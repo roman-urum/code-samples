@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FBD8804-2F4A-423A-93F9-94802C749925}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Maestro.DomainLogic</RootNamespace>
+    <AssemblyName>Maestro.DomainLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\VA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LightInject, Version=4.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.4.0.9\lib\net45\LightInject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net451\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainLogicCompositionRoot.cs" />
+    <Compile Include="Exceptions\DataNotFoundException.cs" />
+    <Compile Include="Mappings\DomainLogicMappings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Implementations\HealthLibraryService.cs" />
+    <Compile Include="Services\Implementations\CustomersService.cs" />
+    <Compile Include="Services\Implementations\CustomerUsersService.cs" />
+    <Compile Include="Services\Implementations\DevicesService.cs" />
+    <Compile Include="Services\Implementations\HealthLibraryService.TagsSearch.cs" />
+    <Compile Include="Services\Implementations\HealthLibraryService.GlobalSearch.cs" />
+    <Compile Include="Services\Implementations\MessagingHubService.cs" />
+    <Compile Include="Services\Implementations\NotesService.cs" />
+    <Compile Include="Services\Implementations\TrendsSettingsService.cs" />
+    <Compile Include="Services\Implementations\VitalConverter.cs" />
+    <Compile Include="Services\Implementations\VitalsService.Conditions.cs" />
+    <Compile Include="Services\Implementations\VitalsService.DefaultThresholds.cs" />
+    <Compile Include="Services\Implementations\VitalsService.cs" />
+    <Compile Include="Services\Implementations\PatientsService.cs" />
+    <Compile Include="Services\Implementations\HealthLibraryService.Programs.cs" />
+    <Compile Include="Services\Implementations\HealthLibraryService.Protocols.cs" />
+    <Compile Include="Services\Implementations\TokenService.cs" />
+    <Compile Include="Services\Implementations\UsersService.cs" />
+    <Compile Include="Services\Implementations\ZoomService.cs" />
+    <Compile Include="Services\Interfaces\IMessagingHubService.cs" />
+    <Compile Include="Services\Interfaces\INotesService.cs" />
+    <Compile Include="Services\Interfaces\IHealthLibraryService.cs" />
+    <Compile Include="Services\Interfaces\ICustomersService.cs" />
+    <Compile Include="Services\Interfaces\ICustomerUsersService.cs" />
+    <Compile Include="Services\Interfaces\IDevicesService.cs" />
+    <Compile Include="Services\Interfaces\IHealthLibraryService.TagsSearch.cs" />
+    <Compile Include="Services\Interfaces\IHealthLibraryService.GlobalSearch.cs" />
+    <Compile Include="Services\Interfaces\ITrendsSettingsService.cs" />
+    <Compile Include="Services\Interfaces\IVitalConverter.cs" />
+    <Compile Include="Services\Interfaces\IVitalsService.Conditions.cs" />
+    <Compile Include="Services\Interfaces\IVitalsService.DefaultThresholds.cs" />
+    <Compile Include="Services\Interfaces\IVitalsService.cs" />
+    <Compile Include="Services\Interfaces\IPatientsService.cs" />
+    <Compile Include="Services\Interfaces\IHealthLibraryService.Programs.cs" />
+    <Compile Include="Services\Interfaces\IHealthLibraryService.Protocols.cs" />
+    <Compile Include="Services\Interfaces\ITokenService.cs" />
+    <Compile Include="Services\Interfaces\IUsersService.cs" />
+    <Compile Include="Services\Interfaces\IZoomService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Maestro.Common\Maestro.Common.csproj">
+      <Project>{4c8f910a-d6b3-4b7e-8d64-6108691b8f7f}</Project>
+      <Name>Maestro.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Maestro.DataAccess.EF\Maestro.DataAccess.EF.csproj">
+      <Project>{fb3b5bca-b3f2-4c31-b5b2-10a9050aba61}</Project>
+      <Name>Maestro.DataAccess.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Maestro.DataAccess\Maestro.DataAccess.Api.csproj">
+      <Project>{12c6a51d-c7a2-449b-ab9f-d387fb66602e}</Project>
+      <Name>Maestro.DataAccess.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Maestro.Domain\Maestro.Domain.csproj">
+      <Project>{0af8a9fc-4eed-4e9a-8071-dbb260f81b82}</Project>
+      <Name>Maestro.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

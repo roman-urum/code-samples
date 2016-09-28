@@ -1,0 +1,23 @@
+﻿<script id="addNoteMeasurementTemplate" type="text/template">
+    <div class="line">
+        <strong style="color: <%- obj.color %>">
+            <% if(!obj.isAutomated) { %>*<% } %>
+            <% _.each(obj.vitals, function (vital, index) { %>
+                <% if (index > 0) { %>,<% } %>
+                <%- vital.name %>
+                <% if (vital.name === 'Blood Pressure') { %>
+                    <span style="color: <%= vital.color %>">
+                        <%- vital.values.systolic %>/<%- vital.values.diastolic %> <%- vital.unit %>
+                    </span>
+                <% } else { %>
+                    <span style="color: <%= vital.color %>">
+                        <%- vital.value %> <%- vital.unit %>
+                    </span>
+                <% } %>
+            <% }); %>
+        </strong> on <%- obj.date %> <%- obj.time %>
+    </div>
+    <!--<div class="line">
+        <%- obj.date %> <%- obj.time %>
+    </div>-->
+</script>

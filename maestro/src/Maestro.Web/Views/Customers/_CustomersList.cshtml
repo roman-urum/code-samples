@@ -1,0 +1,22 @@
+﻿@using Maestro.Web.Models.Customers
+@model CustomerListViewModel
+
+<div class="row">
+    <div class="col-xs-12 ci-user-list">
+        
+        @foreach (var customer in Model.Customers)
+        {
+            if (customer is SingleSiteViewModel)
+            {
+                @Html.Partial("_SingleSiteRow", customer as SingleSiteViewModel)
+            }
+            else if (customer is MultipleSitesViewModel)
+            {
+                @Html.Partial("_MultipleSitesList", customer as MultipleSitesViewModel)
+            }
+        }
+
+    </div>
+</div>
+
+<div class="user-list-counter small" id="search-result-sites-count">@Model.SitesTotalCount Sites Shown</div>

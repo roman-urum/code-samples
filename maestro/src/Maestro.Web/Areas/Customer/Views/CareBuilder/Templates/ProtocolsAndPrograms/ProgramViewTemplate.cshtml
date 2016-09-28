@@ -1,0 +1,118 @@
+@using Maestro.Domain.Enums
+@using Roles = Maestro.Domain.Constants.Roles
+
+<script id="programViewTemplate" type="text/template">
+    <h1 id="title-page" class="h1-ci" data-edit-title="@GlobalStrings.ProgramDetails_EditTitle">@GlobalStrings.ProgramDetails_CreateTitle</h1>
+
+    <ol class="breadcrumb breadcrumb-ci">
+        <li class="active">
+            @GlobalStrings.Edit_Customer_CareBuilderBreadcrumbText
+        </li>
+        <li>
+            <a href="@Url.Action("ProtocolsAndPrograms/Programs", "CareBuilder", new
+                {
+                    area = "Customer",
+                    subdomain = CustomerContext.Current.Customer.Subdomain
+                })">
+                @GlobalStrings.Edit_Customer_CareBuilder_ProgramsBreadcumbText
+            </a>
+        </li>
+        <li class="active js-program-name">
+            <% if (name) { %>
+                <%= name %>
+            <% } else { %>
+                @GlobalStrings.Edit_Customer_CareBuilder_CreateBreadcrumbText
+            <% } %>
+        </li>
+    </ol>
+
+    <div class="alert alert-success hidden js-alert-create-success" role="alert">@GlobalStrings.ProgramDetails_MessageOnCreate</div>
+    <div class="alert alert-success hidden js-alert-update-success" role="alert">@GlobalStrings.ProgramDetails_MessageOnUpdate</div>
+    <div class="alert alert-danger hidden js-alert-fail" role="alert"></div>
+
+    <div class="row">
+        <div class="col-sm-3 offset-right-0">
+            <!-- Tabs -->
+            <ul class="nav nav-tabs nav-tabs-program-ci nav-justified" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#tab-search" aria-controls="home" role="tab" data-toggle="tab">
+                        @GlobalStrings.ProgramDetails_SearchTabTitle
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#tab-organize" aria-controls="profile" role="tab" data-toggle="tab">
+                        @GlobalStrings.ProgramDetails_OrganizeTabTitle
+                    </a>
+                </li>
+            </ul>
+            <!-- Tabs content -->
+            <div class="tab-content">
+                <!-- Search protocols tab -->
+                <div role="tabpanel" class="tab-pane active" id="tab-search">
+                    <div class="show-grid-ci clearfix">
+                        <div class="col-sm-12 program-elements-list-container">
+                            <div class="form-search-small-ci">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" id="search-program-elements-keyword" placeholder="Type Keyword here">
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <select id="search-program-elements-tags" data-placeholder="Search by Tags" data-loading-placeholder="Loading..." class="form-control chosen-select searching-tags"></select>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default js-search-clear" type="button">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="js-search-result"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Organize protocols tab -->
+                <div role="tabpanel" class="tab-pane" id="tab-organize">
+                    <div class="show-grid-ci">
+                        <div class="col-sm-12 program-elements-list-container">
+                            <div class="js-organize">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-9">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">@GlobalStrings.ProgramDetails_NameLabel</span>
+                    <input type="text" class="form-control"
+                           placeholder="@GlobalStrings.ProgramDetails_NamePlaceholder"
+                           value="<%= name %>"
+                           data-name="name"
+                           id="name">
+
+                    @if (User.IsInRoles(Roles.SuperAdmin) || User.HasPermissions(CustomerContext.Current.Customer.Id, CustomerUserRolePermissions.ManageHealthPrograms))
+                    {
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary js-save-program" type="button" data-loading-text="Saving...">@GlobalStrings.ProgramDetails_SaveButton</button>
+                        </span>
+                    }
+                </div>
+                <span class="help-block help-block-error help-block-name hidden"></span>
+            </div>
+            <div class="form-group">
+                <input type="text" id="program-details-tags" class="form-control creation-tags" data-placeholder="Add Tags" 
+                       data-loading-placeholder="Loading..." 
+                       data-name="tags"
+                       value="<%= tags.join(',') %>" />
+                <span class="help-block help-block-error help-block-tags hidden"></span>
+            </div>
+
+            <!-- Protocol Weeks -->
+            <div class="program-weeks-ci js-weeks"></div>
+        </div>
+    </div>
+</script>

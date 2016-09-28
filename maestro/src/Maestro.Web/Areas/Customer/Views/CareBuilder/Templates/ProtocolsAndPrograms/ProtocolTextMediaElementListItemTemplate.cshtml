@@ -1,0 +1,39 @@
+﻿<script id="protocolTextMediaElementListItemTemplate" type="text/template">
+    <div class="protocol-search-element-title protocol-handle clearfix">
+        <div class="pull-left italic">Text and media</div>
+        <span class="glyphicon glyphicon-move pull-right handle-icon"></span>
+    </div>
+    <div class="protocol-search-element-body">
+        <p class="search-result-text strong" title="<%=name%>"><%=name%></p>
+        <% if( typeof(text) !== "undefined" ) { %>
+        <p class="search-result-text"><%=text%></p>
+        <% } %>
+        
+        <% if( typeof(thumbnailUrl) !== "undefined" && thumbnailUrl ) { %>
+            <div class="media media-preview-ci">
+                <div class="media-left media-middle protocol-search-text-media-img">
+                    <% if( mediaType == 1 ) { %>
+                        <img src="<%=thumbnailUrl%>" alt="" class="thumbnail thumbnail-ci">
+                    <% } else { %>
+                        <span class="glyphicon glyphicon-file"></span>
+                    <% } %>
+                </div>
+                <div class="media-body">
+                    <% if( typeof(imageName) !== "undefined" ) { %>
+                        <p><%=imageName%></p>
+                    <% } %>
+                    <% if( typeof(description) !== "undefined" ) { %>
+                        <p><%=description%></p>
+                    <% } %>
+                </div>
+            </div>
+        <% } %>
+        <% if( tags.length > 0 ) { %>
+            <div class="search-result-tags">
+                <% _.each(tags, function(tag){ %>
+                <span class="label label-info" title="<%= tag %>"><%= tag %></span>
+                <% }); %>
+            </div>
+        <% } %>
+    </div>
+</script>

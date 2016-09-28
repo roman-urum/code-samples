@@ -1,0 +1,39 @@
+<script id="patientTrendsAddChartsViewTemplate" type="text/template">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default js-show-vitals">Measurements</button>
+                <button type="button" class="btn btn-default js-show-questions">Care Elements</button>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-6 charts-list-container">
+            <ul class="list-group chart-types">
+                <% _.each(availableCharts, function (chartMeta, index) { %>
+                <li class="list-group-item chart-item">
+                    <span class="chart-title" title="<%=chartMeta.label%>"><%=chartMeta.label%></span>
+                    <a href="" class="js-add-chart" data-index="<%=index%>">Add</a>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            <ul class="list-group chart-types">
+                <% _.each(selectedCharts, function (chartMeta, index) { %>
+                    <li class="list-group-item chart-item">
+                        <span class="chart-title" title="<%=chartMeta.label%>"><span><%=chartMeta.label%></span></span>
+                        <span class="actions">
+                            <button class="js-move-up" data-index="<%=index%>">&#8593;</button>
+                            <button class="js-move-down" data-index="<%=index%>">&#8595;</button>
+                        </span>
+                        <a href="" class="js-remove-chart" data-index="<%=index%>">Remove</a>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+</script>

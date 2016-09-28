@@ -1,0 +1,27 @@
+﻿<script id="questionModalSelectionAnswerSetTemplate" type="text/template">    
+    <div class="clearfix">
+        <h4 class="pull-left"><%=name%></h4>
+        <span class="pull-right">
+            <small>
+                <strong>Default Language:</strong> EN-US
+            </small>
+        </span>
+    </div>
+    
+    <% if (isMultipleChoice) { %>
+        @Html.Partial("_MultiSelectLabel")
+    <% } %>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <strong>
+                <small>Tags:</small>
+            </strong>
+            <% _.each(tags, function(tag) { %>
+                <span class="label label-info"><%= tag %></span>
+            <% }); %>
+        </div>
+    </div>
+    <hr>
+    <div id="answers" class="js-answers panel-group"></div>
+</script>

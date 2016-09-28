@@ -1,0 +1,8 @@
+*.suo
+*.user
+packages/
+logs/
+bin/
+obj/
+.vs/
+/MessagingHub1.sln.GhostDoc.xml

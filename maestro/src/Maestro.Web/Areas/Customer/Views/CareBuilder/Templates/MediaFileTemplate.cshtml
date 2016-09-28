@@ -1,0 +1,64 @@
+﻿<script id="mediaFileTemplate" type="text/template">    
+    <span class="help-block hidden" data-validate-for="media-file-name"></span>
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="nav nav-pills nav-pills-info-ci nav-pills-sm-ci nav-tabs-media-ci">
+                <li role="presentation" class="active"><a href="#media-file" data-toggle="tab">Upload a File</a></li>
+                <li role="presentation"><a href="#media-link" data-toggle="tab">Link to a file</a></li>
+            </ul>
+            <div class="tab-content">
+                <input type="hidden" name="media.contentType" id="media-content-type" />
+                <input type="hidden" data-name="media.fileName" name="media.fileName" id="media-file-name" />
+                <div class="tab-pane active" id="media-file">
+                    <div class="form-group">
+                        <div class="input-group input-group-file-ci">
+                            <input id="input-upload-media-name" type="text" class="form-control" readonly>
+                            <span class="input-group-btn">
+                                <input type="file" id="upload-media-file" accept="application/pdf, image/x-png, image/jpeg, video/mp4" >
+                                <button type="button" class="btn btn-primary btn-file-ci" data-loading-text="Uploading...">
+                                    Browse&hellip;
+                                </button>
+                            </span>
+                        </div>
+                        <span class="help-block help-block-error help-block-media-fileName hidden"></span>
+                    </div>
+                </div>
+                <div class="tab-pane" id="media-link">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="link-to-media-file" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" name="uplaod-media-from-link" id="uplaod-media-from-link" data-loading-text="Uploading...">Upload</button>
+                            </span>
+                        </div>
+                        <span class="help-block help-block-error help-block-media-fileName hidden"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="preview-media-container" class="well well-preview-ci hidden">
+        <div class="media media-preview-ci">
+            <div class="media-left media-middle" id="preview-media-file"></div>
+            <div class="media-body">
+                <p id="preview-media-file-name"></p>
+                <a href="#" id="remove-media-file-btn">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    Remove
+                </a>
+            </div>
+        </div>
+    </div>
+            
+    <div class="form-group">
+        <label for="media-name">Name of Media</label>
+        <input type="text" data-name="media.name" name="media.name" class="form-control" id="media-name" />
+        <span class="help-block hidden" data-validate-for="media-name"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="media-content-tags">Tags <i>(Optional)</i></label>
+        <input type="text" id="media-content-tags" class="form-control creation-tags" data-placeholder="Add Tags" data-loading-placeholder="Loading..." />
+    </div>
+</script>

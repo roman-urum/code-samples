@@ -1,0 +1,37 @@
+﻿<script id="questionModalScaleAnswerSetTemplate" type="text/template">
+    <div class="clearfix">
+        <h4 class="pull-left"><%=name%></h4>
+        <span class="pull-right">
+            <small>
+                <strong>Default Language:</strong> EN-US
+            </small>
+        </span>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <strong>
+                <small>Tags:</small>
+            </strong>
+            <% _.each(tags, function(tag) { %>
+                <span class="label label-info"><%= tag %></span>
+            <% }); %>
+        </div>
+    </div>
+    <hr>
+    
+    <div class="js-scale-control"></div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title panel-title-sm-ci">
+                <a href="#collapse-answers" class="collapsed strong panel-toggle" role="button" data-toggle="collapse" data-parent="#answers" aria-expanded="false">Values</a>
+            </h4>
+        </div> 
+        <div class="panel-collapse collapse" id="collapse-answers" aria-expanded="false">
+            <div class="list-group js-answers">
+
+            </div> 
+        </div> 
+    </div>
+</script>

@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <!-- SUPER USER - EDIT SETTINGS -->
+      <meta http-equiv="X-UI-Compatible" content="IE=edge" />
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+      <link rel="stylesheet" href="vendor/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
+      <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      
+      <!-- PAGE HEADER -->
+      <header class="non-responsive-container ci-header">
+        <div class="ci-brand-img">
+            <a class="navbar-brand" href="#">
+                <img src="img/ci-logo.png" alt="Care Innovations, an Intel - GE Company"/>
+            </a>
+        </div>
+        <div class="ci-user-menu">
+          Welcome <a href="#">Susan</a>!
+        </div>
+        <div class="ci-signout">
+          <a href="#">Sign Out</a>
+        </div>
+      </header>
+      <!-- END PAGE HEADER -->
+        
+      <section class="non-responsive-container">
+        <div class="row">
+          
+          <!-- SIDE NAVIGATION -->
+          <nav class="col-xs-1 ci-navigation left-wrap">
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-home"></span><br />Home</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-user"></span><br />Patients</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-calendar"></span><br />Calendar</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-wrench"></span><br />Care Builder</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-list-alt"></span><br />Reports</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-cog"></span><br />Settings</a></div>
+          </nav>
+          <!-- END SIDE NAVIGATION -->
+          
+          <div class="right-wrap col-xs-11">
+            
+            <!-- PAGE HEADER / BREADCRUMBS -->
+            <h1 class="ci-page-header">Administration <span class="small">(Customer Name)</span></h1>
+            <div class="small"><a class="ci-crumb" href="#">Site Management</a><span class="ci-crumb">&gt;</span><span class="ci-crumb crumb-endcap">Edit Customer Name</span></div>
+            <!-- END PAGE HEADER / BREADCRUMBS -->
+            
+            <!-- MAIN CONTENT - MAESTRO DEFAULT SETTINGS -->
+            <div class="ci-content">
+              
+              <!-- OUTER TAB SHELL FOR DEFAULT SETTINGS -->
+              <div class="settings-wrap-tabs">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#ci-site-settings" data-toggle="tab">Customer Settings</a></li>
+                  <li><a href="#ci-user-settings" data-toggle="tab">Users</a></li>
+                  <li><a href="#ci-conditions" data-toggle="tab">Conditions</a></li>
+                  <li><a href="#ci-devices" data-toggle="tab">Devices</a></li>
+                  <li><a href="#ci-patient-care" data-toggle="tab">Patient Care</a></li>
+                  <li><a href="#ci-health-content" data-toggle="tab">Health Content</a></li>
+                </ul>
+                <div class="tab-content">
+                  
+                  <!-- CUSTOMER SETTINGS TAB CONTENT -->
+                  <div class="tab-pane active" id="ci-site-settings">
+                    
+                    <!-- INNER TAB SHELL FOR CUSTOMER SETTINGS -->
+                    <ul class="nav nav-pills" id="ci-site-settings-tabs">
+                      <li class="active"><a href="#ci-default-information">General</a></li>
+                      <li><a href="#ci-default-features">Default Features</a></li>
+                      <li><a href="#ci-default-reports">Default Reports</a></li>
+                      <li><a href="#ci-default-access-roles">Default Permissions</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      
+                      <!-- GENERAL SETTINGS -->
+                      <div class="tab-pane active" id="ci-default-information">
+                        <form class="settings-form">
+                          <div class="row save-form-wrap">
+                            <div class="col-xs-1"><button type="button" class="btn btn-danger disabled submit-form-confirm submit-form">Save</button></div>
+                            <div class="col-xs-1 ci-text"><a href="#" class="cancel-form" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#page-cancel">Cancel</a></div>
+                            <div class="col-xs-10 ci-text"><span class="error-state confirm-success">Your changes have been saved successfully!</span></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-3 ci-text"><label for="customer-name">Customer Name:</label></div>
+                            <div class="col-xs-9">
+                              <div class="f-group">
+                                <input id="customer-name" type="text" value="John Smith"><div class="ci-text-block">NOTE: This will change the display name of the customer for all sites associated with it.</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-3 ci-text"><label for="cust-logo-upload">Logo:</label></div>
+                            <div class="col-xs-4">
+                              <div class="f-group">
+                                <input id="cust-logo-upload" type="text" value="/path/somefile.jpg">
+                                <button type="button" class="btn btn-default">Browse</button>
+                              </div>
+                              <div class="input-sub-note x-small">Required format: PNG or JPEG</div>
+                            </div>
+                            <div class="col-xs-5"><img src="img/ci-logo.png" class="ci-site-image" alt="Site logo..."/></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-3 ci-text"><label for="cust-pass-expiry">Password Expiration:</label><a href="#" class="info-button" data-toggle="tooltip" data-placement="bottom" title="Set the number of days your password will expire"><span class="glyphicon glyphicon-question-sign"></span></a></div>
+                            <div class="col-xs-9">
+                              <div class="f-group">
+                                <input id="cust-pass-expiry" class="input-validation-error" type="text"><div class="ci-text">days</div>
+                              </div>
+                              <div class="input-sub-note x-small error-state">Any value from 1 &ndash; 9999</div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-3 ci-text"><label for="cust-sess-timeout">Idle Session Timeout:</label><a href="#" class="info-button" data-toggle="tooltip" data-placement="bottom" title="Set the number of minutes your session will expire after."><span class="glyphicon glyphicon-question-sign"></span></a></div>
+                            <div class="col-xs-9">
+                              <div class="f-group">
+                                <input id="cust-sess-timeout" type="text"><div class="ci-text">minutes</div>
+                              </div>
+                              <div class="input-sub-note x-small">Any value from 5 &ndash; 20</div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-8">
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" value="">
+                                  I understand that changing any of the above parameters may impact the security and/or privacy of patient personal health information ("PHI") stored on my organization's behalf by Intel&ndash;GE Care Innovations LLC. Further, I understand that it is solely the responsibility of my organization to perform any and all appropriate risk assessments necessary to ensure.
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row simple-top-border">
+                            <div class="col-xs-5"><h2 class="ci-page-subheader">Sites</h2></div>
+                            <div class="col-xs-7 subhead-add-link"><a href="#" data-toggle="modal" data-target="#new-site">+ Add New Site</a></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-3">Access Link:</div>
+                            <div class="col-xs-9">
+                              <div class="f-group">
+                                <div>http://www.customersubdomain.healthharmonymaestro.com</div><div><a href="#">Copy to Clipboard</a></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="banded-list">
+                            <div class="banded-list-item">
+                              <div class="row">
+                                <div class="col-xs-3 ci-text"><label for="site-display-name">Display Name:</label></div>
+                                <div class="col-xs-3">
+                                  <input id="site-display-name" type="text" value="Populate Site Name">
+                                </div>
+                                <div class="col-xs-6 ci-site-switch">
+                                  <input type="checkbox" class="basic-checkbox" checked><a href="#" class="info-button" data-toggle="tooltip" data-placement="bottom" title="Toggle the availability of the site for users."><span class="glyphicon glyphicon-question-sign"></span></a>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-xs-3 ci-text"><label for="site-phone">Contact Phone:</label></div>
+                                <div class="col-xs-9">
+                                  <input id="site-phone" type="text" value="###-###-####">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="banded-list-item">
+                              <div class="row">
+                                <div class="col-xs-3 ci-text"><label for="site-display-name">Display Name:</label></div>
+                                <div class="col-xs-3">
+                                  <input id="site-display-name" type="text" value="Populate Site Name">
+                                </div>
+                                <div class="col-xs-6 ci-site-switch">
+                                  <input type="checkbox" class="basic-checkbox" checked><a href="#" class="info-button" data-toggle="tooltip" data-placement="bottom" title="Toggle the availability of the site for users."><span class="glyphicon glyphicon-question-sign"></span></a>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-xs-3 ci-text"><label for="site-phone">Contact Phone:</label></div>
+                                <div class="col-xs-9">
+                                  <input id="site-phone" type="text" value="###-###-####">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="banded-list-item">
+                              <div class="row">
+                                <div class="col-xs-3 ci-text"><label for="site-display-name">Display Name:</label></div>
+                                <div class="col-xs-3">
+                                  <input id="site-display-name" type="text" value="Populate Site Name">
+                                </div>
+                                <div class="col-xs-6 ci-site-switch">
+                                  <input type="checkbox" class="basic-checkbox" checked><a href="#" class="info-button" data-toggle="tooltip" data-placement="bottom" title="Toggle the availability of the site for users."><span class="glyphicon glyphicon-question-sign"></span></a>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-xs-3 ci-text"><label for="site-phone">Contact Phone:</label></div>
+                                <div class="col-xs-9">
+                                  <input id="site-phone" type="text" value="###-###-####">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <!-- END GENERAL SETTINGS -->
+                      
+                      <!-- DEFAULT CUSTOMER FEATURES -->
+                      <div class="tab-pane" id="ci-default-features">
+                        <form class="settings-form">
+                          <div class="row save-form-wrap">
+                            <div class="col-xs-1"><button type="button" class="btn btn-danger disabled submit-form-confirm submit-form">Save</button></div>
+                            <div class="col-xs-1 ci-text"><a href="#" class="cancel-form" data-toggle="modal" data-target="#page-cancel">Cancel</a></div>
+                            <div class="col-xs-10 ci-text"><span class="error-state confirm-success">Your changes have been saved successfully!</span></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-12"><h2 class="ci-page-subheader">Default Features</h2><a href="#" class="info-button" data-toggle="tooltip" data-placement="bottom" title="Default Features of the site."><span class="glyphicon glyphicon-question-sign"></span></a></div>
+                          </div>
+                          <div class="feature-list">
+                            <!-- First List of Features -->
+                            <div class="row">
+                              <div class="col-xs-12  feature-list-header">Home Page Features</div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-1"></div>
+                              <div class="col-xs-2">Feature Name</div>
+                              <div class="col-xs-5">Description of feature</div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-one" id="feature-on" value="on"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-one" id="feature-off" value="off" checked="checked"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-one" id="feature-disabled" value="disabled"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-1"><span class="glyphicon glyphicon-warning-sign"></span></div>
+                              <div class="col-xs-2">Feature Name</div>
+                              <div class="col-xs-5">Description of feature</div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-two" id="feature-on" value="on"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-two" id="feature-off" value="off"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-two" id="feature-disabled" value="disabled" checked="checked"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-1"></div>
+                              <div class="col-xs-2">Feature Name</div>
+                              <div class="col-xs-5">Description of feature</div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-three" id="feature-on" value="on" checked="checked"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-three" id="feature-off" value="off"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-three" id="feature-disabled" value="disabled"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-1"></div>
+                              <div class="col-xs-2">Feature Name</div>
+                              <div class="col-xs-5">Description of feature</div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-four" id="feature-on" value="on"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-four" id="feature-on" value="on" checked="checked"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-four" id="feature-disabled" value="disabled"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-1"></div>
+                              <div class="col-xs-2">Feature Name</div>
+                              <div class="col-xs-5">Description of feature</div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-five" id="feature-on" value="on"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-five" id="feature-off" value="off"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-five" id="feature-disabled" value="disabled" checked="checked"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- END First List of Features -->
+                            
+                            <!-- Second List of Features -->
+                            <div class="row">
+                              <div class="col-xs-12  feature-list-header">Patient Features</div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-1"><span class="glyphicon glyphicon-warning-sign"></span></div>
+                              <div class="col-xs-2">Feature Name</div>
+                              <div class="col-xs-5">Description of feature</div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-six" id="feature-on" value="on"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-six" id="feature-off" value="off" checked="checked"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-six" id="feature-disabled" value="disabled"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-1"></div>
+                              <div class="col-xs-2">Feature Name</div>
+                              <div class="col-xs-5">Description of feature</div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-seven" id="feature-on" value="on"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-seven" id="feature-off" value="off" checked="checked"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-seven" id="feature-disabled" value="disabled"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-1"><span class="glyphicon glyphicon-warning-sign"></span></div>
+                              <div class="col-xs-2">Feature Name</div>
+                              <div class="col-xs-5">Description of feature</div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-eight" id="feature-on" value="on" checked="checked"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-eight" id="feature-off" value="off"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-eight" id="feature-disabled" value="disabled"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-1"></div>
+                              <div class="col-xs-2">Feature Name</div>
+                              <div class="col-xs-5">Description of feature</div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-nine" id="feature-on" value="on"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-nine" id="feature-off" value="off" checked="checked"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-nine" id="feature-disabled" value="disabled"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-1"></div>
+                              <div class="col-xs-2">Feature Name</div>
+                              <div class="col-xs-5">Description of feature</div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-ten" id="feature-on" value="on" checked="checked"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-ten" id="feature-off" value="off"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-ten" id="feature-disabled" value="disabled"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- END Second List of Features -->
+                          </div>
+                          <div class="paid-feature-warning small error-state"><span class="glyphicon glyphicon-warning-sign"></span> Paid feature. Do not activate unless a contract is in place.</div>
+                        </form>
+                      </div>
+                      <!-- END DEFAULT CUSTOMER FEATURES -->
+                      
+                      <!-- DEFAULT CUSTOMER REPORTS -->
+                      <div class="tab-pane" id="ci-default-reports">
+                        <form class="settings-form">
+                          <div class="row save-form-wrap">
+                            <div class="col-xs-1"><button type="button" class="btn btn-danger disabled submit-form-confirm submit-form">Save</button></div>
+                            <div class="col-xs-1 ci-text"><a href="#" class="cancel-form" data-toggle="modal" data-target="#page-cancel">Cancel</a></div>
+                            <div class="col-xs-10 ci-text"><span class="error-state confirm-success">Your changes have been saved successfully!</span></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-12"><h2 class="ci-page-subheader">Default Standard Reports</h2><a href="#" class="info-button" data-toggle="tooltip" data-placement="bottom" title="Default reports of the site."><span class="glyphicon glyphicon-question-sign"></span> </a></div>
+                          </div>
+                          <div class="feature-list">
+                            
+                            <!-- First List of Reports -->
+                            <div class="row">
+                              <div class="col-xs-12  feature-list-header">Patient Metrics</div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-3">Report Name</div>
+                              <div class="col-xs-5"><a href="#">Preview</a></div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-one" id="feature-on" value="on"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-one" id="feature-off" value="off" checked="checked"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-one" id="feature-disabled" value="disabled"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-3">Report Name</div>
+                              <div class="col-xs-5"><a href="#">Preview</a></div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-two" id="feature-on" value="on"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-two" id="feature-off" value="off"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-two" id="feature-disabled" value="disabled" checked="checked"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-3">Report Name</div>
+                              <div class="col-xs-5"><a href="#">Preview</a></div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-three" id="feature-on" value="on" checked="checked"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-three" id="feature-off" value="off"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-three" id="feature-disabled" value="disabled"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- END First List of Reports -->
+                            
+                            <!-- Second List of Reports -->
+                            <div class="row">
+                              <div class="col-xs-12  feature-list-header">Adherence Reports</div>
+                            </div>
+                            <div class="row feature-item">
+                              <div class="col-xs-3">Report Name</div>
+                              <div class="col-xs-5"><a href="#">Preview</a></div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-four" id="feature-on" value="on"> On
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-1">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-four" id="feature-off" value="off" checked="checked"> Off
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-xs-2">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="feature-option-four" id="feature-disabled" value="disabled"> Disabled
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- END Second List of Reports -->
+                          </div>
+                        </form>
+                      </div>
+                      <!-- END DEFAULT CUSTOMER REPORTS -->
+                      
+                      <!-- DEFAULT CUSTOMER ACCESS ROLES -->
+                      <div class="tab-pane" id="ci-default-access-roles">
+                         <form class="settings-form">
+                          <div class="row save-form-wrap">
+                            <div class="col-xs-1"><button type="button" class="btn btn-danger disabled submit-form" data-toggle="modal" data-target="#page-save">Save</button></div>
+                            <div class="col-xs-1 ci-text"><a href="#" class="cancel-form" data-toggle="modal" data-target="#page-cancel">Cancel</a></div>
+                            <div class="col-xs-10 ci-text"><span class="error-state confirm-success">Your changes have been saved successfully!</span></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-5"><h2 class="ci-page-subheader">Default Permissions</h2></div>
+                            <div class="col-xs-7 subhead-add-link"><a href="#" data-toggle="modal" data-target="#new-role">+ Create New Role</a></div>
+                          </div>
+                          <div class="row access-role-actions">
+                            <div class="col-xs-1">Role: </div>
+                            <div class="col-xs-3">
+                              <select>
+                                <option>Admin</option>
+                                <option>Clinician</option>
+                              </select>
+                            </div>
+                            <div class="col-xs-5 text-center"><a href="#" data-toggle="modal" data-target="#rename-role">Rename Selected Role</a> <a href="#" data-toggle="modal" data-target="#delete-role">Delete Selected Role</a></div>
+                            <div class="col-xs-3 text-right"><a href="#" class="accordion-expand-all">Expand All</a><a href="#" class="accordion-collapse-all">Collapse All</a></div>
+                          </div>
+                          <div class="access-roles">
+                            <div class="list-accordion">
+                              <div class="row">
+                                <div class="col-xs-12">
+                                  <div class="list-arrow"></div>
+                                  <a class="list-collapse" href="javascript:void(0);">Customer Information Management</a>
+                                </div>
+                              </div>
+                              <div class="accordion-content">
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <p>Granular Permission 1</p>
+                                    <p class="small">Description of granular permission.</p>
+                                  </div>
+                                  <div class="col-xs-6">Permission controls</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <p>Granular Permission 1</p>
+                                    <p class="small">Description of granular permission.</p>
+                                  </div>
+                                  <div class="col-xs-6">Permission controls</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <p>Granular Permission 1</p>
+                                    <p class="small">Description of granular permission.</p>
+                                  </div>
+                                  <div class="col-xs-6">Permission controls</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="list-accordion">
+                              <div class="row">
+                                <div class="col-xs-12">
+                                  <div class="list-arrow"></div>
+                                  <a class="list-collapse" href="javascript:void(0);">User Management</a>
+                                </div>
+                              </div>
+                              <div class="accordion-content">
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <p>Granular Permission 1</p>
+                                    <p class="small">Description of granular permission.</p>
+                                  </div>
+                                  <div class="col-xs-6">Permission controls</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <p>Granular Permission 1</p>
+                                    <p class="small">Description of granular permission.</p>
+                                  </div>
+                                  <div class="col-xs-6">Permission controls</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <p>Granular Permission 1</p>
+                                    <p class="small">Description of granular permission.</p>
+                                  </div>
+                                  <div class="col-xs-6">Permission controls</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="list-accordion">
+                              <div class="row">
+                                <div class="col-xs-12">
+                                  <div class="list-arrow"></div>
+                                  <a class="list-collapse" href="javascript:void(0);">ERP Management</a>
+                                </div>
+                              </div>
+                              <div class="accordion-content">
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <p>Granular Permission 1</p>
+                                    <p class="small">Description of granular permission.</p>
+                                  </div>
+                                  <div class="col-xs-6">Permission controls</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <p>Granular Permission 1</p>
+                                    <p class="small">Description of granular permission.</p>
+                                  </div>
+                                  <div class="col-xs-6">Permission controls</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <p>Granular Permission 1</p>
+                                    <p class="small">Description of granular permission.</p>
+                                  </div>
+                                  <div class="col-xs-6">Permission controls</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="list-accordion">
+                              <div class="row">
+                                <div class="col-xs-12">
+                                  <div class="list-arrow"></div>
+                                  <a class="list-collapse" href="javascript:void(0);">TSI Management</a>
+                                </div>
+                              </div>
+                              <div class="accordion-content">
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <p>Granular Permission 1</p>
+                                    <p class="small">Description of granular permission.</p>
+                                  </div>
+                                  <div class="col-xs-6">Permission controls</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <p>Granular Permission 1</p>
+                                    <p class="small">Description of granular permission.</p>
+                                  </div>
+                                  <div class="col-xs-6">Permission controls</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-xs-6">
+                                    <p>Granular Permission 1</p>
+                                    <p class="small">Description of granular permission.</p>
+                                  </div>
+                                  <div class="col-xs-6">Permission controls</div>
+                                </div>
+                              </div>
+                            </div> 
+                          </div>
+                        </form>
+                      </div>
+                      <!-- END DEFAULT CUSTOMER ACCESS ROLES -->
+                    </div>
+                    <!-- END INNER TAB SHELL FOR CUSTOMER SETTINGS -->
+                    
+                  </div>
+                  <!-- END CUSTOMER SETTINGS TAB CONTENT -->
+                  
+                  <div class="tab-pane" id="ci-user-settings">User Settings</div>
+                  <div class="tab-pane" id="ci-conditions">Conditions</div>
+                  <div class="tab-pane" id="ci-devices">Devices</div>
+                  <div class="tab-pane" id="ci-patient-care">Patient Care</div>
+                  <div class="tab-pane" id="ci-health-content">Health Content</div>
+                </div>
+              </div>
+              <!-- END OUTER TAB SHELL FOR DEFAULT SETTINGS -->
+              
+            </div>
+            <!-- END MAIN CONTENT -->
+            
+             <!-- MODALS / TOOLTIPS -->
+            <div class="modal fade" id="page-save" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Are you sure you want to proceed?</h4>
+                  </div>
+                  <div class="modal-body">
+                    You are attempting to save changes that will affect the data available to all sites within the Care Innovations Maestro application.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Continue Changes</button>
+                    <button type="button" class="btn btn-primary submit-form-confirm" data-dismiss="modal">Save Changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="page-cancel" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Are you sure you want to cancel?</h4>
+                  </div>
+                  <div class="modal-body">
+                    You have made changes to the current tab.  Are you sure you want to cancel and discard your changes?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default cancel-form-confirm" data-dismiss="modal">Cancel Changes</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Continue Changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="page-switch" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">You made some changes.</h4>
+                  </div>
+                  <div class="modal-body">
+                    You have made changes to the current tab.  If you switch to another tab, your changes will be lost.  Proceed?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Take me back...</button>
+                    <button type="button" class="btn btn-primary switch-form-confirm" data-dismiss="modal">Continue</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="rename-role" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Rename Role</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="role-rename-input">Role Name:</label>
+                      <input id="role-rename-input" class="form-control" type="text" value="Rolename">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary edit-role-confirm" data-dismiss="modal">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="new-role" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">New Role</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="role-rename-input">Role Name:</label>
+                      <input id="role-rename-input" class="form-control" type="text" placeholder="Enter rolename here">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary edit-role-confirm" data-dismiss="modal">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="delete-role" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Delete Role</h4>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure you want to delete the selected role? <span class="delete-select-role error-state">Role Name</span>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary edit-role-confirm" data-dismiss="modal">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="site-switch" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Are you sure you want to continue?</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>You are about to turn a site "<span class="site-switch-state"><strong>Off</strong></span>" which means that the site will no longer allow log-in by any customer users or administrators.</span></p>
+                    <p>Additional text explaining the feature of turning a site on or off.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default switch-state-revert" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary switch-state-confirm" data-dismiss="modal">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="new-site" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <form>
+                    <div class="modal-header">
+                      <h4 class="modal-title">Add New Site</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>To create a new site, fill out the form below and click "Create". Your site will be created in an unpublished state.</p>
+                      <div class="row">
+                        <div class="col-xs-4 ci-text"><label for="new-display-name">Display Name:</label></div>
+                        <div class="col-xs-8">
+                          <input id="new-contact-phone" type="text">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-4 ci-text"><label for="new-contact-phone">Contact Phone:</label></div>
+                        <div class="col-xs-8">
+                          <input id="new-contact-phone" type="text">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-primary add-site-confirm" data-dismiss="modal">Save</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- END MODALS / TOOLTIPS -->
+            
+          </div>
+        </div>
+      </section>
+      <script src="vendor/jquery/dist/jquery.min.js"></script>
+      <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="vendor/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+      <script src="js/global.js"></script>
+      <script src="js/admin.js"></script>
+    </body>
+</html>

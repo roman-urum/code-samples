@@ -1,0 +1,16 @@
+﻿<script id="patientsListItemDetailsTemplate" type="text/template">
+    <h5>Programs:</h5>
+    <div class="row patient-search-wrapper">
+        <% if(obj.Programs.length) { %>
+            <% _.each(obj.Programs, function(program) { %>
+            <div class="col-sm-4 patient-search-col">
+                <div class="patient-search-program"><%- program.Name %> (Day <%- program.CurrentDay %> of <%- program.TotalDays %>)</div>
+            </div>
+            <% }) %>
+        <% } else { %>
+            <div class="col-sm-12 patient-search-no-col">
+                <div class="well well-sm">No Programs</div>
+            </div>
+        <% } %>
+    </div>
+</script>

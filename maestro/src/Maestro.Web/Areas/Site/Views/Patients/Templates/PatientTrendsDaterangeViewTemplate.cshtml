@@ -1,0 +1,24 @@
+<script id="patientTrendsDaterangeViewTemplate" type="text/template">
+
+    <div class="form-group">
+        <label>Date Range:</label><br>
+        <select class="form-control input-sm js-daterange-predefined daterange-predefined">
+            <option value="7">Last 1 week</option>
+            <option value="14">Last 2 weeks</option>
+            <option value="28">Last 4 weeks</option>
+            <option value="84">Last 12 weeks</option>
+            <option value="172">Last 6 months</option>
+            <option value="355">Last 12 months</option>
+            <option value="0">Custom range</option>
+        </select>
+        <span class="custom-daterange-quick-access">
+            <a href="" class="js-custom-daterange-enable">Custom</a>
+        </span>
+        <span class="custom-daterange">
+            <input type="text" class="form-control input-sm js-daterange-start" value="">
+            <span class="input-group-addon">to</span>
+            <input type="text" class="form-control input-sm js-daterange-end" value="">
+            <button class="btn btn-sm btn-default js-custom-daterange-save">Update</button>
+        </span>
+    </div>
+</script>

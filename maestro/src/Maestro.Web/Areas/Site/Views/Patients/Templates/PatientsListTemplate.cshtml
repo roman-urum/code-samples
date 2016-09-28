@@ -1,0 +1,14 @@
+@using Maestro.Web.Resources
+
+<script id="patientsListTemplate" type="text/template">
+    <div class="page-header page-header-ci">
+        <h1>
+            @GlobalStrings.Patients_PatientsText
+            <small>(@SiteContext.Current.Site.Name)</small>
+        </h1>
+    </div>
+    <div class="page-content-ci">
+        <div id="patient-search-box"></div>
+        <div id="patients-list-container"></div>
+    </div>
+</script>

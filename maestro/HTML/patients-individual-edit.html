@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- SUPER USER - CLINICIAN MANAGEMENT -->
+        <meta http-equiv="X-UI-Compatible" content="IE=edge" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="vendor/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      <!-- PAGE HEADER -->
+      <header class="non-responsive-container ci-header">
+        <div class="ci-brand-img">
+            <a class="navbar-brand" href="#">
+                <img src="img/ci-logo.png" alt="Care Innovations, an Intel - GE Company"/>
+            </a>
+        </div>
+        <div class="ci-user-menu">
+          Welcome <a href="#">Susan</a>!
+        </div>
+        <div class="ci-signout">
+          <a href="#">Sign Out</a>
+        </div>
+      </header>
+      <!-- END PAGE HEADER -->
+        
+      <section class="non-responsive-container">
+        <div class="row">
+          
+          <!-- SIDE NAVIGATION -->
+          <nav class="col-xs-1 ci-navigation left-wrap">
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-home"></span><br />Home</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-user"></span><br />Patients</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-calendar"></span><br />Calendar</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-wrench"></span><br />Care Builder</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-list-alt"></span><br />Reports</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-cog"></span><br />Settings</a></div>
+          </nav>
+          <!-- END SIDE NAVIGATION -->
+          
+          <div class="right-wrap col-xs-11">
+            <div class="maestro-edit-wrap">
+              <!-- PAGE HEADER / BREADCRUMBS -->
+              <div class="row">
+                <div class="col-xs-10"><h1 class="ci-page-header">James Mackenzie <span class="small">(### &ndash; ### &ndash; ####)</span></h1></div>
+                <div class="col-xs-2 text-right ci-text"><em>Edit Mode</em></div>
+              </div>
+              <!-- END PAGE HEADER / BREADCRUMBS -->
+
+              <!-- MAIN CONTENT - EDIT PATIENTS -->
+              <div class="ci-content">
+
+                <!-- OUTER TAB SHELL FOR EDIT PATIENTS -->
+                <div class="settings-wrap-tabs">
+                  <ul class="nav nav-tabs">
+                    <li><a href="#ci-patient-info" data-toggle="tab">Patient Info</a></li>
+                    <li class="active"><a href="#ci-care-managers" data-toggle="tab">Care Managers</a></li>
+                    <li><a href="#ci-groups" data-toggle="tab">Groups and Conditions</a></li>
+                    <li><a href="#ci-thresholds" data-toggle="tab">Thresholds</a></li>
+                    <li><a href="#ci-devices" data-toggle="tab">Devices</a></li>
+                  </ul>
+                  <div class="tab-content">
+
+                    <!-- PATIENT INFO TAB CONTENT -->
+                    <div class="tab-pane" id="ci-patient-info">
+                      
+                    </div>
+                    <!-- END PATIENT INFO TAB CONTENT -->
+
+                    <!-- CARE MANAGERS TAB CONTENT -->
+                    <div class="tab-pane active" id="ci-care-managers">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <h2 class="ci-page-subheader">Assign Care Managers</h2>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <div class="row">
+                            <div class="col-xs-8">
+                              <form class="site-filter form-inline">
+                                <div class="form-group">
+                                  <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Enter keywords here...">
+                                    <div class="input-group-addon"><a href="#"><span class="glyphicon glyphicon-search"></span></a></div>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                            <div class="col-xs-4 ci-text text-right"><a href="#">Assign All</a></div>
+                          </div>
+                          <div class="manager-list-wrap">
+                            <div class="row">
+                              <div class="col-xs-6 ci-text">Adam Abrams</div>
+                              <div class="col-xs-3 ci-text text-center">26 Patients</div>
+                              <div class="col-xs-3 text-right"><button class="btn btn-primary">Assign</button></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-xs-6 ci-text">Adam Abrams</div>
+                              <div class="col-xs-3 ci-text text-center">26 Patients</div>
+                              <div class="col-xs-3 text-right"><button class="btn btn-primary">Assign</button></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-xs-6 ci-text">Adam Abrams</div>
+                              <div class="col-xs-3 ci-text text-center">26 Patients</div>
+                              <div class="col-xs-3 text-right"><button class="btn btn-primary">Assign</button></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-xs-6 ci-text">Adam Abrams</div>
+                              <div class="col-xs-3 ci-text text-center">26 Patients</div>
+                              <div class="col-xs-3 text-right"><button class="btn btn-primary">Assign</button></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-xs-6 ci-text">Adam Abrams</div>
+                              <div class="col-xs-3 ci-text text-center">26 Patients</div>
+                              <div class="col-xs-3 text-right"><button class="btn btn-primary">Assign</button></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xs-6">
+                          <div class="row">
+                            <div class="col-xs-8 ci-text">
+                              <em>Assigned Care Managers</em>
+                            </div>
+                            <div class="col-xs-4 text-right ci-text"><a href="#">Remove All</a></div>
+                          </div>
+                          <div class="manager-list-wrap">
+                            <ul class="list-unstyled">
+                              <li><div class="user-tag tag-green">Samantha Martin <a href="#"><span class="glyphicon glyphicon-remove-circle"></span></a></div></li>
+                              <li><div class="user-tag tag-blue">John Smith <a href="#"><span class="glyphicon glyphicon-remove-circle"></span></a></div></li>
+                              <li><div class="user-tag tag-blue">Beth Horn <a href="#"><span class="glyphicon glyphicon-remove-circle"></span></a></div></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- END CARE MANAGERS TAB CONTENT -->
+
+                    <div class="tab-pane" id="ci-groups">Groups and Conditions</div>
+                    <div class="tab-pane" id="ci-thresholds">Thresholds</div>
+                    <div class="tab-pane" id="ci-devices">Devices</div>
+                  </div>
+                </div>
+                <!-- END OUTER TAB SHELL FOR EDIT PATIENTS -->
+                
+              </div>
+              <!-- END MAIN CONTENT -->
+            </div>
+            <div class="maestro-noedit-wrap edit-hide">
+              <!-- PAGE HEADER / BREADCRUMBS -->
+              <div class="row">
+                <div class="col-xs-3"><h1 class="ci-page-header">Patients</h1></div>
+                <div class="col-xs-9 text-right"><a class="show-edit-tools" href="#">+ Add Patient</a></div>
+              </div>
+              <!-- END PAGE HEADER / BREADCRUMBS -->
+              
+              <!-- MAIN CONTENT - PATIENTS -->
+              <div class="ci-content">
+                <ul class="list-unstyled">
+                  <li>Patient Name</li>
+                  <li>Patient Name</li>
+                  <li>Patient Name</li>
+                  <li>Patient Name</li>
+                </ul>
+              </div>
+              <!-- END MAIN CONTENT -->
+              
+            </div>
+            
+             <!-- MODALS / TOOLTIPS -->
+            <div class="modal fade" id="page-save" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Are you sure you want to proceed?</h4>
+                  </div>
+                  <div class="modal-body">
+                    You are attempting to save changes that will affect the data available to all sites within the Care Innovations Maestro application.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Continue Changes</button>
+                    <button type="button" class="btn btn-primary modal-hide-edit" data-dismiss="modal">Save Changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="page-cancel" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Are you sure you want to cancel?</h4>
+                  </div>
+                  <div class="modal-body">
+                    You have made changes to the current tab.  Are you sure you want to cancel and discard your changes?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default modal-hide-edit" data-dismiss="modal">Cancel Changes</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Continue Changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END MODALS / TOOLTIPS -->
+            
+          </div>
+        </div>
+      </section>
+      <script src="vendor/jquery/dist/jquery.min.js"></script>
+      <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="vendor/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+      <script src="js/global.js"></script>
+      <script src="js/patients.js"></script>
+    </body>
+</html>

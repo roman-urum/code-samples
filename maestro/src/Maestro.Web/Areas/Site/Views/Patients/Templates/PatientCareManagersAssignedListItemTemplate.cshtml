@@ -1,0 +1,10 @@
+<script id="patientCareManagersAssignedListItemTemplate" type="text/template">
+	<%=firstName%>
+	<%=lastName%>
+	<!-- if (User.IsInRole(Roles.SuperAdminRoleName) ||
+	     User.HasPermissions(CustomerContext.Current.Customer.Id,
+	         CustomerUserRolePermissions.AssignRemoveCareManagers))-->
+	<a class="js-remove-care-manager">
+		<span class="glyphicon glyphicon-trash"></span>
+	</a>
+</script>

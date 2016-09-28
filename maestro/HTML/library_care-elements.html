@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+      <!-- PAGE HEADER -->
+      <header id="header" class="header-ci">
+        <div class="container header-container-ci">
+          <div class="row vertical-align">
+            <div class="col-xs-12 col-sm-3">
+              <a class="navbar-brand navbar-brand-ci" href="#">
+                <img src="img/ci-logo.png" alt="Care Innovations, an Intel - GE Company" width="200"/>
+              </a>
+            </div>
+            <div class="col-xs-12 col-sm-2">
+              <p class="header-welcome">Welcome, <a href="#" class="btn-link-name">(name)</a> !</p>
+            </div>
+            <div class="col-xs-12 col-sm-offset-5 col-sm-2"><button class="btn btn-link pull-right">Sign Out</button>
+            </div>
+          </div>
+        </div>
+      </header>          
+      <!-- END PAGE HEADER --> 
+
+
+
+      <div id="main"> <!--need further styling? add class="main" or class="main main-ci"> to this div (id="main") but don't style the #main at all please. Need to add JS functionality? add class="js-main" or similar. again, don't attach functionality to the existing ID.-->
+        <div class="container">
+          <div class="row">
+
+            <!-- SIDE NAVIGATION -->
+            <div class="col-sm-1 padding-none">
+              <nav class="navbar navbar-ci" role="navigation">
+                <ul class="nav navbar-nav">
+                  <li><a href="#" class="btn btn-link"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><br />Home</a></li>
+                  <li><a href="#" class="btn btn-link active"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><br />Patients</a></li>
+                  <li><a href="#" class="btn btn-link"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><br />Calendar</a></li>
+                  <li><a href="#" class="btn btn-link"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span><br />Care Builder</a></li>
+                  <li><a href="#" class="btn btn-link"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><br />Reports</a></li>
+                  <li><a href="#" class="btn btn-link"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span><br />Settings</a></li>
+                </ul>
+              </nav>
+            </div>
+            <!-- END SIDE NAVIGATION -->
+
+            <div class="col-sm-11 padding-left-2x">
+
+              <!-- PAGE HEADER / BREADCRUMBS --> 
+              <h1 class="page-header-ci">Library</h1>
+              <ol class="breadcrumb breadcrumb-ci">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Patients</a></li><!--Section-->
+                <li class="active">Library</li><!--Current Page-->
+              </ol>
+              <!-- END PAGE HEADER / BREADCRUMBS -->
+              <div class="row">
+                <div class="col-xs-12">
+                  <button class="btn btn-primary pull-right" data-toggle="modal" data-target=".modal_library-addContent">Add Content</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#tab-careElements" aria-controls="home" role="tab" data-toggle="tab">Care Elements</a></li>
+                    <li role="presentation"><a href="#tab-protocolsPrograms" aria-controls="profile" role="tab" data-toggle="tab">Protocols and Programs</a></li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="tab-careElements">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="well">
+                            <h3>Search</h3>
+                            <div class="row">
+                            <div class="col-sm-4">
+                              <form>
+                              <select class="form-control">
+                                <option value="1">Content Type One</option>
+                                <option value="2">Content Type Two</option>
+                                <option value="3">Content Type Three</option>
+                                <option value="4">Content Type Four</option>
+                                <option value="5">Content Type Five</option>
+                                <option value="6">Content Type Six</option>
+                                <option value="7">Content Type Seven</option>
+                              </select>
+                              </form>
+                              </div>
+                              <div class="col-sm-4">
+                              <form>
+                                <div class="form-group">
+                                  <input class="form-control" type="text" placeholder="Start typing here to select tags" name="form-search_select-tags" />
+                                </div>
+                                <div class="tags">
+                                  <div class="active-tags" id="active-tags">
+                                    <span class="tag">
+                                      <span class="tag-x cursor-pointer">
+                                        <span class="tag-x">×</span> 
+                                        <span class="tag-name">tag 1</span> 
+                                      </span>
+                                    </span>
+                                    <span class="tag">
+                                      <span class="tag-x cursor-pointer">
+                                        <span class="tag-x">×</span> 
+                                        <span class="tag-name">tag 2</span> 
+                                      </span>
+                                    </span>
+                                  </div>
+                                </div>
+                              </form>
+                              </div>
+                              <div class="col-sm-4">
+                              <form>
+                                <div class="form-group">
+                                  <div class="input-group">
+                                    <input class="form-control" type="text" placeholder="Type keyword here">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                                  </div>
+                                </div>
+                              </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div><!-- end search row-->
+
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" id="headingOne">
+                                <h3 class="panel-title panel-title-ci">
+                                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                                    Answer Set
+                                  </a>
+                                  <span class="pull-right small"><em>Multiple Choice</em></span>
+                                </h3>
+                                <p>Changes to feet or legs</p>
+                                <span class="tag">
+                                  <span class="tag-x cursor-pointer">
+                                    <span class="tag-x">×</span> 
+                                    <span class="tag-name">Weight Mgmt</span> 
+                                  </span>
+                                </span>
+                                <span class="tag btn btn-default" role="button">Add Tag...</span>
+
+                              </div>
+                              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                  <div class="careElement">
+                                    <h5>Answer 1</h5>
+                                    <p class="small">No changes</p>
+                                    <ul class="list-inline">
+                                      <li class="col-sm-3"><b>ID:</b>&nbsp;ABC123456</li>
+                                      <li class="col-sm-3"><b>Score Value:</b>&nbsp;6</li>
+                                      <li class="col-sm-3"><b>CI ID:</b>&nbsp;N/A</li>
+                                      <li class="col-sm-3"><b>CI Score:</b>&nbsp;N/A</li>
+                                    </ul>
+                                  </div>
+                                  <div class="careElement">
+                                    <h5>Answer 2</h5>
+                                    <p class="small">Skin color change</p>
+                                    <ul class="list-inline">
+                                      <li class="col-sm-3"><b>ID:</b>&nbsp;ABC123456</li>
+                                      <li class="col-sm-3"><b>Score Value:</b>&nbsp;6</li>
+                                      <li class="col-sm-3"><b>CI ID:</b>&nbsp;N/A</li>
+                                      <li class="col-sm-3"><b>CI Score:</b>&nbsp;N/A</li>
+                                    </ul>
+                                  </div>
+                                  <div class="careElement">
+                                    <h5>Answer 3</h5>
+                                    <p class="small">Pain or Numbness</p>
+                                    <ul class="list-inline">
+                                      <li class="col-sm-3"><b>ID:</b>&nbsp;ABC123456</li>
+                                      <li class="col-sm-3"><b>Score Value:</b>&nbsp;6</li>
+                                      <li class="col-sm-3"><b>CI ID:</b>&nbsp;N/A</li>
+                                      <li class="col-sm-3"><b>CI Score:</b>&nbsp;N/A</li>
+                                    </ul>
+                                  </div>
+
+                                </div>
+                                <div class="panel-footer">
+                                  <div class="row careElement">
+                                    <div class="col-sm-2 text-left">
+                                      <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modal-usageReport">View Usage Report</button>
+                                    </div>
+                                    <div class="col-sm-1 col-sm-offset-8">
+                                      <a href="#" class="btn btn-link">Remove</a>
+                                    </div>
+                                    <div class="col-sm-1">
+                                      <a href="#" class="btn btn-default">Edit</a>
+                                    </div>                                  
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" id="headingTwo">
+                                <h3 class="panel-title panel-title-ci">
+                                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Question
+                                  </a>
+                                </h3>
+                                <p>Do you have an appetite?</p>
+                                <span class="tag">
+                                  <span class="tag-x cursor-pointer">
+                                    <span class="tag-x">×</span> 
+                                    <span class="tag-name">Weight Mgmt</span> 
+                                  </span>
+                                </span>
+                                <span class="tag btn btn-default" role="button">Add Tag...</span>
+
+                              </div>
+                              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                  <div class="careElement">
+                                    <h5>Answer 1</h5>
+                                    <p class="small">Yes, I have an appetite</p>
+                                    <ul class="list-inline">
+                                      <li class="col-sm-3"><b>ID:</b>&nbsp;ABC123456</li>
+                                      <li class="col-sm-3"><b>Score Value:</b>&nbsp;6</li>
+                                      <li class="col-sm-3"><b>CI ID:</b>&nbsp;N/A</li>
+                                      <li class="col-sm-3"><b>CI Score:</b>&nbsp;N/A</li>
+                                    </ul>
+                                  </div>
+                                  <div class="careElement">
+                                    <h5>Answer 2</h5>
+                                    <p class="small">No, I do not have an appetite</p>
+                                    <ul class="list-inline">
+                                      <li class="col-sm-3"><b>ID:</b>&nbsp;ABC123456</li>
+                                      <li class="col-sm-3"><b>Score Value:</b>&nbsp;6</li>
+                                      <li class="col-sm-3"><b>CI ID:</b>&nbsp;N/A</li>
+                                      <li class="col-sm-3"><b>CI Score:</b>&nbsp;N/A</li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="panel-footer">
+                                  <div class="row careElement">
+                                    <div class="col-sm-2 text-left">
+                                      <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modal-usageReport">View Usage Report</button>
+                                    </div>
+                                    <div class="col-sm-1 col-sm-offset-8">
+                                      <a href="#" class="btn btn-link">Remove</a>
+                                    </div>
+                                    <div class="col-sm-1">
+                                      <a href="#" class="btn btn-default">Edit</a>
+
+                                    </div>
+                                  </div>
+                                </div>
+
+                              </div>
+                              </div>
+
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                  <h3 class="panel-title panel-title-ci">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                      Answer
+                                    </a>
+                                    <span class="pull-right small"><em>Scale</em></span>
+                                  </h3>
+                                  <p>Scale 1-10</p>
+                                  <span class="tag btn btn-default" role="button">Add Tag...</span>
+
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                  <div class="panel-body">
+                                    <div class="careElement">
+                                      <p>...</p>
+                                    </div>
+                                  </div>
+                                  <div class="panel-footer">
+                                    <div class="row careElement">
+                                      <div class="col-sm-2 text-left">
+                                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modal-usageReport">View Usage Report</button>
+                                      </div>
+                                      <div class="col-sm-1 col-sm-offset-8">
+                                        <a href="#" class="btn btn-link">Remove</a>
+                                      </div>
+                                      <div class="col-sm-1">
+                                        <a href="#" class="btn btn-default">Edit</a>
+                                      </div>                                  
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+
+                      </div>
+                      <div role="tabpanel" class="tab-pane" id="tab-protocolsPrograms"></div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <hr/>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <!-- modals -->
+        <!--modal: view usage report-->
+        <div class="modal fade" id="modal-usageReport" tabindex="-2" role="dialog" aria-labelledby="modal-label_usageReport">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modal-label_usageReport">Usage Report</h4>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <h5>Question</h5>
+                    <p>I'm a question that's maybe sort of kind of long; do you think it will eventually end at some point?</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6">
+                    <p>Used in (#) Protocols:</p>
+                    <ul class="list-unstyled list-modal">
+                      <li>Protocol A</li>
+                      <li>Protocol B</li>
+                      <li>Protocol C</li>
+                      <li>Protocol D</li>
+                      <li>Protocol E</li>
+                      <li>Protocol F</li>
+                      <li>Protocol G</li>
+                      <li>Protocol H</li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-12 col-sm-6">
+                    <p>Used in (#) Programs:</p>
+                    <ul class="list-unstyled list-modal">
+                      <li>Protocol A</li>
+                      <li>Protocol B</li>
+                      <li>Protocol C</li>
+                      <li>Protocol D</li>
+                      <li>Protocol E</li>
+                      <li>Protocol F</li>
+                      <li>Protocol G</li>
+                      <li>Protocol H</li>
+                    </ul>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end modal: view Usage Report-->
+
+        <!-- modal: addContent -->
+        <div class="modal fade modal_library-addContent" tabindex="-1" role="dialog" aria-labelledby="aria-modal-title-contentAdd">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="aria-modal-title-contentAdd">Add Content</h4>
+              </div>
+              <div class="modal-body">
+                <p>Select the type of content you want to add.</p>
+                <p class="page-header">Care Element</p>
+                <ul class="list-inline vertical-align">
+                  <li class="btn btn-default" data-toggle="modal" data-target="#modal-question-add"><span class="glyphicon glyphicon-question-sign"></span><br>Question</li>
+                  <li class="btn btn-default"><span class="glyphicon glyphicon-info-sign"></span><br>
+                    Answer Set</li>
+                    <li class="btn btn-default"><span class="glyphicon glyphicon-edit"></span><br>Text & Media</li>
+                  </ul>
+                  <p class="page-header">Programs and Protocols</p>
+                  <ul class="list-inline vertical-align">
+                    <li class="btn btn-default"><span class="glyphicon glyphicon-check"></span><br>Protocol</li>
+                    <li class="btn btn-default"><span class="glyphicon glyphicon-list"></span><br>Program</li>
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-success">Continue</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal: addContent-->
+
+          <!-- modal: addContent-question-->
+          <div class="modal fade" id="modal-question-add" tabindex="-1" role="dialog" aria-labelledby="aria-modal-title-questionAdd">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="aria-modal-title-questionAdd">Add Question</h3>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="careElement-question">Question</label>
+                      <input type="text" class="form-control" id="careElement-question" placeholder="Enter Question Text Here" >
+                    </div>
+                  </form>
+                  <hr />
+                  <h4>Answers</h4>
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#answers-library" aria-controls="library" role="tab" data-toggle="tab">Library</a></li>
+                      <li role="presentation"><a href="#answers-createNew" aria-controls="createNew" role="tab" data-toggle="tab">Create New</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                      <div role="tabpanel" class="tab-pane active" id="answers-library">
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="well">
+                              <form class="form-inline">
+                                <div class="form-group col-sm-4">
+                                  <label class="sr-only" for="search-tag">Search by Tag</label>
+                                  <div class="input-group">
+                                    <input type="text" class="form-control" id="search-tag" placeholder="Search by Tag">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                                  </div>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                  <div class="form-inline-helper vertical-align">
+                                    <label for="select-type control-label">Type</label>
+                                    <select class="form-control">
+                                      <option>All</option>
+                                      <option>Type 1</option>
+                                      <option>Type 2</option>
+                                      <option>Type 3</option>
+                                      <option>Type 4</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                  <label class="sr-only" for="search-keyword">Enter Keyword Here</label>
+                                  <div class="input-group">
+                                    <input type="text" class="form-control" id="search-keyword" placeholder="Enter Keyword Here">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-12 scrollable">
+                            <div class="panel-group" id="question-accordion" role="tablist" aria-multiselectable="true">
+                              <div class="panel panel-info">
+                                <div class="panel-heading" role="tab" id="answer-headingOne">
+                                  <h3 class="panel-title">
+                                    <a class="collapsed panel-toggle" role="button" data-toggle="collapse" data-parent="#question-accordion" href="#collapse-answer_001" aria-expanded="false" aria-controls="collapse-answer_001">
+                                      Changes to feet or legs
+                                    </a>
+                                    <span class="pull-right"><em>Multiple Choice</em></span>
+                                  </h3>
+                                </div>
+                                <div id="collapse-answer_001" class="panel-collapse collapse" role="tabpanel" aria-labelledby="answer-headingOne">
+                                  <div class="panel-body">
+                                    <div class="careElement row">
+                                      <div class="col-sm-2 text-right">Answers:</div>
+                                      <div class="col-sm-10">
+                                        <ul class="list-unstyled">
+                                          <li>No Changes</li>
+                                          <li>Some other change that is longer</li>
+                                          <li>Skin color change</li>
+                                          <li>Pain or numbness</li>
+                                        </ul>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                  <div class="panel-footer">
+                                    <div class="row careElement">
+                                      <span class="tag btn-link">
+                                        <span class="tag-x cursor-pointer">
+                                          <span class="tag-name">Weight Mgmt</span> 
+                                        </span>
+                                      </span>   
+                                      <span class="tag btn-link">
+                                        <span class="tag-x cursor-pointer">
+                                          <span class="tag-name">COPD</span> 
+                                        </span>
+                                      </span>                                  
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="panel panel-info">
+                                <div class="panel-heading" role="tab" id="answer-headingTwo">
+                                  <h3 class="panel-title">
+                                    <a class="collapsed panel-toggle" role="button" data-toggle="collapse" data-parent="#question-accordion" href="#collapse-answer_002" aria-expanded="false" aria-controls="collapse-answer_002">
+                                      Reactions
+                                    </a>
+                                    <span class="pull-right"><em>Open Ended</em></span>
+                                  </h3>
+
+                                </div>
+                                <div id="collapse-answer_002" class="panel-collapse collapse" role="tabpanel" aria-labelledby="answer-headingTwo">
+                                  <div class="panel-body">
+                                    <div class="careElement">
+                                    </div>  
+                                  </div>
+                                  <div class="panel-footer">
+                                    <div class="row careElement">
+                                      <span class="tag btn-link">
+                                        <span class="tag-x cursor-pointer">
+                                          <span class="tag-name">Weight Mgmt</span> 
+                                        </span>
+                                      </span>   
+                                      <span class="tag btn-link">
+                                        <span class="tag-x cursor-pointer">
+                                          <span class="tag-name">COPD</span> 
+                                        </span>
+                                      </span>         
+                                    </div>
+                                  </div>
+                                </div>
+
+                              </div>
+                              <div class="panel panel-info">
+                                <div class="panel-heading" role="tab" id="answer-headingThree">
+                                  <h3 class="panel-title">
+                                    <a class="collapsed panel-toggle" role="button" data-toggle="collapse" data-parent="#question-accordion" href="#collapse-answer_003" aria-expanded="false" aria-controls="collapse-answer_003">
+                                      Scale 1-10
+                                    </a>
+                                    <span class="pull-right"><em>Scale</em></span>
+                                  </h3>
+                                </div>
+                                <div id="collapse-answer_003" class="panel-collapse collapse" role="tabpanel" aria-labelledby="answer-headingThree">
+                                  <div class="panel-body">
+                                    <div class="careElement">
+                                      <p class="page-header">1 is good, 10 is bad (i.e., "How much pain are you in right now?")</p>
+                                      <div class="chart-scale">
+                                        <button class="btn btn-scale btn-scale-asc-1">1</button>
+                                        <button class="btn btn-scale btn-scale-asc-2">2</button>
+                                        <button class="btn btn-scale btn-scale-asc-3">3</button>
+                                        <button class="btn btn-scale btn-scale-asc-4">4</button>
+                                        <button class="btn btn-scale btn-scale-asc-5">5</button>
+                                        <button class="btn btn-scale btn-scale-asc-6">6</button>
+                                        <button class="btn btn-scale btn-scale-asc-7">7</button>
+                                        <button class="btn btn-scale btn-scale-asc-8">8</button>
+                                        <button class="btn btn-scale btn-scale-asc-9">9</button>
+                                        <button class="btn btn-scale btn-scale-asc-10">10</button>
+                                      </div>
+                                      <hr/>
+
+                                      <p class="page-header">1 is bad, 10 is good (i.e., "How happy are you feeling today?")</p>
+                                      <div class="chart-scale">
+                                        <button class="btn btn-scale btn-scale-desc-1">1</button>
+                                        <button class="btn btn-scale btn-scale-desc-2">2</button>
+                                        <button class="btn btn-scale btn-scale-desc-3">3</button>
+                                        <button class="btn btn-scale btn-scale-desc-4">4</button>
+                                        <button class="btn btn-scale btn-scale-desc-5">5</button>
+                                        <button class="btn btn-scale btn-scale-desc-6">6</button>
+                                        <button class="btn btn-scale btn-scale-desc-7">7</button>
+                                        <button class="btn btn-scale btn-scale-desc-8">8</button>
+                                        <button class="btn btn-scale btn-scale-desc-9">9</button>
+                                        <button class="btn btn-scale btn-scale-desc-10">10</button>
+                                      </div>
+
+
+                                    </div>
+                                  </div>
+                                  <div class="panel-footer">
+                                    <div class="row careElement">
+                                      <span class="tag btn-link">
+                                        <span class="tag-x cursor-pointer">
+                                          <span class="tag-name">Weight Mgmt</span> 
+                                        </span>
+                                      </span>   
+                                      <span class="tag btn-link">
+                                        <span class="tag-x cursor-pointer">
+                                          <span class="tag-name">COPD</span> 
+                                        </span>
+                                      </span>                                  
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="panel panel-info">
+                                <div class="panel-heading" role="tab" id="answer-headingFour">
+                                  <h3 class="panel-title">
+                                    <a class="collapsed panel-toggle" role="button" data-toggle="collapse" data-parent="#question-accordion" href="#collapse-answer_004" aria-expanded="false" aria-controls="collapse-answer_004">
+                                      Have you recently:
+                                    </a>
+                                    <span class="pull-right"><em>Checklist</em></span>
+                                  </h3>
+                                </div>
+                                <div id="collapse-answer_004" class="panel-collapse collapse" role="tabpanel" aria-labelledby="answer-headingFour">
+                                  <div class="panel-body">
+                                    <div class="careElement">
+                                      <div class="checkbox">
+                                        <label for="checkbox_001">
+                                          <input name="checkbox_001" type="checkbox" value="">
+                                          First Thing
+                                        </label>
+                                      </div>
+                                      <div class="checkbox">
+                                        <label for="checkbox_002">
+                                          <input name="checkbox_002" type="checkbox" value="">
+                                          Second Thing
+                                        </label>
+                                      </div>
+                                      <div class="checkbox">
+                                        <label for="checkbox_003">Wh
+                                          <input name="checkbox_003" type="checkbox" value="">
+                                          Third Thing
+                                        </label>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                  <!--for demo purposes, no footer on this panel-->
+                                </div>
+                              </div>                    
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div role="tabpanel" class="tab-pane" id="answers-createNew">
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <div class="well">
+                              <h5>Select answer set type:</h5>
+                              <div class="list-group">
+                                <a href="#" class="list-group-item"><h5 class="list-group-item-heading bold">Multiple Choice</h5><p class="list-group-item-text">Select one of many available answers.</p></a>
+                                <a href="#" class="list-group-item"><h5 class="list-group-item-heading">Scale</h5><p class="list-group-item-text">Select one of a set of values on a sliding scale.</p></a>
+                                <a href="#" class="list-group-item"><h5 class="list-group-item-heading">Open Ended</h5><p class="list-group-item-text">Free text entry, up to 500 characters.</p></a>
+                                <a href="#" class="list-group-item"><h5 class="list-group-item-heading">Checklist</h5><p class="list-group-item-text">Select multiple available answers.</p></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end modal: addContent-question-->
+
+
+
+
+                <!-- end modals-->
+
+
+
+
+
+                <script src="vendor/jquery/dist/jquery.min.js"></script>
+                <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+              </body>
+              </html>

@@ -1,0 +1,78 @@
+<script id="patientHealthSessionRecurringRulesTemplate" type="text/template">
+
+    <div id="frequency-controls" data-toggle="buttons" class="btn-group btn-group-block-ci btn-group-frequency-ci clearfix">
+        <label id="daily-control" class="btn btn-default btn-sm<%=(frequency == 'daily' ? ' active' : '') %>">
+            <input type="radio" value="daily" name="frequency">
+            Daily
+        </label>
+        <label id="weekly-control" class="btn btn-default btn-sm<%=(frequency == 'weekly' ? ' active' : '') %>">
+            <input type="radio" value="weekly" name="frequency">
+            Weekly
+        </label>
+        <label id="monthly-control" class="btn btn-default btn-sm<%=(frequency == 'monthly' ? ' active' : '') %>">
+            <input type="radio" value="monthly" name="frequency">
+            Monthly
+        </label>
+    </div>
+    <div class="recurring-session-rules-content">
+        <div id="daily" class="recurring-session-panel<%=(frequency == 'daily' ? ' active' : '') %>">
+
+            <div class="form-group">
+                <label for="intervalDaily" class="col-sm-5 control-label offset-right-0">Repeat Every</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" id="intervalDaily" name="intervalDaily" data-name="intervalDaily" value="">
+                    <span class="help-block help-block-error hidden"></span>
+                </div>
+                <label for="intervalDaily" class="col-sm-3 control-label text-left offset-left-0">Days</label>
+            </div>
+
+        </div>
+        <div id="weekly" class="recurring-session-panel<%=(frequency == 'weekly' ? ' active' : '') %>">
+
+            <div class="form-group">
+                <label for="intervalWeekly" class="col-sm-5 control-label offset-right-0">Repeat Every</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" id="intervalWeekly" name="intervalWeekly" data-name="intervalWeekly" value="">
+                    <span class="help-block help-block-error hidden"></span>
+                </div>
+                <label for="intervalWeekly" class="col-sm-3 control-label text-left offset-left-0">Weeks</label>
+            </div>
+
+            <div id="recurring-session-week">
+                <span class="help-block help-block-error help-block-weekDays hidden"></span>
+            </div>
+            
+        </div>
+        <div id="monthly" class="recurring-session-panel<%=(frequency == 'monthly' ? ' active' : '') %>">
+
+            <div class="form-group">
+                <label for="intervalMonthly" class="col-sm-5 control-label offset-right-0">Repeat Every</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" id="intervalMonthly" name="intervalMonthly" data-name="intervalMonthly" value="">
+                    <span class="help-block help-block-error hidden"></span>
+                </div>
+                <label for="intervalMonthly" class="col-sm-3 control-label text-left offset-left-0">Months</label>
+            </div>
+
+            <div id="recurring-session-month">
+                <span class="help-block help-block-error help-block-monthDays hidden"></span>
+            </div>
+            
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">The recurring session will stop at the end of this day:</div>
+        <label for="endDate" class="col-sm-5 control-label offset-right-0"></label>
+        <div class="col-sm-7">
+            <div id="endDate-datetimepicker" class="input-group">
+                <input type="text" class="form-control" id="endDateDp" name="endDateDp">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+            <input type="hidden" id="endDate" name="endDate" data-name="endDate">
+            <span class="help-block help-block-error help-block-endDate hidden"></span>
+        </div>
+    </div>
+</script>
+

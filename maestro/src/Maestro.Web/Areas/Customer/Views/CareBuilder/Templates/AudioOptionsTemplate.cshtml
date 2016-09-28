@@ -1,0 +1,78 @@
+﻿<script id="audioOptionsTemplate" type="text/template">
+    <!-- Audio options -->
+    <div class="panel-heading" role="tab">
+        <div class="clearfix">
+            <h4 class="panel-title pull-left">
+                <a class="collapsed panel-toggle js-audio-options-header" role="button" href="#audio-options_<%= index %>"
+                    data-toggle="collapse"
+                    data-collapseText="@GlobalStrings.Edit_Customer_CareBuilder_CollapseAudioOptionsLink"
+                    data-expandText="@GlobalStrings.Edit_Customer_CareBuilder_ExpandAudioOptionsLink">
+                    @GlobalStrings.Edit_Customer_CareBuilder_ExpandAudioOptionsLink
+                </a>
+                <button type="button"
+                        class="btn btn-primary btn-xs js-play-audio <% if (!audioFileMedia) { %>hidden<% } %>">
+                    <span class="glyphicon glyphicon-play"></span>
+                </button>
+                <i class="fa fa-language fa-lg js-pronunciation-flag <% if (!pronunciation) { %>hidden<% } %>"></i>
+            </h4>
+        </div>
+    </div>
+
+    <div id="audio-options_<%= index %>" class="collapse" role="tabpanel">
+        <div class="panel-body">
+
+            <div class="form-group">
+                <div class="row">
+                    <label for="careElement-pronunciation" class="col-xs-offset-1 col-xs-11">
+                        @GlobalStrings.Edit_Customer_CareBuilder_PronunciationLabel:
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <i class="fa fa-language fa-2x"></i>
+                    </div>
+                    <div class="col-xs-11">
+                        <textarea class="form-control js-pronunciation"
+                                  data-name="pronunciation"
+                                  placeholder="@GlobalStrings.Edit_Customer_CareBuilder_PronunciationPlaceholder"><%= pronunciation %></textarea>
+                        <span class="help-block hidden" data-validate-for="careElement-pronunciation"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-xs-offset-1 col-xs-11">
+                        @GlobalStrings.Edit_Customer_CareBuilder_AudioFileLabel:
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <button type="button"
+                                class="btn btn-primary btn-xs js-play-audio"
+                                <% if (!audioFileMedia) { %>disabled<% } %>>
+                            <span class="glyphicon glyphicon-play"></span>
+                        </button>
+                    </div>
+                    <div class="col-xs-9">
+                        <div class="input-group input-group-file-ci">
+                            <input type="text" class="form-control js-audio-name" id="js-audio-file-name" data-name="text.audioFileMedia.fileName" readonly>
+                            <span class="help-block hidden" data-validate-for="js-audio-file-name"></span>
+                            <span class="input-group-btn">
+                                <input type="file" class="js-upload-audio-file" accept="audio/mp3, audio/wav">
+                                <button type="button" class="btn btn-primary btn-file-ci" data-loading-text="@GlobalStrings.Common_UploadingText">
+                                    @GlobalStrings.Common_BrowseButtonText&hellip;
+                                </button>
+                            </span>                            
+                        </div>
+                        <span class="help-block help-block-error help-block-audio-fileName hidden"></span>
+                        
+                    </div>
+                    <div class="col-xs-2 <% if (!audioFileMedia) { %>hidden<% } %> js-remove-audio">
+                        <a href="#">@GlobalStrings.Common_RemoveButtonText</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

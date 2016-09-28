@@ -1,0 +1,35 @@
+﻿@using Maestro.Common.Extensions
+@model Maestro.Web.Models.Customers.MultipleSitesViewModel
+           
+<div class="list-accordion customer-item">
+    <div class="row user-item">
+        <div class="col-sm-10">
+
+            <div class="list-arrow"></div>
+            <a class="list-collapse ci-customer-name" search-value="@Model.Name" href="javascript:void(0);">@Model.Name</a>
+
+        </div>        
+        <div class="col-sm-2 ci-site-edit">
+            @Html.CustomerActionLink("Edit", Model.Subdomain, "General", "Settings")
+        </div>
+    </div>
+    <div class="accordion-content">
+        
+        @foreach (var website in Model.Websites)
+        {
+            <div class="row user-item">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4 ci-site-name" search-value="@website.Name">@website.Name</div>
+                <div class="col-sm-2 ci-site-state">
+                    <strong>@website.IsActive.ToStateString()</strong>
+                    
+                    @if (!website.IsPublished)
+                    {
+                        <span class="has-error">Not Published</span>
+                    }
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

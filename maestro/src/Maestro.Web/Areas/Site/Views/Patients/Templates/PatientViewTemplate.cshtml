@@ -1,0 +1,144 @@
+@using Maestro.Web.Resources
+
+<script id="patientViewTemplate" type="text/template">
+    <div class="page-header page-header-ci page-header-primary-ci">
+        <div class="pull-right">
+            <a href="EditPatient/<%=id%>/PatientInfo/" class="btn btn-primary btn-lg btn-invert js-patient-edit">Edit</a>
+        </div>
+        <h1>
+            <%=firstName%>
+            <%=lastName%>
+            <% if( idMain ){ %><small>(<%=idMain.value%>)</small><% } %>
+        </h1>
+    </div>
+    <div class="page-content-ci">
+
+        <div class="b-patient-card-ci">
+            
+            <div class="well patient-card-info-ci">
+                <div class="row">
+                    <div class="col-sm-1"><strong>@GlobalStrings.Patient_Age</strong> <%=age%></div>
+                    <div class="col-sm-2"><strong>@GlobalStrings.Patient_View_DateOfBirth</strong> <%=birthDateParsed%></div>
+                    <div class="col-sm-2"><strong>@GlobalStrings.Patient_View_Gender</strong> <%=genderName%></div>
+                    <div class="col-sm-3"><strong>@GlobalStrings.Patient_View_Phone</strong> <%=phoneHome%></div>
+                    <div class="col-sm-4 text-right action-list">
+                        <a class="js-chat">
+                            <i class="fa fa-envelope fa-invert-ci"></i>
+                            Send Message
+                        </a>
+                        <a class="js-video-call">
+                            <i class="fa fa-video-camera fa-invert-ci"></i>
+                            Start Video Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-patient-additional-info-ci">
+
+            <div class="row row-patient-info-ci">
+                <div class="col-sm-3">
+                    <h4>@GlobalStrings.Patient_KeyIdentifiersText</h4>
+                    <ul class="list-unstyled">
+                    <% _.each(identifiers, function(identifier){ %>
+                        <li><%= identifier.name %>: <%= identifier.value %></li>
+                    <% }); %>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h4>@GlobalStrings.Patients_CareManagersText</h4>
+                     <div id="assigned-care-managers-container"></div>
+                    <!--if (User.IsInRole(Roles.SuperAdminRoleName) ||
+                                 User.HasPermissions(CustomerContext.Current.Customer.Id,
+                                     CustomerUserRolePermissions.AssignRemoveCareManagers))-->
+                    <a class="js-patient-edit" href="EditPatient/<%=id%>/CareManagers/">
+                        @GlobalStrings.Patient_View_AddCareManagerLink
+                    </a>
+                </div>
+                <div class="col-sm-3">
+                    <h4>@GlobalStrings.Patient_PatientDemographicsText</h4>
+                    <ul class="list-unstyled">
+                        <li><%=address1%></li>
+                        <% if ( address2 ) { %><li><%=address2%></li><% } %>
+                        <% if ( address3 ) { %><li><%=address3%></li><% } %>
+                        <li><%=city%>, <%=state%>, <%=zipCode%></li>
+                        <li><%=phoneHome%> (home)<% if ( phoneWork ){%> | <%=phoneWork%> (work)<% } %></li>
+                        <% if ( email ) { %><li><a href="mailto:<%=email%>"><%=email%></a></li><% } %>
+                        <li>Language: <%=language%></li>
+                    </ul>           
+                </div>
+                <div class="col-sm-3">
+                    <h4>@GlobalStrings.Patient_ConditionsTitle</h4>
+                    
+                    <div id="js-patient-conditions-container"></div>
+                    
+                    <a class="js-patient-edit" href="EditPatient/<%=id%>/Conditions/">
+                        @GlobalStrings.Patient_View_AddConditionLink
+                    </a>
+                </div>
+            </div>
+
+            <!--div class="row row-patient-info-ci">
+                <div class="col-sm-4">
+                    <h4>@GlobalStrings.Patient_View_FamilyCaregiver</h4>
+                </div>
+                <div class="col-sm-4">
+                    <h4>@GlobalStrings.Patients_GroupsAndConditionsText</h4>
+                    <a class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        @GlobalStrings.Patient_View_AssignGroupLink
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <h4>@GlobalStrings.Patient_View_Physicians</h4>
+                </div>
+            </div-->
+        </div>
+
+        <div class="b-patient-additional-info-controll-ci">
+            <a class="btn-toggle-slide js-patient-additional-info-toggle">
+                <span class="fa fa-angle-down"></span>
+                <!--span class="glyphicon glyphicon-chevron-up"></span-->
+            </a>    
+        </div>
+
+        <div style="position: relative;">
+            <ul class="nav nav-tabs nav-tabs-primary">
+                <li>
+                    <a href="#dashboard" id="Dashboard" data-href="PatientDetails/<%=id%>/Dashboard/" class="js-view-patient-tab">
+                        Patient Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#schedule" id="Schedule" data-href="PatientDetails/<%=id%>/Schedule/" class="js-view-patient-tab">
+                        Schedule
+                    </a>
+                </li>
+                <li>
+                    <a href="#detailedData" id="DetailedData" data-href="PatientDetails/<%=id%>/DetailedData/" class="js-view-patient-tab" >
+                        Detailed Data
+                    </a>
+                </li>
+                <li>
+                    <a href="#trends" id="Trends" data-href="PatientDetails/<%=id%>/Trends/" class="js-view-patient-tab">
+                        Trends
+                    </a>
+                </li>
+                <!--li>
+                    <a href="#history" id="History" data-href="PatientDetails/<%=id%>/History/" class="js-view-patient-tab">Patient History</a>
+                </li-->
+            </ul>
+            <div class="tab-content">
+                <div id="dashboard" class="tab-pane" role="tabpanel"></div>
+                <div id="schedule" class="tab-pane" role="tabpanel"></div>
+                <div id="detailedData" class="tab-pane" role="tabpanel"></div>
+                <div id="trends" class="tab-pane" role="tabpanel"></div>
+                <div id="history" class="tab-pane" role="tabpanel"></div>       
+            </div>
+            <button id="show-patient-notes" style="position: absolute;top: 0;right: 0;" type="button" class="btn btn-success btn-sm">
+                <i class="fa fa-book"></i>
+            </button>
+        </div>
+    </div>
+</script>

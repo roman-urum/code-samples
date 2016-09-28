@@ -1,0 +1,81 @@
+﻿@using Maestro.Domain.Constants
+@using Newtonsoft.Json
+
+@model dynamic
+
+@{
+    ViewBag.AppId = "appPatients";
+
+    var constants = Model != null ? JsonConvert.SerializeObject(Model) : string.Empty;
+}
+
+<input id="constants" type="hidden" value="@constants"/>
+
+@Html.Hidden("user-manage-permission", (@User.IsInCustomerRoles(CustomerUserRoles.CustomerAdmin) || @User.IsInCustomerRoles(CustomerUserRoles.ManageAllPatients)))
+
+<div id="patients-container" class="content-container-ci">
+    <img src="/Content/img/spinner.gif" class="spinner">
+</div>
+
+@Html.Partial("~/Areas/Site/Views/Notes/_Templates.cshtml")
+
+@Html.Partial("Templates/PatientDetails/Dashboard/PatientDashboardTemplate")
+@Html.Partial("Templates/PatientDetails/Dashboard/PatientDashboardHealthSessionsViewTemplate")
+@Html.Partial("Templates/PatientDetails/Dashboard/PatientDashboardThresholdsViewTemplate")
+@Html.Partial("Templates/PatientDetails/Dashboard/PatientDashboardPeripheralsViewTemplate")
+
+@Html.Partial("Templates/PatientsListTemplate")
+@Html.Partial("Templates/PatientsListItemTemplate")
+@Html.Partial("Templates/PatientViewTemplate")
+@Html.Partial("Templates/PatientCalendarTemplate")
+@Html.Partial("Templates/PatientCalendarSearchListItemTemplate")
+@Html.Partial("Templates/PatientCalendarProgramModalTemplate")
+@Html.Partial("Templates/PatientCalendarProgramTerminateModalTemplate")
+@Html.Partial("Templates/PatientCalendarProgramDeleteModalTemplate")
+@Html.Partial("Templates/PatientHealthSessionContainerTemplate")
+@Html.Partial("Templates/PatientHealthSessionRecurringRulesTemplate")
+@Html.Partial("Templates/PatientDashboardViewTemplate")
+@Html.Partial("Templates/PatientDetailedDataViewTemplate")
+@Html.Partial("Templates/PatientTrendsViewTemplate")
+@Html.Partial("Templates/PatientTrendsDaterangeViewTemplate")
+@Html.Partial("Templates/PatientTrendsVitalChartViewTemplate")
+@Html.Partial("Templates/PatientTrendsBloodPressureChartViewTemplate")
+@Html.Partial("Templates/PatientTrendsAssessmentChartViewTemplate")
+@Html.Partial("Templates/PatientTrendsAssessmentAnswerFlyoutTemplate")
+@Html.Partial("Templates/PatientTrendsAddChartsViewTemplate")
+@Html.Partial("Templates/PatientTrendsVitalReadingFlyoutTemplate")
+@Html.Partial("Templates/PatientTrendsVitalThresholdFlyoutTemplate")
+@Html.Partial("Templates/PatientHistoryViewTemplate")
+@Html.Partial("Templates/PatientCreateTemplate")
+@Html.Partial("Templates/PatientEditTemplate")
+@Html.Partial("Templates/PatientCareManagersAssignedListItemTemplate")
+@Html.Partial("Templates/PatientMeasurementTemplate")
+@Html.Partial("Templates/CareManagersListItemTemplate")
+@Html.Partial("Templates/CareManagersAssignedListItemTemplate")
+@Html.Partial("Templates/ConditionsListItemTemplate")
+@Html.Partial("Templates/ConditionsAssignedListItemTemplate")
+
+@Html.Partial("Templates/ConditionDetailsTemplate")
+@Html.Partial("Templates/ConditionDetailsContentTemplate")
+@Html.Partial("Templates/NoProgramsFoundView")
+@Html.Partial("Templates/NoProtocolsFoundView")
+@Html.Partial("Templates/ProgramListItemTemplate")
+@Html.Partial("Templates/ProtocolListItemTemplate")
+
+@Html.Partial("Templates/DevicesListItemTemplate")
+@Html.Partial("Templates/DevicesConfirmRemoveTemplate")
+@Html.Partial("Templates/DevicesConfirmDecomissionTemplate")
+@Html.Partial("Templates/DevicesConfirmAddTemplate")
+@Html.Partial("Templates/DevicesIVRErrorTemplate")
+@Html.Partial("Templates/DevicesManagePinTemplate")
+@Html.Partial("Templates/DevicesSelectListItemTemplate")
+@Html.Partial("Templates/DeviceSingleItemTemplate")
+@Html.Partial("Templates/ModalLgTemplate")
+@Html.Partial("Templates/PatientSearchBoxTemplate")
+@Html.Partial("Templates/PatientSearchBoxItemTemplate")
+@Html.Partial("Templates/PatientCalendarHistoryTemplates")
+@Html.Partial("Templates/PatientsListItemDetailsTemplate")
+@Html.Partial("Templates/WaitTemplate")
+@Html.Partial("Templates/PatientSearchBoxAdvancedTemplate")
+@Html.Partial("Templates/PatientSearchBoxAdvancedItemTemplate")
+@Html.Partial("Templates/OneWayChatTemplate")

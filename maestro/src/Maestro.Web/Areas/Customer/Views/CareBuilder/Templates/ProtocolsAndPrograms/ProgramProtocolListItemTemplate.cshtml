@@ -1,0 +1,16 @@
+﻿<script id="programProtocolListItemTemplate" type="text/template">
+    <div class="program-search-element-title program-handle clearfix">
+        <div class="pull-left italic">Protocol</div>
+        <span class="glyphicon glyphicon-move pull-right handle-icon"></span>
+    </div>
+    <div class="program-search-element-body">
+        <p class="search-result-text" title="<%=name.value%>"><%=name.value%></p>
+        <% if( tags.length > 0 ) { %>
+            <div class="search-result-tags">
+                <% _.each(tags, function(tag) { %>
+                <span class="label label-info"><%= tag %></span>
+                <% }); %>
+            </div>
+        <% } %>
+    </div>
+</script>

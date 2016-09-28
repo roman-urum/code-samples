@@ -1,0 +1,41 @@
+@using Maestro.Web.Resources
+
+<div id="measurements-title" class="measurements-title clearfix">
+	<h3>Peripherals</h3>
+	<div class="measurements-question">
+		<span class="glyphicon glyphicon-question-sign"
+			data-toggle="popover"
+			data-content="
+				<p>Use this form to specify which measurements you would like to collect from your patient.
+				</p>
+				<p>Automated Entry will allow the patient to collect readings through peripheral devices. Manual Entry will allow your patient to type in their measurements by hand.
+				</p>
+				<p>Turning on either Automated or Manual entry will allow you to configure thresholds in the below panels.
+				</p>" 
+			data-original-title="Collect Measurements"
+			title="Collect Measurements">
+		</span>
+	</div>
+</div>
+
+<div class="measurements-container" id="measurements-container"></div>
+
+<h3 id="thresholds-title">Limit-Based Thresholds</h3>
+
+<div id="thresholds-container"></div>
+
+<div class="well">
+	<div class="row">
+		<div class="col-sm-12">
+			<a href="EditPatient/<%=id%>/Devices/" class="btn btn-danger js-patient-measurements-save">
+				@GlobalStrings.Patient_SaveAndNextTabText
+			</a>
+			<a href="PatientDetails/<%=id%>/" class="btn btn-primary js-patient-measurements-save">
+				@GlobalStrings.Patient_SaveAndExitText
+			</a>
+			<a href="PatientDetails/<%=id%>/" class="btn btn-link js-patient-measurements-cancel">
+				@GlobalStrings.Edit_Customer_CancelButtonText
+			</a>
+		</div>
+	</div>
+</div>

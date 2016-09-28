@@ -1,0 +1,23 @@
+﻿<script id="measurementThresholdTemplate" type="text/template">
+    <h4><%=name%></h4>
+    <div class="row">
+        <div class="col-md-12">
+            <label class="radio-inline">
+                <input type="radio" name="<%=name%>" value="High" data-name="value" /> 
+                @GlobalStrings.Edit_Customer_CareBuilder_MeasurementThresholdHighValue
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="<%=name%>" value="Low" data-name="value" /> 
+                @GlobalStrings.Edit_Customer_CareBuilder_MeasurementThresholdLowValue
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="<%=name%>" value="WithinLimit" data-name="value" /> 
+                @GlobalStrings.Edit_Customer_CareBuilder_MeasurementThresholdWithinLimitValue
+            </label>
+            <label class="radio-inline js-ignore-threshold hide">
+                <input type="radio" name="<%=name%>" value="DoesNotApply" data-name="value" /> 
+                @GlobalStrings.Edit_Customer_CareBuilder_MeasurementThresholdDoesNotApplyValue
+            </label>
+        </div>
+    </div>
+</script>

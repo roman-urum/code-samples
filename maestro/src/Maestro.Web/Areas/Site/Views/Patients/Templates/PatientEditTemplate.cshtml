@@ -1,0 +1,46 @@
+<script id="patientEditTemplate" type="text/template">
+	<div class="page-header page-header-ci page-header-primary-ci">
+		<h1>
+			<%=firstName%>
+			<%=lastName%>
+			<% if( idMain ){ %><small>(<%=idMain.value%>)</small><% } %>
+		</h1>
+	</div>
+	<div class="page-content-ci">
+		<ul class="nav nav-tabs">
+			<li><a href="#patient-info" id="PatientInfo" data-href="EditPatient/<%=id%>/PatientInfo/" class="js-edit-patient-tab">Patient Info</a></li>
+			<li><a href="#conditions" id="Conditions" data-href="EditPatient/<%=id%>/Conditions/" class="js-edit-patient-tab">Conditions</a></li>
+			<li><a href="#care-managers" id="CareManagers" data-href="EditPatient/<%=id%>/CareManagers/" class="js-edit-patient-tab">Care Managers</a></li>
+			<li><a href="#measurements" id="Measurements" data-href="EditPatient/<%=id%>/Measurements/" class="js-edit-patient-tab">Measurements</a></li>
+			<li><a href="#devices" id="Devices" data-href="EditPatient/<%=id%>/Devices/" class="js-edit-patient-tab">Devices</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="patient-info" class="tab-pane">
+
+		        @Html.Partial("Templates/_PatientEditInfoTemplate")
+
+		    </div>
+			<div id="conditions" class="tab-pane">
+
+				@Html.Partial("Templates/_PatientEditConditionsTemplate")
+
+			</div>
+			<div id="care-managers" class="tab-pane">
+
+				@Html.Partial("Templates/_PatientEditCareManagersTemplate")
+
+			</div>
+			<div id="measurements" class="tab-pane">
+
+				@Html.Partial("Templates/_PatientEditMeasurementsTemplate")
+				
+			</div>
+			<div id="devices" class="tab-pane">
+				
+				@Html.Partial("Templates/_PatientEditDevicesTemplate")
+				
+			</div>
+		</div>
+	</div>
+</script>

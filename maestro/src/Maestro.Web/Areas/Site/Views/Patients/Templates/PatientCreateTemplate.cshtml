@@ -1,0 +1,25 @@
+@using Maestro.Web.Resources
+
+<script id="patientCreateTemplate" type="text/template">
+	<div class="page-header page-header-ci page-header-primary-ci">
+		<h1>Create Patient</h1>
+	</div>
+
+	<div class="page-content-ci">
+		<ul class="nav nav-tabs">
+			<li class="active"><a>Patient Info</a></li>
+			<li class="tab-disabled-ci"><a>Care Managers</a></li>
+			<!--li class="tab-disabled-ci"><a>Groups and Conditions</a></li-->
+			<li class="tab-disabled-ci"><a>@GlobalStrings.PatientLayout_ThresholdsTabText</a></li>
+			<li class="tab-disabled-ci"><a>Devices</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="patient-info" class="tab-pane active">
+
+				@Html.Partial("Templates/_PatientEditInfoTemplate")
+
+			</div>
+		</div>
+	</div>
+</script>

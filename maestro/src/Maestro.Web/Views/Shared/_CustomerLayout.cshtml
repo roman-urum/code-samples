@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.IsRequireJsEnabled = true;
+}
+
+@Html.Partial("_CustomerHeader")
+
+<div id="main" class="container wrapper-conteiner-ci">
+    @RenderBody()
+</div>
+
+@section scripts {
+    @RenderSection("scripts", required: false)
+}

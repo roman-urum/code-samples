@@ -1,0 +1,20 @@
+<script id="patientDashboardPeripheralsViewTemplate" type="text/template">
+    <nav class="navbar navbar-default">
+        <div class="navbar-title-ci">Peripherals</div>
+    </nav>
+
+    <div class="aside-block-content">
+        <% if (isModelFetched) { %>
+            <ul class="devices-list">
+                <% _.each(devices, function (device) { %>
+                    <li>
+                        <span><%= _.values(device)[0] %></span>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <img src="/Content/img/spinner.gif" class="spinner" />
+        <% } %>
+        <a class="btn btn-primary btn-lg js-manage-peripherals" href="/<%=siteId%>/Patients/EditPatient/<%=id%>/Measurements/">Manage Peripherals</a>
+    </div>
+</script>

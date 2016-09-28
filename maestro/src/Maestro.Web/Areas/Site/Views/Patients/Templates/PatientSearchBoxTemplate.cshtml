@@ -1,0 +1,53 @@
+﻿@using Maestro.Web.Resources
+@model dynamic
+
+<script id="PatientSearchBoxTemplate" type="text/template">
+    <div class="row form-group">
+        <div class="col-sm-2">
+            <a class="btn btn-primary form-control js-patient-add" href="CreatePatient/">@GlobalStrings.Patients_AddPatientText</a>
+        </div>
+        <div class="col-sm-5">
+            <div class="input-group typeahead-wrapper">
+                <input type="text" class="form-control typeahead" />
+                <div class="typeahead-actions">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                    <span class="glyphicon glyphicon-remove"></span>
+                </div>
+                <span class="input-group-btn">
+                    <button id="suggestion-box-search" class="btn btn-default" type="button">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <% if(obj.hasIdentifiers) { %>
+                    <a id="advanced-search-button" class="btn btn-default" data-toggle="collapse" aria-expanded="false" aria-controls="collapseAdvancedSearch" href="#collapseAdvancedSearch">
+                        <span class="glyphicon glyphicon-list"></span>
+                    </a>
+                    <% } %>
+                </span>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="checkbox checkbox-ci">
+                <label>
+                    <input type="checkbox" id="suggestion-box-inactive">Show inactive patients
+                </label>
+            </div>
+        </div>
+    </div>
+    <% if(obj.managePermission) { %>
+    <div class="row">
+        <div class="col-sm-12 form-horizontal">
+            <div class="form-group">
+                <label for="suggestion-box-manage-permission" class="col-sm-2 control-label">View Patients:</label>
+                <div class="col-sm-5">
+                    <select class="form-control" id="suggestion-box-manage-permission" disabled>
+                        <option value="">Loading...</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <% } %>
+    <div class="collapse" id="collapseAdvancedSearch"></div>
+</script>

@@ -1,0 +1,1925 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CustomerService.Web.Api</name>
+    </assembly>
+    <members>
+        <member name="T:CustomerService.Web.Api.AutomapperConfig">
+            <summary>
+            AutomapperConfig.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.AutomapperConfig.RegisterRules">
+            <summary>
+            Registers the rules.
+            </summary>
+        </member>
+        <member name="T:CustomerService.Web.Api.WebApiConfig">
+            <summary>
+            WebApiConfig.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Registers the specified configuration.
+            </summary>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="T:CustomerService.Web.Api.Controllers.OrganizationsController">
+            <summary>
+            OrganizationsController.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.OrganizationsController.#ctor(CustomerService.Web.Api.Helpers.Interfaces.IOrganizationsControllerHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Controllers.CustomersController" /> class.
+            </summary>
+            <param name="organizationsControllerHelper">The organizations controller helper.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.OrganizationsController.GetOrganizations(System.Int32,CustomerService.Domain.Dtos.OrganizationSearchDto)">
+            <summary>
+            Gets the organizations.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.OrganizationsController.GetOrganization(System.Int32,System.Guid)">
+            <summary>
+            Gets the organization.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="organizationId">The organization identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.OrganizationsController.CreateOrganization(System.Int32,CustomerService.Web.Api.Models.Dtos.Organizations.CreateOrganizationRequestDto)">
+            <summary>
+            Creates the organization.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.OrganizationsController.UpdateOrganization(System.Int32,System.Guid,CustomerService.Web.Api.Models.Dtos.Organizations.UpdateOrganizationRequestDto)">
+            <summary>
+            Updates the organization.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="organizationId">The organization identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.OrganizationsController.DeleteOrganization(System.Int32,System.Guid)">
+            <summary>
+            Deletes the organization.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="organizationId">The organization identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Controllers.FileUploadController">
+            <summary>
+            FileUploadController.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.FileUploadController.#ctor(CustomerService.Web.Api.Helpers.Interfaces.IFileUploadControllerHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Controllers.FileUploadController"/> class.
+            </summary>
+            <param name="fileUploaderHelper">The file uploader helper.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.FileUploadController.UploadFile(CustomerService.Web.Api.Models.Dtos.FileUpload.UploadFileDto)">
+            <summary>
+            Uploads the file.
+            </summary>
+        </member>
+        <member name="T:CustomerService.Web.Api.Controllers.CategoriesOfCareController">
+            <summary>
+            CategoriesOfCareController.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CategoriesOfCareController.#ctor(CustomerService.Web.Api.Helpers.Interfaces.ICategoriesOfCareControllerHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Controllers.CategoriesOfCareController"/> class.
+            </summary>
+            <param name="categoriesOfCareControllerHelper">The categories of cares controller helper.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CategoriesOfCareController.CreateCategoryOfCare(System.Int32,CustomerService.Web.Api.Models.Dtos.CategoryOfCare.CategoryOfCareRequestDto)">
+            <summary>
+            Creates the category of care.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CategoriesOfCareController.UpdateCategoryOfCare(System.Int32,System.Guid,CustomerService.Web.Api.Models.Dtos.CategoryOfCare.CategoryOfCareRequestDto)">
+            <summary>
+            Updates the category of care.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="categoryOfCareId">The category of care identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CategoriesOfCareController.DeleteCategoryOfCare(System.Int32,System.Guid)">
+            <summary>
+            Deletes the category of care.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="categoryOfCareId">The category of care identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CategoriesOfCareController.GetCategoryOfCare(System.Int32,System.Guid)">
+            <summary>
+            Gets the category of care.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="categoryOfCareId">The category of care identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CategoriesOfCareController.GetCategoriesOfCare(System.Int32,CustomerService.Domain.Dtos.BaseSearchDto)">
+            <summary>
+            Gets the categories of cares.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Controllers.CustomersController">
+            <summary>
+            Customer Controller. Get/Post/Put/Delete actions.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CustomersController.#ctor(CustomerService.Web.Api.Helpers.Interfaces.ICustomersControllerHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Controllers.CustomersController"/> class.
+            </summary>
+            <param name="customersHelper">The customer service.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CustomersController.GetCustomers(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Boolean)">
+            <summary>
+            Gets all customers.
+            </summary>
+            <param name="q">The q.</param>
+            <param name="skip">The skip.</param>
+            <param name="take">The take.</param>
+            <param name="includeArchived">if set to <c>true</c> [include archived].</param>
+            <param name="isBrief">if set to <c>true</c> [is brief].</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CustomersController.GetCustomer(System.Int32,System.Boolean)">
+            <summary>
+            Gets the customer by id.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="isBrief">if set to <c>true</c> [is brief].</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CustomersController.GetCustomerByName(System.Int32,System.String,System.Boolean)">
+            <summary>
+            Gets customer by name.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="name">The name.</param>
+            <param name="isBrief">if set to <c>true</c> [is brief].</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CustomersController.GetCustomerBySubdomain(System.Int32,System.String,System.Boolean)">
+            <summary>
+            Gets customer by subdomain.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="subdomain">The subdomain.</param>
+            <param name="isBrief">if set to <c>true</c> [is brief].</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CustomersController.CreateCustomer(CustomerService.Web.Api.Models.Dtos.Customer.CreateCustomerRequestDto)">
+            <summary>
+            Creates the customer.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CustomersController.UpdateCustomer(System.Int32,CustomerService.Web.Api.Models.Dtos.Customer.UpdateCustomerRequestDto)">
+            <summary>
+            Updates the customer with all customer's sites.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.CustomersController.DeleteCustomer(System.Int32)">
+            <summary>
+            Deletes the customer.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Controllers.SitesController">
+            <summary>
+            SitesController.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.SitesController.#ctor(CustomerService.Web.Api.Helpers.Interfaces.ISitesControllerHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Controllers.SitesController"/> class.
+            </summary>
+            <param name="sitesHelper">The site service.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.SitesController.GetSites(System.Int32,CustomerService.Domain.Dtos.SiteSearchDto)">
+            <summary>
+            Gets the customer sites.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.SitesController.GetSite(System.Int32,System.Guid)">
+            <summary>
+            Gets site by specified identifier.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteId">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.SitesController.GetSiteByName(System.Int32,System.String)">
+            <summary>
+            Gets site by name.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteName">Name of the site.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.SitesController.GetSiteByNpi(System.Int32,System.String)">
+            <summary>
+            Gets site by site NPI.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteNpi">The site NPI.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.SitesController.GetSiteByCustomerSiteId(System.Int32,System.String)">
+            <summary>
+            Gets site by customer site id.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="customerSiteId">The customer site Id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.SitesController.CreateSite(System.Int32,CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto)">
+            <summary>
+            Creates new site.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.SitesController.UpdateSite(System.Int32,System.Guid,CustomerService.Web.Api.Models.Dtos.Site.UpdateSiteRequestDto)">
+            <summary>
+            Updates site.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteId">The site identifier.</param>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Controllers.SitesController.DeleteSite(System.Int32,System.Guid)">
+            <summary>
+            Deletes the site.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteId">The site identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.CustomAttributes.DescriptionLocalizedAttribute">
+            <summary>
+            DescriptionLocalizedAttribute.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.CustomAttributes.DescriptionLocalizedAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.CustomAttributes.DescriptionLocalizedAttribute"/> class.
+            </summary>
+            <param name="resourceId">The resource identifier.</param>
+        </member>
+        <member name="T:CustomerService.Web.Api.CustomAttributes.TokenAuthorizeAttribute">
+            <summary>
+            TokenAuthorizeAttribute.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.CustomAttributes.TokenAuthorizeAttribute.HandleUnauthorizedRequest(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Processes requests that fail authorization.
+            </summary>
+            <param name="actionContext">The context.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.CustomAttributes.TokenAuthorizeAttribute.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Called when [authorization].
+            </summary>
+            <param name="actionContext">The action context.</param>
+        </member>
+        <member name="T:CustomerService.Web.Api.Filters.InvalidateCacheOutputAttribute">
+            <summary>
+            InvalidateCacheOutputAttribute (Note: This is FIXED version of WebApi.OutputCache.V2 InvalidateCacheOutputAttribute).
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Filters.InvalidateCacheOutputAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Filters.InvalidateCacheOutputAttribute"/> class.
+            </summary>
+            <param name="methodName">Name of the method.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Filters.InvalidateCacheOutputAttribute.#ctor(System.String,System.Type,System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Filters.InvalidateCacheOutputAttribute" /> class.
+            </summary>
+            <param name="methodName">Name of the method.</param>
+            <param name="controllerType">Type of the controller.</param>
+            <param name="actionParameters">The action parameters.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Filters.InvalidateCacheOutputAttribute.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            Called when [action executed].
+            </summary>
+            <param name="actionExecutedContext">The action executed context.</param>
+        </member>
+        <member name="T:CustomerService.Web.Api.Filters.ValidateModelAttribute">
+            <summary>
+            Validates model state and returns <see cref="F:System.Net.HttpStatusCode.BadRequest"/>
+            with error description unless it is valid.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Filters.ValidateModelAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Occurs before the action method is invoked.
+            </summary>
+            <param name="actionContext">The action context.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Filters.ValidateModelAttribute.GenerateErrorMessageDetails(System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Generates the error message details.
+            </summary>
+            <param name="modelState">State of the model.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.ExceptionHandling.GlobalExceptionHandler">
+            <summary>
+            GlobalExceptionHandler.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.ExceptionHandling.GlobalExceptionHandler.HandleAsync(System.Web.Http.ExceptionHandling.ExceptionHandlerContext,System.Threading.CancellationToken)">
+            <summary>
+            When overridden in a derived class, handles the exception asynchronously.
+            </summary>
+            <param name="context">The exception handler context.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>
+            A task representing the asynchronous exception handling operation.
+            </returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.ExceptionHandling.GlobalExceptionHandler.Handle(System.Web.Http.ExceptionHandling.ExceptionHandlerContext)">
+            <summary>
+            When overridden in a derived class, handles the exception synchronously.
+            </summary>
+            <param name="context">The exception handler context.</param>
+        </member>
+        <member name="T:CustomerService.Web.Api.Exceptions.HttpLogicException">
+            <summary>
+            HttpLogicException.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Exceptions.HttpLogicException.#ctor(System.Net.HttpStatusCode,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Exceptions.HttpLogicException"/> class.
+            </summary>
+            <param name="statusCode">The status code.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:CustomerService.Web.Api.Extensions.RouteDataExtensions">
+            <summary>
+            RouteDataExtensions.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Extensions.RouteDataExtensions.GetWebApiRouteData(System.Web.Routing.RouteData)">
+            <summary>
+            Gets the web API route data.
+            </summary>
+            <param name="routeData">The route data.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Extensions.StackExchangeRedisExtensions">
+            <summary>
+            StackExchangeRedisExtensions.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Extensions.StackExchangeRedisExtensions.Get``1(StackExchange.Redis.IDatabase,System.String)">
+            <summary>
+            Gets the specified key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="cache">The cache.</param>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Extensions.StackExchangeRedisExtensions.Get(StackExchange.Redis.IDatabase,System.String)">
+            <summary>
+            Gets the specified key.
+            </summary>
+            <param name="cache">The cache.</param>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Extensions.StackExchangeRedisExtensions.GetAllKeys(StackExchange.Redis.ConnectionMultiplexer)">
+            <summary>
+            Gets all keys.
+            </summary>
+            <param name="connectionMultiplexer">The connection multiplexer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Extensions.StackExchangeRedisExtensions.SearchKeys(StackExchange.Redis.ConnectionMultiplexer,System.String)">
+            <summary>
+            Searches the keys.
+            </summary>
+            <param name="connectionMultiplexer">The connection multiplexer.</param>
+            <param name="searchPattern">The search pattern.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Extensions.StackExchangeRedisExtensions.Set(StackExchange.Redis.IDatabase,System.String,System.Object,System.TimeSpan)">
+            <summary>
+            Sets the specified key.
+            </summary>
+            <param name="cache">The cache.</param>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <param name="expiry">The expiry.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Helpers.Implemetations.CategoriesOfCareControllerHelper">
+            <summary>
+            CategoriesOfCareControllerHelper.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CategoriesOfCareControllerHelper.#ctor(CustomerService.DomainLogic.Services.Interfaces.ICategoriesOfCareService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Helpers.Implemetations.CategoriesOfCareControllerHelper"/> class.
+            </summary>
+            <param name="сategoriesOfCareService">The сategories of cares service.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CategoriesOfCareControllerHelper.CreateCategoryOfCare(System.Int32,CustomerService.Web.Api.Models.Dtos.CategoryOfCare.CategoryOfCareRequestDto)">
+            <summary>
+            Creates the category of care.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CategoriesOfCareControllerHelper.UpdateCategoryOfCare(System.Guid,CustomerService.Web.Api.Models.Dtos.CategoryOfCare.CategoryOfCareRequestDto)">
+            <summary>
+            Updates the category of care.
+            </summary>
+            <param name="categoryOfCareId">The category of care identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CategoriesOfCareControllerHelper.DeleteCategoryOfCare(System.Guid)">
+            <summary>
+            Deletes the category of care.
+            </summary>
+            <param name="categoryOfCareId">The category of care identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CategoriesOfCareControllerHelper.GetCategoryOfCare(System.Guid)">
+            <summary>
+            Gets the category of care.
+            </summary>
+            <param name="categoryOfCareId">The category of care identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CategoriesOfCareControllerHelper.GetCategoriesOfCare(System.Int32,CustomerService.Domain.Dtos.BaseSearchDto)">
+            <summary>
+            Gets the categories of care.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Helpers.Implemetations.OrganizationsControllerHelper">
+            <summary>
+            OrganizationsControllerHelper.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.OrganizationsControllerHelper.#ctor(CustomerService.DomainLogic.Services.Interfaces.IOrganizationsService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Helpers.Implemetations.CustomersControllerHelper" /> class.
+            </summary>
+            <param name="organizationsService">The organizations service.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.OrganizationsControllerHelper.GetOrganizations(System.Int32,CustomerService.Domain.Dtos.OrganizationSearchDto)">
+            <summary>
+            Gets customers.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.OrganizationsControllerHelper.GetOrganization(System.Int32,System.Guid)">
+            <summary>
+            Gets the organization.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="organizationId">The organization identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.OrganizationsControllerHelper.CreateOrganization(System.Int32,CustomerService.Web.Api.Models.Dtos.Organizations.CreateOrganizationRequestDto)">
+            <summary>
+            Creates the organization.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.OrganizationsControllerHelper.UpdateOrganization(System.Int32,System.Guid,CustomerService.Web.Api.Models.Dtos.Organizations.UpdateOrganizationRequestDto)">
+            <summary>
+            Updates the organization.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="organizationId">The organization identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.OrganizationsControllerHelper.DeleteOrganization(System.Int32,System.Guid)">
+            <summary>
+            Deletes the organization.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="organizationId">The organization identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Helpers.Implemetations.FileUploadControllerHelper">
+            <summary>
+            FileUploadHelper.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.FileUploadControllerHelper.SaveFile(CustomerService.Web.Api.Models.Dtos.FileUpload.UploadFileDto)">
+            <summary>
+            Saves the file.
+            </summary>
+            <param name="model">The HTTP posted file.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Helpers.Implemetations.CustomersControllerHelper">
+            <summary>
+            CustomersControllerHelper.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CustomersControllerHelper.#ctor(CustomerService.DomainLogic.Services.Interfaces.ICustomerService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Helpers.Implemetations.CustomersControllerHelper" /> class.
+            </summary>
+            <param name="customerService">The user customer service.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CustomersControllerHelper.CreateCustomer(CustomerService.Web.Api.Models.Dtos.Customer.CreateCustomerRequestDto)">
+            <summary>
+            Creates the customer.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CustomersControllerHelper.UpdateCustomer(System.Int32,CustomerService.Web.Api.Models.Dtos.Customer.UpdateCustomerRequestDto)">
+            <summary>
+            Updates the customer.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CustomersControllerHelper.GetCustomer(System.Int32,System.Boolean)">
+            <summary>
+            Gets the customer model.
+            </summary>
+            <param name="customerId">The identifier.</param>
+            <param name="isBrief">if set to <c>true</c> [is brief].</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CustomersControllerHelper.GetCustomers(CustomerService.Domain.Dtos.CustomersSearchDto,System.Boolean)">
+            <summary>
+            Gets customers.
+            </summary>
+            <param name="request">The request.</param>
+            <param name="isBrief"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CustomersControllerHelper.GetCustomerByName(System.Int32,System.String,System.Boolean)">
+            <summary>
+            Gets customer by name.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="name">The name.</param>
+            <param name="isBrief">if set to <c>true</c> [is brief].</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CustomersControllerHelper.GetCustomerBySubdomain(System.Int32,System.String,System.Boolean)">
+            <summary>
+            Gets the customer by subdomain.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="subdomain">The subdomain.</param>
+            <param name="isBrief">if set to <c>true</c> [is brief].</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.CustomersControllerHelper.DeleteCustomer(System.Int32)">
+            <summary>
+            Deletes the customer.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Helpers.Implemetations.SitesControllerHelper">
+            <summary>
+            SitesService.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.SitesControllerHelper.#ctor(CustomerService.DomainLogic.Services.Interfaces.ISiteService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Helpers.Implemetations.SitesControllerHelper"/> class.
+            </summary>
+            <param name="sitesService">The customer site service.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.SitesControllerHelper.CreateSite(System.Int32,CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto)">
+            <summary>
+            Creates the site.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.SitesControllerHelper.UpdateSite(System.Int32,System.Guid,CustomerService.Web.Api.Models.Dtos.Site.UpdateSiteRequestDto)">
+            <summary>
+            Updates the site asynchronous.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteId">The identifier.</param>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.SitesControllerHelper.GetSites(System.Int32,CustomerService.Domain.Dtos.SiteSearchDto)">
+            <summary>
+            Gets all sites.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.SitesControllerHelper.GetSite(System.Int32,System.Guid)">
+            <summary>
+            Gets the site.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteId">The site identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.SitesControllerHelper.GetSiteByName(System.Int32,System.String)">
+            <summary>
+            Gets the customer site dto asynchronous.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteName">Name of the site.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.SitesControllerHelper.GetSiteBySiteNpi(System.Int32,System.String)">
+            <summary>
+            Gets the site by customer identifier and site npi asynchronous.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteNpi">The site npi.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.SitesControllerHelper.GetSiteByCustomerSiteId(System.Int32,System.String)">
+            <summary>
+            Gets the site by customer identifier and customer site identifier asynchronous.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="customerSiteId">The customer site identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Implemetations.SitesControllerHelper.DeleteSite(System.Int32,System.Guid)">
+            <summary>
+            Deletes the site.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteId">The site identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Helpers.Interfaces.ICategoriesOfCareControllerHelper">
+            <summary>
+            ICategoriesOfCareControllerHelper.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ICategoriesOfCareControllerHelper.CreateCategoryOfCare(System.Int32,CustomerService.Web.Api.Models.Dtos.CategoryOfCare.CategoryOfCareRequestDto)">
+            <summary>
+            Creates the category of care.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ICategoriesOfCareControllerHelper.UpdateCategoryOfCare(System.Guid,CustomerService.Web.Api.Models.Dtos.CategoryOfCare.CategoryOfCareRequestDto)">
+            <summary>
+            Updates the category of care.
+            </summary>
+            <param name="categoryOfCareId">The category of care identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ICategoriesOfCareControllerHelper.DeleteCategoryOfCare(System.Guid)">
+            <summary>
+            Deletes the category of care.
+            </summary>
+            <param name="categoryOfCareId">The category of care identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ICategoriesOfCareControllerHelper.GetCategoryOfCare(System.Guid)">
+            <summary>
+            Gets the category of care.
+            </summary>
+            <param name="categoryOfCareId">The category of care identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ICategoriesOfCareControllerHelper.GetCategoriesOfCare(System.Int32,CustomerService.Domain.Dtos.BaseSearchDto)">
+            <summary>
+            Gets the categories of cares.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Helpers.Interfaces.IOrganizationsControllerHelper">
+            <summary>
+            IOrganizationsControllerHelper.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.IOrganizationsControllerHelper.GetOrganizations(System.Int32,CustomerService.Domain.Dtos.OrganizationSearchDto)">
+            <summary>
+            Gets customers.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.IOrganizationsControllerHelper.GetOrganization(System.Int32,System.Guid)">
+            <summary>
+            Gets the organization.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="organizationId">The organization identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.IOrganizationsControllerHelper.CreateOrganization(System.Int32,CustomerService.Web.Api.Models.Dtos.Organizations.CreateOrganizationRequestDto)">
+            <summary>
+            Creates the organization.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.IOrganizationsControllerHelper.UpdateOrganization(System.Int32,System.Guid,CustomerService.Web.Api.Models.Dtos.Organizations.UpdateOrganizationRequestDto)">
+            <summary>
+            Updates the organization.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="organizationId">The organization identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.IOrganizationsControllerHelper.DeleteOrganization(System.Int32,System.Guid)">
+            <summary>
+            Deletes the organization.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="organizationId">The organization identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Helpers.Interfaces.IFileUploadControllerHelper">
+            <summary>
+            IFileUploadHelper.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.IFileUploadControllerHelper.SaveFile(CustomerService.Web.Api.Models.Dtos.FileUpload.UploadFileDto)">
+            <summary>
+            Saves the file.
+            </summary>
+            <param name="model">The HTTP posted file.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Helpers.Interfaces.ICustomersControllerHelper">
+            <summary>
+            CustomerService interface.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ICustomersControllerHelper.GetCustomer(System.Int32,System.Boolean)">
+            <summary>
+            Gets the customer.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="isBrief">if set to <c>true</c> [is brief].</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ICustomersControllerHelper.GetCustomers(CustomerService.Domain.Dtos.CustomersSearchDto,System.Boolean)">
+            <summary>
+            Gets customers.
+            </summary>
+            <param name="request">The request.</param>
+            <param name="isBrief">if set to <c>true</c> [is brief].</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ICustomersControllerHelper.CreateCustomer(CustomerService.Web.Api.Models.Dtos.Customer.CreateCustomerRequestDto)">
+            <summary>
+            Creates the customer.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ICustomersControllerHelper.UpdateCustomer(System.Int32,CustomerService.Web.Api.Models.Dtos.Customer.UpdateCustomerRequestDto)">
+            <summary>
+            Updates the customer.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ICustomersControllerHelper.GetCustomerByName(System.Int32,System.String,System.Boolean)">
+            <summary>
+            Gets customer by name.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="name">The name.</param>
+            <param name="isBrief">if set to <c>true</c> [is brief].</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ICustomersControllerHelper.GetCustomerBySubdomain(System.Int32,System.String,System.Boolean)">
+            <summary>
+            Gets the customer by subdomain.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="subdomain">The subdomain.</param>
+            <param name="isBrief">if set to <c>true</c> [is brief].</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ICustomersControllerHelper.DeleteCustomer(System.Int32)">
+            <summary>
+            Deletes the customer.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Helpers.Interfaces.ISitesControllerHelper">
+            <summary>
+            ISitesService.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ISitesControllerHelper.GetSites(System.Int32,CustomerService.Domain.Dtos.SiteSearchDto)">
+            <summary>
+            Gets all sites.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ISitesControllerHelper.GetSite(System.Int32,System.Guid)">
+            <summary>
+            Gets the site.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteId">The site identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ISitesControllerHelper.CreateSite(System.Int32,CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto)">
+            <summary>
+            Creates the site.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ISitesControllerHelper.UpdateSite(System.Int32,System.Guid,CustomerService.Web.Api.Models.Dtos.Site.UpdateSiteRequestDto)">
+            <summary>
+            Updates the site asynchronous.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteId">The identifier.</param>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ISitesControllerHelper.GetSiteByName(System.Int32,System.String)">
+            <summary>
+            Gets the customer site dto asynchronous.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteName">Name of the site.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ISitesControllerHelper.GetSiteBySiteNpi(System.Int32,System.String)">
+            <summary>
+            Gets the site by customer identifier and site npi asynchronous.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteNpi">The site npi.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ISitesControllerHelper.GetSiteByCustomerSiteId(System.Int32,System.String)">
+            <summary>
+            Gets the site by customer identifier and customer site identifier asynchronous.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="customerSiteId">The customer site identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.Interfaces.ISitesControllerHelper.DeleteSite(System.Int32,System.Guid)">
+            <summary>
+            Deletes the site.
+            </summary>
+            <param name="customerId">The customer identifier.</param>
+            <param name="siteId">The site identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CustomerService.Web.Api.Helpers.StackExchangeRedisOutputCacheProvider">
+            <summary>
+            StackExchangeRedisOutputCacheProvider.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.StackExchangeRedisOutputCacheProvider.#ctor(StackExchange.Redis.IDatabase)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CustomerService.Web.Api.Helpers.StackExchangeRedisOutputCacheProvider" /> class.
+            </summary>
+            <param name="redisCache">The redis cache.</param>
+        </member>
+        <member name="P:CustomerService.Web.Api.Helpers.StackExchangeRedisOutputCacheProvider.AllKeys">
+            <summary>
+            Gets all keys.
+            </summary>
+            <value>
+            All keys.
+            </value>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.StackExchangeRedisOutputCacheProvider.RemoveStartsWith(System.String)">
+            <summary>
+            Removes the starts with.
+            </summary>
+            <param name="key">The key.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.StackExchangeRedisOutputCacheProvider.Get``1(System.String)">
+            <summary>
+            Gets the specified key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.StackExchangeRedisOutputCacheProvider.Get(System.String)">
+            <summary>
+            Gets the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.StackExchangeRedisOutputCacheProvider.Remove(System.String)">
+            <summary>
+            Removes the specified key.
+            </summary>
+            <param name="key">The key.</param>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.StackExchangeRedisOutputCacheProvider.Contains(System.String)">
+            <summary>
+            Determines whether [contains] [the specified key].
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomerService.Web.Api.Helpers.StackExchangeRedisOutputCacheProvider.Add(System.String,System.Object,System.DateTimeOffset,System.String)">
+            <summary>
+            Adds the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <param name="expiration">The expiration.</param>
+            <param name="dependsOnKey">The depends on key.</param>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Customer.FullCustomerResponseDto">
+            <summary>
+            FullCustomerResponseDto.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.FullCustomerResponseDto.Sites">
+            <summary>
+            Gets or sets the sites.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.FullCustomerResponseDto.Organizations">
+            <summary>
+            Gets or sets the organizations.
+            </summary>
+            <value>
+            The organizations.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.FullCustomerResponseDto.CategoriesOfCare">
+            <summary>
+            Gets or sets the categories of care.
+            </summary>
+            <value>
+            The categories of care.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Customer.BriefCustomerResponseDto">
+            <summary>
+            BriefCustomerResponseDto.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.BriefCustomerResponseDto.Sites">
+            <summary>
+            Gets or sets the sites.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.BriefCustomerResponseDto.Organizations">
+            <summary>
+            Gets or sets the organizations.
+            </summary>
+            <value>
+            The organizations.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.BriefCustomerResponseDto.CategoriesOfCare">
+            <summary>
+            Gets or sets the categories of care.
+            </summary>
+            <value>
+            The categories of care.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Customer.CreateCustomerRequestDto">
+            <summary>
+            Create customer request Dto.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.CreateCustomerRequestDto.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.CreateCustomerRequestDto.Subdomain">
+            <summary>
+            Gets or sets the subdomain.
+            </summary>
+            <value>
+            The subdomain.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.CreateCustomerRequestDto.LogoPath">
+            <summary>
+            Gets or sets the logo path.
+            </summary>
+            <value>
+            The logo path.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.CreateCustomerRequestDto.PasswordExpirationDays">
+            <summary>
+            Gets or sets the password expiration days (days).
+            </summary>
+            <value>
+            The password expiration days.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.CreateCustomerRequestDto.IddleSessionTimeout">
+            <summary>
+            Gets or sets the iddle session timeout (minutes).
+            </summary>
+            <value>
+            The iddle session timeout.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Customer.UpdateCustomerRequestDto">
+            <summary>
+            UpdateCustomerRequestDto.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.UpdateCustomerRequestDto.IsArchived">
+            <summary>
+            Gets or sets the is archived.
+            </summary>
+            <value>
+            The is archived.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Customer.BaseCustomerResponseDto">
+            <summary>
+            BaseCustomerResponseDto.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.BaseCustomerResponseDto.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.BaseCustomerResponseDto.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.BaseCustomerResponseDto.Subdomain">
+            <summary>
+            Gets or sets the subdomain.
+            </summary>
+            <value>
+            The subdomain.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.BaseCustomerResponseDto.LogoPath">
+            <summary>
+            Gets or sets the logo path.
+            </summary>
+            <value>
+            The logo path.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.BaseCustomerResponseDto.PasswordExpirationDays">
+            <summary>
+            Gets or sets the password expiration days (days).
+            </summary>
+            <value>
+            The password expiration days.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.BaseCustomerResponseDto.IddleSessionTimeout">
+            <summary>
+            Gets or sets the iddle session timeout (minutes).
+            </summary>
+            <value>
+            The iddle session timeout.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Customer.BaseCustomerResponseDto.IsArchived">
+            <summary>
+            Gets or sets a value indicating whether this instance is archived.
+            </summary>
+            <value>
+            <c>true</c> if this instance is archived; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.FileUpload.UploadFileDto">
+            <summary>
+            UploadFileDto.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.FileUpload.UploadFileDto.FileName">
+            <summary>
+            Gets or sets the name of the file.
+            </summary>
+            <value>
+            The name of the file.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.FileUpload.UploadFileDto.ContentType">
+            <summary>
+            Gets or sets the type of the content.
+            </summary>
+            <value>
+            The type of the content.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.FileUpload.UploadFileDto.FileData">
+            <summary>
+            Gets or sets the file data.
+            </summary>
+            <value>
+            The file data.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.FileUpload.UploadFileResponseDto">
+            <summary>
+            UploadFileResponse.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.FileUpload.UploadFileResponseDto.FilePath">
+            <summary>
+            Gets or sets the file path.
+            </summary>
+            <value>
+            The file path.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.CategoryOfCare.CategoryOfCareResponseDto">
+            <summary>
+            CategoryOfCareResponseDto.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.CategoryOfCare.CategoryOfCareResponseDto.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.CategoryOfCare.CategoryOfCareRequestDto">
+            <summary>
+            CategoryOfCareRequestDto.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.CategoryOfCare.CategoryOfCareRequestDto.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode">
+            <summary>
+            ErrorCode.
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.CustomerDoesNotExists">
+            <summary>
+            The user does not exists.
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.SiteDoesNotExists">
+            <summary>
+            The site does not exists.
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.ForbiddenForSiteUpdating">
+            <summary>
+            The no access for site updating.
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.InvalidRequest">
+            <summary>
+            The invalid request
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.InvalidAccessToken">
+            <summary>
+            The invalid access token.
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.TokenNotProvided">
+            <summary>
+            The token not provided
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.IncorrectFile">
+            <summary>
+            The incorrect file.
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.SubdomainIsNotAvailable">
+            <summary>
+            The subdomain is not available
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.CustomerNameIsNotAvailable">
+            <summary>
+            The customer name is not available
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.CustomerMustHaveASite">
+            <summary>
+            The customer must have a site
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.CustomerNameConflict">
+            <summary>
+            The customer name conflict
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.SiteAlreadyExists">
+            <summary>
+            The site already exists for current user
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.SiteWithSuchNpiAlreadyExistsForCurrentCustomer">
+            <summary>
+            The site with such NPI already exists for current customer
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.SiteWithSuchCustomerSiteIdAlreadyExistsForCurrentCustomer">
+            <summary>
+            The site with such customer site identifier already exists for current customer
+            </summary>
+        </member>
+        <member name="F:CustomerService.Web.Api.Models.Dtos.Enums.ErrorCode.InternalServerError">
+            <summary>
+            The unspecified server error.
+            </summary>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Organizations.UpdateOrganizationRequestDto">
+            <summary>
+            UpdateOrganizationRequestDto.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Organizations.UpdateOrganizationRequestDto.IsArchived">
+            <summary>
+            Gets or sets the is archived.
+            </summary>
+            <value>
+            The is archived.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Organizations.CreateOrganizationRequestDto">
+            <summary>
+            CreateOrganizationRequestDto.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Organizations.CreateOrganizationRequestDto.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Organizations.CreateOrganizationRequestDto.ParentOrganizationId">
+            <summary>
+            Gets or sets the parent organization identifier.
+            </summary>
+            <value>
+            The parent organization identifier.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Organizations.OrganizationResponseDto">
+            <summary>
+            OrganizationResponseDto.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Organizations.OrganizationResponseDto.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Organizations.OrganizationResponseDto.CustomerId">
+            <summary>
+            Gets or sets the customer identifier.
+            </summary>
+            <value>
+            The customer identifier.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Organizations.OrganizationResponseDto.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Organizations.OrganizationResponseDto.IsArchived">
+            <summary>
+            Gets or sets a value indicating whether this instance is archived.
+            </summary>
+            <value>
+            <c>true</c> if this instance is archived; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Organizations.OrganizationResponseDto.ParentOrganizationId">
+            <summary>
+            Gets or sets the parent organization identifier.
+            </summary>
+            <value>
+            The parent organization identifier.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Site.BaseSiteDto">
+            <summary>
+            Contains common fields for customers' sites.
+            Used in request to create new customer.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.BaseSiteDto.Name">
+            <summary>
+            Gets or sets the name of the site.
+            </summary>
+            <value>
+            The name of the site.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.BaseSiteDto.ContactPhone">
+            <summary>
+            Gets or sets the contact phone.
+            </summary>
+            <value>
+            The contact phone.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.BaseSiteDto.ParentOrganizationId">
+            <summary>
+            Gets or sets the parent organization identifier.
+            </summary>
+            <value>
+            The parent organization identifier.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Site.UpdateSiteRequestDto">
+            <summary>
+            UpdateCreateSiteRequestDto.
+            </summary>
+            <seealso cref="T:CustomerService.Web.Api.Models.Dtos.Site.BaseSiteDto" />
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.UpdateSiteRequestDto.IsArchived">
+            <summary>
+            Gets or sets the is archived.
+            </summary>
+            <value>
+            The is archived.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto">
+            <summary>
+            CreateSiteRequestDto.
+            </summary>
+            <seealso cref="T:CustomerService.Web.Api.Models.Dtos.Site.BaseSiteDto" />
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>
+            The state.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+            <value>
+            The city.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto.Address1">
+            <summary>
+            Gets or sets the Address1.
+            </summary>
+            <value>
+            The Address1.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto.Address2">
+            <summary>
+            Gets or sets the Address2.
+            </summary>
+            <value>
+            The Address2.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto.Address3">
+            <summary>
+            Gets or sets the Address3.
+            </summary>
+            <value>
+            The Address3.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto.ZipCode">
+            <summary>
+            Gets or sets the zip code.
+            </summary>
+            <value>
+            The zip code.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto.NationalProviderIdentificator">
+            <summary>
+            Gets or sets the National Provider Identificator.
+            </summary>
+            <value>
+            The National Provider Identificator.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto.CustomerSiteId">
+            <summary>
+            Gets or sets the customer site identifier.
+            </summary>
+            <value>
+            The customer site identifier.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this site is active.
+            </summary>
+            <value>
+              <c>true</c> if this site is active; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto.IsPublished">
+            <summary>
+            Gets or sets a value indicating whether this instance is published.
+            </summary>
+            <value>
+            <c>true</c> if this instance is published; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.CreateSiteRequestDto.CategoriesOfCare">
+            <summary>
+            Gets or sets the categories of care.
+            </summary>
+            <value>
+            The categories of care.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto">
+            <summary>
+            Dto for responses of Sites API.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.CustomerId">
+            <summary>
+            Gets or sets the customer identifier.
+            </summary>
+            <value>
+            The customer identifier.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>
+            The state.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+            <value>
+            The city.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.Address1">
+            <summary>
+            Gets or sets the Address1.
+            </summary>
+            <value>
+            The Address1.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.Address2">
+            <summary>
+            Gets or sets the Address2.
+            </summary>
+            <value>
+            The Address2.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.Address3">
+            <summary>
+            Gets or sets the Address3.
+            </summary>
+            <value>
+            The Address3.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.ZipCode">
+            <summary>
+            Gets or sets the zip code.
+            </summary>
+            <value>
+            The zip code.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.NationalProviderIdentificator">
+            <summary>
+            Gets or sets the National Provider Identificator.
+            </summary>
+            <value>
+            The National Provider Identificator.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.CustomerSiteId">
+            <summary>
+            Gets or sets the customer site identifier.
+            </summary>
+            <value>
+            The customer site identifier.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this site is active.
+            </summary>
+            <value>
+              <c>true</c> if this site is active; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.IsPublished">
+            <summary>
+            Gets or sets a value indicating whether this instance is published.
+            </summary>
+            <value>
+            <c>true</c> if this instance is published; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.IsArchived">
+            <summary>
+            Gets or sets a value indicating whether this instance is archived.
+            </summary>
+            <value>
+            <c>true</c> if this instance is archived; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.Site.SiteResponseDto.CategoriesOfCare">
+            <summary>
+            Gets or sets the categories of care.
+            </summary>
+            <value>
+            The categories of care.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.PagedResultDto`1">
+            <summary>
+            PagedResultDto.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.PagedResultDto`1.Results">
+            <summary>
+            Gets or sets the results.
+            </summary>
+            <value>
+            The results.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.PagedResultDto`1.Total">
+            <summary>
+            Gets or sets the total.
+            </summary>
+            <value>
+            The total.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.PagedResultDto`1.Count">
+            <summary>
+            Gets or sets the count.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.PostResponseDto`1">
+            <summary>
+            Base model for response of request
+            to create new entity.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.PostResponseDto`1.Id">
+            <summary>
+            Id of new entity.
+            </summary>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Dtos.ErrorResponseDto">
+            <summary>
+            ErrorResponseDto.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.ErrorResponseDto.Error">
+            <summary>
+            Gets or sets the error code.
+            </summary>
+            <value>
+            The error code.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.ErrorResponseDto.Message">
+            <summary>
+            Gets or sets the error message.
+            </summary>
+            <value>
+            The error message.
+            </value>
+        </member>
+        <member name="P:CustomerService.Web.Api.Models.Dtos.ErrorResponseDto.Details">
+            <summary>
+            Gets or sets the details.
+            </summary>
+            <value>
+            The details.
+            </value>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Mapping.OrganizationsMapping">
+            <summary>
+            OrganizationsMapping.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Models.Mapping.OrganizationsMapping.Configure">
+            <summary>
+            Override this method in a derived class and call the CreateMap method to associate that map with this profile.
+            Avoid calling the <see cref="T:AutoMapper.Mapper" /> class from this method.
+            </summary>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Mapping.CommonMapping">
+            <summary>
+            CommonMapping.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Models.Mapping.CommonMapping.Configure">
+            <summary>
+            Override this method in a derived class and call the CreateMap method to associate that map with this profile.
+            Avoid calling the <see cref="T:AutoMapper.Mapper" /> class from this method.
+            </summary>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Mapping.CategoriesOfCareMapping">
+            <summary>
+            CategoriesOfCareMapping.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Models.Mapping.CategoriesOfCareMapping.Configure">
+            <summary>
+            Override this method in a derived class and call the CreateMap method to associate that map with this profile.
+            Avoid calling the <see cref="T:AutoMapper.Mapper" /> class from this method.
+            </summary>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Mapping.SitesMapping">
+            <summary>
+            SiteMapping.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Models.Mapping.SitesMapping.Configure">
+            <summary>
+            Override this method in a derived class and call the CreateMap method to associate that map with this profile.
+            Avoid calling the <see cref="T:AutoMapper.Mapper" /> class from this method.
+            </summary>
+        </member>
+        <member name="T:CustomerService.Web.Api.Models.Mapping.CustomersMapping">
+            <summary>
+            CustomerMapping.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.Models.Mapping.CustomersMapping.Configure">
+            <summary>
+            Override this method in a derived class and call the CreateMap method to associate that map with this profile.
+            Avoid calling the <see cref="T:AutoMapper.Mapper" /> class from this method.
+            </summary>
+        </member>
+        <member name="T:CustomerService.Web.Api.WebApiApplication">
+            <summary>
+            WebApiApplication.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.WebApiApplication.Application_Start">
+            <summary>
+            Application_s the start.
+            </summary>
+        </member>
+        <member name="T:CustomerService.Web.Api.Resources.GlobalStrings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.Create_Customer_InvalidSubdomainNameField">
+            <summary>
+              Looks up a localized string similar to Invalid customer subdomain.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_ApiAccessTokenInvalid">
+            <summary>
+              Looks up a localized string similar to API access token invalid.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_CustomerDoesNotExists">
+            <summary>
+              Looks up a localized string similar to Customer does not exists.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_CustomerMustHaveASite">
+            <summary>
+              Looks up a localized string similar to Customer must have a site.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_CustomerNameAlreadyExists">
+            <summary>
+              Looks up a localized string similar to Customer Name already exists.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_CustomerNameConflict">
+            <summary>
+              Looks up a localized string similar to Customer with the same name already exists.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_CustomerNameIsNotAvailable">
+            <summary>
+              Looks up a localized string similar to Customer name is not available.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_EntityAlreadyExists">
+            <summary>
+              Looks up a localized string similar to Customer with the same .
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_IncorrectFile">
+            <summary>
+              Looks up a localized string similar to Incorrect file.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_InternalServerError">
+            <summary>
+              Looks up a localized string similar to Unspecified server error.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_InvalidRequest">
+            <summary>
+              Looks up a localized string similar to Invalid parameter value(s).
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_NoRightsSiteUpdating">
+            <summary>
+              Looks up a localized string similar to You have no rigths for site updating.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_SiteAlreadyExists">
+            <summary>
+              Looks up a localized string similar to Site already exists.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_SiteDoesNotExists">
+            <summary>
+              Looks up a localized string similar to Site does not exists.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_SiteWithSuchCustomerSiteIdAlreadyExistsForCurrentCustomer">
+            <summary>
+              Looks up a localized string similar to Site with such CustomerSiteId already exists for current customer.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_SiteWithSuchNpiAlreadyExistsForCurrentCustomer">
+            <summary>
+              Looks up a localized string similar to Site with such NPI already exists for current customer.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_SubdomainIsNotAvailable">
+            <summary>
+              Looks up a localized string similar to Subdomain Name already exists.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.ErrorCode_TokenNotProvided">
+            <summary>
+              Looks up a localized string similar to Security token was not available.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.RangeAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to The field {0} should be within range {1} - {2}.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.RegularExpressionAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to The field {0} contains invalid characters.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.RequiredAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to The {0} field is required.
+            </summary>
+        </member>
+        <member name="P:CustomerService.Web.Api.Resources.GlobalStrings.StringLengthAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to The field {0} must be a string with a maximum length of {1}.
+            </summary>
+        </member>
+        <member name="T:CustomerService.Web.Api.WebApiCompositionRoot">
+            <summary>
+            WebApiCompositionRoot.
+            </summary>
+        </member>
+        <member name="M:CustomerService.Web.Api.WebApiCompositionRoot.Compose(LightInject.IServiceRegistry)">
+            <summary>
+            Composes services by adding services to the <paramref name="serviceRegistry" />.
+            </summary>
+            <param name="serviceRegistry">The target <see cref="T:LightInject.IServiceRegistry" />.</param>
+        </member>
+    </members>
+</doc>

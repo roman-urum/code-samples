@@ -1,0 +1,30 @@
+﻿<script id="scaleAnswersControlTemplate" type="text/template">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 js-scale-answers">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10 offset-0">
+                    <div class="clearfix">
+                        <% if (lowLabel !== null) { %>
+                            <span class="pull-left scale-answer-label min"><%=lowLabel.value%></span>
+                        <% } %>
+                        <% if (highLabel !== null) { %>
+                            <span class="pull-right scale-answer-label max"><%=highLabel.value%></span>
+                        <% } %>
+                        <% if (midLabel !== null) { %>
+                            <span class="pull-center scale-answer-label mid"><%=midLabel.value%></span>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1 text-right"><%=lowValue%></div>
+                <div class="col-sm-10 offset-0">
+                    <input class="scale" type="text" data-slider-min="<%=lowValue%>" data-slider-max="<%=highValue%>" data-slider-step="1" data-slider-value="0" />
+                </div>
+                <div class="col-sm-1"><%=highValue%></div>
+            </div>
+        </div>
+    </div>
+</script>

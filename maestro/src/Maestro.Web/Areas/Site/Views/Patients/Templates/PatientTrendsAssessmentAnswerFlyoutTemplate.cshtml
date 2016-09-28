@@ -1,0 +1,27 @@
+<script id="patientTrendsAssessmentAnswerFlyoutTemplate" type="text/template">
+
+    <span class="chart-flyout assessment-answer-flyout">
+        <span class="header">
+            <span><%= headerText %></span>
+            <a href="" class="close js-close-tooltip"><i class="fa fa-times-circle"></i></a>
+        </span>
+        <span class="text-block">
+            <label>Response:</label>
+            <span style="color: <%= answerTextColor %>"><%= answerText %></span>
+        </span>
+        <% if (readingItems.length > 1) { %>
+            <span class="text-block">No. of Responses: <%= readingItems.length %></span>
+            <span class="text-block">
+                <ul class="readings">
+                    <% _.each(readingItems, function (reading) { %>
+                        <li>
+                            <span style="color: <%= reading.textColor %>">
+                                <%= reading.text %>
+                            </span>
+                        </li>
+                    <% }); %>
+                </ul>
+            </span>
+        <% } %>
+    </span>
+</script>

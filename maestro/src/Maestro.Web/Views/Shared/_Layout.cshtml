@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css/fonts.css")
+    @Styles.Render("~/bundles/css")
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.Action("PasswordExpirationModal", "Account", new { area = string.Empty })
+        @Html.Partial("_SessionExpirationModal")
+    }
+
+    @RenderBody()
+
+    @Html.Partial("_GlobalStrings")
+    @if (ViewBag.IsRequireJsEnabled == null || !ViewBag.IsRequireJsEnabled)
+    {
+        @Scripts.Render("~/bundles/js/common")
+    }
+    else
+    {
+        <script src="/Content/js/libs/require.min.js"></script>
+        <script src="/Content/js/config.js"></script>
+
+        if (!string.IsNullOrEmpty(ViewBag.AppId))
+        {
+            string appId = HttpContext.Current.IsDebuggingEnabled ?
+                string.Format("{0}.js?ver={1}", ViewBag.AppId, DateTime.Now.ToString("HH:mm:ss.ffff")) :
+                string.Format("{0}.min.js?ver={1}", ViewBag.AppId, typeof(MvcApplication).Assembly.GetName().Version);
+
+            <script src="@string.Format("/Content/js/{0}", appId)"></script>
+        }
+    }
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

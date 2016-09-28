@@ -1,0 +1,175 @@
+﻿@using System.Web.UI.WebControls
+@using Maestro.Domain.Constants
+@using Newtonsoft.Json
+@model dynamic
+
+@{
+    ViewBag.AppId = "appDashboard";
+
+    var constants = Model != null ? JsonConvert.SerializeObject(Model) : string.Empty;
+}
+
+<input id="constants" type="hidden" value="@constants"/>
+
+<h1 class="page-header page-header-ci">
+    Dashboard
+    <small>(@SiteContext.Current.Site.Name)</small>
+</h1>
+
+<div class="clearfix" style="margin: 0 -15px;">
+
+    @if (User.IsInCustomerRoles(CustomerUserRoles.CustomerAdmin) || @User.IsInCustomerRoles(CustomerUserRoles.ManageAllPatients))
+    {
+        <div class="row">
+            <div class="col-lg-3">
+
+            </div>
+            <div class="col-lg-9 form-horizontal">
+                <div class="form-group">
+                    <label for="care-managers-filter-dropdown" class="col-sm-2 control-label">View Patients:</label>
+                    <div class="col-sm-5">
+                        <select class="form-control" id="care-managers-filter-dropdown" disabled>
+                            <option value="">Loading...</option>
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    }
+
+    <div class="col-lg-3" id="dashboard-widgets">
+        <div id="sites-list" class="panel panel-default visible">
+            <header class="panel-heading stylized-panel collapsed" style="cursor: pointer;" data-toggle="collapse" aria-controls="sites-list-body" data-target="#sites-list-body" aria-expanded="false">
+                <div class="row">
+                    <div class="col-sm-10">
+                        @SiteContext.Current.Site.Name
+                        <a role="button" class="btn btn-xs btn-primary select-all not-active">Select All</a>
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="caret-icon pull-right"></span>
+                    </div>
+                </div>
+            </header>
+            <div id="sites-list-body" class="panel-collapse collapse" aria-expanded="false">
+                <div class="panel-body no-padding">
+                    <div id="sites-list-body-content"></div>
+                </div>
+            </div>
+        </div>
+        <div id="severity-filter" class="panel panel-default">
+            <header class="panel-heading stylized-panel" style="cursor: pointer;" data-toggle="collapse" aria-controls="severity-filter-body" data-target="#severity-filter-body" aria-expanded="true">
+                <div class="row">
+                    <div class="col-sm-10">
+                        Alert severities
+                        <sup>
+                            <i style="font-size: 80%;" class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></i>
+                        </sup>
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="caret-icon pull-right"></span>
+                    </div>
+                </div>
+            </header>
+            <div id="severity-filter-body" class="panel-collapse collapse in" aria-expanded="true">
+                <div class="panel-body no-padding" style="padding: 0;">
+                    <div class="dashboard-selector-body">
+                        <div class="range-item">
+                            <div class="scale-width-detector">
+                                <span class="scale-range-width-detector">25/50</span>
+                                <span class="scale-name-width-detector">Name</span>
+                            </div>
+                            <div class="scale-item-wrapper">
+                                <div class="scale-item" style="height: 55%;">
+                                    <span class="scale-range">25/50</span>
+                                    <span class="scale-name">Name</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="range-item disabled">
+                            <div class="scale-width-detector">
+                                <span class="scale-range-width-detector">25/50</span>
+                                <span class="scale-name-width-detector">This is very long name</span>
+                            </div>
+                            <div class="scale-item-wrapper">
+                                <div class="scale-item" style="height: 15%;">
+                                    <span class="scale-range">25/50</span>
+                                    <span class="scale-name">This is very long name</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="range-item">
+                            <div class="scale-width-detector">
+                                <span class="scale-range-width-detector">50</span>
+                                <span class="scale-name-width-detector">Simple name</span>
+                            </div>
+                            <div class="scale-item-wrapper">
+                                <div class="scale-item" style="height: 100%;">
+                                    <span class="scale-range">50</span>
+                                    <span class="scale-name">Simple name</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="alert-type-filter" class="panel panel-default">
+            <header class="panel-heading stylized-panel" style="cursor: pointer;" data-toggle="collapse" aria-controls="alert-type-filter-body" data-target="#alert-type-filter-body" aria-expanded="true">
+                <div class="row">
+                    <div class="col-sm-10">
+                        Alert types
+                        <sup>
+                            <i style="font-size: 80%;" class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="Tooltip on right"></i>
+                        </sup>
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="caret-icon pull-right"></span>
+                    </div>
+                </div>
+            </header>
+            <div id="alert-type-filter-body" class="panel-collapse collapse in" aria-expanded="true">
+                <div class="panel-body no-padding">
+                    this is body
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <header class="stylized-panel panel-heading">
+            <div class="row">
+                <div class="col-sm-12">Care Needed</div>
+            </div>
+        </header>
+        <section style="margin-top: 20px" id="patient-list-container">
+            <img src="/Content/img/spinner.gif" class="spinner">
+        </section>
+    </div>
+</div>
+
+@Html.Partial("Templates/WaitTemplate")
+@Html.Partial("Templates/PatientViewNoCards")
+@Html.Partial("Templates/PatientViewWatchPatient")
+
+@Html.Partial("Templates/PatientViewTemplate")
+@Html.Partial("Templates/PatientViewHeader")
+@Html.Partial("Templates/PatientViewHeaderItem")
+@Html.Partial("Templates/PatientViewHeaderBehavior")
+@Html.Partial("Templates/PatientViewHeaderThreshold")
+@Html.Partial("Templates/PatientViewHeaderBloodPressure")
+@Html.Partial("Templates/PatientViewDetailsBloodPressure")
+@Html.Partial("Templates/PatientViewHeaderAdherence")
+@Html.Partial("Templates/PatientViewDetailsAdherence")
+@Html.Partial("Templates/PatientViewDetailsBehavior")
+@Html.Partial("Templates/PatientViewDetailsThreshold")
+@Html.Partial("Templates/PatientViewDetailsFooter")
+@Html.Partial("Templates/PatientViewIgnoreReadingModal")
+@Html.Partial("Templates/AlertTypeItemWidgetView")
+@Html.Partial("Templates/AlertTypeWidgetView")
+@Html.Partial("Templates/AlertSeverityItemWidgetView")
+@Html.Partial("Templates/AlertSeverityWidgetView")
+@Html.Partial("Templates/CareManagersFilterTemplate")
+@Html.Partial("Templates/SitesView")
+@Html.Partial("Templates/OrgItemTreeView")
+@Html.Partial("~/Areas/Site/Views/Patients/Templates/OneWayChatTemplate.cshtml")

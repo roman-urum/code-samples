@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlertResult_AlertSeverityWithSuchIdDoesNotExist" xml:space="preserve">
+    <value>Alert severity with such id does not exist</value>
+  </data>
+  <data name="AlertResult_OneOfProvidedAlertsDoesNotExistOrAlreadyAcknowledged" xml:space="preserve">
+    <value>One of provided alerts doesn't exist or already acknowledged</value>
+  </data>
+  <data name="AlertSeverityResult_NotFound" xml:space="preserve">
+    <value>Alert severity not found</value>
+  </data>
+  <data name="AlertSeverityResult_Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="GreaterThanAttribute_ValidationError" xml:space="preserve">
+    <value>{0} must be greater than {1}</value>
+  </data>
+  <data name="AssessmentMedia_FileAlreadyUploadedError" xml:space="preserve">
+    <value>Assessment media already uploaded</value>
+  </data>
+  <data name="AssessmentMedia_InvalidContentProvidedError" xml:space="preserve">
+    <value>Incorrect file format</value>
+  </data>
+  <data name="AssessmentMedia_NotFoundError" xml:space="preserve">
+    <value>Assessment media not found</value>
+  </data>
+  <data name="HealthSession_NotFound" xml:space="preserve">
+    <value>Health session not found</value>
+  </data>
+  <data name="HealthSession_Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="NoteStatus_HealthSessionElementConflict" xml:space="preserve">
+    <value>Provided HealthSessionElement's identifier is incorrect</value>
+  </data>
+  <data name="NoteStatus_NotFound" xml:space="preserve">
+    <value>Note with such identifier doesn't exist</value>
+  </data>
+  <data name="NoteStatus_MeasurementConflict" xml:space="preserve">
+    <value>Provided Measurement's identifier is incorrect</value>
+  </data>
+  <data name="SuggestedNotableStatus_NameConflict" xml:space="preserve">
+    <value>Notable with such name already exists</value>
+  </data>
+  <data name="SuggestedNotableStatus_NotFound" xml:space="preserve">
+    <value>Notable with such identifier doesn't exist</value>
+  </data>
+  <data name="ThresholdResult_AlertSeverityDoesNotExist" xml:space="preserve">
+    <value>Alert severity sith such identifier doesn't exist</value>
+  </data>
+  <data name="ThresholdResult_ExistingAlertSeverityShouldBeUsed" xml:space="preserve">
+    <value>Existing Alert Severity should be used (if at least one Alert Severity is being used within Customer)</value>
+  </data>
+  <data name="ThresholdResult_Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="ThresholdResult_ThresholdWithSuchIdDoesNotExist" xml:space="preserve">
+    <value>Threshold with such identifier doesn't exist</value>
+  </data>
+  <data name="ThresholdResult_VitalThresholdAlreadyExists" xml:space="preserve">
+    <value>Threshold for this Vital already exists</value>
+  </data>
+  <data name="ThresholdResult_VitalThresholdDoesNotExist" xml:space="preserve">
+    <value>Threshold for this Vital doesn't exist</value>
+  </data>
+  <data name="HealthSession_AssessmentMediaIsNotValid" xml:space="preserve">
+    <value>Incorrect assessment media id</value>
+  </data>
+  <data name="ConditionsStatus_ConditionNotFound" xml:space="preserve">
+    <value>Condition not found</value>
+  </data>
+  <data name="CreateUpdatePatientConditionsStatus_OneOfProvidedConditionsInvalid" xml:space="preserve">
+    <value>One of provided conditions is invalid</value>
+  </data>
+  <data name="HealthSession_HealthSessionWithClientIdAlreadyExists" xml:space="preserve">
+    <value>Health session with such ClientId already exists</value>
+  </data>
+  <data name="Measurement_MeasurementWithClientIdAlreadyExists" xml:space="preserve">
+    <value>Measurement with such ClientId already exists</value>
+  </data>
+  <data name="ThresholdResult_VitalConditionThresholdAlreadyExists" xml:space="preserve">
+    <value>Threshold for this Vital, Severity and Condition already exists</value>
+  </data>
+  <data name="ThresholdResult_ConditionDoesNotExist" xml:space="preserve">
+    <value>Specified condition does not exist</value>
+  </data>
+  <data name="ThresholdResult_ConditionShouldBeSpecified" xml:space="preserve">
+    <value>Condition should be specified.</value>
+  </data>
+  <data name="ConditionsStatus_ConditionAlreadyExistsForThatCustomer" xml:space="preserve">
+    <value>Condition with such name aleary exists for that customer id.</value>
+  </data>
+</root>

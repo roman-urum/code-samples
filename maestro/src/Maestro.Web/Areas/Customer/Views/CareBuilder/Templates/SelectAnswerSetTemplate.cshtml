@@ -1,0 +1,61 @@
+﻿<script id="selectAnswerSetTemplate" type="text/template">
+    
+    <div class="clearfix">
+        <h4 class="pull-left">Answers</h4>
+        <!--<a class="btn btn-primary btn-default btn-sm pull-right" href="#answers-createNew" aria-controls="createNew" role="tab" data-toggle="tab">Create New</a>-->
+    </div>
+
+    <!-- Tab panes -->
+    
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="answers-library">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <select class="form-control" id="answer-type">
+                            <option value="All">All</option>
+                            <option value="SelectionAnswerSet">Multiple Choice</option>
+                            <!--<option value="SelectionAnswerSet">Check List</option>-->
+                            <option value="ScaleAnswerSet">Scale Answer Set</option>
+                            <option value="OpenEndedAnswerSet">Open Ended Answer Set</option>
+                        </select>
+                    </div>
+                     <div class="col-sm-4">
+                        <div class="input-group">
+                            <select id="search-tags" data-placeholder="Search by Tags" data-loading-placeholder="Loading..." class="form-control chosen-select searching-tags"></select>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default js-search-clear" type="button">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" col-sm-4">
+                        <input type="text" class="form-control" id="search-keyword" placeholder="Enter Keyword Here">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel-group panel-group-ci" id="question-accordion" role="tablist" aria-multiselectable="true"></div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="answers-createNew">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="well">
+                        <h5>Select answer set type:</h5>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item"><h5 class="list-group-item-heading bold">Multiple Choice</h5><p class="list-group-item-text">Select one of many available answers.</p></a>
+                            <a href="#" class="list-group-item"><h5 class="list-group-item-heading">Scale</h5><p class="list-group-item-text">Select one of a set of values on a sliding scale.</p></a>
+                            <a href="#" class="list-group-item"><h5 class="list-group-item-heading">Open Ended</h5><p class="list-group-item-text">Free text entry, up to 500 characters.</p></a>
+                            <a href="#" class="list-group-item"><h5 class="list-group-item-heading">Checklist</h5><p class="list-group-item-text">Select multiple available answers.</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

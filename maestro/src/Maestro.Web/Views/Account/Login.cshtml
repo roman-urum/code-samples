@@ -1,0 +1,43 @@
+﻿@using Maestro.Web.Models.Users
+
+@model LoginViewModel
+@{
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+    ViewBag.Title = GlobalStrings.Users_Login_PageTitle;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        
+        <!-- MAIN CONTENT - SITE ADMIN -->
+        <div class="ci-content">
+            @using (Html.BeginForm("Login", "Account", new {returnUrl = Model.ReturnUrl}, FormMethod.Post, new {@class = "form-signin-ci"}))
+            {
+                <h2 class="form-signin-heading-ci">@GlobalStrings.Users_Login_PageTitle</h2>
+
+                @Html.LabelFor(model => model.Email, new {@class = "sr-only"})
+                @Html.TextBoxFor(model => model.Email, new {@type = "email", @autofocus = "autofocus", @required = "required", @placeholder = "Email address", @class = "form-control" })
+
+                @Html.LabelFor(model => model.Password, new {@class = "sr-only"})
+                @Html.PasswordFor(model => model.Password, new {@required = "required", @placeholder = "Password", @class = "form-control" })
+
+                <div class="validation-message-ci">
+                    @Html.ValidationMessage(LoginViewModel.IncorrectCredentialsKey)
+                    @Html.ValidationMessageFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+
+                <button type="submit" class="btn btn-lg btn-primary btn-block">@GlobalStrings.Users_Login_LoginButtonTitle</button>
+
+            }
+        </div>
+
+        <!-- END MAIN CONTENT -->
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/js/jqueryval")
+    @Scripts.Render("~/bundles/js/login")
+}

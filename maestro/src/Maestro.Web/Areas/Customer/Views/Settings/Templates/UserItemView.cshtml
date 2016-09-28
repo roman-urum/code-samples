@@ -1,0 +1,41 @@
+<script id="userItemView" type="text/template">
+
+    <td class="col-xs-4 ci-user-name highlightable">        
+        <a href="/Settings/Users/<%= id %>/Details" class="js-link">
+            <% var firstNameStartHighlightIndex = firstName.toLowerCase().indexOf(searchStr.toLowerCase()); %>            
+            <% var firstNameEndHighlightIndex = firstNameStartHighlightIndex >= 0 ? firstNameStartHighlightIndex + searchStr.length : -1; %>            
+            <span id="user-first-name" class="user-first-name"><%= firstName.substring(0, firstNameStartHighlightIndex) %><span class="highlight"><%= firstName.substring(firstNameStartHighlightIndex, firstNameEndHighlightIndex) %></span><%= firstName.substring(firstNameEndHighlightIndex, firstName.length) %></span>
+            
+            <% var lastNameStartHighlightIndex = lastName.toLowerCase().indexOf(searchStr.toLowerCase()); %>
+            <% var lastNameEndHighlightIndex = lastNameStartHighlightIndex >= 0 ? lastNameStartHighlightIndex + searchStr.length : -1; %>                        
+            <span id="user-first-name" class="user-first-name"><%= lastName.substring(0, lastNameStartHighlightIndex) %><span class="highlight"><%= lastName.substring(lastNameStartHighlightIndex, lastNameEndHighlightIndex) %></span><%= lastName.substring(lastNameEndHighlightIndex, lastName.length) %></span>
+        </a>
+        <br />
+        <% var emailStartHighlightIndex = email.toLowerCase().indexOf(searchStr.toLowerCase()); %>
+        <% var emailEndHighlightIndex = emailStartHighlightIndex >= 0 ? emailStartHighlightIndex + searchStr.length : -1; %>        
+        <a href="mailto:user.Email"><%= email.substring(0, emailStartHighlightIndex) %><span class="highlight"><%= email.substring(emailStartHighlightIndex, emailEndHighlightIndex) %></span><%= email.substring(emailEndHighlightIndex, email.length) %></a>
+        <br />
+        <span id="user-phone"><%= phone %></span>
+    </td>
+
+    <td class="col-xs-2 ci-user-site-block highlightable">
+        <ul class="list-unstyled">
+            <% _.each(sites, function (site) { %>
+                <li><%= site.name %></li>
+            <% }); %>
+        </ul>
+    </td>
+
+    <td class="col-xs-2 highlightable">
+        <div class="label label-success"><%= customerUserRole.name %></div>
+    </td>
+
+    <td class="col-xs-3 highlightable">
+        <input type="checkbox" class="basic-checkbox js-toggle-user" <%= JSON.parse(isEnabled) ? 'checked' : '' %>>
+    </td>
+
+    <td class="col-xs-1">
+        <a href="/Settings/Users/<%= id %>/Edit" class="js-link">@GlobalStrings.Customer_Users_List_EditExistingLink</a>
+    </td>
+
+</script>

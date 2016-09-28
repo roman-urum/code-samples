@@ -1,0 +1,81 @@
+﻿@using Roles = Maestro.Domain.Constants.Roles
+<script id="questionModalSelectionAnswerChoiceTemplate" type="text/template">
+    <div class="panel-heading">
+        <h4 class="panel-title panel-title-sm-ci">
+            <a href="#collapse-answer_<%=id%>" class="collapsed panel-toggle" role="button" data-toggle="collapse" data-parent="#answers" aria-expanded="false">
+                <strong>Answer <%=index%>: </strong> <%=answerString.value%>
+            </a>
+        </h4>
+    </div> 
+    <div class="panel-collapse collapse" id="collapse-answer_<%=id%>" aria-expanded="false">
+        <div class="panel-body">
+            <div class="row form-horizontal">
+                <div class="col-sm-6">
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-3 control-label text-left">ID:</label>
+                        <div class="col-sm-9">
+                            <input class="form-control"
+                                   type="text" 
+                                   name="externalId"
+                                   value="<%=externalId%>"
+                                   data-name="externalId"
+                                   placeholder="Enter ID here" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    @if (User.IsInRole(Roles.SuperAdmin))
+                    {
+                        <div class="form-group form-group-sm">
+                        <label class="col-sm-3 control-label offset-left-0 text-left">CI ID:</label>
+                        <div class="col-sm-9">
+                            <input class="form-control"
+                                   type="text" 
+                                   name="internalId"
+                                   data-name="internalId"
+                                   value="<%=internalId%>"
+                                   placeholder="Enter CI ID here" />
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <div class="row form-horizontal">
+                <div class="col-sm-6">
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-3 control-label text-left">Score:</label>
+                        <div class="col-sm-9">
+                            <input class="form-control"
+                                   type="text" 
+                                   name="externalScore"
+                                   value="<%=externalScore%>"
+                                   placeholder="Enter Score Here"
+                                   data-name="externalScore"
+                                   id="external-score_<%=id%>" />
+                            <span class="help-block hidden" data-validate-for="external-score_<%=id%>"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    @if (User.IsInRole(Roles.SuperAdmin))
+                    {
+                        <div class="form-group form-group-sm">
+                        <label class="col-sm-3 control-label offset-left-0 text-left">CI Score:</label>
+                        <div class="col-sm-9">
+                            <input class="form-control"
+                                   type="text" 
+                                   name="internalScore"
+                                   value="<%=internalScore%>"
+                                   placeholder="Enter Score Here"
+                                   data-name="internalScore"
+                                   id="internal-score_<%=id%>" />
+                            <span class="help-block hidden" data-validate-for="external-score_<%=id%>"></span>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

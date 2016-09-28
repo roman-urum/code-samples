@@ -1,0 +1,24 @@
+<script id="patientTrendsAssessmentChartViewTemplate" type="text/template">
+    <li class="chart-container col-sm-6">
+        <div class="pull-right">
+            <a class="js-reorder">
+                <i class="fa fa-bars fa-invert-ci"></i>
+                Reorder
+            </a>
+            &nbsp;
+            <a class="js-remove">
+                <i class="fa fa-times fa-invert-ci"></i>
+                Remove
+            </a>
+            <!--span><small>Move chart</small></span>
+            <button class="js-move-up">&#8593;</button>
+            <button class="js-move-down">&#8595;</button-->
+        </div>
+        <h3><%=chartLabel%></h3>
+        <div class="clearfix"></div>
+        <div class="chart"></div>
+        <div class="spinner-container" style="display: none;">
+            <img src="/Content/img/spinner.gif" class="spinner" />
+        </div>
+    </li>
+</script>

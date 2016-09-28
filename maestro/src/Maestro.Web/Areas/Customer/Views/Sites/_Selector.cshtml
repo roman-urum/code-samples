@@ -1,0 +1,37 @@
+﻿@model Maestro.Web.Areas.Customer.Models.Sites.SitesSelectorViewModel
+
+<div id="site-selector" class="panel panel-default visible">
+    <header class="panel-heading stylized-panel collapsed" style="cursor: pointer;"
+            data-toggle="collapse"
+            aria-controls="assigned-sites"
+            data-target="#assigned-sites">
+        <div class="row">
+            @if (Model.AvailableSites.Any()) {
+            <div class="col-sm-10">
+                @Model.CurrentSiteName
+            </div>
+            <div class="col-sm-2">
+                <span class="caret-icon pull-right"></span>
+            </div>
+            } else {
+            <div class="col-sm-12">
+                @Model.CurrentSiteName
+            </div>
+            }
+        </div>
+    </header>
+
+    @if (Model.AvailableSites.Any())
+    {
+        <div id="assigned-sites" class="panel-collapse collapse">
+            <div class="panel-body no-padding">
+                <ul class="list-unstyled">
+                    @foreach (var site in Model.AvailableSites)
+                    {
+                        <li><a href="@Url.Action("Index", "Dashboard", new { siteId = site.Id, area = "Site"})">@site.Name</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+</div>

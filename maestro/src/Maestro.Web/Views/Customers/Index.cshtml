@@ -1,0 +1,65 @@
+﻿@using Maestro.Web.Models.Customers
+@model CustomerListViewModel
+
+@{
+    ViewBag.Title = "Administration";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+<!-- PAGE HEADER / BREADCRUMBS -->
+<h1 class="page-header-ci">@GlobalStrings.Customers_Search_PageTitle</h1>
+<!-- END PAGE HEADER / BREADCRUMBS -->
+
+<div class="ci-content">
+    @if (User.IsInRole(Maestro.Domain.Constants.Roles.SuperAdmin))
+    {
+        <div class="row">
+            <div class="col-xs-12">
+                @GlobalStrings.Customers_Search_ChangeSettingsAssumption
+                @Html.ActionLink(@GlobalStrings.Customers_Search_ChangeSettingsLink, "Index", new {area = "Settings", controller = "Admins"}) 
+            </div>
+        </div>
+    }
+    
+    <div class="row">
+        <div class="col-sm-3">
+            <h2 class="ci-page-subheader">@GlobalStrings.Customers_Search_SitesListTitle</h2>
+        </div>
+        
+        @if (User.IsInRole(Maestro.Domain.Constants.Roles.SuperAdmin))
+        {
+            <div class="col-sm-9 subhead-add-link">
+                <a class="add-cust" href="#" data-toggle="modal">@GlobalStrings.Customers_Search_AddCustomerButton</a>
+            </div>
+        }
+    </div>
+    
+    <!-- SEARCH FILTER -->
+    <div class="row">
+        <div class="col-sm-4">
+            <p>@GlobalStrings.Customers_Search_SelectCustomerAssumption</p>
+            <form class="site-filter form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control filter-input" placeholder="@GlobalStrings.Customers_Search_SearchFieldPlaceholder">
+                        <div class="input-group-addon"><a href="#" class="submit-site-filter"><span class="glyphicon glyphicon-search"></span></a></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END SEARCH FILTER -->
+    
+    <!-- USER LIST -->
+    @Html.Partial("_CustomersList", Model)
+    <!-- END USER LIST -->
+</div>
+
+@Html.Partial("CreateCustomer", new CreateCustomerViewModel())
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/js/customerslist")
+    @Scripts.Render("~/bundles/js/jqueryval")
+}

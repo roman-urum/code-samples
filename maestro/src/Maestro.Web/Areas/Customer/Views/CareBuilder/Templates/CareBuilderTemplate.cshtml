@@ -1,0 +1,141 @@
+@using Maestro.Domain.Enums
+@using Roles = Maestro.Domain.Constants.Roles
+
+<script id="CareBuilderTemplate" type="text/template">
+
+    <!-- PAGE HEADER / BREADCRUMBS -->
+    <h1 class="page-header-ci">@GlobalStrings.Edit_Customer_CareBuilderTitleText</h1>
+
+    <ol class="breadcrumb">
+        <li class="active">
+            @GlobalStrings.Edit_Customer_CareBuilderBreadcrumbText
+        </li>
+        <li class="active">
+            <!--Current Page-->
+            @GlobalStrings.Edit_Customer_CareElementsBreadcrumbText
+        </li>
+    </ol>
+
+    <!-- END PAGE HEADER / BREADCRUMBS -->
+    <!-- MAIN CONTENT -->
+    <div class="ci-content">
+        @if (User.IsInRoles(Roles.SuperAdmin) ||
+            User.HasPermissions(
+                CustomerContext.Current.Customer.Id,
+                CustomerUserRolePermissions.ManageCareElements,
+                CustomerUserRolePermissions.ManageHealthProtocols,
+                CustomerUserRolePermissions.ManageHealthPrograms
+            )
+        )
+        {
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-primary pull-right js-add-content">@GlobalStrings.Edit_Customer_CareBuilderAddContentText</button>
+                </div>
+            </div>
+        }        
+        <div class="row">
+            <div class="col-sm-12">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a id="care-elements-tab-link" href="#tab-careElements" aria-controls="home" role="tab" data-toggle="tab">
+                            @GlobalStrings.Edit_Customer_CareBuilderCareElementsTabText
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a id="protocols-and-programs-tab-link" href="#tab-protocolsPrograms" aria-controls="profile" role="tab" data-toggle="tab">
+                            @GlobalStrings.Edit_Customer_CareBuilderProtocolsAndProgramsTabText
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div id="tab-careElements" role="tabpanel" class="tab-pane active">
+                        <h3>Search</h3>
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <select id="care-element-type" class="form-control">
+                                        <option value="0">All</option>
+                                        <option value="1">Multiple Choice</option>
+                                        <option value="2">Scale</option>
+                                        <option value="3">Question</option>
+                                        <option value="4">Text and Media</option>
+                                        <option value="5">Open Ended</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <select id="care-elements-search-tags" data-placeholder="Search by Tags" data-loading-placeholder="Loading..." class="form-control chosen-select searching-tags"></select>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default js-search-clear" type="button">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input id="care-elements-search-keyword" class="form-control" type="text" placeholder="Type keyword here">
+                                            <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12" id="care-elements-list"></div>
+                        </div>
+                    </div>
+                    <div id="tab-protocolsPrograms" role="tabpanel" class="tab-pane">
+                        <h3>Search</h3>
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <select id="protocols-and-programs-type" class="form-control">
+                                        <option value="0">All</option>
+                                        <option value="1">Protocols</option>
+                                        <option value="2">Programs</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <select id="protocols-and-programs-search-tags" data-placeholder="Search by Tags" data-loading-placeholder="Loading..." class="form-control chosen-select searching-tags"></select>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default js-search-clear" type="button">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input id="protocols-and-programs-search-keyword" class="form-control" type="text" placeholder="Type keyword here">
+                                            <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="panel-group panel-group-ci" id="protocols-and-programs-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</script>

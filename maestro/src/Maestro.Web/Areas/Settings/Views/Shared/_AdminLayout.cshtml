@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+<h1 class="page-header-ci">
+    @GlobalStrings.Edit_Customer_AdministrationText
+    <span class="small">(Maestro Default Settings)</span>
+</h1>
+<ol class="breadcrumb breadcrumb-ci">
+    <li><a href="/">@GlobalStrings.Edit_Customer_SiteManagementBreadcrumbText</a></li>
+    <li><a class="active">Edit Maestro Default Settings</a></li>
+</ol>
+
+<!-- END PAGE HEADER / BREADCRUMBS -->
+
+<!-- MAIN CONTENT - MAESTRO DEFAULT SETTINGS -->
+<div class="ci-content">
+
+    <!-- OUTER TAB SHELL FOR DEFAULT SETTINGS -->
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#ci-user-settings">@GlobalStrings.Edit_Customer_UsersTabTitle</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        @RenderBody()
+    </div>
+    <!-- END OUTER TAB SHELL FOR DEFAULT SETTINGS -->
+
+</div>
+<!-- END MAIN CONTENT -->
+
+@section scripts
+{
+    @RenderSection("scripts", required: false)
+}

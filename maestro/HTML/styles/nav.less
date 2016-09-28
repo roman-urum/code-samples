@@ -1,0 +1,43 @@
+/* Left Side Navigation */
+.navbar-ci {
+  .basic-box-shadow();
+  background-color: rgba(69, 69, 69, 0.1);
+  
+  ul {
+    display: block;
+    margin: 0 auto;
+    padding: 1.618em 0 0.618em 0;
+    width: 100%;
+  }
+
+  ul li {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+
+    a {
+      padding: 0;
+      margin: 0 auto 1.618em auto;
+      display: block;
+    }
+    .active {
+      color: @base-link-hover-color;
+    }
+    a:hover, a:focus {
+      color: @base-link-hover-color;
+      -webkit-transition: color 0.2s ease;
+      -moz-transition: color 0.2s ease;
+      -o-transition: color 0.2s ease;
+      transition: color 0.2s ease;
+    }
+
+    .glyphicon {
+      font-size: 40px; 
+    }
+  }
+}
+.navbar-brand-ci {
+  padding: 0;
+}

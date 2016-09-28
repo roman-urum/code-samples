@@ -1,0 +1,31 @@
+<script id="patientDashboardThresholdsViewTemplate" type="text/template">
+    <nav class="navbar navbar-default">
+        <div class="navbar-title-ci">Thresholds</div>
+    </nav>
+
+    <div class="aside-block-content">
+        <% if (isModelFetched) { %>
+        
+            <% if (thresholdsOverlap) {%>
+                <div class="overlap-alert-row">
+                    <span class="glyphicon glyphicon-warning-sign overlap-alert"></span>
+                    <span class="overlap-alert-text">This measurement has or is inheriting thresholds that overlap. This could cause excessive alerts.</span>
+                </div>
+            <% } %>        
+
+            <% if (thresholds.length) { %>        
+                <div>Thresholds set for:</div>
+                <ul>
+                    <% _.each(thresholds, function (thresholdName) { %>
+                    <li><%= thresholdName %></li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No patient specific thresholds set<br>Default thresholds applied</p>
+            <% } %>
+        <% } else { %>
+            <img src="/Content/img/spinner.gif" class="spinner" />
+        <% } %>
+        <a class="btn btn-primary btn-lg js-edit-thresholds" href="/<%=siteId%>/Patients/EditPatient/<%=id%>/Measurements/">Edit Thresholds</a>
+    </div>
+</script>

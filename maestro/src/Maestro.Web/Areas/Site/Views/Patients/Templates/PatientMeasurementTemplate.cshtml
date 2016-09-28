@@ -1,0 +1,189 @@
+<script id="patientMeasurementTemplate" type="text/template">
+	<tbody>
+		<tr>
+			<td>Weight Scale</td>
+			<td colspan="2">
+				<div class="peripherals-capture">Data capture type</div>
+				<div data-toggle="buttons" class="btn-group btn-group-peripherals-ci clearfix">
+					<label class="btn btn-default<%=(peripherals.weight == 'both' ? ' active' : '') %>">
+						<input type="radio" value="both" name="<%=id%>.peripherals.weight">
+						Both Available
+					</label>
+					<label class="btn btn-default<%=(peripherals.weight == 'auto' ? ' active' : '') %>">
+						<input type="radio" value="auto" name="<%=id%>.peripherals.weight">
+						Automatic Only
+					</label>
+					<label class="btn btn-default<%=(peripherals.weight == 'manual' ? ' active' : '') %>">
+						<input type="radio" value="manual" name="<%=id%>.peripherals.weight">
+						Manual Only
+					</label>
+					<label class="btn btn-default btn-none-ci<%=(peripherals.weight == 'none' ? ' active' : '') %>">
+						<input type="radio" value="none" name="<%=id%>.peripherals.weight">
+						None
+					</label>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Blood Pressure Monitor</td>
+			<td colspan="2">
+				<div class="peripherals-capture">Data capture type</div>
+				<div data-toggle="buttons" class="btn-group btn-group-peripherals-ci clearfix">
+					<label class="btn btn-default<%=(peripherals.bloodPressure == 'both' ? ' active' : '') %>">
+						<input type="radio" value="both" name="<%=id%>.peripherals.bloodPressure">
+						Both Available
+					</label>
+					<label class="btn btn-default<%=(peripherals.bloodPressure == 'auto' ? ' active' : '') %>">
+						<input type="radio" value="auto" name="<%=id%>.peripherals.bloodPressure">
+						Automatic Only
+					</label>
+					<label class="btn btn-default<%=(peripherals.bloodPressure == 'manual' ? ' active' : '') %>">
+						<input type="radio" value="manual" name="<%=id%>.peripherals.bloodPressure">
+						Manual Only
+					</label>
+					<label class="btn btn-default btn-none-ci<%=(peripherals.bloodPressure == 'none' ? ' active' : '') %>">
+						<input type="radio" value="none" name="<%=id%>.peripherals.bloodPressure">
+						None
+					</label>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Pulse Oximeter</td>
+			<td colspan="2">
+				<div class="peripherals-capture">Data capture type</div>
+				<div data-toggle="buttons" class="btn-group btn-group-peripherals-ci clearfix">
+					<label class="btn btn-default<%=(peripherals.pulseOx == 'both' ? ' active' : '') %>">
+						<input type="radio" value="both" name="<%=id%>.peripherals.pulseOx">
+						Both Available
+					</label>
+					<label class="btn btn-default<%=(peripherals.pulseOx == 'auto' ? ' active' : '') %>">
+						<input type="radio" value="auto" name="<%=id%>.peripherals.pulseOx">
+						Automatic Only
+					</label>
+					<label class="btn btn-default<%=(peripherals.pulseOx == 'manual' ? ' active' : '') %>">
+						<input type="radio" value="manual" name="<%=id%>.peripherals.pulseOx">
+						Manual Only
+					</label>
+					<label class="btn btn-default btn-none-ci<%=(peripherals.pulseOx == 'none' ? ' active' : '') %>">
+						<input type="radio" value="none" name="<%=id%>.peripherals.pulseOx">
+						None
+					</label>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td-setting">Glucometer</td>
+			<td class="td-setting-type">
+				<div class="peripherals-capture">Data capture type</div>
+				<div data-toggle="buttons" class="btn-group btn-group-peripherals-ci clearfix">
+					<label class="btn btn-default<%=(peripherals.bloodGlucose == 'both' ? ' active' : '') %>">
+						<input type="radio" value="both" name="<%=id%>.peripherals.bloodGlucose">
+						Both Available
+					</label>
+					<label class="btn btn-default<%=(peripherals.bloodGlucose == 'auto' ? ' active' : '') %>">
+						<input type="radio" value="auto" name="<%=id%>.peripherals.bloodGlucose">
+						Automatic Only
+					</label>
+					<label class="btn btn-default<%=(peripherals.bloodGlucose == 'manual' ? ' active' : '') %>">
+						<input type="radio" value="manual" name="<%=id%>.peripherals.bloodGlucose">
+						Manual Only
+					</label>
+					<label class="btn btn-default btn-none-ci<%=(peripherals.bloodGlucose == 'none' ? ' active' : '') %>">
+						<input type="radio" value="none" name="<%=id%>.peripherals.bloodGlucose">
+						None
+					</label>
+				</div>
+			</td>
+			<td>
+				<div class="js-glucometer-device-type">
+					<div class="peripherals-capture">Device type</div>
+					<div class="radio">
+						<label>
+							<input type="radio" value="1" name="<%=id%>.settings.bloodGlucosePeripheral"/>
+							iHealth Glucometer
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" value="3" name="<%=id%>.settings.bloodGlucosePeripheral"/>
+							Glooko Glucometer
+						</label>
+				    </div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Spirometer</td>
+			<td colspan="2">
+				<div class="peripherals-capture">Data capture type</div>
+				<div data-toggle="buttons" class="btn-group btn-group-peripherals-ci clearfix">
+					<label class="btn btn-default<%=(peripherals.peakFlow == 'both' ? ' active' : '') %>">
+						<input type="radio" value="both" name="<%=id%>.peripherals.peakFlow">
+						Both Available
+					</label>
+					<label class="btn btn-default<%=(peripherals.peakFlow == 'auto' ? ' active' : '') %>">
+						<input type="radio" value="auto" name="<%=id%>.peripherals.peakFlow">
+						Automatic Only
+					</label>
+					<label class="btn btn-default<%=(peripherals.peakFlow == 'manual' ? ' active' : '') %>">
+						<input type="radio" value="manual" name="<%=id%>.peripherals.peakFlow">
+						Manual Only
+					</label>
+					<label class="btn btn-default btn-none-ci<%=(peripherals.peakFlow == 'none' ? ' active' : '') %>">
+						<input type="radio" value="none" name="<%=id%>.peripherals.peakFlow">
+						None
+					</label>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Thermometer</td>
+			<td colspan="2">
+				<div class="peripherals-capture">Data capture type</div>
+				<div data-toggle="buttons" class="btn-group btn-group-peripherals-ci clearfix">
+					<label class="btn btn-default<%=(peripherals.temperature == 'both' ? ' active' : '') %>">
+						<input type="radio" value="both" name="<%=id%>.peripherals.temperature">
+						Both Available
+					</label>
+					<label class="btn btn-default<%=(peripherals.temperature == 'auto' ? ' active' : '') %>">
+						<input type="radio" value="auto" name="<%=id%>.peripherals.temperature">
+						Automatic Only
+					</label>
+					<label class="btn btn-default<%=(peripherals.temperature == 'manual' ? ' active' : '') %>">
+						<input type="radio" value="manual" name="<%=id%>.peripherals.temperature">
+						Manual Only
+					</label>
+					<label class="btn btn-default btn-none-ci<%=(peripherals.temperature == 'none' ? ' active' : '') %>">
+						<input type="radio" value="none" name="<%=id%>.peripherals.temperature">
+						None
+					</label>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Pedometer</td>
+			<td colspan="2">
+				<div class="peripherals-capture">Data capture type</div>
+				<div data-toggle="buttons" class="btn-group btn-group-peripherals-ci clearfix">
+					<label class="btn btn-default<%=(peripherals.pedometer == 'both' ? ' active' : '') %>">
+						<input type="radio" value="both" name="<%=id%>.peripherals.pedometer">
+						Both Available
+					</label>
+					<label class="btn btn-default<%=(peripherals.pedometer == 'auto' ? ' active' : '') %>">
+						<input type="radio" value="auto" name="<%=id%>.peripherals.pedometer">
+						Automatic Only
+					</label>
+					<label class="btn btn-default<%=(peripherals.pedometer == 'manual' ? ' active' : '') %>">
+						<input type="radio" value="manual" name="<%=id%>.peripherals.pedometer">
+						Manual Only
+					</label>
+					<label class="btn btn-default btn-none-ci<%=(peripherals.pedometer == 'none' ? ' active' : '') %>">
+						<input type="radio" value="none" name="<%=id%>.peripherals.pedometer">
+						None
+					</label>
+				</div>
+			</td>
+		</tr>
+	<tbody>
+</script>

@@ -1,0 +1,43 @@
+<script id="patientsListItemTemplate" type="text/template">
+    <header data-toggle="collapse" class="panel-heading">
+        <div class="row">
+            <div class="col-sm-5">
+                <a class="btn btn-default  btn-xs btn-radius-ci indicator">
+                    <i class="fa fa-angle-down"></i>
+                </a>
+                <a class="panel-heading-text js-patient-show" href="PatientDetails/<%=Id%>/">
+                    <%- obj.FirstName %> <%- obj.LastName %>  <% if(obj.Identifiers.length) { %> 
+                        <% var primaryIdentifier = _.find(obj.Identifiers, function(item) { return item.IsPrimary; }) %>
+                        <% if (primaryIdentifier) { %>
+                            (<%- primaryIdentifier.Value %>)
+                        <% } %>
+                    <% } %>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <% if(obj.Status.code === 0) { %>
+                    <i><%- obj.Status.name %></i>
+                <% } else if(obj.Status.code === 2) { %>
+                    <span><%- obj.Status.name %></span>
+                <% } %>
+            </div>
+            <div class="col-sm-5">
+                <div class="row">
+                    <div class="col-sm-6 text-right">
+                        <strong>Care Managers:</strong>
+                    </div>
+                    <div class="col-sm-6">
+                        <% _.each(obj.CareManagers, function(careManager, counter) { %>
+                            <div><%=careManager.FirstName %> <%=careManager.LastName %></div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="panel-collapse collapse">
+        <div class="panel-body">
+            <img src="/Content/img/spinner.gif" class="spinner" />
+        </div>
+    </div>
+</script>

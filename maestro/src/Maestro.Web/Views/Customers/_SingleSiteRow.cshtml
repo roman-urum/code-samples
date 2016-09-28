@@ -1,0 +1,26 @@
+﻿@using Maestro.Common.Extensions
+@model Maestro.Web.Models.Customers.SingleSiteViewModel
+
+@if (Model != null && Model.Website != null)
+{
+    <div class="row user-item customer-item">
+        <div class="col-sm-4 ci-customer-name" search-value="@Model.Name">
+            @Model.Name
+        </div>
+        <div class="col-sm-4 ci-site-name" search-value="@Model.Website.Name">
+            @Model.Website.Name
+        </div>
+        <div class="col-sm-2 ci-site-state">
+            <strong>@Model.Website.IsActive.ToStateString()</strong>
+
+            @if (!Model.Website.IsPublished)
+            {
+                <span class="text-danger">Not Published</span>
+            }
+        </div>
+
+        <div class="col-sm-2 ci-site-edit">
+            @Html.CustomerActionLink("Edit", Model.Subdomain, "General", "Settings")
+        </div>
+    </div>
+}

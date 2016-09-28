@@ -1,0 +1,62 @@
+﻿<script id="notesItemTemplate" type="text/template">
+    <time class="note-block-time" datetime="<%- obj.CreatedUtc %>"><%- obj.createdUtcFormated %></time>
+    <h4 class="note-block-notables"><% var notablesLength = obj.notables.length; if(notablesLength) { %>
+        <% _.each(obj.notables, function(notable, index) { %>
+        <%- notable %><% if(index !== notablesLength -1) { %>, <% } %>
+        <% }); %>
+        <% } %>
+    </h4>
+    <% if(obj.createdBy) { %>
+    <div class="note-block-author">
+        <strong style="color: #555; padding-bottom: 10px; display: inline-block;">
+            <%- obj.createdBy %>
+        </strong>
+    </div>
+    <% } %>
+    <% if(obj.measurement) { %>
+    <div class="measurement" style="padding-bottom: 10px;">
+        <span style="color: <%- obj.measurement.color %>">
+            <% if(!obj.measurement.isAutomated) { %>*<% } %><%- obj.measurement.value %> <%- obj.measurement.unit %>
+        </span>
+        on <i><%- obj.measurement.date %> on <%- obj.measurement.time %></i>
+    </div>
+    <% } %>
+    <% if(obj.measurementReading) { %>
+    <div class="measurement" style="padding-bottom: 10px;">
+        <% if(!obj.measurementReading.isAutomated) { %>*<% } %>
+        <% if (obj.measurementReading.vitals && obj.measurementReading.vitals.length) { %>
+
+            <% _.each(obj.measurementReading.vitals, function (vital, index) { %>
+                <% if (index > 0) { %>,<% } %>
+                <%- vital.name %>
+                <span style="color: <%= vital.color %>">
+                    <%- vital.value %> <%- vital.unit %>
+                </span>
+            <% }); %>
+
+        <% } %>
+        on <i><%- obj.measurementReading.date %> <%- obj.measurementReading.time %></i>
+    </div>
+    <% } %>
+    <% if(obj.behavior) { %>
+    <div class="behavior" style="padding-bottom: 10px;">
+        <strong><%- obj.behavior.question %> -
+            <span style="color: <%- obj.behavior.color %>">
+                
+                <% _.each(obj.behavior.answers, function(answer, index) {%>
+                    <%- answer %>
+                    <% if (index != obj.behavior.answers.length - 1) {%> , <% } %>
+                <% }) %>
+
+                <!--<%- obj.behavior.answer %>-->
+            </span>
+        </strong>
+        on <i><%- obj.behavior.date %> <%- obj.behavior.time %></i>
+    </div>
+    <% } %>
+    <div class="note-block-text">
+        <div class="note-block-full-text">
+            <%- obj.text %>
+        </div>
+    </div>
+</script>

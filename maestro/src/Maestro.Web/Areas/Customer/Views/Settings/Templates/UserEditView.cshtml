@@ -1,0 +1,194 @@
+<script id="userEditView" type="text/template">
+
+    <div id="ci-edit-customer-user">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="page-header">
+                    <%= firstName || lastName ? firstName + ' ' + lastName : 'New user' %>
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-primary js-submit-user">
+                            @GlobalStrings.Edit_Customer_SaveButtonText
+                        </button>
+                        <a href="" class="btn btn-link js-user-edit-cancel">@GlobalStrings.Edit_Customer_CancelButtonText</a>
+                    </div>
+                </h2>
+            </div>
+        </div>
+
+        <div class="row js-manual-bind">
+            <div class="col-sm-2 ci-text">
+                <label>User Status</label>
+            </div>
+            <div class="col-sm-10">
+                <select name="isEnabled" data-name="isEnabled">
+                    <option value="true">Enabled</option>
+                    <option value="false">Disabled</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Contact Information</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>First Name*</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" name="firstName" data-name="firstName"/>
+                        <span class="help-block hidden"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Last Name*</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" name="lastName" data-name="lastName"/>
+                        <span class="help-block hidden"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Email*</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="email" name="email" data-name="email"/>
+                        <span class="help-block hidden"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Phone</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" name="phone">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>NPI</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" name="nationalProviderIdentificator">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Customer User ID</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" name="customerUserId">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-5 col-sm-offset-1">
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Address1</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" name="address1">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Address2</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" name="address2">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Address3</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" name="address3">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>City</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" name="city">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>State</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" name="state">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Zip Code</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" name="zipCode">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Site Access</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="sites-wrapper"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Permissions</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2 ci-text">
+                <label>Customer Role</label>
+            </div>
+            <div class="col-xs-5">
+                <select class="js-select-role" name="customerUserRoleId" data-name="customerUserRoleId">
+                    <% _.each(rolesCollection, function (role) { %>
+                        <option value="<%= role.id %>"><%= role.name %></option>
+                    <% }); %>
+                </select>
+                <span class="help-block hidden"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="permissions-wrapper"></div>
+            </div>
+        </div>
+
+    </div>
+
+</script>

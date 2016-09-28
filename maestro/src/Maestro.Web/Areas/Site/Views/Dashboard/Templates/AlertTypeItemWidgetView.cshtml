@@ -1,0 +1,14 @@
+﻿<script id="alertTypeItemWidgetView" type="text/template">
+    <div class="scale-item-wrapper">
+        <span class="scale-name"><%- obj.NAME %></span>
+        <div class="scale-item" style="width: <%- obj.PERCENTAGE %>%; background: <%- obj.COLOR %>;"></div>
+        <span class="scale-range">
+            <% if(!obj.COUNT) { %>
+            <%- 0 %>
+            <% } else if(obj.TOTALCOUNT !== obj.COUNT) { %>
+            <%- obj.COUNT %>/<%- obj.TOTALCOUNT %>
+            <% } else { %>
+            <%- obj.TOTALCOUNT %>
+            <% } %></span>
+    </div>
+</script>

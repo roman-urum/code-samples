@@ -1,0 +1,12 @@
+﻿<script id="patientCardViewTemplateHeaderBloodPressure" type="text/template">
+    <div class="col-sm-9">
+        Blood Pressure
+        <strong>
+            <% if(!obj.reading.isAutomated) { %>*<% } %><span style="color: <%- obj.reading.measurement.vitals.systolicBloodPressure.color %>"><%- obj.reading.measurement.vitals.systolicBloodPressure.value %></span>/<span style="color: <%- obj.reading.measurement.vitals.diastolicBloodPressure.color %>"><%- obj.reading.measurement.vitals.diastolicBloodPressure.value %></span> <%- obj.unitLabel %>
+        </strong>
+        on <%- obj.reading.measurement.vitals.systolicBloodPressure.formattedDate %>
+    </div>
+    <div class="col-sm-3 text-right">
+        <strong><%- obj.reading.alert.type.NAME %></strong>
+    </div>
+</script>

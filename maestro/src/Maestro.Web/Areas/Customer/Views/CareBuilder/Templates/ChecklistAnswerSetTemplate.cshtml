@@ -1,0 +1,44 @@
+﻿<script id="checkListAnswerSetTemplate" type="text/template">
+    <div class="panel panel-info">
+        <div class="panel-heading" role="tab" id="answer-headingFour">
+            <h3 class="panel-title">
+                <a class="collapsed panel-toggle" role="button" data-toggle="collapse" data-parent="#question-accordion" href="#collapse-answer_<%=Id%>" aria-expanded="false" aria-controls="collapse-answer_<%=Id%>">
+                    <%=Name%>
+                </a>
+                <span class="pull-right">
+                    <em>Checklist</em>
+                    <a href="#" class="js-select-answer-set" answer-set-id="<%=Id%>">Select</a>
+                </span>
+            </h3>
+        </div>
+        <div id="collapse-answer_<%=Id%>" class="panel-collapse collapse" role="tabpanel">
+            <div class="panel-body">
+                <div class="careElement">
+                    <% _.each(SelectionAnswerChoices, function(answerChoice){ %>
+
+                        <div class="checkbox">
+                            <label for="checkbox_001">
+                                <input name="checkbox_001" type="checkbox" value="">
+                                <%=answerChoice.AnswerString.Value%>
+                            </label>
+                        </div>
+
+                    <% }); %>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="row careElement">
+                    <% _.each(Tags, function(tag) { %>
+
+                    <span class="tag btn-link">
+                        <span class="tag-x cursor-pointer">
+                            <span class="tag-name"><%= tag %></span>
+                        </span>
+                    </span>
+
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

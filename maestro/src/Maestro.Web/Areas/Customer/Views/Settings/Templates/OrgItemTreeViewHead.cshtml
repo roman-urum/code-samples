@@ -1,0 +1,22 @@
+<script id="orgItemTreeViewHead" type="text/template">
+
+    <div class="org-head js-org-head-details">
+        <span class="tree-icon fa fa-caret-down js-toggle-branch"></span>
+        <span class="folder-icon fa fa-folder-o"></span>
+        <span class="name"><%= name %></span>
+        <span class="actions">
+            <% if (!isRoot) { %>
+                <span class="actions-item">
+                    <a href="" class="js-suborg-edit">edit</a>
+                </span>
+            <% } %>
+            <span class="actions-item">
+                <a href="" class="js-suborg-add">add sub-org</a>
+            </span>
+            <span class="actions-item">
+                <a href="" class="js-site-add">add site</a>
+            </span>
+        </span>
+    </div>
+
+</script>

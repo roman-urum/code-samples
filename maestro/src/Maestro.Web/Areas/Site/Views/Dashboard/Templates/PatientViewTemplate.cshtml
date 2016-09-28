@@ -1,0 +1,18 @@
+﻿<script id="patientCardViewTemplate" type="text/template">
+    <header data-toggle="collapse" class="panel-heading patient-card-header">
+        <span class="color-line" style="background: <%- obj.cardColor %>"></span>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4>
+                        <a class="show-patient-page" href="<%- obj.url %>/Patients/PatientDetails/<%- obj.patientInfo.id %>/"><%- obj.patientInfo.name %></a>
+                    </h4>
+                </div>
+                <div class="col-sm-9 card-header"></div>
+            </div>
+    </header>
+    <div class="panel-collapse collapse">
+        <div class="panel-body no-padding">
+            <img src="/Content/img/spinner.gif" class="spinner">
+        </div>
+    </div>
+</script>

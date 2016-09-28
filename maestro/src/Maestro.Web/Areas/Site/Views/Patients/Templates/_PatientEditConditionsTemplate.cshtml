@@ -1,0 +1,48 @@
+@using Maestro.Web.Resources
+<div class="clearfix">
+    <h3>Patient Conditions</h3>
+    <!--<div class="pull-left">
+            <span class="glyphicon glyphicon-question-sign"
+                  data-toggle="popover"
+                  data-content="
+                    <p>Use this form to specify which measurements you would like to collect from your patient.
+                    </p>
+                    <p>Automated Entry will allow the patient to collect readings through peripheral devices. Manual Entry will allow your patient to type in their measurements by hand.
+                    </p>
+                    <p>Turning on either Automated or Manual entry will allow you to configure thresholds in the below panels.
+                    </p>"
+                  data-original-title="Collect Measurements"
+                  title="Collect Measurements">
+            </span>
+    </div>-->
+</div>
+
+<div class="row">
+    <div class="col-sm-6"><a class="js-assign-all-conditions">Assign All</a></div>
+    <div class="col-sm-6"><a class="js-remove-all-conditions">Remove All</a></div>
+</div>
+<div class="row">
+    <div class="col-sm-6 conditions-container available-conditions-container">
+        <div id="available-conditions-container"></div>
+        <div class="box-overlay" style="display: none;"></div>
+    </div>
+    <div class="col-sm-6 conditions-container assigned-conditions-container">
+        <div id="assigned-conditions-container"></div>
+    </div>
+</div>
+
+<div class="well">
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="EditPatient<% if ( typeof id !== "undefined" ) { %>/<%=id%><% }else{ %>/id<% } %>/CareManagers/" class="btn btn-danger js-patient-conditions-save">
+                @GlobalStrings.Patient_SaveAndNextTabText
+            </a>
+            <a href="PatientDetails<% if ( typeof id !== "undefined" ) { %>/<%=id%><% }else{ %>/id<% } %>/" class="btn btn-primary js-patient-conditions-save">
+                @GlobalStrings.Patient_SaveAndExitText
+            </a>
+            <a href="<% if ( typeof id !== "undefined" ) { %>PatientDetails/<%=id%><% } %>/" class="btn btn-link js-patient-conditions-cancel">
+                @GlobalStrings.Edit_Customer_CancelButtonText
+            </a>
+        </div>
+    </div>
+</div>

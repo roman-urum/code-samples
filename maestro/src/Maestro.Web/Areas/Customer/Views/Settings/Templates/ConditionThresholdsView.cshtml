@@ -1,0 +1,34 @@
+<script id="conditionThresholdsView" type="text/template">
+
+    <div class="thresholds-board">
+        <h3 id="thresholds-title">Limit-Based Thresholds</h3>
+
+        <span class="glyphicon glyphicon-question-sign"
+              data-toggle="popover"
+              data-content="<p>Assigning this condition to a patient will assign the below thresholds to the patient except where a limit-based thresholds has been applied directly in the patient's profile.</p><p>Editing condition-level limits will update all patient threshold settings that are inheriting from this condition.</p>"
+              data-original-title="Default Health Sessions"
+              title="Setting Limit-Based Thresholds Defaults">
+        </span>
+
+        <div class="thresholds-container">
+            <img src="/Content/img/spinner.gif" class="spinner" />
+        </div>
+        <br />
+        <div class="well">
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="#" class="btn btn-danger js-save-condition-thresholds-and-next-button">
+                        @GlobalStrings.Patient_SaveAndNextTabText
+                    </a>
+                    <a href="#" class="btn btn-primary js-save-condition-thresholds-and-exit-button">
+                        @GlobalStrings.Patient_SaveAndExitText
+                    </a>
+                    <a href="#" class="btn btn-link js-cancel-button">
+                        @GlobalStrings.Edit_Customer_CancelButtonText
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>

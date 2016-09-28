@@ -1,0 +1,81 @@
+@using Maestro.Domain.Enums
+@using Roles = Maestro.Domain.Constants.Roles
+
+<script id="mainView" type="text/template">
+    <div>
+        <ul class="nav nav-tabs main-settings-sections">
+            @if (User.IsInRoles(Roles.SuperAdmin) ||
+                User.HasPermissions(
+                    CustomerContext.Current.Customer.Id,
+                    CustomerUserRolePermissions.ViewCustomerSettings,
+                    CustomerUserRolePermissions.ManageCustomerSettings
+                )
+            )
+            {
+                <li>
+                    <a href="#content-general" id="tab-general" data-href="@Url.Action("General", "Settings")" class="js-link js-tab-link">@GlobalStrings.Edit_Customer_CustomerSettingsTabTitle</a>
+                </li>
+            }
+
+            @if (User.IsInRoles(Roles.SuperAdmin) ||
+                User.HasPermissions(
+                    CustomerContext.Current.Customer.Id,
+                    CustomerUserRolePermissions.ManageCustomerSites
+                )
+            )
+            {
+                <li>
+                    <a href="#content-sites" id="tab-sites" data-href="@Url.Action("Sites", "Settings")" class="js-link js-tab-link">@GlobalStrings.Edit_Customer_SitesTabTitle</a>
+                </li>
+            }
+
+            @if (User.IsInRoles(Roles.SuperAdmin) ||
+                User.HasPermissions(
+                    CustomerContext.Current.Customer.Id,
+                    CustomerUserRolePermissions.CreateCustomerUsers,
+                    CustomerUserRolePermissions.ViewCustomerUsers,
+                    CustomerUserRolePermissions.ManageCustomerUserDetails,
+                    CustomerUserRolePermissions.ManageCustomerUserPassword,
+                    CustomerUserRolePermissions.ManageCustomerUserPermissions
+                )
+            )
+            {
+                <li>
+                    <a href="#content-users" id="tab-users" data-href="@Url.Action("Users", "Settings")" class="js-link js-tab-link">@GlobalStrings.Edit_Customer_UsersTabTitle</a>
+                </li>
+            }
+
+            @if (User.IsInRoles(Roles.SuperAdmin) ||
+                User.HasPermissions(
+                    CustomerContext.Current.Customer.Id,
+                    CustomerUserRolePermissions.ManageCustomerThresholds
+                )
+            )
+            {
+                <li>
+                    <a href="#content-thresholds" id="tab-thresholds" data-href="@Url.Action("Thresholds", "Settings")" class="js-link js-tab-link">@GlobalStrings.Edit_Customer_ThresholdsTabTitle</a>
+                </li>
+            }
+            
+            @if (User.IsInRoles(Roles.SuperAdmin) ||
+                User.HasPermissions(
+                    CustomerContext.Current.Customer.Id,
+                    CustomerUserRolePermissions.ManageCustomerSettings // ToDo: Add separate permissions
+                )
+            )
+            {
+                <li>
+                    <a href="#content-conditions" id="tab-conditions" data-href="@Url.Action("Conditions", "Settings")" class="js-link js-tab-link">@GlobalStrings.Edit_Customer_ConditionsTabTitle</a>
+                </li>
+            }
+        </ul>
+        
+        <div class="tab-content">
+            <div id="content-general" class="tab-pane"></div>
+            <div id="content-sites" class="tab-pane"></div>
+            <div id="content-users" class="tab-pane"></div>
+            <div id="content-thresholds" class="tab-pane"></div>
+            <div id="content-conditions" class="tab-pane"></div>
+        </div>
+    </div>
+</script>

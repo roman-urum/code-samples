@@ -1,0 +1,9 @@
+<script id="deviceSingleItemTemplate" type="text/template">
+    <span class="glyphicon glyphicon-device-status-<%=status%>-ci"></span>
+    <%=(deviceType ? deviceType : "Other Device")%>
+    <% if(deviceType) { %>
+        <% if(deviceId) { %>
+            (<% if(deviceIdType != null) { %><%=deviceIdTypeLabel%>: <% } %><%=deviceId%>)
+        <% } %>
+    <% } %>
+</script>

@@ -1,0 +1,116 @@
+@using Maestro.Web.Extensions
+
+<header id="header">
+    <nav class="navbar navbar-header-ci">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-header-logo-ci navbar-brand" href="@(User.Identity.IsAuthenticated ? Url.Action("Index", "Customers", new {area = string.Empty}) : "#")"></a>
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-header-ci-toggle" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="navbar-collapse collapse" id="navbar-header-ci-toggle">
+                    <ul class="nav navbar-nav navbar-nav-top-ci">
+                        @{
+                            string dashboardLinkClass = HttpContext.Current.Request.Url.IsRouteMatch("Index", "Dashboard") ? "active" : string.Empty;
+                            string patientsLinkClass =
+                                HttpContext.Current.Request.Url.IsRouteMatch("Index", "Patients", "Site") ||
+                                HttpContext.Current.Request.Url.IsRouteMatch("PatientDetails", "Patients", "Site") ||
+                                HttpContext.Current.Request.Url.IsRouteMatch("CreatePatient", "Patients", "Site") ||
+                                HttpContext.Current.Request.Url.IsRouteMatch("EditPatient", "Patients", "Site") ?
+                                "active" :
+                                string.Empty;
+                            string careBuilderLinkClass =
+                                HttpContext.Current.Request.Url.IsRouteMatch("CareElements", "CareBuilder", "Customer") ||
+                                HttpContext.Current.Request.Url.IsRouteMatch("ProtocolsAndPrograms", "CareBuilder", "Customer") ||
+                                HttpContext.Current.Request.Url.IsRouteMatch("CreateProtocol", "CareBuilder", "Customer") ||
+                                HttpContext.Current.Request.Url.IsRouteMatch("EditProtocol", "CareBuilder", "Customer") ||
+                                HttpContext.Current.Request.Url.IsRouteMatch("CreateProgram", "CareBuilder", "Customer") ||
+                                HttpContext.Current.Request.Url.IsRouteMatch("EditProgram", "CareBuilder", "Customer") ?
+                                "active" :
+                                string.Empty;
+                        }
+
+                        @if (PagePermissions.IsAvailable("Index", "Dashboard", "Site"))
+                        {
+                            <li class="@dashboardLinkClass">
+                                <a href="@Url.SiteAction("Index", "Dashboard")" class="btn btn-link">
+                                    <i class="fa fa-tachometer"></i> Dashboard
+                                </a>
+                            </li>
+                        }
+
+                        @if (PagePermissions.IsAvailable("Index", "Patients", "Site"))
+                        {
+                            <li class="@patientsLinkClass">
+                                <a href="@Url.SiteAction("Index", "Patients")" class="btn btn-link">
+                                    <i class="fa fa-users"></i> Patients
+                                </a>
+                            </li>
+                        }
+
+                        @if (PagePermissions.IsAvailable("CareElements", "CareBuilder", "Customer"))
+                        {
+                            <li class="@careBuilderLinkClass">
+                                <a href="@Url.Action("CareElements", "CareBuilder", new {area = "Customer", subdomain = CustomerContext.Current.Customer.Subdomain})" class="btn btn-link">
+                                    <i class="fa fa-stethoscope"></i> Care Builder
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                    <ul class="nav navbar-nav navbar-nav-user-ci navbar-right">
+                        <li class="dropdown">
+                            <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle dropdown-toggle-user-ci" href="#">
+                                @GlobalStrings.Layout_Header_Welcome
+                                @User.Identity.Name!
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                @if (PagePermissions.IsAvailable("General", "Settings", "Customer"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action("General", "Settings", new { area = "Customer", subdomain = CustomerContext.Current.Customer.Subdomain })" class="btn btn-link">
+                                            Settings
+                                        </a>
+                                    </li>
+                                }
+                                else if (PagePermissions.IsAvailable("CustomerUsers", "Settings", "Customer"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action("CustomerUsers", "Settings", new { area = "Customer", subdomain = CustomerContext.Current.Customer.Subdomain })" class="btn btn-link">
+                                            Settings
+                                        </a>
+                                    </li>
+                                }
+                                else if (PagePermissions.IsAvailable("ManageThresholds", "Settings", "Customer"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action("ManageThresholds", "Settings", new { area = "Customer", subdomain = CustomerContext.Current.Customer.Subdomain })" class="btn btn-link">
+                                            Settings
+                                        </a>
+                                    </li>
+                                }
+
+                                <li>
+                                    @Html.ActionLink(GlobalStrings.Layout_Header_SignOutLink, "Logout", new { controller = "Account", area = string.Empty }, new { @class = "btn btn-link" })
+                                </li>
+                            </ul>
+                        </li>
+                        @*<li class="site-search">
+                            <a href="#" class="btn btn-link btn-link-search">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>*@
+                    </ul>
+                </div>
+            }
+        </div>
+    </nav>
+</header>

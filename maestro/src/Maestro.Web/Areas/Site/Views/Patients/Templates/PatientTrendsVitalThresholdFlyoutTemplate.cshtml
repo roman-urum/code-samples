@@ -1,0 +1,16 @@
+<script id="patientTrendsVitalThresholdFlyoutTemplate" type="text/template">
+    <span class="chart-flyout vital-threshold-flyout">
+        <span class="header">
+            <span><%= chartName %> Thresholds</span>
+            <a href="" class="close js-close-tooltip"><i class="fa fa-times-circle"></i></a>
+        </span>
+        <span class="text-block">
+            <%= isDefault ? 'Default' : 'Patient\'s' %>
+            <span class="threshold-name" style="color: <%= color %>"><%= name %></span>
+            Threshold
+        </span>
+        <span class="text-block"><label>Low Limit:</label> <%= data.minValue %> <%= data.unit %></span>
+        <span class="text-block"><label>High Limit:</label> <%= data.maxValue %> <%= data.unit %></span>
+        <span class="text-block pull-right"><a href="/<%=siteId%>/Patients/EditPatient/<%=id%>/Measurements/">Edit Threshold</a></span>
+    </span>
+</script>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+      <!-- PAGE HEADER -->
+      <header id="header" class="header-ci">
+        <div class="container header-container-ci">
+          <div class="row vertical-align">
+            <div class="col-xs-12 col-sm-3">
+              <a class="navbar-brand navbar-brand-ci" href="#">
+                <img src="img/ci-logo.png" alt="Care Innovations, an Intel - GE Company" width="200"/>
+              </a>
+            </div>
+            <div class="col-xs-12 col-sm-2">
+              <p class="header-welcome">Welcome, <a href="#" class="btn-link-name">(name)</a> !</p>
+            </div>
+            <div class="col-xs-12 col-sm-offset-5 col-sm-2"><button class="btn btn-link pull-right">Sign Out</button>
+            </div>
+          </div>
+        </div>
+      </header>          
+      <!-- END PAGE HEADER --> 
+      
+      <div id="main"> <!--need further styling? add class="main" or class="main main-ci"> to this div (id="main") but don't style the #main at all please. Need to add JS functionality? add class="js-main" or similar. again, don't attach functionality to the existing ID.-->
+        <div class="container">
+          <div class="row">
+
+            <!-- SIDE NAVIGATION -->
+            <div class="col-sm-1 padding-none">
+              <nav class="navbar navbar-ci" role="navigation">
+                <ul class="nav navbar-nav">
+                  <li><a href="#" class="btn btn-link"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><br />Home</a></li>
+                  <li><a href="#" class="btn btn-link"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><br />Patients</a></li>
+                  <li><a href="#" class="btn btn-link"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><br />Calendar</a></li>
+                  <li><a href="#" class="btn btn-link"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span><br />Care Builder</a></li>
+                  <li><a href="#" class="btn btn-link"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><br />Reports</a></li>
+                  <li><a href="#" class="btn btn-link"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span><br />Settings</a></li>
+                </ul>
+              </nav>
+            </div>
+            <!-- END SIDE NAVIGATION -->
+
+            <div class="col-sm-11 padding-left-2x">
+
+              <!-- PAGE HEADER / BREADCRUMBS -->
+              <h1 class="page-header-ci">Maestro 2: Reset Password</h1>
+              <ol class="breadcrumb breadcrumb-ci">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Section</a></li>
+                <li class="active">Current Page</li>
+              </ol>
+              <!-- END PAGE HEADER / BREADCRUMBS -->           
+              <!-- MAIN CONTENT - SITE ADMIN -->
+              <div class="ci-content">
+                <form class="ci-reset-form">
+                  <div class="row">
+                    <div class="col-xs-2 ci-text"><label for="login-email"><strong>Enter Password:</strong></label></div>
+                    <div class="col-xs-10">
+                      <input id="login-password" class="input-validation-error" type="password">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-2 ci-text"><label for="login-password"><strong>Re-enter Password:</strong></label></div>
+                    <div class="col-xs-10">
+                      <input id="login-password" type="password" class="input-validation-error">
+                      <div class="input-sub-note x-small error-state">The passwords you entered do not match.</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-6 text-right">
+                      <button type="submit" class="btn btn-primary">Sign In</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- END MAIN CONTENT -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="vendor/jquery/dist/jquery.min.js"></script>
+      <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    </body>
+    </html>

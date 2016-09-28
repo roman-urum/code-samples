@@ -1,0 +1,19 @@
+<script id="siteItemView" type="text/template">
+
+    <div class="org-head-overlay-container site-item">
+        <div class="org-head">
+            <span class="site-icon fa-stack fa-lg <%= isActive ? 'site-enabled' : 'site-disabled' %>">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+            </span>
+                <span class="name"><%= name %></span>
+            <span class="actions">
+                <span class="actions-item">
+                    <a href="" class="js-site-edit">site properties</a>
+                </span>
+            </span>
+        </div>
+        <div class="node-overlay" style="display: none;"></div>
+    </div>
+
+</script>

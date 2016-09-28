@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "{0} ({1})".FormatWith(GlobalStrings.Edit_Customer_AdministrationText, CustomerContext.Current.Customer.Name);
+    ViewBag.AppId = "appCustomerSettings";
+}
+
+<!-- PAGE HEADER -->
+<h1 class="page-header-ci">
+    @GlobalStrings.Edit_Customer_AdministrationText:
+    @CustomerContext.Current.Customer.Name
+</h1>
+<!-- END PAGE HEADER -->
+
+<!-- MAIN CONTENT -->
+<div class="ci-content customer-settings-container"></div>
+
+@Html.Partial("Templates/GeneralSettingsView")
+@Html.Partial("Templates/MainView")
+@Html.Partial("Templates/OrgItemTreeView")
+@Html.Partial("Templates/OrgItemTreeViewHead")
+@Html.Partial("Templates/OrgItemTreeViewHeadEdit")
+@Html.Partial("Templates/OrgSelectItemTreeView")
+@Html.Partial("Templates/OrgsView")
+@Html.Partial("Templates/SiteEditView")
+@Html.Partial("Templates/SiteItemEditView")
+@Html.Partial("Templates/SiteItemView")
+@Html.Partial("Templates/SiteSelectItemView")
+@Html.Partial("Templates/SitesView")
+@Html.Partial("Templates/SpinnerTemplate")
+@Html.Partial("Templates/ThresholdsView")
+@Html.Partial("Templates/UserDetailsView")
+@Html.Partial("Templates/UserEditView")
+@Html.Partial("Templates/UserItemView")
+@Html.Partial("Templates/UserPermissionsView")
+@Html.Partial("Templates/UsersCollectionView")
+@Html.Partial("Templates/UsersFiltersView")
+@Html.Partial("Templates/UsersView")
+@Html.Partial("Templates/ConditionsCollectionView")
+@Html.Partial("Templates/ConditionsView")
+@Html.Partial("Templates/ConditionItemView")
+@Html.Partial("Templates/NoConditionsView")
+@Html.Partial("Templates/ConditionEditLayoutView")
+@Html.Partial("Templates/ConditionDetailsView")
+@Html.Partial("Templates/ConditionThresholdsView")
+@Html.Partial("Templates/ConditionContentView")
+@Html.Partial("Templates/NoProgramsFoundView")
+@Html.Partial("Templates/NoProtocolsFoundView")
+@Html.Partial("Templates/ProgramListItemTemplate")
+@Html.Partial("Templates/ProtocolListItemTemplate")
+<!-- END MAIN CONTENT -->

@@ -1,0 +1,21 @@
+<script id="textMediaElementItemMediaTemplate" type="text/template">
+    <div class="media media-preview-ci">
+        <div class="media-left media-middle">
+        <% if( contentType.match('image') ) { %>
+            
+            <% if (thumbnailUrl) { %>
+                <img src="<%=thumbnailUrl%>" class="thumbnail thumbnail-ci" alt="">
+            <% } else {%>
+                <span class="glyphicon glyphicon-question-sign"></span>
+            <% } %>
+
+        <% } else { %>
+            <span class="glyphicon glyphicon-file thumbnail"></span>
+        <% } %>
+        </div>
+        <div class="media-body">
+            <p class="strong"><%=name%></p>
+            <p><%=description%></p>
+        </div>
+    </div>
+</script>

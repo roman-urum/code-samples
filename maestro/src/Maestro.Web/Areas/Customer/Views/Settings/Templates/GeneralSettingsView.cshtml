@@ -1,0 +1,94 @@
+<script id="generalSettingsView" type="text/template">
+
+    <div class="row save-form-wrap">
+        <div class="col-sm-3">
+            <button type="submit" class="btn btn-primary js-settings-submit">
+                @GlobalStrings.Edit_Customer_SaveButtonText
+            </button>
+        </div>
+        <div class="col-sm-9 ci-text">
+            <span class="error-state json-message">
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3 ci-text form-label">
+            Customer name:
+        </div>
+        <div class="col-sm-3">
+            <input class="form-control col-sm-6" type="text" name="customerName" data-name="customerName">
+            <span class="help-block hidden"></span>
+            <span class="input-sub-note x-small">@GlobalStrings.Edit_Customer_CustomerNameFieldNote</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3 ci-text form-label">
+            Logo:
+        </div>
+        <div class="col-sm-3">
+            <input type="file" name="logoImage">
+                <span class="input-sub-note x-small">
+                    Required format: PNG or GIF
+                </span>
+        </div>
+        <div class="col-xs-5">
+            <img id="site-image-preview" src="<%= logoPath %>" class="ci-site-image"
+                 alt="@GlobalStrings.Edit_Customer_LogoAltText" width="250"/>
+            <span class="input-sub-note x-small"><a href="#" id="site-image-remove">Remove</a></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3 ci-text form-label">
+            Password Expiration:
+            <a href="#" class="info-button" data-toggle="tooltip" data-placement="bottom"
+               title="@GlobalStrings.Edit_Customer_PasswordExpirationFieldTooltip"><span
+                    class="glyphicon glyphicon-question-sign"></span></a>
+        </div>
+        <div class="col-sm-3">
+            <div class="f-group">
+                <input class="form-control" type="text" name="passwordExpiration" data-name="passwordExpiration">
+                <span class="help-block hidden"></span>
+                <span class="ci-text unit-label">@GlobalStrings.Edit_Customer_DaysText</span>
+                <span class="input-sub-note x-small">
+                    Any value from 1 to 9999
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3 ci-text form-label">
+            Idle session timeout
+            <a href="#" class="info-button" data-toggle="tooltip" data-placement="bottom"
+               title="@GlobalStrings.Edit_Customer_IdleSessionTimeoutFieldTooltip"><span
+                    class="glyphicon glyphicon-question-sign"></span></a>
+        </div>
+        <div class="col-sm-3">
+            <div class="f-group">
+                <input class="form-control" type="text" name="idleSessionTimeout" data-name="idleSessionTimeout">
+                <span class="help-block hidden"></span>
+                <span class="ci-text unit-label">@GlobalStrings.Edit_Customer_MinutesText</span>
+                <span class="input-sub-note x-small">
+                    Any value from 5 to 20
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" class="js-confirmation-checkbox">
+                    @GlobalStrings.Edit_Customer_DisclaimerContent
+                </label>
+            </div>
+            <div class="input-sub-note x-small">
+            </div>
+        </div>
+    </div>
+
+</script>

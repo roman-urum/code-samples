@@ -1,0 +1,36 @@
+<script id="patientTrendsVitalReadingFlyoutTemplate" type="text/template">
+    <span class="chart-flyout vital-reading-flyout">
+        <span class="header">
+            <span><%= headerText %></span>
+            <a href="" class="close js-close-tooltip"><i class="fa fa-times-circle"></i></a>
+        </span>
+        <% if (readingsNumber > 1) { %>
+            <span class="text-block"><label>Avg Reading:</label> <%= avgText %></span>
+            <span class="text-block"><label>No. of Readings:</label> <%= readingsNumber %></span>
+            <% if (readingsNumber > 5) { %>
+                <span class="text-block"><a href="">View all readings</a></span>
+            <% } %>
+            <span class="text-block">
+                <ul class="readings">
+                    <% _.each(readingItems, function (reading) { %>
+
+                    <li style="color: <%= reading.textColor %>">
+                        <% if (!reading.isAutomated) { %>
+                            <sup class="is-manual"><span class="fa fa-asterisk"></span></sup>
+                        <% } %>
+                        <span><%= reading.date %></span>
+                        <span><%= reading.time %></span>
+                        <span><%= reading.value %></span>
+                    </li>
+
+                    <% }); %>
+                </ul>
+            </span>
+        <% } else { %>
+            <span class="text-block">
+                <label>Reading:</label>
+                <span style="color: <%= avgTextColor %>"><%= avgText %></span>
+            </span>
+        <% } %>
+    </span>
+</script>

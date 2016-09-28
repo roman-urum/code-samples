@@ -1,0 +1,47 @@
+﻿@using Maestro.Domain.Enums
+@using Roles = Maestro.Domain.Constants.Roles
+
+<script id="selectionAnswerSetListItemTemplate" type="text/template">
+    <div class="panel-heading clearfix" role="tab" id="heading-<%= id %>">
+        <input type="hidden" value="<%= id %>" name="Id" />
+        <div class="row">
+            <div class="col-sm-10">
+                <h4 class="panel-title strong">
+                    <a role="button"
+                       class="js-collapsed collapsed panel-toggle"
+                       data-toggle="collapse"
+                       data-parent="#care-elements-list"
+                       href="#collapse-<%= id %>"
+                       aria-expanded="false"
+                       aria-controls="collapse-<%=id%>">
+                        <%= name %>
+                    </a>
+                </h4>
+            </div>
+            <div class="col-sm-2 small italic text-right">
+                Multiple Choice
+            </div>
+        </div>
+
+        <% _.each(tags, function(tag){ %>
+        <span class="label label-info"><%= tag %></span>
+        <% }); %>
+
+    </div>
+    <div id="collapse-<%= id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-<%= id %>">
+        <div class="panel-body">
+        </div>
+        <div class="panel-footer clearfix">
+            <div class="pull-left">
+                <strong>Default Language:</strong> EN-US
+            </div>
+            
+            @if (User.IsInRoles(Roles.SuperAdmin) || User.HasPermissions(CustomerContext.Current.Customer.Id, CustomerUserRolePermissions.ManageCareElements))
+            {
+                <div class="pull-right pull-right-panel-heading-ci">
+                    <a href="#" class="btn btn-primary js-edit-selection-answer-set-item">Edit</a>
+                </div>
+            }            
+        </div>
+    </div>
+</script>

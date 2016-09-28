@@ -1,0 +1,30 @@
+@using Maestro.Web.Resources
+
+<div class="row row-patient-title">
+    <div class="col-sm-12">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle"
+                    data-toggle="dropdown"
+                    aria-haspopup="true" 
+                    aria-expanded="false">
+                @GlobalStrings.Devices_NewActivationText 
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="js-new-activation" data-deviceType="Other">@GlobalStrings.Devices_MobileDeviceTypeText</a></li>
+                <li><a class="js-new-activation" data-deviceType="IVR">@GlobalStrings.Devices_IVRTypeText</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="devices-list-container"></div>
+
+<div class="well">
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="PatientDetails/<%=id%>/" class="btn btn-primary js-patient-device-exit">
+                Exit
+            </a>
+        </div>
+    </div>
+</div>

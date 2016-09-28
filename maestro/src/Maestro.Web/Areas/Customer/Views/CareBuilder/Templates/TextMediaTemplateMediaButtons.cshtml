@@ -1,0 +1,33 @@
+﻿<script id="textMediaElementMediaButtonsTemplate" type="text/template">
+<% if (media) { %>
+
+    <p class="strong"><%= media.get('name') %></p>
+    <p><%= media.get('description') %></p>
+
+<% } %>
+
+<% if (media && !media.isNew()) { %>
+
+    <button role="button" class="btn btn-default js-replace-media-btn">
+        <span class="glyphicon glyphicon-refresh"></span>
+        Replace
+    </button>
+
+<% } else if (!media) { %>
+
+    <button role="button" class="btn btn-default js-add-media-btn">
+        <span class="glyphicon glyphicon-paperclip"></span>
+        Add media
+    </button>
+
+<% } %>
+
+<% if (media) { %>
+
+    <button role="button" class="btn btn-default js-remove-media-btn">
+        <span class="glyphicon glyphicon-paperclip"></span>
+        Remove
+    </button>
+
+<% } %>
+</script>

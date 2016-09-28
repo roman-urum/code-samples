@@ -1,0 +1,12 @@
+﻿<% if(obj.notables.length) { %>
+<div class="input-group">
+    <select class="selectpicker" multiple data-selected-text-format="count">
+        <% if(obj.notables.length > 1) { %>
+        <option value="All">All</option>
+        <% } %>
+        <% _.each(obj.notables, function(notable) { %>
+        <option><%- notable %></option>
+        <% }) %>
+    </select>
+</div>
+<% } %>

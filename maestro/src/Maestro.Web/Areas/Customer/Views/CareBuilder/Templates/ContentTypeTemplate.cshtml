@@ -1,0 +1,53 @@
+﻿@using Maestro.Domain.Enums
+@using Roles = Maestro.Domain.Constants.Roles
+
+@{
+    bool hasManageCareElementsPermissions = User.IsInRoles(Roles.SuperAdmin) || User.HasPermissions(CustomerContext.Current.Customer.Id, CustomerUserRolePermissions.ManageCareElements);
+    bool hasManageHealthProtocolsPermissions = User.IsInRoles(Roles.SuperAdmin) || User.HasPermissions(CustomerContext.Current.Customer.Id, CustomerUserRolePermissions.ManageHealthProtocols);
+    bool hasManageHealthProgramsPermissions = User.IsInRoles(Roles.SuperAdmin) || User.HasPermissions(CustomerContext.Current.Customer.Id, CustomerUserRolePermissions.ManageHealthPrograms);
+
+    string careElementsButtonClass = hasManageCareElementsPermissions ? string.Empty : "disabled";
+    string healthProtocolsButtonClass = hasManageHealthProtocolsPermissions ? string.Empty : "disabled";
+    string healthProgramsButtonClass = hasManageHealthProgramsPermissions ? string.Empty : "disabled";
+}
+
+<script id="contentTypeTemplate" type="text/template">
+    <div class="alert alert-info" role="alert">
+        Please, select the type of content you want to add.
+    </div>
+
+    <h4>Care Element</h4>
+
+    <div class="btn-group btn-group-justified">
+        <a role="button" href="#" class="btn btn-default js-add-question @careElementsButtonClass">
+            <span class="glyphicon glyphicon-question-sign"></span><br>
+            Question
+        </a>
+
+        <a role="button" href="#" class="btn btn-default js-add-answer-set @careElementsButtonClass">
+            <span class="glyphicon glyphicon-info-sign"></span><br>
+            Answer Set
+        </a>
+
+        <a role="button" href="#" class="btn btn-default js-add-text-and-media @careElementsButtonClass">
+            <span class="glyphicon glyphicon-edit"></span><br>
+            Text &amp; Media
+        </a>
+    </div>
+
+    <hr>
+
+    <h4>Protocols and Programs</h4>
+
+    <div class="btn-group btn-group-justified">
+        <a role="button" href="CreateProtocol" class="btn btn-default js-add-protocols-and-programs @healthProtocolsButtonClass">
+            <span class="glyphicon glyphicon-check"></span><br>
+            Protocol
+        </a>
+
+        <a role="button" href="CreateProgram" class="btn btn-default js-add-protocols-and-programs @healthProgramsButtonClass">
+            <span class="glyphicon glyphicon-list"></span><br>
+            Program
+        </a>
+    </div>
+</script>

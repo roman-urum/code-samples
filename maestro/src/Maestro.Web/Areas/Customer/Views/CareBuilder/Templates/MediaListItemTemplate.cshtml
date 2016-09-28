@@ -1,0 +1,18 @@
+﻿<script id="mediaListItemTemplate" type="text/template">
+    <div class="col-md-3">
+        <div class="thumbnail media-tile media-item" media-id="<%=id%>">
+            <% if (contentType.match('image')) { %>
+                <% if (thumbnailUrl) { %>
+                    <img src="<%=thumbnailUrl%>" alt="">
+                <% } else {%>
+                    <span class="glyphicon glyphicon-question-sign"></span>
+                <% } %>
+            <% } else { %>
+                <span class="glyphicon glyphicon-file"></span>
+            <% } %>
+            
+            <div class="media-tile-title" title="<%=name%>"><%=name%></div>
+            <div class="media-tile-body"><%=mimeTypes[contentType] ? mimeTypes[contentType] : "Unknown"%></div>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,40 @@
+<script id="patientDetailedDataViewTemplate" type="text/template">
+    <div class="patient-detailed-data clearfix">
+        @*<nav class="navbar navbar-default">
+            <div class="navbar-title-ci">Detailed Data</div>
+        </nav>*@
+        <div class="row js-detailed-data-date-filter"></div>
+        <div class="row">
+            <div class="col-sm-3 pull-left">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="isGrouped" id="isGrouped" class="js-grouped">
+                        Group by Health Session
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-3 pull-right text-right">
+                <div class="js-accordion-collapse-trigger">
+                    <a class="js-expand-all">Expand All</a>
+                    &emsp;
+                    <a class="js-collapse-all">Collapse All</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 pull-right text-right">
+                <a href="#" class="disabled js-patient-export-detailed-data">
+                    <i class="fa fa-external-link fa-invert-ci"></i>
+                    Export detailed data
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="b-detailed-data js-detailed-data"></div>
+        <div class="b-detailed-data-hint text-right">
+            <span class="italic has-asterisk">
+                manual entry
+            </span>
+        </div>
+    </div>
+</script>

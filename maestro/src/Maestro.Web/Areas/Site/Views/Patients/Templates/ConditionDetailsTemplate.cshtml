@@ -1,0 +1,23 @@
+<script id="conditionDetailsTemplate" type="text/template">
+
+    <div class="condition-details">
+        <h2><%= name %></h2>
+        <p><%= description %></p>
+
+        <div class="condition-details-content">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#condition-thresholds" role="tab" data-toggle="tab">Thresholds</a></li>
+                <li role="presentation"><a href="#condition-content" role="tab" data-toggle="tab">Content</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="condition-thresholds">
+                </div>
+                <div role="tabpanel" class="tab-pane" id="condition-content">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</script>

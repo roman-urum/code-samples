@@ -1,0 +1,12 @@
+<script id="openEndedAnswerSetListItemTemplate" type="text/template">
+    <div class="panel-heading clearfix" role="tab" id="heading-<%= id %>">
+        <div class="row">
+            <div class="col-sm-10">
+                <h4 class="panel-title strong"><%= name %></h4>
+            </div>
+        </div>
+        <% _.each(tags, function(tag){ %>
+        <span class="label label-info"><%= tag %></span>
+        <% }); %>
+    </div>
+</script>

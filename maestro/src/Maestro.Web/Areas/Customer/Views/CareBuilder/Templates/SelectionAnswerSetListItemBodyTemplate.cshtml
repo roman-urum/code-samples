@@ -1,0 +1,15 @@
+﻿<script id="selectionAnswerSetListItemBodyTemplate" type="text/template">
+    <div class="row">
+        <div class="col-sm-2 strong">
+            Answers
+            <% if (isMultipleChoice) { %>
+                <br />@Html.Partial("_MultiSelectLabel")
+            <% } %>
+        </div>
+        <div class="col-sm-10">
+            <% _.each(selectionAnswerChoices.toJSON(), function(answerChoice, index){ %>
+                <%= answerChoice.answerString.value %><br>
+            <% }); %>
+        </div>
+    </div>
+</script>

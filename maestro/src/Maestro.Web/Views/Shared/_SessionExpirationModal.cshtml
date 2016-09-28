@@ -1,0 +1,17 @@
+﻿@using Maestro.Web.Security
+
+<!-- Session timeout in milliseconds-->
+<input type="hidden" id="session-timeout" value="@UserContext.ResumeSessionTimeout"/>
+
+<div class="modal fade session-timeout-modal" id="session-timeout-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                @GlobalStrings.SessionExpirationModal_Message
+            </div>
+            <div class="modal-footer">
+                <button id="btn-resume-session" type="button" class="btn btn-default" data-dismiss="modal">@GlobalStrings.SessionExpirationModal_ConfirmationButton</button>
+            </div>
+        </div>
+    </div>
+</div>

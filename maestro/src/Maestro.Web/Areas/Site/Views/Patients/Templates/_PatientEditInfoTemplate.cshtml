@@ -1,0 +1,232 @@
+@using Maestro.Web.Resources
+@using NodaTime
+
+<div class="row">
+    <div class="col-sm-4">
+        <h3>Status</h3>
+        <div data-toggle="buttons" class="btn-group btn-group-block-ci clearfix">
+            <label class="btn btn-default<%=(status == 1 ? ' active' : '') %>">
+                <input type="radio" value="1" name="status">
+                Active
+            </label>
+            <label class="btn btn-default<%=(status == 2 ? ' active' : '') %>">
+                <input type="radio" value="2" name="status">
+                In Training
+            </label>
+            <label class="btn btn-default<%=(status == 0 ? ' active' : '') %>" >
+                <input type="radio" value="0" name="status">
+                Inactive
+            </label>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div id="form-group-categories-of-care" class="form-group form-group-categories-of-care-ci">
+            <h3>Category Of Care</h3>
+            <select id="categoriesOfCare" data-placeholder="Select Categories Of Care" name="categoriesOfCare" data-name="categoriesOfCare" class="form-control chosen-select categories-of-care"></select>
+        </div>
+    </div>
+</div>
+
+<h3>@GlobalStrings.Patient_KeyIdentifiersText</h3>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="firstName">@GlobalStrings.Patient_FirstName</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" data-name="firstName" value="">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="middleInitial">@GlobalStrings.Patient_MiddleInitial</label>
+            <input type="text" class="form-control" id="middleInitial" name="middleInitial" data-name="middleInitial" value="">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="lastName">@GlobalStrings.Patient_LastName</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" data-name="lastName" value="">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="gender">@GlobalStrings.Patient_Gender</label>
+            <div data-toggle="buttons" class="btn-group btn-group-block-ci clearfix">
+                <label class="btn btn-default<%=(gender == 1 ? ' active' : '') %>">
+                    <input type="radio" id="male" name="gender" value="1">
+                    @GlobalStrings.Gender_Male
+                </label>
+                <label class="btn btn-default<%=(gender == 2 ? ' active' : '') %>">
+                    <input type="radio" id="female" name="gender" value="2">
+                        @GlobalStrings.Gender_Female
+                </label>
+            </div>
+            <span class="help-block help-block-error help-block-gender hidden"></span>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="birthDate">@GlobalStrings.Patient_DateOfBirth</label>
+            <div id="birthDate-datetimepicker" class="input-group date">
+                <input type="text" class="form-control" id="birthDate-dp" name="birthDate-dp" value="">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+            <input type="hidden" id="birthDate" name="birthDate" value="">
+            <span class="help-block help-block-error help-block-birthDate hidden"></span>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="age">@GlobalStrings.Patient_Age</label>           
+            <input type="text" class="form-control" id="age" name="age" value="" readonly="readonly">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+</div>
+
+<div id="patient-identifiers"></div>
+
+<h3>@GlobalStrings.Patient_PatientDemographicsText</h3>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="address1">@GlobalStrings.Patient_Address1</label>
+            <input type="text" class="form-control" id="address1" name="address1" data-name="address1" value="">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="address2">@GlobalStrings.Patient_Address2</label>
+            <input type="text" class="form-control" id="address2" name="address2" data-name="address2" value="">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="address3">@GlobalStrings.Patient_Address3</label>
+            <input type="text" class="form-control" id="address3" name="address3" data-name="address3" value="">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="city">@GlobalStrings.Patient_City</label>
+            <input type="text" class="form-control" id="city" name="city" data-name="city" value="">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="state">@GlobalStrings.Patient_State</label>
+            <input type="text" class="form-control" id="state" name="state" data-name="state" value="">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="zipCode">@GlobalStrings.Patient_Zip</label>
+            <input type="text" class="form-control" id="zipCode" name="zipCode" data-name="zipCode" value="">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="phoneHome">@GlobalStrings.Patient_HomePhoneNumber</label>
+            <input type="text" class="form-control" id="phoneHome" name="phoneHome" data-name="phoneHome" placeholder="(###) ###-####" value="">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="phoneWork">@GlobalStrings.Patient_WorkPhoneNumber</label>
+            <input type="text" class="form-control" id="phoneWork" name="phoneWork" data-name="phoneWork" placeholder="(###) ###-####" value="">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="email">@GlobalStrings.Patient_Email</label>
+            <input type="email" class="form-control" id="email" name="email" data-name="email" value="">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="language">*Language:</label>
+            <select class="form-control" id="language" name="language" data-name="language">
+                <option value="en" selected="selected">English</option>
+                <option value="es">Spanish</option>
+            </select>
+            <span class="help-block help-block-error help-block-language hidden"></span>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="timeZone">*Time Zone:</label>
+            <select class="form-control" id="timeZone" name="timeZone" data-name="timeZone">
+                @{
+                    var now = SystemClock.Instance.Now;
+
+                    foreach (var timeZoneId in DateTimeZoneProviders.Tzdb.Ids)
+                    {
+                        var tz = DateTimeZoneProviders.Tzdb[timeZoneId];
+                        var offset = tz.GetZoneInterval(now).StandardOffset;
+
+                        <option value="@timeZoneId">@string.Format("(UTC{0:+HH:mm}) {1}", offset, tz)</option>
+                    }
+                }
+            </select>
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="preferredSessionTime">*Preferred Session Time:</label>
+            <div class="input-group preferred-session-time" id="preferred-session-time">
+                <input type="text" class="form-control" id="preferredSessionTime-dp" name="preferredSessionTime-dp" value="">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                </span>
+            </div>
+            <input type="hidden" id="preferredSessionTime" name="preferredSessionTime" data-name="preferredSessionTime" value="">
+            <span class="help-block help-block-error help-block-preferred-session-time hidden"></span>
+        </div>
+
+    </div>
+</div>
+
+<div class="well">
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="EditPatient<% if ( typeof id !== "undefined" ) { %>/<%=id%><% }else{ %>/id<% } %>/Conditions/" class="btn btn-danger js-patient-info-save">
+                @GlobalStrings.Patient_SaveAndNextTabText
+            </a>
+            <a href="PatientDetails<% if ( typeof id !== "undefined" ) { %>/<%=id%><% }else{ %>/id<% } %>/" class="btn btn-primary js-patient-info-save">
+                @GlobalStrings.Patient_SaveAndExitText
+            </a>
+            <a href="<% if ( typeof id !== "undefined" ) { %>PatientDetails/<%=id%><% } %>/" class="btn btn-link js-patient-info-cancel">
+                @GlobalStrings.Edit_Customer_CancelButtonText
+            </a>
+        </div>
+    </div>
+</div>

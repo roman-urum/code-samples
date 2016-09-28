@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenService", "TokenService\TokenService.csproj", "{1DBAE411-579C-4BCD-BD33-71580CCC8706}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4BF3E7AE-13DC-4FC1-90BB-3C6957019B1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenService.Domain", "TokenService.Domain\TokenService.Domain.csproj", "{15228FFE-C13B-4BA0-BA7C-82EC2B59FCE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenService.DataAccess", "TokenService.DataAccess\TokenService.DataAccess.csproj", "{F63284B4-0414-4CCF-99C9-AE328F63EC2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenService.Common", "TokenService.Common\TokenService.Common.csproj", "{DE107605-70A1-4285-878F-941534451E61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4326A3F9-75D2-49BA-A26F-19C02F69FB19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3EB7073A-84D4-4729-8EB3-16FC4865648D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{60EAAD2D-FDD5-49A5-90A0-DFEDC8D85E33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenService.DomainLogic", "TokenService.DomainLogic\TokenService.DomainLogic.csproj", "{4E1CC657-5B88-4AC9-81B4-309EDB1D222F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DBAE411-579C-4BCD-BD33-71580CCC8706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DBAE411-579C-4BCD-BD33-71580CCC8706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DBAE411-579C-4BCD-BD33-71580CCC8706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DBAE411-579C-4BCD-BD33-71580CCC8706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15228FFE-C13B-4BA0-BA7C-82EC2B59FCE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15228FFE-C13B-4BA0-BA7C-82EC2B59FCE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15228FFE-C13B-4BA0-BA7C-82EC2B59FCE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15228FFE-C13B-4BA0-BA7C-82EC2B59FCE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F63284B4-0414-4CCF-99C9-AE328F63EC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F63284B4-0414-4CCF-99C9-AE328F63EC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F63284B4-0414-4CCF-99C9-AE328F63EC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F63284B4-0414-4CCF-99C9-AE328F63EC2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE107605-70A1-4285-878F-941534451E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE107605-70A1-4285-878F-941534451E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE107605-70A1-4285-878F-941534451E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE107605-70A1-4285-878F-941534451E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E1CC657-5B88-4AC9-81B4-309EDB1D222F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E1CC657-5B88-4AC9-81B4-309EDB1D222F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E1CC657-5B88-4AC9-81B4-309EDB1D222F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E1CC657-5B88-4AC9-81B4-309EDB1D222F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1DBAE411-579C-4BCD-BD33-71580CCC8706} = {60EAAD2D-FDD5-49A5-90A0-DFEDC8D85E33}
+		{15228FFE-C13B-4BA0-BA7C-82EC2B59FCE3} = {4326A3F9-75D2-49BA-A26F-19C02F69FB19}
+		{F63284B4-0414-4CCF-99C9-AE328F63EC2B} = {3EB7073A-84D4-4729-8EB3-16FC4865648D}
+		{DE107605-70A1-4285-878F-941534451E61} = {4326A3F9-75D2-49BA-A26F-19C02F69FB19}
+		{4E1CC657-5B88-4AC9-81B4-309EDB1D222F} = {4326A3F9-75D2-49BA-A26F-19C02F69FB19}
+	EndGlobalSection
+EndGlobal

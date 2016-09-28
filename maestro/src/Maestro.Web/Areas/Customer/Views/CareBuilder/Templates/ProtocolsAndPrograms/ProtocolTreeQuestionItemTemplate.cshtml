@@ -1,0 +1,57 @@
+<script id="protocolTreeQuestionItemTemplate" type="text/template">
+    <div class="protocol-item-element protocol-item-element-question protocol-item-element-<% if ( element.type == 2 ) { %>textandmedia<% }else if ( element.type == 3 ){ %>measurement<% }else if ( element.type == 4 ){ %>assessment<% }else {%>question<% } %>"
+         data-isMainBranch="<%= isMainBranch %>">
+        <% if( element.type == 2 ) { %>
+            <% if( element.text ) { %>
+                <p><%=element.text.value%></p>
+            <% } %>
+            <% if( element.media ) { %>
+                <div class="media media-preview-ci">
+                    <div class="media-left media-middle">
+                        <% if( element.media.contentType.match('image') ) { %>
+                            <img src="<%=element.media.thumbnailUrl%>" class="thumbnail thumbnail-ci thumbnail-protocol-ci" alt="">
+                        <% } else { %>
+                            <span class="glyphicon glyphicon-file"></span>
+                        <% } %>
+                    </div>
+                    <div class="media-body">
+                        <p class="strong"><%=element.media.name%></p>
+                        <p><%=element.media.description%></p>
+                    </div>
+                </div>
+            <% } %>
+        <% } else { %>
+            <%=element.questionElementString.value%>
+        
+            <% if (element.answerSet && element.answerSet.isMultipleChoice) { %>
+                <br />@Html.Partial("_MultiSelectLabel")
+            <% } %>
+        <% } %>
+        <% if ( element.type == 1 ) { %><a class="btn-toggle-answers">Hide Answers</a><% } %>
+        <div class="dropdown element-settings">
+            <button class="btn btn-default btn-settings dropdown-toggle" type="button" id="element-settings-<%=id%>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-cog"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="element-settings-<%=id%>">
+                <% if ( !isMainBranch && !branches.length ) { %>
+                    <li><a class="js-is-ended js-is-ended-element <% if ( nextProtocolElementId == null ) { %>protocol-set-continue<% }else{ %>protocol-set-end<% } %>" data-elementid="<%=id%>"><% if ( nextProtocolElementId == null ) { %>Continue Protocol <% }else{ %>End Protocol<% } %></a></li>
+                <% } %>
+                <li><a class="js-delete-element" data-elementid="<%=id%>">Delete Element</a></li>
+            </ul>
+        </div>
+
+        <% if ( !isMainBranch && !branches.length && nextProtocolElementId == null ) { %>
+            <span class="element-status glyphicon glyphicon-remove-circle"></span>
+        <% } %>
+    </div>
+    <ol id="<%=id%>-container" class="protocol-list"></ol>
+    <% if ( element.type == 3 ) { %>
+        <p>
+            New Measurement Branch
+            <button type="button" class="js-add-measurement-branch" 
+                    data-measurement-type="<%=element.measurementType%>"
+                    data-measurement-name="<%=element.questionElementString.value%>"
+                    data-elementId="<%=id%>">Add</button>
+        </p>
+    <% } %>
+</script>

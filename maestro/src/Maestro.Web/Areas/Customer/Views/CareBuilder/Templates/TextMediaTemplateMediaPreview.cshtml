@@ -1,0 +1,13 @@
+﻿<script id="textMediaElementMediaPreviewTemplate" type="text/template">
+<% if(contentType && contentType.match('image') ) { %>
+
+    <% if (thumbnailUrl) { %>
+        <img src="<%=thumbnailUrl%>" class="thumbnail thumbnail-ci" alt="">
+    <% } else {%>
+        <span class="glyphicon glyphicon-question-sign"></span>
+    <% } %>
+
+<% } else if (contentType) { %>
+    <span class="glyphicon glyphicon-file"></span>
+<% } %>
+</script>

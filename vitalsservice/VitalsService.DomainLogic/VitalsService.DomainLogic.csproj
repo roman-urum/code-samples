@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77A7ABAC-748D-4A0C-BB39-48760F8676C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VitalsService.DomainLogic</RootNamespace>
+    <AssemblyName>VitalsService.DomainLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\VA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.Extensions, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Extensions.0.0.2\lib\net40\EntityFramework.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Isg.EntityFramework, Version=0.4.1.31637, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalLibs\Isg.EntityFramework\Isg.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject, Version=3.0.2.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.3.0.2.7\lib\net45\LightInject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ServiceBus">
+      <HintPath>..\packages\WindowsAzure.ServiceBus.2.7.5\lib\net40-full\Microsoft.ServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.1.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.0.1\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainLogicAutomapperConfig.cs" />
+    <Compile Include="Exceptions\DataNotFoundException.cs" />
+    <Compile Include="DomainLogicCompositionRoot.cs" />
+    <Compile Include="Extensions\AnalyticsEntityExtensions.cs" />
+    <Compile Include="Mappings\ConditionsMapping.cs" />
+    <Compile Include="Mappings\PatientNotesMapping.cs" />
+    <Compile Include="Mappings\ThresholdMapping.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Implementations\AlertSeveritiesService.cs" />
+    <Compile Include="Services\Implementations\AssessmentMediaService.cs" />
+    <Compile Include="Services\Implementations\ConditionsService.cs" />
+    <Compile Include="Services\Implementations\MessagingHubService.cs" />
+    <Compile Include="Services\Implementations\PatientNotesService.cs" />
+    <Compile Include="Services\Implementations\Esb.cs" />
+    <Compile Include="Services\Implementations\AlertsService.cs" />
+    <Compile Include="Services\Implementations\DefaultThresholdsService.cs" />
+    <Compile Include="Services\Implementations\TagService.cs" />
+    <Compile Include="Services\Implementations\ThresholdAggregator.cs" />
+    <Compile Include="Services\Implementations\PatientConditionsService.cs" />
+    <Compile Include="Services\Implementations\ThresholdsService.cs" />
+    <Compile Include="Services\Implementations\HealthSessionsService.cs" />
+    <Compile Include="Services\Implementations\MeasurmentsService.cs" />
+    <Compile Include="Services\Implementations\TokenService.cs" />
+    <Compile Include="Services\Interfaces\IAlertSeveritiesService.cs" />
+    <Compile Include="Services\Interfaces\IAssessmentMediaService.cs" />
+    <Compile Include="Services\Interfaces\IConditionsService.cs" />
+    <Compile Include="Services\Interfaces\IMessagingHubService.cs" />
+    <Compile Include="Services\Interfaces\IPatientNotesService.cs" />
+    <Compile Include="Services\Interfaces\IEsb.cs" />
+    <Compile Include="Services\Interfaces\IAlertsService.cs" />
+    <Compile Include="Services\Interfaces\IDefaultThresholdsService.cs" />
+    <Compile Include="Services\Interfaces\ITagService.cs" />
+    <Compile Include="Services\Interfaces\IThresholdAggregator.cs" />
+    <Compile Include="Services\Interfaces\IPatientConditionsService.cs" />
+    <Compile Include="Services\Interfaces\IThresholdsService.cs" />
+    <Compile Include="Services\Interfaces\IHealthSessionsService.cs" />
+    <Compile Include="Services\Interfaces\IMeasurementsService.cs" />
+    <Compile Include="Services\Interfaces\ITokenService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VitalsService.ApiAccess\Vitals.ApiAccess.csproj">
+      <Project>{64936892-fe74-48d8-a288-a5c154002ec6}</Project>
+      <Name>Vitals.ApiAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VitalsService.Common\VitalsService.Common.csproj">
+      <Project>{0B0EFE13-F567-41F5-8C68-129EDC3863B5}</Project>
+      <Name>VitalsService.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VitalsService.ContentStorage.Azure\VitalsService.ContentStorage.Azure.csproj">
+      <Project>{7e391bac-4fa0-4281-a515-a27b4144099d}</Project>
+      <Name>VitalsService.ContentStorage.Azure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VitalsService.DataAccess.Document\VitalsService.DataAccess.Document.csproj">
+      <Project>{49A41061-AB11-4751-B6C5-BB02CB2C9230}</Project>
+      <Name>VitalsService.DataAccess.Document</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VitalsService.DataAccess.EF\VitalsService.DataAccess.EF.csproj">
+      <Project>{c5752cd3-1eff-4bfc-b43e-a06e65dcd89c}</Project>
+      <Name>VitalsService.DataAccess.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VitalsService.Domain\VitalsService.Domain.csproj">
+      <Project>{301ab3d0-1aac-44fa-9959-746f6203adea}</Project>
+      <Name>VitalsService.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

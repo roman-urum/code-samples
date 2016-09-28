@@ -1,0 +1,28 @@
+@using Maestro.Web.Resources
+
+<h3>Assign Care Managers</h3>
+
+<div class="row">
+    <div class="col-sm-6"><a class="js-assign-all-care-manager">Assign All</a></div>
+    <div class="col-sm-6"><a class="js-remove-all-care-manager">Remove All</a></div>
+</div>
+<div class="row">
+    <div class="col-sm-6" id="available-care-managers-container"></div>
+    <div class="col-sm-6" id="assigned-care-managers-container"></div>
+</div>
+
+<div class="well">
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="EditPatient/<%=id%>/Measurements/" class="btn btn-danger js-patient-care-managers-save">
+                @GlobalStrings.Patient_SaveAndNextTabText
+            </a>
+            <a href="PatientDetails/<%=id%>/" class="btn btn-primary js-patient-care-managers-save">
+                @GlobalStrings.Patient_SaveAndExitText
+            </a>
+            <a href="PatientDetails/<%=id%>/" class="btn btn-link js-patient-care-managers-cancel">
+                @GlobalStrings.Edit_Customer_CancelButtonText
+            </a>
+        </div>
+    </div>
+</div>

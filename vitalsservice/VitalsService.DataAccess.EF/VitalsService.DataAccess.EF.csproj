@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5752CD3-1EFF-4BFC-B43E-A06E65DCD89C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VitalsService.DataAccess.EF</RootNamespace>
+    <AssemblyName>VitalsService.DataAccess.EF</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\VA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Isg.EntityFramework">
+      <HintPath>..\ExternalLibs\Isg.EntityFramework\Isg.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject, Version=3.0.2.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.3.0.2.7\lib\net45\LightInject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexts\IVitalsDataContext.cs" />
+    <Compile Include="EfCompositionRoot.cs" />
+    <Compile Include="EfConfiguration.cs" />
+    <Compile Include="Helpers\ConnectionStringsHelper.cs" />
+    <Compile Include="Interceptors\AuditableInterceptor.cs" />
+    <Compile Include="Interceptors\PrimaryKeyInterceptor.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Mappings\AlertSeverityMapping.cs" />
+    <Compile Include="Mappings\AssessmentMediaMapping.cs" />
+    <Compile Include="Mappings\AssessmentValueMapping.cs" />
+    <Compile Include="Mappings\ConditionMapping.cs" />
+    <Compile Include="Mappings\NoteMapping.cs" />
+    <Compile Include="Mappings\NoteNotableMapping.cs" />
+    <Compile Include="Mappings\PatientConditionMapping.cs" />
+    <Compile Include="Mappings\SuggestedNotableMapping.cs" />
+    <Compile Include="Mappings\TagsMapping.cs" />
+    <Compile Include="Mappings\ThresholdMapping.cs" />
+    <Compile Include="Mappings\DefaultThresholdMapping.cs" />
+    <Compile Include="Mappings\HealthSessionElementAlertMapping.cs" />
+    <Compile Include="Mappings\HealthSessionElementMapping.cs" />
+    <Compile Include="Mappings\HealthSessionMapping.cs" />
+    <Compile Include="Mappings\MeasurementMapping.cs" />
+    <Compile Include="Mappings\DeviceMapping.cs" />
+    <Compile Include="Mappings\AlertMapping.cs" />
+    <Compile Include="Mappings\PatientThresholdMapping.cs" />
+    <Compile Include="Mappings\VitalAlertMapping.cs" />
+    <Compile Include="Mappings\VitalMapping.cs" />
+    <Compile Include="Mappings\MeasurementNoteMapping.cs" />
+    <Compile Include="Mappings\FreeFormAnswerMapping.cs" />
+    <Compile Include="Mappings\MeasurementValueMapping.cs" />
+    <Compile Include="Mappings\ScaleAnswerMapping.cs" />
+    <Compile Include="Mappings\SelectionAnswerMapping.cs" />
+    <Compile Include="Migrations\201512310958033_Initial.cs" />
+    <Compile Include="Migrations\201512310958033_Initial.Designer.cs">
+      <DependentUpon>201512310958033_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601131500060_Extend healtyh session element with media properties.cs" />
+    <Compile Include="Migrations\201601131500060_Extend healtyh session element with media properties.Designer.cs">
+      <DependentUpon>201601131500060_Extend healtyh session element with media properties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601191355076_AssessmentMedia.cs" />
+    <Compile Include="Migrations\201601191355076_AssessmentMedia.Designer.cs">
+      <DependentUpon>201601191355076_AssessmentMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601191450516_Merge.cs" />
+    <Compile Include="Migrations\201601191450516_Merge.Designer.cs">
+      <DependentUpon>201601191450516_Merge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601200902112_AssessmentValues.cs" />
+    <Compile Include="Migrations\201601200902112_AssessmentValues.Designer.cs">
+      <DependentUpon>201601200902112_AssessmentValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602121233580_Make unique SuggestedNoteables.Name.cs" />
+    <Compile Include="Migrations\201602121233580_Make unique SuggestedNoteables.Name.Designer.cs">
+      <DependentUpon>201602121233580_Make unique SuggestedNoteables.Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602181352543_SuggestedNotablesIndexUpdated.cs" />
+    <Compile Include="Migrations\201602181352543_SuggestedNotablesIndexUpdated.Designer.cs">
+      <DependentUpon>201602181352543_SuggestedNotablesIndexUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602251418470_RefactoringAlerts.cs" />
+    <Compile Include="Migrations\201602251418470_RefactoringAlerts.Designer.cs">
+      <DependentUpon>201602251418470_RefactoringAlerts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603151158337_LengthRestrictionForAlertSeverityName.cs" />
+    <Compile Include="Migrations\201603151158337_LengthRestrictionForAlertSeverityName.Designer.cs">
+      <DependentUpon>201603151158337_LengthRestrictionForAlertSeverityName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603211408326_TimezonesAddedToSeveralEntities.cs" />
+    <Compile Include="Migrations\201603211408326_TimezonesAddedToSeveralEntities.Designer.cs">
+      <DependentUpon>201603211408326_TimezonesAddedToSeveralEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604071340058_CustomerIdIndexesAdded.cs" />
+    <Compile Include="Migrations\201604071340058_CustomerIdIndexesAdded.Designer.cs">
+      <DependentUpon>201604071340058_CustomerIdIndexesAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604271054263_Add_conditions_and_tags.cs" />
+    <Compile Include="Migrations\201604271054263_Add_conditions_and_tags.Designer.cs">
+      <DependentUpon>201604271054263_Add_conditions_and_tags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604281236207_PatientConditionsAdded.cs" />
+    <Compile Include="Migrations\201604281236207_PatientConditionsAdded.Designer.cs">
+      <DependentUpon>201604281236207_PatientConditionsAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604281357077_ConditionsUpdated.cs" />
+    <Compile Include="Migrations\201604281357077_ConditionsUpdated.Designer.cs">
+      <DependentUpon>201604281357077_ConditionsUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604290955583_ClientIdAdded.cs" />
+    <Compile Include="Migrations\201604290955583_ClientIdAdded.Designer.cs">
+      <DependentUpon>201604290955583_ClientIdAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604291241508_Unique_Condition_Name.cs" />
+    <Compile Include="Migrations\201604291241508_Unique_Condition_Name.Designer.cs">
+      <DependentUpon>201604291241508_Unique_Condition_Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605061357375_Conditions_Remove_Unnique_Name_Index.cs" />
+    <Compile Include="Migrations\201605061357375_Conditions_Remove_Unnique_Name_Index.Designer.cs">
+      <DependentUpon>201605061357375_Conditions_Remove_Unnique_Name_Index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605061400596_Conditions_Add_Unique_Name_CustomerId_Index.cs" />
+    <Compile Include="Migrations\201605061400596_Conditions_Add_Unique_Name_CustomerId_Index.Designer.cs">
+      <DependentUpon>201605061400596_Conditions_Add_Unique_Name_CustomerId_Index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606030924062_Replace_relation_Note-Vital_with_relation_Note-Measurement.cs" />
+    <Compile Include="Migrations\201606030924062_Replace_relation_Note-Vital_with_relation_Note-Measurement.Designer.cs">
+      <DependentUpon>201606030924062_Replace_relation_Note-Vital_with_relation_Note-Measurement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606301209075_HealthSessionUpdated.cs" />
+    <Compile Include="Migrations\201606301209075_HealthSessionUpdated.Designer.cs">
+      <DependentUpon>201606301209075_HealthSessionUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Contexts\VitalsDataContext.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VitalsService.Common\VitalsService.Common.csproj">
+      <Project>{0b0efe13-f567-41f5-8c68-129edc3863b5}</Project>
+      <Name>VitalsService.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VitalsService.Domain\VitalsService.Domain.csproj">
+      <Project>{301ab3d0-1aac-44fa-9959-746f6203adea}</Project>
+      <Name>VitalsService.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512310958033_Initial.resx">
+      <DependentUpon>201512310958033_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601131500060_Extend healtyh session element with media properties.resx">
+      <DependentUpon>201601131500060_Extend healtyh session element with media properties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601191355076_AssessmentMedia.resx">
+      <DependentUpon>201601191355076_AssessmentMedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601191450516_Merge.resx">
+      <DependentUpon>201601191450516_Merge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601200902112_AssessmentValues.resx">
+      <DependentUpon>201601200902112_AssessmentValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602121233580_Make unique SuggestedNoteables.Name.resx">
+      <DependentUpon>201602121233580_Make unique SuggestedNoteables.Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602181352543_SuggestedNotablesIndexUpdated.resx">
+      <DependentUpon>201602181352543_SuggestedNotablesIndexUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602251418470_RefactoringAlerts.resx">
+      <DependentUpon>201602251418470_RefactoringAlerts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603151158337_LengthRestrictionForAlertSeverityName.resx">
+      <DependentUpon>201603151158337_LengthRestrictionForAlertSeverityName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603211408326_TimezonesAddedToSeveralEntities.resx">
+      <DependentUpon>201603211408326_TimezonesAddedToSeveralEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604071340058_CustomerIdIndexesAdded.resx">
+      <DependentUpon>201604071340058_CustomerIdIndexesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604271054263_Add_conditions_and_tags.resx">
+      <DependentUpon>201604271054263_Add_conditions_and_tags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604281236207_PatientConditionsAdded.resx">
+      <DependentUpon>201604281236207_PatientConditionsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604281357077_ConditionsUpdated.resx">
+      <DependentUpon>201604281357077_ConditionsUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604290955583_ClientIdAdded.resx">
+      <DependentUpon>201604290955583_ClientIdAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604291241508_Unique_Condition_Name.resx">
+      <DependentUpon>201604291241508_Unique_Condition_Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605061357375_Conditions_Remove_Unnique_Name_Index.resx">
+      <DependentUpon>201605061357375_Conditions_Remove_Unnique_Name_Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605061400596_Conditions_Add_Unique_Name_CustomerId_Index.resx">
+      <DependentUpon>201605061400596_Conditions_Add_Unique_Name_CustomerId_Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606030924062_Replace_relation_Note-Vital_with_relation_Note-Measurement.resx">
+      <DependentUpon>201606030924062_Replace_relation_Note-Vital_with_relation_Note-Measurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606301209075_HealthSessionUpdated.resx">
+      <DependentUpon>201606301209075_HealthSessionUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

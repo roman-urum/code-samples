@@ -1,0 +1,73 @@
+@using Newtonsoft.Json
+@model dynamic
+
+@{
+    ViewBag.AppId = "appCareBuilder";
+
+    var constants = Model != null ? JsonConvert.SerializeObject(Model) : string.Empty;
+}
+
+<input id="constants" type="hidden" value="@constants"/>
+
+<div id="care-builder-container">
+    <img src="/Content/img/spinner.gif" class="spinner">
+</div>
+
+@Html.Partial("Templates/CareBuilderTemplate")
+@Html.Partial("Templates/ScaleAnswerSetListItemTemplate")
+@Html.Partial("Templates/ScaleAnswersControlTemplate")
+@Html.Partial("Templates/SelectionAnswerSetListItemTemplate")
+@Html.Partial("Templates/SelectionAnswerSetListItemBodyTemplate")
+@Html.Partial("Templates/QuestionElementListItemTemplate")
+@Html.Partial("Templates/QuestionElementSelectionAnswersTemplate")
+@Html.Partial("Templates/QuestionElementScaleAnswersTemplate")
+@Html.Partial("Templates/AnswerSetTypeTemplate")
+@Html.Partial("Templates/ContentTypeTemplate")
+@Html.Partial("Templates/SelectionAnswerSetFormTemplate")
+@Html.Partial("Templates/SelectionAnswerChoiceTemplate")
+@Html.Partial("Templates/ScaleAnswerSetFormTemplate")
+@Html.Partial("Templates/SelectionAnswerSetFormTemplate")
+@Html.Partial("Templates/AddQuestionTemplate")
+@Html.Partial("Templates/SelectAnswerSetTemplate")
+@Html.Partial("Templates/SelectionAnswerSetTemplate")
+@Html.Partial("Templates/SelectionAnswerSetAnswersTemplate")
+@Html.Partial("Templates/OpenEndedAnswerSetTemplate")
+@Html.Partial("Templates/OpenEndedAnswerSetListItemTemplate")
+@Html.Partial("Templates/ChecklistAnswerSetTemplate")
+@Html.Partial("Templates/ScaleAnswerSetTemplate")
+@Html.Partial("Templates/QuestionModalSelectionAnswerSetTemplate")
+@Html.Partial("Templates/QuestionModalSelectionAnswerChoiceTemplate")
+@Html.Partial("Templates/QuestionModalScaleAnswerSetTemplate")
+@Html.Partial("Templates/QuestionModalScaleAnswerChoiceTemplate")
+@Html.Partial("Templates/QuestionModalOpenEndedAnswerSetTemplate")
+@Html.Partial("Templates/TextMediaElementTemplate")
+@Html.Partial("Templates/TextMediaTemplateMediaButtons")
+@Html.Partial("Templates/TextMediaTemplateMediaPreview")
+@Html.Partial("Templates/TextMediaElementListItemTemplate")
+@Html.Partial("Templates/TextMediaElementItemMediaTemplate")
+@Html.Partial("Templates/MediaElementFormTemplate")
+@Html.Partial("Templates/MediaFileTemplate")
+@Html.Partial("Templates/MediaFormMediaLibraryTemplate")
+@Html.Partial("Templates/MediaListItemTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProtocolListItemTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProtocolTreeQuestionItemTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProtocolTreeAnswerChoiceItemTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProtocolTreeAnswerScaleItemTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProtocolTreeAnswerOpenEndedTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProtocolTreeMeasurementBranchTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProtocolQuestionListItemTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProtocolMeasurementListItemTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProtocolAssessmentListItemTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProtocolTextMediaElementListItemTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProtocolViewTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProtocolSimulatorTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/MeasurementBranchModalTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/MeasurementThresholdTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProgramListItemTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProgramViewTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProgramWeekTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProgramDayTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProgramProtocolListItemTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/ProgramProtocolTemplate")
+@Html.Partial("Templates/ProtocolsAndPrograms/RecurrenceModalTemplate")
+@Html.Partial("Templates/AudioOptionsTemplate")

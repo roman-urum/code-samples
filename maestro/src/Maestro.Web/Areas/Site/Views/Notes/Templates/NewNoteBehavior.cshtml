@@ -1,0 +1,16 @@
+﻿<script id="addNoteBehaviorTemplate" type="text/template">
+    <div class="line">
+        <!--<strong><%- obj.question %> - <span style="color: <%- obj.color %>"><%- obj.answer %></span></strong> on <%- obj.date %> <%- obj.time %></div>-->
+        <strong>
+            <%- obj.question %> -
+            <span style="color: <%- obj.color %>">
+                <% _.each(obj.answers, function(answer, index) {%>
+                    <%- answer %>
+                    <% if (index != obj.answers.length - 1) {%> , <% } %>
+                <% }) %>
+            </span>
+        </strong> on <%- obj.date %> <%- obj.time %></div>        
+    <!--<div class="line">
+        <%- obj.date %> <%- obj.time %>
+    </div>-->
+</script>

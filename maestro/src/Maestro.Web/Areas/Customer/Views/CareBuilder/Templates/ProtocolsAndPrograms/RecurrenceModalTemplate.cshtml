@@ -1,0 +1,40 @@
+﻿<script id="recurrenceModalTemplate" type="text/template">
+<div class="form-horizontal">
+  <div class="form-group">
+    <label for="everyDays" class="col-sm-3 control-label">Protocol name</label>
+    <div class="col-sm-9">
+        <p class="form-control-static"><%= protocolName %></p>   
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="everyDays" class="col-sm-3 control-label">Occurs every</label>
+    <div class="col-sm-3">
+        <div class="input-group">
+            <input id="everyDays" data-name="everyDays" value="<%= everyDays %>" type="text" class="form-control" />
+            <span class="input-group-addon">days</span>
+        </div>      
+    </div>
+    <div class="col-sm-6">
+        <span class="help-block help-block-error help-block-everyDays"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="startDay" class="col-sm-3 control-label">Starts on day #</label>
+    <div class="col-sm-3">
+      <input id="startDay" data-name="startDay" value="<%= startDay %>" type="text" class="form-control" />
+    </div>
+    <div class="col-sm-6">
+        <span class="help-block help-block-error help-block-startDay"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="endDay" class="col-sm-3 control-label">Ends on day #</label>
+    <div class="col-sm-3">
+       <input id="endDay" data-name="endDay" value="<%= endDay %>" type="text" class="form-control" />
+    </div>
+    <div class="col-sm-6">
+        <span class="help-block help-block-error help-block-endDay"></span>
+    </div>
+  </div>
+</div>
+</script>

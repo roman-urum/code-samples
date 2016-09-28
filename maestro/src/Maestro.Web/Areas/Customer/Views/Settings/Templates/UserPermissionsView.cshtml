@@ -1,0 +1,45 @@
+<script id="userPermissionsView" type="text/template">
+
+
+    <div id="permissions">
+
+        <div class="actions">
+            <a href="" class="js-expand-all">Expand All</a>|
+            <a href="" class="js-collapse-all">Collapse All</a>
+        </div>
+
+        <% if (customerUserRole) { %>
+        <div id="role-<%= customerUserRole.id %>-permissions" class="role-permissions">
+            <% var groups = _.groupBy(customerUserRole.permissions, 'category'); %>
+            <% var groupsArray = _.values(groups); %>
+            <% _.each(groups, function (permissions, groupName, list) { %>
+            <% var index =  _.indexOf(groupsArray, permissions)%>
+            <div class="permission-group accordion list-accordion">
+                <div class="permission-group-heading accordion-heading row">
+                    <div class="col-xs-12">
+                        <a class="accordion-toggle collapsed list-collapse active-list"
+                           role="button" data-toggle="collapse" href="#permission-group-content-<%= index %>">
+                            <div class="list-arrow"></div>
+                            <%= groupName %>
+                        </a>
+                    </div>
+                </div>
+                <div id="permission-group-content-<%= index %>" class="permission-group-content accordion-content accordion-body collapse">
+                    <% _.each(permissions, function (permission) { %>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p><%= permission.name %></p>
+                            <p class="small"><%= permission.description %></p>
+                        </div>
+                        <div class="col-xs-6">Permission controls</div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+        <% } %>
+    </div>
+
+
+</script>

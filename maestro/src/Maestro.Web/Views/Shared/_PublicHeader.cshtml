@@ -1,0 +1,50 @@
+@using Maestro.Web.Extensions
+<header id="header">
+    <nav class="navbar navbar-header-ci">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-header-logo-ci" href="@(User.Identity.IsAuthenticated ? Url.Action("Index", "Customers", new { area = string.Empty }) : "#")"></a>
+            </div>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="navbar-collapse collapse">
+                    <!--ul class="nav navbar-nav navbar-nav-top-ci">
+                        @{
+                            string homeLinkClass = HttpContext.Current.Request.Url.IsRouteMatch("Index", "Customers") ? "active" : string.Empty;
+                        }
+                        <li class="@homeLinkClass">
+                            <a href="@Url.Action("Index", "Customers", new { area = string.Empty} )" class="btn btn-link">
+                                <i class="fa fa-home"></i> Home
+                            </a>
+                        </li>
+                    </ul-->
+                    <ul class="nav navbar-nav navbar-nav-user-ci navbar-right">
+                        <li class="dropdown">
+                            <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle dropdown-toggle-user-ci" href="#">
+                                @GlobalStrings.Layout_Header_Welcome
+                                @User.Identity.Name!
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="@Url.Action("Index", "Admins", new {area = "Settings"})" class="btn btn-link">
+                                        Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    @Html.ActionLink(GlobalStrings.Layout_Header_SignOutLink, "Logout", new { controller = "Account", area = string.Empty }, new { @class = "btn btn-link" })
+                                </li>
+                            </ul>
+                        </li>
+                        @*<li class="site-search">
+                            <a href="#" class="btn btn-link btn-link-search">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>*@
+                    </ul>
+                </div>
+            }
+        </div>
+    </nav>
+</header>

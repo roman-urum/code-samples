@@ -1,0 +1,56 @@
+<script id="protocolTreeAnswerChoiceItemTemplate" type="text/template">
+    <div class="protocol-item-element protocol-item-element-answer <% if ( isMultipleChoice ) { %>js-branching-prohibited<% } %>" data-branchId="<%= branchId %>">
+        <div id="answer-alert-icon-<%=id%>-at-question-<%=elementId%>" class="pull-right element-alert">
+            <span class="glyphicon glyphicon-bell"></span>
+        </div>
+
+        <%=answerString.value%>
+        <div class="dropdown element-settings">
+            <button class="btn btn-default btn-settings dropdown-toggle" type="button" id="answer-settings-<%=elementId%>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-cog"></span>
+            </button>
+            <ul id="settings-answer-<%=id%>-at-question-<%=elementId%>" 
+                class="dropdown-menu dropdown-menu-right" 
+                aria-labelledby="answer-settings-<%=elementId%>">
+
+                <li>
+                    <a class="js-is-ended js-is-ended-branch <% if ( nextProtocolElementId == null ) { %>protocol-set-continue<% }else{ %>protocol-set-end<% } %>"
+                       data-branchId="<%=branchId%>"
+                       data-elementId="<%=elementId%>">
+                        <% if ( nextProtocolElementId == null ) { %>Continue Protocol <% }else{ %>End Protocol<% } %>
+                    </a>
+                </li>
+                <li class="js-unset-alert-li">
+                    <a class="js-unset-alert" data-question-id="<%=elementId%>" data-answer-id="<%=id%>">
+                        Unset Alert
+                    </a>
+                </li>
+                
+                <% if ( alertSeverities.length ) { %>
+                    <% _.each(alertSeverities, function(alertSeverity){ %>
+                        <li class="js-set-alert-li">
+                            <a class="js-set-alert" 
+                               data-question-id="<%=elementId%>" 
+                               data-answer-id="<%=id%>"
+                               data-alert-severity-id="<%= alertSeverity.id %>">
+                                Set <%= alertSeverity.name %> Alert
+                            </a>
+                        </li>
+                    <% }); %>
+                <% }else{ %>
+                    <li class="js-set-alert-li">
+                        <a class="js-set-alert"
+                           data-question-id="<%=elementId%>"
+                           data-answer-id="<%=id%>">
+                            Set Alert
+                        </a>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+        
+        <% if (nextProtocolElementId == null ) { %>
+            <span class="element-status glyphicon glyphicon-remove-circle"></span>
+        <% } %>
+    </div>
+</script>

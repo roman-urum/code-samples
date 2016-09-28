@@ -1,0 +1,66 @@
+﻿@using Maestro.Web.Models.Users
+@model ActivateAccountViewModel
+
+@{
+    ViewBag.Title = "Activate account";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <!-- PAGE HEADER / BREADCRUMBS -->
+        <h1 class="page-header-ci">@GlobalStrings.Users_Login_PageTitle</h1>
+        <!-- END PAGE HEADER / BREADCRUMBS -->
+        <!-- MAIN CONTENT - SITE ADMIN -->
+        <div class="ci-content">
+            @using (Html.BeginForm("ActivateAccount", "Account", FormMethod.Post, new { @class = "ci-activate-account-form" }))
+            {
+                @Html.HiddenFor(m => m.Email)
+                @Html.HiddenFor(m => m.Token)
+                @Html.HiddenFor(m => m.Expires)
+                @Html.HiddenFor(m => m.PasswordExpiration)
+                <div class="row">
+                    <div class="col-sm-2 ci-text">
+                        @Html.LabelFor(model => model.Password, new { @class = "strong" })
+                    </div>
+                    <div class="col-xs-10">
+                        @Html.PasswordFor(model => model.Password)
+                        <div class="input-sub-note x-small error-state">
+                            @Html.ValidationMessageFor(model => model.Password)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2 ci-text">
+                        @Html.LabelFor(model => model.ConfirmPassword, new { @class = "strong" })
+                    </div>
+                    <div class="col-xs-10">
+                        @Html.PasswordFor(model => model.ConfirmPassword)
+
+                        <div class="input-sub-note x-small error-state">
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                        </div>
+
+                        <div class="x-small error-state">
+                            @Html.ValidationMessage(ActivateAccountViewModel.IncorrectCredentialsKey)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-5 text-right">
+                        <button id="btn-sign-in" type="submit" class="btn btn-primary">@GlobalStrings.Users_ActivateAccount_Reset</button>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/js/jqueryval")
+    @Scripts.Render("~/bundles/js/activate-account")
+}

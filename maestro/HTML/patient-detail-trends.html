@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="bower_components/c3/c3.min.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+      <header id="header" class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+            </div>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-2"><!--sidebar--></div>
+
+            
+            <div class="col-xs-12 col-sm-10">
+              <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-info" href="#patientDashboard">Patient Dashboard</button>
+                <button type="button" class="btn btn-info" href="#detailedData">Detailed Data</button>
+                <button type="button" class="btn btn-info active" href="#trends">Trends</button>
+                <button type="button" class="btn btn-info" href="#patientHistory">Patient History</button>
+              </div>
+
+              <div class="row" id="patientDashboard">
+              </div>
+
+              <div class="row" id="detailedData">
+              </div>
+
+              <!--Patient Detail - Trends -->  
+              <div class="row" id="trends">
+                <div class="col-xs-12">
+                  <div class="row vertical-align">
+                    <div class="col-xs-12 col-sm-2">
+                      <button class="btn btn-default" data-toggle="modal" data-target=".js-modal-chart-add">Add Charts</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-2">
+                      <form>
+                        <label class="control-label label-small">Date Range:</label>
+                        <select class="form-control input-sm">
+                          <!--per the wireframes: NOTE: List of presets and the default are not yet identified. -->
+                          <option>Last 8 weeks</option>
+                          <option>Last 4 weeks</option>
+                          <option>Last 2 weeks</option>
+                        </select>
+                      </form>
+                    </div>
+                    <div class="col-xs-12 col-sm-1 padding-left-none">
+                      <!--per the wireframes: don't implement yet-->
+                  <!--
+                  <a href="#" class="btn btn-link pull-left">Custom</a>
+                -->
+              </div>
+              <div class="col-xs-12 col-sm-3">
+                <form>
+                  <label class="control-label label-small">Show Care Element Data by:</label>
+                  <select class="form-control input-sm">
+                    <!--per the wireframes: NOTE: List of presets and the default are not yet identified. -->
+                    <option>Day</option>
+                    <option>Week</option>
+                    <option>Month</option>
+                  </select>
+
+                </form>
+              </div>
+              <div class="col-xs-12 col-sm-3">
+                <a href="#" class="btn btn-link pull-left">Make Default for this Patient</a>
+              </div>
+              <div class="col-xs-12 col-sm-1">
+                <!--per the wireframes, don't implement this yet-->
+                 <!--
+                  <a href="#" class="btn btn-link pull-right">Export</a>
+                -->
+              </div>
+            </div>
+            <hr />
+
+            <div class="row">
+
+              <div class="col-xs-12">
+                <div class="panel panel-chart js-panel">
+                  <div class="panel-heading">
+                    <h3 class="panel-title panel-title-ci">Time Series Chart&nbsp;<button class="btn btn-link">Remove</button>
+                      <span class="pull-right">Move Chart&nbsp;
+                        <span class="glyphicon glyphicon-arrow-up js-up-button"></span>
+                        <span class="glyphicon glyphicon-arrow-down js-down-button"></span>
+                        
+                      </span>
+                    </h2>
+                  </div>
+                  <div class="panel-body">
+                    <div class="chart js-chart-timeline_heartrate"></div>
+                  </div>
+                </div>
+                <div class="panel panel-chart js-panel">
+                  <div class="panel-heading">
+                    <h2 class="panel-title panel-title-ci">Scatterplot Chart&nbsp;<button class="btn btn-link">Remove</button>
+                      <span class="pull-right">Move Chart&nbsp;
+                        <span class="glyphicon glyphicon-arrow-up js-up-button"></span>
+                        <span class="glyphicon glyphicon-arrow-down js-down-button"></span>
+                      </span>
+                    </h2>
+                  </div>
+                  <div class="panel-body">
+                    <div class="chart js-chart-scatter_exercise"></div>
+                  </div>
+                </div>
+                <div class="panel panel-chart js-panel">
+                  <div class="panel-heading">
+                    <h2 class="panel-title panel-title-ci">Stacked Bar Chart&nbsp;<button class="btn btn-link">Remove</button>
+                      <span class="pull-right">Move Chart&nbsp;
+                        <span class="glyphicon glyphicon-arrow-up js-up-button"></span>
+                        <span class="glyphicon glyphicon-arrow-down js-down-button"></span>
+                      </span>
+                    </h2>
+                  </div>
+                  <div class="panel-body">
+                    <div class="js-chart-bar_exercise-weekly"></div>
+                  </div>
+                </div>
+              </div>
+              <!--end col-xs-12-->
+
+            </div>
+
+
+
+          </div>
+
+        </div>
+      <!-- End Patient Detail - Trends -->
+
+        <div class="row" id="patientHistory">
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- modals -->
+
+<!--modal: threshold-->
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Threshold</h4>
+      </div>
+      <div class="modal-body">
+        <p>Threshold specific data, i.e., Max 120 BPM</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-btn-link">Edit</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--end modal: threshold-->
+
+<!--modal: plot point data details-->
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">DD/MM/YYYY ##:## AM PST</h4>
+      </div>
+      <div class="modal-body">
+        <ul class="list-unstyled js-insertclassnamehere">
+          <li>Response: (Response)</li>
+          <li>Alerted: (Yes/No)</li>
+          <li>Applicable Notifications: (Go here)</li>
+        </ul>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default">Void Readings</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--end modal: plot point data details-->
+
+  <!--end modals-->
+
+</main>
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/jquery/dist/jquery.min.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/d3/d3.min.js" charset="utf-8"></script>
+<script src="bower_components/c3/c3.min.js"></script>
+<script>
+  $('.js-up-button').click(function(){
+    $(this).parents('.js-panel').insertBefore($(this).parents('.js-panel').prev());
+  });
+
+  $('.js-down-button').click(function(){
+    $(this).parents('.js-panel').insertAfter($(this).parents('.js-panel').next());
+  });
+</script>
+<script> //line chart with dates 
+    var chart_timeseries = c3.generate({
+    bindto: '.js-chart-timeline_heartrate',
+    data: {
+      x: 'x',
+      //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+      columns: [
+      ['x', '2016-01-01', '2016-01-02', '2016-01-03', '2016-01-04', '2016-01-05', '2016-01-06', '2016-01-07', '2016-01-08', '2016-01-09', '2016-01-10', '2016-01-11', '2016-01-12', '2016-01-13', '2016-01-14', '2016-01-15', '2016-01-16', '2016-01-17', '2016-01-18', '2016-01-19', '2016-01-20', '2016-01-21', '2016-01-22', '2016-01-23', '2016-01-24', '2016-01-25', '2016-01-26', '2016-01-27', '2016-01-28', '2016-01-29', '2016-01-30', '2016-02-01'],
+      ['data1', 30, 200, 100, 400, 150, 250, 30, 200, 100, 400, 150, 250,30, 200, 100, 400, 150, 250,30, 200, 100, 400, 150, 250, 30, 45, 100, 45, 65, 75]
+      ]
+    },
+    axis: {
+      x: {
+        type: 'timeseries',
+        label: 'Date',
+        tick: {
+          fit: true,
+          rotate: 55,
+          outer: false,
+          count: 31,
+          format: '%m/%d/%y',
+          culling: false
+        }
+      },
+      y: {
+      tick: {
+        fit: true,
+        culling: false,
+        outer: false
+      }
+    }
+    },
+        regions: [{
+      start: '2016-01-05',
+      end: '2016-01-20'
+    }]
+  });
+</script>
+<script> //scatter plot chart with dates
+  var chart_scatter = c3.generate({
+    bindto: '.js-chart-scatter_exercise',
+    data: {
+      selection: {
+        enabled: true
+      },
+      x: 'date',
+      columns: [
+        ['date', '2016-01-01', '2016-01-02', '2016-01-03', '2016-01-04', '2016-01-05', '2016-01-06', '2016-01-07', '2016-01-08', '2016-01-09', '2016-01-10', '2016-01-11', '2016-01-12', '2016-01-13', '2016-01-14', '2016-01-15', '2016-01-16', '2016-01-17', '2016-01-18', '2016-01-19', '2016-01-20', '2016-01-21', '2016-01-22', '2016-01-23', '2016-01-24', '2016-01-25', '2016-01-26', '2016-01-27', '2016-01-28', '2016-01-29', '2016-01-30', '2016-02-01'],
+        ['data2', 10, 10, 10, null, null, 20, 40, 20, 60, 80, null, 40, 40, 40, 10, 10, null, 10, null, 10, 10, 10, null, null, 10, 20, 40, 20, 60, 10, ]
+      ],
+      type: 'timeseries',
+      types: {
+        data2: 'scatter'
+      },
+      groups: [
+        ['date'],
+        ['data2']
+      ]
+    },
+    axis: {
+      x: {
+        type: 'timeseries',
+        label: 'Date',
+        tick: {
+          fit: true,
+          rotate: 55,
+          outer: false,
+          count: 31,
+          format: '%m/%d/%y',
+          culling: false
+        }
+      },
+      y: {
+        label: 'Minutes',
+        tick: {
+          count: 5,
+          values: [10, 20, 40, 60, 80],
+          fit: true,
+          culling: false,
+          outer: false
+        }
+      }
+    },
+    grid: {
+      y: {
+        lines: [{
+          value: 10
+        }, {
+          value: 20
+        }, {
+          value: 40
+        }, {
+          value: 60
+        }, {
+          value: 80
+        }]
+      }
+    },
+    regions: [{
+      start: '2016-01-05',
+      end: '2016-01-20'
+    }]
+
+  });
+</script>
+<script>
+  var chart_bar = c3.generate({
+    bindto: '.js-chart-bar_exercise-weekly',
+      data: {
+        x: 'x',
+        columns: [
+            ['x', 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12'],
+               ['0-10', 2, 2, 5, 4, 5, 4, 3, 4, 5, 2, 2, 1],
+              ['10-20', 3, 3, 2, 2, 1, 2, 4, 2, 2, 3, 0, 2],
+              ['20-40', 3, 4, 0, 2, 1, 1, 3, 2, 2, 3, 4, 2],
+              ['40-60', 2, 1, 0, 0, 0, 1, 3, 2, 2, 2, 4, 2],
+       ['More than 60', 2, 2, 0, 0, 0, 0, 0, 0, 0, 2, 3, 2]
+          ], 
+          type: 'bar',
+
+          groups: [
+              ['0-10', '10-20', '20-40', '40-60', 'More than 60']
+          ]
+      },
+      axis: {
+        y: {
+          label: {
+            text: 'Number of Responses',
+            position: 'outer-middle'
+          }
+        },
+       x: {
+        type: 'category',
+        tick: {
+          fit: true,
+          rotate: 55,
+          outer: false,
+          count: 12,
+          culling: false,
+          multiline: false   
+        },
+         height: 60
+       }
+      },
+      regions: [{
+      start: '1',
+      end: '5'
+    }],
+    tooltip: {
+          format: {
+              title: function (d) { return '(MM/DD/YYYY - MM/DD/YYYY)'; },
+              value: function (value) {
+                  var format = 12;
+                  return (value);
+              }
+          }
+      }
+  });
+</script>
+      </body>
+      </html>

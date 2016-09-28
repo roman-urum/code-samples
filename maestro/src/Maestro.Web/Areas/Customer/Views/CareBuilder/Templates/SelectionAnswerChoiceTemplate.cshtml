@@ -1,0 +1,15 @@
+﻿<script id="selectionAnswerChoiceTemplate" type="text/template">
+    <div class="input-group">
+        <span class="input-group-addon"><%= index %></span>
+        <input type="text" data-name="answerString.value" class="form-control" placeholder="Enter Answer Text Here" value="<%= answerString.value %>" />
+        <span class="input-group-btn">
+        <button class="btn btn-default js-make-open-close-ended"><% if (isOpenEnded) { %> Make Close-Ended <% } else { %> Make Open-Ended <% } %></button>
+        <% if (isRemovable) { %>
+            <button class="btn btn-default js-remove-answer" type="button">
+                 <span class="glyphicon glyphicon-remove"></span>
+            </button>
+        <% } %>
+      </span>
+    </div>
+    <span class="help-block help-block-error help-block-answerString-value hidden"></span>    
+</script>

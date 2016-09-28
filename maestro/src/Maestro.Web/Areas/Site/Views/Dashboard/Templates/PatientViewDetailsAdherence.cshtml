@@ -1,0 +1,69 @@
+﻿<script id="patientCardViewTemplateDetailADHERENCE" type="text/template">
+    <% if(!obj.noColor) { %>
+    <span class="color-line" style="background: transparent"></span>
+    <% } else { %>
+    <span class="color-line" style="background: <%- obj.color %>"></span>
+    <% } %>
+    <div class="alert-detailed-body collapse" id="details-<%- obj.id %>">
+        <div class="row alert-details-container">
+            <div class="col-sm-9">
+                <% if(obj.recentReadings) if(obj.recentReadings.length) { %>
+                <h5>Recent Health sessions (last 30 days):</h5>
+                <table class="table table-striped">
+                    <tbody>
+                    <% _.each(obj.recentReadings, function(recentReading) { %>
+                    <tr>
+                        <td style="white-space: nowrap"><%- recentReading.first %></td>
+                        <td><%- recentReading.second %></td>
+                        <td class="text-right"><strong><%- recentReading.third %></strong></td>
+                    </tr>
+                    <% }) %>
+                    </tbody>
+                </table>
+                <% } else { %>
+                <div class="well text-center">No recent health sessions were reported in the last 30 days</div>
+                <% } %>
+            </div>
+            <div class="col-sm-3">
+                <h5>Contact patient:</h5>
+                <hr style="margin-top: 0;"/>
+                <% if(obj.patientInfo.phone) { %>
+                <h5 style="margin-bottom: 0;">Phone number:</h5>
+                <%- obj.patientInfo.phone %> <br/><br/>
+                <% } %>
+                <a href="#" class="js-video"><i class="fa fa-icon fa-video-camera"></i> Start video call</a>
+                <br/>
+                <br/>
+                <a href="#" class="js-chat"><i class="fa fa-icon fa-envelope"></i> Send Message</a>
+                <br/>
+            </div>
+        </div>
+        <div class="row alert-details-container">
+            <div class="col-sm-5">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>
+                            <button type="button" class="btn btn-default acknowledge-alert">Acknowledge</button>
+                        </p>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <!--<p class="watch-patient-wrapper"></p>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <% if(obj.hasMore) { %>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <i style="display: inline-block;margin-top: 5px;">(+<%- obj.hasMore %> see more)</i>
+                    </div>
+                    <div class="col-sm-6">
+                        <a role="button" class="btn btn-primary pull-right" href="<%- obj.url %>/Patients/PatientDetails/<%- obj.patientInfo.id %>/Schedule/">See more</a>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+</script>

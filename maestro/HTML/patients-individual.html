@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- SUPER USER - INDIVIDUAL PATIENT -->
+        <meta http-equiv="X-UI-Compatible" content="IE=edge" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="vendor/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      <!-- PAGE HEADER -->
+      <header class="non-responsive-container ci-header">
+        <div class="ci-brand-img">
+            <a class="navbar-brand" href="#">
+                <img src="img/ci-logo.png" alt="Care Innovations, an Intel - GE Company"/>
+            </a>
+        </div>
+        <div class="ci-user-menu">
+          Welcome <a href="#">Susan</a>!
+        </div>
+        <div class="ci-signout">
+          <a href="#">Sign Out</a>
+        </div>
+      </header>
+      <!-- END PAGE HEADER -->
+        
+      <section class="non-responsive-container">
+        <div class="row">
+          
+          <!-- SIDE NAVIGATION -->
+          <nav class="col-xs-1 ci-navigation left-wrap">
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-home"></span><br />Home</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-user"></span><br />Patients</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-calendar"></span><br />Calendar</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-wrench"></span><br />Care Builder</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-list-alt"></span><br />Reports</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-cog"></span><br />Settings</a></div>
+          </nav>
+          <!-- END SIDE NAVIGATION -->
+          
+          <div class="right-wrap col-xs-11">
+            <div class="maestro-edit-wrap">
+              <!-- PAGE HEADER / BREADCRUMBS -->
+              <div class="row">
+                <div class="col-xs-10"><h1 class="ci-page-header">James Mackenzie <span class="small">(### &ndash; ### &ndash; ####)</span></h1></div>
+                <div class="col-xs-2 text-right ci-text"><button class="btn btn-primary">Edit</button></div>
+              </div>
+              <!-- END PAGE HEADER / BREADCRUMBS -->
+
+              <!-- MAIN CONTENT - EDIT PATIENTS -->
+              <div class="ci-content">
+                <div class="detail-wrap">
+                  <div class="row patient-header">
+                    <div class="col-xs-2 ci-text">Age: 100</div>
+                    <div class="col-xs-2 ci-text">DOB: 10/12/2015</div>
+                    <div class="col-xs-2 text-center ci-text">Gender: Female</div>
+                    <div class="col-xs-3 text-center ci-text">Phone: ###-###-####</div>
+                    <div class="col-xs-3 text-right">Video call: <button class="btn btn-default">Call Now</button></div>
+                  </div>
+                  <div class="patient-details">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <div class="ci-page-subheader">Key Identifiers</div>
+                        <ul class="list-unstyled">
+                          <li>ID 2</li>
+                          <li>ID 3</li>
+                        </ul>
+                        <div class="ci-page-subheader spacer">Patient Demographics</div>
+                        <address>
+                          Address 1<br />
+                          Address 2<br />
+                          Address 3<br />
+                          San Francisco, CA 94107<br /><br />
+                          (123) 456-7890<br />
+                          mail@domain.com<br /><br />
+                          English
+                        </address>
+                      </div>
+                      <div class="col-xs-4">
+                        <div class="ci-page-subheader">Care Managers</div>
+                        <ul class="list-unstyled">
+                          <li><div class="user-tag tag-green">Samantha Martin <a href="#"><span class="glyphicon glyphicon-remove-circle"></span></a></div></li>
+                          <li><div class="user-tag tag-blue">John Smith <a href="#"><span class="glyphicon glyphicon-remove-circle"></span></a></div></li>
+                          <li><a href="#">+ Add Care Manager</a></li>
+                        </ul>
+                        <div class="ci-page-subheader spacer">Groups and Conditions</div>
+                        <ul class="list-unstyled">
+                          <li><div class="user-tag tag-blue">Diabetes <a href="#"><span class="glyphicon glyphicon-remove-circle"></span></a></div></li>
+                          <li><div class="user-tag tag-green">Heart Transplant <a href="#"><span class="glyphicon glyphicon-remove-circle"></span></a></div></li>
+                          <li><div class="user-tag tag-yellow">Group Name <a href="#"><span class="glyphicon glyphicon-remove-circle"></span></a></div></li>
+                          <li><a href="#">+ Assign Group/Condition</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-xs-4">
+                        <div class="ci-page-subheader">Family Caregiver</div>
+                        <address>
+                          Name<br />
+                          Relationship<br />
+                          Address 3<br />
+                          Contact Phone<br />
+                          Contact Email
+                        </address>
+                        <div class="ci-page-subheader">Physicians</div>
+                        <address>
+                          First Name<br />
+                          Last Name<br />
+                          Specialty<br />
+                          Organization<br />
+                          Contact Phone<br />
+                          Contact Email<br />
+                          Fax Number
+                        </address>
+                        <address>
+                          First Name<br />
+                          Last Name<br />
+                          Specialty<br />
+                          Organization<br />
+                          Contact Phone<br />
+                          Contact Email<br />
+                          Fax Number
+                        </address>
+                        <address>
+                          First Name<br />
+                          Last Name<br />
+                          Specialty<br />
+                          Organization<br />
+                          Contact Phone<br />
+                          Contact Email<br />
+                          Fax Number
+                        </address>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expand-patient-row text-center">
+                    <a href="#" class="expand-patient">Expand</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END MAIN CONTENT -->
+            </div>
+            <div class="maestro-noedit-wrap edit-hide">
+              <!-- PAGE HEADER / BREADCRUMBS -->
+              <div class="row">
+                <div class="col-xs-3"><h1 class="ci-page-header">Patients</h1></div>
+                <div class="col-xs-9 text-right"><a class="show-edit-tools" href="#">+ Add Patient</a></div>
+              </div>
+              <!-- END PAGE HEADER / BREADCRUMBS -->
+              
+              <!-- MAIN CONTENT - PATIENTS -->
+              <div class="ci-content">
+                <ul class="list-unstyled">
+                  <li>Patient Name</li>
+                  <li>Patient Name</li>
+                  <li>Patient Name</li>
+                  <li>Patient Name</li>
+                </ul>
+              </div>
+              <!-- END MAIN CONTENT -->
+              
+            </div>
+            
+             <!-- MODALS / TOOLTIPS -->
+            <div class="modal fade" id="page-save" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Are you sure you want to proceed?</h4>
+                  </div>
+                  <div class="modal-body">
+                    You are attempting to save changes that will affect the data available to all sites within the Care Innovations Maestro application.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Continue Changes</button>
+                    <button type="button" class="btn btn-primary modal-hide-edit" data-dismiss="modal">Save Changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="page-cancel" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Are you sure you want to cancel?</h4>
+                  </div>
+                  <div class="modal-body">
+                    You have made changes to the current tab.  Are you sure you want to cancel and discard your changes?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default modal-hide-edit" data-dismiss="modal">Cancel Changes</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Continue Changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END MODALS / TOOLTIPS -->
+            
+          </div>
+        </div>
+      </section>
+      <script src="vendor/jquery/dist/jquery.min.js"></script>
+      <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="vendor/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+      <script src="js/global.js"></script>
+      <script src="js/patients.js"></script>
+    </body>
+</html>

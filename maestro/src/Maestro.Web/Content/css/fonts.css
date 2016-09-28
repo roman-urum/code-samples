@@ -1,0 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+@font-face {
+	font-family: 'TradeGothic18';
+	src: url('../fonts/tradegothicltstd-cn18-webfont.eot');
+	src: local('☺'), url('../fonts/tradegothicltstd-cn18-webfont.woff') format('woff'), url('../fonts/tradegothicltstd-cn18-webfont.ttf') format('truetype'), url('../fonts/tradegothicltstd-cn18-webfont.svg#webfont44edSEOy') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TradeGothic18';
+	src: url('../fonts/tradegothicltstd-bdcn20-webfont.eot');
+	src: local('☺'), url('../fonts/tradegothicltstd-bdcn20-webfont.woff') format('woff'), url('../fonts/tradegothicltstd-bdcn20-webfont.ttf') format('truetype'), url('../fonts/tradegothicltstd-bdcn20-webfont.svg#webfontKKhzV9YZ') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}

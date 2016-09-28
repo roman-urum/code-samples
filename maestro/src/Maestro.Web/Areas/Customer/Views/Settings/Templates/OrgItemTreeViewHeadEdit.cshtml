@@ -1,0 +1,32 @@
+<script id="orgItemTreeViewHeadEdit" type="text/template">
+
+    <div class="org-head js-org-head-edit">
+        <span class="tree-icon fa fa-caret-down"></span>
+        <span class="folder-icon fa fa-folder-o"></span>
+        <span class="name">
+            <input type="text" class="js-org-name form-control input-sm" value="<%= name %>" data-name="name">
+            <span class="help-block hidden"></span>
+        </span>
+        <span class="actions">
+            <span class="org-menu-item">
+                <a href="" class="btn btn-sm btn-default js-suborg-edit-save">Save</a>
+            </span>
+            <span class="org-menu-item">
+                <a href="" class="btn btn-sm btn-default js-suborg-edit-cancel">Cancel</a>
+            </span>
+            <% if (!isCreating) { %>
+                <% if (children.length) { %>
+                    <span class="org-menu-item">
+                        <a href="" class="btn btn-sm btn-default js-suborg-remove" disabled>Remove</a>
+                    </span>
+                <% } else { %>
+                    <span class="org-menu-item">
+                        <a href="" class="btn btn-sm btn-default js-suborg-remove">Remove</a>
+                    </span>
+                <% } %>
+
+            <% } %>
+        </span>
+    </div>
+
+</script>

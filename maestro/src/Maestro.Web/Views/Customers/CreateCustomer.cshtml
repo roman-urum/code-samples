@@ -1,0 +1,84 @@
+﻿@model Maestro.Web.Models.Customers.CreateCustomerViewModel
+ 
+<div class="modal fade" id="create-customer" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">@GlobalStrings.Create_Customer_CreateCustomerText</h4>
+            </div> 
+
+            @using (Html.BeginForm("Create", "Customers", FormMethod.Post, new { id="create-customer-form"}))
+            {
+                <div class="modal-body">               
+                    <h5><strong>@GlobalStrings.Create_Customer_Step1Text</strong></h5>
+                    <p>@GlobalStrings.Create_Customer_CustomerNameFieldTip</p>
+                    <div class="row">
+                        <div class="col-sm-4 ci-text">
+                            @Html.LabelFor(model => model.CustomerName)
+                        </div>
+                        <div class="col-sm-8">
+
+                            @Html.TextBoxFor(model => model.CustomerName)
+                            <div class="input-sub-note x-small error-state">
+                                @Html.ValidationMessageFor(model => model.CustomerName)
+                            </div>
+                        </div>
+                    </div>
+                    <h5><strong>@GlobalStrings.Create_Customer_Step2Text</strong></h5>
+                    <p>@GlobalStrings.Create_Customer_SubdomainNameFieldTip</p>
+                    <p><strong>@GlobalStrings.Create_Customer_ExampleText</strong><br />https://www.<strong>customername</strong>.healthharmonymaestro.com</p>
+                    <div class="row">
+                        <div class="col-sm-4 ci-text">
+                            @Html.LabelFor(model => model.SubdomainName)
+                        </div>
+                        <div class="col-sm-8">
+      
+                            @Html.TextBoxFor(model => model.SubdomainName)         
+                            <div class="input-sub-note x-small error-state">
+                                @Html.ValidationMessageFor(model => model.SubdomainName)
+                            </div>
+                        </div>
+                    </div>
+                    <h5><strong>@GlobalStrings.Create_Customer_Spet3Text</strong></h5>
+                    <p>@GlobalStrings.Create_Customer_SiteNameFieldTip</p>
+                    <div class="row">
+                        <div class="col-sm-4 ci-text">
+                            @Html.LabelFor(model => model.FirstSiteName)
+                        </div>
+                        <div class="col-sm-8">
+                          
+                            @Html.TextBoxFor(model => model.FirstSiteName)                            
+                            <div class="input-sub-note x-small error-state">
+                                @Html.ValidationMessageFor(model => model.FirstSiteName)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">                        
+                        <div class="col-sm-4 ci-text">
+                            @Html.LabelFor(model => model.ContactPhone)
+                        </div>
+                        <div class="col-sm-8">
+
+                            @Html.TextBoxFor(model => model.ContactPhone)
+                            <div class="input-sub-note x-small error-state">
+                                @Html.ValidationMessageFor(model => model.ContactPhone)
+                            </div>
+                        </div>
+                    </div>
+                    <p><em>@GlobalStrings.RequiredText</em></p>
+                    <div class="row">
+                        <div class="col-xs-10 error-state" id="server-error-message">
+
+                          
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel-button">@GlobalStrings.Edit_Customer_CancelButtonText</button>
+                    <button type="button" class="btn btn-primary" id="submit-customer">@GlobalStrings.Edit_Customer_SaveButtonText</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

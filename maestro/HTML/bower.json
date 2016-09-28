@@ -1,0 +1,22 @@
+{
+  "name": "Dev",
+  "version": "0.0.0",
+  "license": "NONE",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "bootstrap-switch": "~3.3.2",
+    "d3": "~3.5.5",
+    "c3": "~0.4.10"
+  },
+  "resolutions": {
+    "d3": "~3.5.5"
+  }
+}

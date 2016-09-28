@@ -1,0 +1,75 @@
+﻿@using Roles = Maestro.Domain.Constants.Roles
+<script id="questionModalScaleAnswerChoiceTemplate" type="text/template">
+<div class="row">
+    <div class="col-sm-12">
+        <strong>Value:</strong> <%=value%>    
+        <div class="row row-value-ci form-horizontal">
+            <div class="col-sm-6">
+                <div class="form-group form-group-sm">
+                    <label class="col-sm-3 control-label text-left">ID:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control"
+                               type="text" 
+                               name="externalId"
+                               value="<%=externalId%>"
+                               placeholder="Enter ID here"
+                               data-name="externalId" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                @if (User.IsInRole(Roles.SuperAdmin))
+                {
+                    <div class="form-group form-group-sm">
+                    <label class="col-sm-3 control-label offset-left-0 text-left">CI ID:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control"
+                               type="text" 
+                               name="internalId"
+                               value="<%=internalId%>"
+                               placeholder="Enter CI ID here"
+                               data-name="internalId" />
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+
+        <div class="row form-horizontal">
+            <div class="col-sm-6">
+                <div class="form-group form-group-sm">
+                    <label class="col-sm-3 control-label text-left">Score:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control"
+                               type="text" 
+                               name="externalScore"
+                               value="<%=externalScore%>"
+                               placeholder="Enter Score Here" 
+                               data-name="externalScore"
+                               id="external-score_<%=value%>" />
+                        <span class="help-block hidden" data-validate-for="external-score_<%=value%>"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                @if (User.IsInRole(Roles.SuperAdmin))
+                {
+                    <div class="form-group form-group-sm">
+                    <label class="col-sm-3 control-label offset-left-0 text-left">CI Score:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control"
+                               type="text" 
+                               name="internalScore"
+                               value="<%=internalScore%>"
+                               placeholder="Enter Score Here"
+                               data-name="internalScore"
+                               id="internal-score_<%=value%>" />
+                        <span class="help-block hidden" data-validate-for="external-score_<%=value%>"></span>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+</script>

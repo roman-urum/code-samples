@@ -1,0 +1,140 @@
+<script id="siteEditView" type="text/template">
+
+    <form>
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Organization:</label>
+            </div>
+            <div class="col-sm-5">
+                <span class="orgs-path"><%= getOrgsPath() %></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Move site:</label>
+            </div>
+            <div class="col-sm-5">
+                <select name="parentOrganizationId">
+                    <option value=""><%= rootOrgName %></option>
+                    <% _.each(orgs, function (org) { %>
+                        <option value="<%= org.id %>">
+                            <% var i = 0, indentStr = ''; %>
+                            <% while (i < org.indentLevel) { %>
+                            <% indentStr += '\u2013'; %>
+                            <% i += 1; %>
+                            <% } %>
+                            <%= indentStr %>
+                            <%= org.name %>
+                        </option>
+                    <% } ); %>
+                </select>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Site Availability:</label>
+            </div>
+            <div class="col-sm-5">
+                <input type="checkbox" class="basic-checkbox js-site-toggle" <%= isActive ? 'checked' : '' %>>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Display name:*</label>
+            </div>
+            <div class="col-sm-5">
+                <input class="form-control input-sm" type="text" name="name" data-name="name" value="">
+                <span class="help-block hidden"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Contact Phone:</label>
+            </div>
+            <div class="col-sm-5">
+                <input class="form-control input-sm" type="text" placeholder="###-###-####" name="contactPhone" value="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>State:</label>
+            </div>
+            <div class="col-sm-5">
+                <input class="form-control input-sm" type="text" name="state" value="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>City:</label>
+            </div>
+            <div class="col-sm-5">
+                <input class="form-control input-sm" type="text" name="city" value="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>ZipCode:</label>
+            </div>
+            <div class="col-sm-5">
+                <input class="form-control input-sm" type="text" name="zipCode" value="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Address1:</label>
+            </div>
+            <div class="col-sm-5">
+                <input class="form-control input-sm" type="text" name="address1" value="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Address2:</label>
+            </div>
+            <div class="col-sm-5">
+                <input class="form-control input-sm" type="text" name="address2" value="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Address3:</label>
+            </div>
+            <div class="col-sm-5">
+                <input class="form-control input-sm" type="text" name="address3" value="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>NPI:</label>
+            </div>
+            <div class="col-sm-5">
+                <input class="form-control input-sm" type="text" name="nationalProviderIdentificator" value="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Customer Site ID:</label>
+            </div>
+            <div class="col-sm-5">
+                <input class="form-control input-sm" type="text" name="customerSiteId" value="">
+            </div>
+        </div>
+
+        <a class="btn btn-danger site-remove js-site-remove">Remove</a>
+    </form>
+
+</script>

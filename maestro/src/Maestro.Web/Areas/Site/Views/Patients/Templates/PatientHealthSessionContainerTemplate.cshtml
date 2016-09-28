@@ -1,0 +1,157 @@
+<script id="patientHealthSessionContainerTemplate" type="text/template">
+
+    <ul class="nav nav-pills nav-pills-sm-ci nav-pills-session-ci" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#tab-session-creation" role="tab" data-toggle="tab">
+                Add Content
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#tab-session-schedule" role="tab" data-toggle="tab">
+                Schedule
+                <span id="session-protocol-count" class="hidden"></span>
+            </a>
+        </li>
+    </ul>
+    <div class="new-session-label">New Session</div>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tab-session-creation">
+            <div class="form-search-small-ci">
+                <div class="form-group">
+                    <input class="form-control" type="text" id="search-protocol-elements-keyword" placeholder="Type Keyword here">
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <select id="search-protocol-elements-tags" data-placeholder="Search by Tags" data-loading-placeholder="Loading..." class="form-control chosen-select searching-tags"></select>
+                        <span class="input-group-btn js-search-protocol-clear-container">
+                            <button class="btn btn-default js-search-protocol-clear" type="button">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div id="patient-protocol-search-result" class="b-patient-session-protocols protocols-search"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab-session-schedule">
+            <div class="b-patient-session-protocols">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" data-name="name" placeholder="New Session">
+                    <span class="help-block hidden"></span>
+                </div>
+                <hr />
+                <div id="session-protocol-collection" class="session-protocol-collection-ci"></div>
+                <hr />
+                <div class="form-horizontal hide-grid-ci">
+                    <% if( !isEdit ){%>
+                        <div class="form-group">
+                            <div class="col-sm-12 checkbox">
+                                <label>
+                                    <input type="checkbox" name="isDefault" id="isDefault"> Make this the Default Health Session
+                                </label>
+                            </div>
+                        </div>
+                    <% } %>
+                    <% if( isEdit && isDefault ) {%>
+                        <div class="default-health-session-edit-label-ci">
+                            There are no schedule details to<br>
+                            show. This is the Health Session that<br>
+                            is always available to the Patient and<br>
+                            that can be taken an unlimited<br>
+                            number of times.
+                        </div>
+                    <% } %>
+
+                    <% if( ( isEdit && !isDefault ) || !isEdit ) {%>
+                        <div id="regular-health-session-fields">
+                            <h5>Session Duration</h5>
+                            <div class="form-group">
+                                <label for="startDate" class="col-sm-5 control-label offset-right-0">Start Date</label>
+                                <div class="col-sm-7">
+                                    <div id="startDate-datetimepicker" class="input-group">
+                                        <input type="text" class="form-control" id="startDateDp" name="startDateDp">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                    <input type="hidden" id="startDate" name="startDate" data-name="startDate">
+                                    <span class="help-block help-block-error help-block-startDate hidden"></span>
+                                </div>
+                            </div>
+                            <h5>Session Time</h5>
+                            <div class="form-group">
+                                <div class="col-sm-12">     
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="timeType" id="defaultTime" value="defaultTime">
+                                            Default to patient preferred time (<%=preferredSessionTime%>)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12 offset-right-0">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="timeType" id="differentTime" value="differentTime">
+                                            Select a different time
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-5"></div>
+                                <div class="col-sm-7">
+                                    <div class="input-group" id="sessionTime-time">
+                                        <input type="text" class="form-control" id="sessionTimeTp" name="sessionTimeTp" data-name="sessionTime" value="">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-time"></span>
+                                        </span>
+                                    </div>
+                                    <input type="hidden" id="sessionTime" name="sessionTime" data-name="sessionTime">
+                                    <span class="help-block help-block-error help-block-sessionTime hidden"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group overlay-container">
+                                <label for="expireMinutes" class="col-sm-5 control-label offset-right-0">Valid For</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="expireHours" name="expireHours" data-name="expireHours" value="">
+                                    <input type="hidden" id="expireMinutes" name="expireMinutes" >
+                                    <span class="help-block help-block-error help-block-expireHours hidden"></span>
+                                </div>
+                                <label for="expireMinutes" class="col-sm-3 control-label text-left offset-left-0">Hours</label>
+                                <span class="overlay js-valid-for-overlay" style="display: none;"></span>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12 checkbox">
+                                    <label>
+                                        <input type="checkbox" name="isNeverExpiring" id="isNeverExpiring"> Never Expires
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-12 checkbox">
+                                    <label>
+                                        <input type="checkbox" name="isRecurring" id="isRecurring"> Make this a Recurring Session
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="recurring-session-rules" class="hidden"></div>
+                        </div>
+                    <% } %>
+                </div>
+                <p class="help-block help-block-error help-block-session-occurrences hidden"></p>
+                <div class="session-protocols-submit">
+                    <button class="btn btn-link js-cancel-session">Cancel</button>
+                    <% if( isEdit ){%>
+                    <button class="btn btn-primary js-create-session disabled">Update</button>
+                    <%}else{%>
+                    <button class="btn btn-primary js-create-session disabled">Create</button>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+

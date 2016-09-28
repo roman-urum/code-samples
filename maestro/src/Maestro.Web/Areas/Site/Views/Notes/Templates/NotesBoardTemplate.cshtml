@@ -1,0 +1,40 @@
+﻿<script id="notesBoardTemplate" type="text/template">
+    <i class="fa fa-times close-notes"></i>
+    <div class="all-note-containers">
+        <div class="notes-container">
+            <header class="notes-header">
+                <div class="clearfix">
+                    <h2 class="notes-count pull-left">0 notes</h2>
+                    <h2 class="pull-left">
+                        <a id="new-note-button" href="#" class="pull-left" style="margin: 0 10px;">Add note</a>
+                    </h2>
+                </div>
+                <div id="notes-search-box"></div>
+            </header>
+            <hr/>
+            <section id="notes-body" class="notes-body"></section>
+            <!--<footer class="notes-footer text-center">
+                <button id="new-note-button" class="btn btn-default" type="button">Add note</button>
+            </footer>-->
+        </div>
+        <div class="new-note-container">
+            <header class="notes-header">
+                <h2>New Note</h2>
+                <div class="details-container"></div>
+                <div id="new-notables-list"></div>
+            </header>
+            <footer class="notes-footer clearfix" style="padding-top: 20px;">
+                <button id="save-new-note" class="btn btn-default pull-left" type="button">Save note</button>
+                <a id="hide-new-note" class="pull-left" style="margin: 5px 0 0 10px">Cancel</a>
+            </footer>
+            <hr/>
+            <div class="new-note-text-box">
+                <textarea id="new-note-field" placeholder="Type note contents here"></textarea>
+            </div>
+
+        </div>
+    </div>
+    <div class="spinner-block">
+        <img src="/Content/img/spinner.gif" class="spinner" />
+    </div>
+</script>

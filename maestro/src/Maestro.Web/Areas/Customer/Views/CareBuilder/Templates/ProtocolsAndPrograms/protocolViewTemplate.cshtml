@@ -1,0 +1,121 @@
+@using Maestro.Domain.Enums
+@using Roles = Maestro.Domain.Constants.Roles
+
+<script id="protocolViewTemplate" type="text/template">
+    <input id="invalid-branches-error" type="hidden" value="@GlobalStrings.Edit_Customer_CareBuilder_InvalidProtocolBranchesError" />
+
+    <h1 id="title-page" class="h1-ci" data-edit-title="Edit Protocol">New Protocol</h1>
+    <ol class="breadcrumb">
+        <li class="active">
+            @GlobalStrings.Edit_Customer_CareBuilderBreadcrumbText
+        </li>
+        <li>
+            <a href="@Url.Action("ProtocolsAndPrograms/Protocols", "CareBuilder", new
+                     {
+                         area = "Customer",
+                         subdomain = CustomerContext.Current.Customer.Subdomain
+                     })">
+                @GlobalStrings.Edit_Customer_CareBuilder_ProtocolsBreadcumbText
+            </a>
+        </li>
+        <li class="active js-protocol-name">
+            <% if (name) { %>
+            <%= name.value %>
+            <% } else { %>
+            @GlobalStrings.Edit_Customer_CareBuilder_CreateBreadcrumbText
+            <% } %>
+        </li>
+    </ol>
+
+    <div class="alert alert-success hidden js-alert-create-success" role="alert">New protocol is successfully created</div>
+    <div class="alert alert-success hidden js-alert-update-success" role="alert">Protocol successfully updated</div>
+    <div class="alert alert-danger hidden js-alert-fail" role="alert"></div>
+    <div class="row protocol-container">
+        <div class="col-sm-3 offset-right-0 protocol-elements-container">
+            <div class="show-grid-ci clearfix">
+                <div class="col-sm-12 protocol-elements-list-container">
+                    <div class="form-search-small-ci">
+                        <div class="form-group">
+                            <select class="form-control js-search-target">
+                                <option value="all">All</option>
+                                <option value="textAndMediaElements">Text and media</option>
+                                <option value="questions">Questions</option>
+                                <option value="measurements">Measurements</option>
+                                <option value="assessments">Assessments</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="search-protocol-elements-keyword" placeholder="Type Keyword here">
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <select id="search-protocol-elements-tags" data-placeholder="Search by Tags" data-loading-placeholder="Loading..." class="form-control chosen-select searching-tags"></select>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default js-search-clear" type="button">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="js-search-result">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 protocol-form-container">
+            <div class="form-protocol-ci">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">Name of protocol: </span>
+                        <input type="text" class="form-control" value="<% if (typeof(id) !== "undefined") { %><%=name.value%><% } %>" data-name="name" id="protocol-name">
+                        
+                        @if (User.IsInRoles(Roles.SuperAdmin) || User.HasPermissions(CustomerContext.Current.Customer.Id, CustomerUserRolePermissions.ManageHealthProtocols))
+                        {
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary js-save-protocol <% if (typeof(id) === "undefined") { %>disabled<% } %>" <% if (typeof(id) === "undefined") { %>disabled="disabled"<% } %> type="button" data-loading-text="Saving...">Save Protocol</button>
+                            </span>
+                        }
+                        
+                        <span class="input-group-btn">
+                            <a class="btn btn-primary js-simulate-protocol">
+                                <span class="glyphicon glyphicon-play"></span>
+                            </a>
+                        </span>
+                    </div>
+                    <span class="help-block help-block-error help-block-name hidden"></span>
+                </div>                
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="form-group">
+                            <input type="text" id="protocol-details-tags" class="form-control creation-tags" data-placeholder="Add Tags" 
+                                   data-name="tags"
+                                   data-loading-placeholder="Loading..." 
+                                   value="<%= tags.join(',') %>" />
+                            <span class="help-block help-block-error help-block-tags hidden"></span>
+                        </div>                        
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="checkbox">
+                            <label>
+                                <input id="protocol-privacy" type="checkbox" <% if (isPrivate) { %>checked="checked"<% } %> /> @GlobalStrings.Edit_Customer_CareBuilder_ProtocolDetails_PrivacyLabelText
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="show-grid-ci">
+                <div class="col-sm-12 protocol-tree-list-container">
+                    <ol class="protocol-list js-protocol-tree protocol-tree-list">
+                        <li class="protocol-first-element-drop-placeholder js-protocol-first-element-drop-placeholder">
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

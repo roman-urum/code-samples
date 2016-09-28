@@ -1,0 +1,28 @@
+﻿<script id="measurementBranchModalTemplate" type="text/template">
+    <p>@GlobalStrings.Edit_Customer_CareBuilder_ProtocolsBranchInstuctionsText</p>
+    <div>
+        <span class="help-block-error js-value-not-selected hide">
+            @GlobalStrings.Edit_Customer_CareBuilder_ProtocolsBranchError
+        </span>
+    </div>
+    <div>
+        <span class="help-block-error js-branch-exists hide">
+            @GlobalStrings.Edit_Customer_CareBuilder_ProtocolsBranchExists
+        </span>
+    </div>
+    
+    <div class="row js-alert-severities">
+        <div class="col-md-6">
+            <h4>@GlobalStrings.Edit_Customer_CareBuilder_ThresholdSeverityLabel</h4>
+            <select id="thresholdAlertSeverityId" 
+                    name="thresholdAlertSeverityId" 
+                    data-name="thresholdAlertSeverityId"
+                    class="form-control">
+            </select>
+        </div>
+    </div>
+    
+    <div class="js-thresholds">
+
+    </div>
+</script>

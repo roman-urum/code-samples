@@ -1,0 +1,41 @@
+﻿@using Maestro.Domain.Enums
+@using Roles = Maestro.Domain.Constants.Roles
+
+<script id="protocolListItemTemplate" type="text/template">
+    <div class="panel-heading clearfix" role="tab" id="heading-<%=id%>">
+        <input type="hidden" value="<%= id %>" name="Id" />
+        <div class="row">
+            <div class="col-sm-10">
+                <h4 class="panel-title strong">
+                    <a class="js-edit-protocol" href="EditProtocol/<%=id%>">
+                        <%= name %>
+                    </a>
+                </h4>
+            </div>
+            <div class="col-sm-2 small italic text-right">Protocol</div>
+        </div>
+
+        <% _.each(tags, function(tag){ %>
+        <span class="label label-info"><%= tag %></span>
+        <% }); %>
+
+    </div>
+    <div class="panel-footer clearfix">
+        <div class="pull-left">
+            <strong>Default Language:</strong> EN-US
+        </div>
+
+        <div class="pull-right pull-right-panel-heading-ci">
+            <a href="EditProtocol/<%= id %>" class="btn btn-primary js-edit-protocol">
+                @if (User.IsInRoles(Roles.SuperAdmin) || User.HasPermissions(CustomerContext.Current.Customer.Id, CustomerUserRolePermissions.ManageHealthProtocols))
+                {
+                    <span>@GlobalStrings.ProgramProtocolList_EditButton</span>
+                }
+                else
+                {
+                    <span>@GlobalStrings.ProgramProtocolList_ViewButton</span>
+                }                
+            </a>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,35 @@
+<script id="protocolTreeAnswerScaleItemTemplate" type="text/template">
+	<div class="protocol-item-element protocol-item-element-answer protocol-item-disabled">
+		<div class="row hide-grid-ci">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10 offset-0">
+				<div class="clearfix">
+					<span class="pull-left scale-answer-label min"><%=lowLabel.value%></span>
+					<span class="pull-right scale-answer-label max"><%=highLabel.value%></span>
+					<% if (midLabel != null) { %>
+					    <span class="pull-center scale-answer-label mid"><%= midLabel.value %></span>
+					<% } %>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		<div class="row hide-grid-ci">
+			<div class="col-sm-1 text-right"><%=lowValue%></div>
+			<div class="col-sm-10 offset-0">
+				 <input class="scale" type="text" data-slider-min="<%=lowValue%>" data-slider-max="<%=highValue%>" data-slider-step="1" data-slider-value="0"/>
+			</div>
+			<div class="col-sm-1"><%=highValue%></div>
+		</div>
+		<div class="dropdown element-settings">
+			<!--button class="btn btn-default btn-settings dropdown-toggle" type="button" id="element-settings-<%=id%>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon-cog"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="element-settings-<%=id%>">
+				<li><a href="#">Action</a></li>
+				<li><a href="#">Another action</a></li>
+				<li><a href="#">Something else here</a></li>
+				<li><a href="#">Separated link</a></li>
+			</ul-->
+		</div>
+	</div>
+</script>

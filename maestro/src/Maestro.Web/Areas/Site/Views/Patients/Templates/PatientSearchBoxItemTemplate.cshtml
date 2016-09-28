@@ -1,0 +1,11 @@
+﻿<script id="PatientSearchBoxItemTemplate" type="text/template">
+    <div class="suggestion-box-item" data-href="PatientDetails/<%- obj.Id %>/">
+        <span><%- obj.FirstName %></span>
+        <span><%- obj.LastName %></span>
+        <% var length = obj.Identifiers.length; if(length) { %>
+        <i>(<% _.each(obj.Identifiers, function(item, position) { %>
+            <%- item.Name %>: <%- item.Value %> <% if(length - 1 !== position) { %>,<% } %>
+            <% }) %>)</i>
+        <% } %>
+    </div>
+</script>

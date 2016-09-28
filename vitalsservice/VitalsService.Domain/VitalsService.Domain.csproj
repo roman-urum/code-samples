@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{301AB3D0-1AAC-44FA-9959-746F6203ADEA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VitalsService.Domain</RootNamespace>
+    <AssemblyName>VitalsService.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\VA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebApi Foolproof Validation, Version=0.9.5639.13860, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\foolproof.webapi.0.0.2\lib\WebApi Foolproof Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\DbConstraints.cs" />
+    <Compile Include="DbEntities\Alert.cs" />
+    <Compile Include="DbEntities\AssessmentMedia.cs" />
+    <Compile Include="DbEntities\AssessmentValue.cs" />
+    <Compile Include="DbEntities\Condition.cs" />
+    <Compile Include="DbEntities\HealthSessionElementAlert.cs" />
+    <Compile Include="DbEntities\HealthSessionElementValue.cs" />
+    <Compile Include="DbEntities\Device.cs" />
+    <Compile Include="DbEntities\FreeFormAnswer.cs" />
+    <Compile Include="DbEntities\HealthSession.cs" />
+    <Compile Include="DbEntities\HealthSessionElement.cs" />
+    <Compile Include="DbEntities\IAnalyticsEntity.cs" />
+    <Compile Include="DbEntities\IBaseAnalyticsEntity.cs" />
+    <Compile Include="DbEntities\Measurement.cs" />
+    <Compile Include="DbEntities\Note.cs" />
+    <Compile Include="DbEntities\NoteNotable.cs" />
+    <Compile Include="DbEntities\PatientCondition.cs" />
+    <Compile Include="DbEntities\SuggestedNotable.cs" />
+    <Compile Include="DbEntities\MeasurementValue.cs" />
+    <Compile Include="DbEntities\MeasurementNote.cs" />
+    <Compile Include="DbEntities\Tag.cs" />
+    <Compile Include="DbEntities\Threshold.cs" />
+    <Compile Include="DbEntities\ScaleAnswer.cs" />
+    <Compile Include="DbEntities\SelectionAnswer.cs" />
+    <Compile Include="DbEntities\AlertSeverity.cs" />
+    <Compile Include="DbEntities\DefaultThreshold.cs" />
+    <Compile Include="DbEntities\PatientThreshold.cs" />
+    <Compile Include="DbEntities\Vital.cs" />
+    <Compile Include="DbEntities\VitalAlert.cs" />
+    <Compile Include="DocumentDb\RawMeasurement.cs" />
+    <Compile Include="Dtos\AlertSeveritiesSearchDto.cs" />
+    <Compile Include="Dtos\AssessmentMediaSearchDto.cs" />
+    <Compile Include="Dtos\ConditionSearchDto.cs" />
+    <Compile Include="Dtos\NotesSearchDto.cs" />
+    <Compile Include="Dtos\BaseSearchDto.cs" />
+    <Compile Include="Dtos\AlertsSearchDto.cs" />
+    <Compile Include="Dtos\OrderedSearchDto.cs" />
+    <Compile Include="Enums\ConditionStatus.cs" />
+    <Compile Include="Enums\CreateUpdatePatientConditionsStatus.cs" />
+    <Compile Include="Enums\Ordering\HealthSessionOrderBy.cs" />
+    <Compile Include="Enums\SortDirection.cs" />
+    <Compile Include="Dtos\ThresholdsSearchDto.cs" />
+    <Compile Include="Dtos\DefaultThresholdsSearchDto.cs" />
+    <Compile Include="Dtos\OperationResultDto.cs" />
+    <Compile Include="Dtos\PagedResult.cs" />
+    <Compile Include="Dtos\HealthSessionsSearchDto.cs" />
+    <Compile Include="Dtos\TokenServiceDtos\VerifyTokenRequest.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Enums\MediaType.cs" />
+    <Compile Include="Enums\UpdateAssessmentMediaStatus.cs" />
+    <Compile Include="Enums\UpdateHealthSessionStatus.cs" />
+    <Compile Include="Enums\CreateUpdateAlertSeverityStatus.cs" />
+    <Compile Include="Enums\CreateUpdateAlertStatus.cs" />
+    <Compile Include="Enums\NoteStatus.cs" />
+    <Compile Include="Enums\SuggestedNotableStatus.cs" />
+    <Compile Include="Enums\CreateUpdateDefaultThresholdStatus.cs" />
+    <Compile Include="Enums\GetAlertSeverityStatus.cs" />
+    <Compile Include="Enums\GetDeleteDefaultThresholdStatus.cs" />
+    <Compile Include="Enums\GetHealthSessionStatus.cs" />
+    <Compile Include="Enums\CreateHealthSessionStatus.cs" />
+    <Compile Include="Enums\AlertType.cs" />
+    <Compile Include="Enums\ThresholdDefaultType.cs" />
+    <Compile Include="Enums\ThresholdSearchType.cs" />
+    <Compile Include="Enums\UpdateMeasurementStatus.cs" />
+    <Compile Include="Enums\CreateMeasurementStatus.cs" />
+    <Compile Include="Enums\GetDeleteThresholdStatus.cs" />
+    <Compile Include="Enums\CreateUpdateThresholdStatus.cs" />
+    <Compile Include="Enums\HealthSessionElementValueType.cs" />
+    <Compile Include="Enums\HealthSessionElementType.cs" />
+    <Compile Include="Enums\ProcessingType.cs" />
+    <Compile Include="Enums\ThresholdType.cs" />
+    <Compile Include="Enums\UnitType.cs" />
+    <Compile Include="Enums\VitalType.cs" />
+    <Compile Include="EsbEntities\DeviceMessage.cs" />
+    <Compile Include="EsbEntities\HealthSessionElementMessage.cs" />
+    <Compile Include="EsbEntities\HealthSessionElementValueMessage.cs" />
+    <Compile Include="EsbEntities\HealthSessionMessage.cs" />
+    <Compile Include="EsbEntities\MeasurementMessage.cs" />
+    <Compile Include="EsbEntities\NoteMessage.cs" />
+    <Compile Include="EsbEntities\VitalMessage.cs" />
+    <Compile Include="Dtos\MessagingHub\NotificationDto.cs" />
+    <Compile Include="Dtos\MessagingHub\NotificationResponseDto.cs" />
+    <Compile Include="Enums\MessagingHub\RegistrationType.cs" />
+    <Compile Include="DomainObjects\PatientAlerts.cs" />
+    <Compile Include="IAuditable.cs" />
+    <Compile Include="ISoftDelitable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dtos\TokenServiceDtos\CreateUserRequest.cs" />
+    <Compile Include="Dtos\TokenServiceDtos\CredentialsDto.cs" />
+    <Compile Include="Dtos\TokenServiceDtos\GetTokenRequest.cs" />
+    <Compile Include="Dtos\TokenServiceDtos\GetTokenResponse.cs" />
+    <Compile Include="Dtos\TokenServiceDtos\VerifyAccessRequest.cs" />
+    <Compile Include="Dtos\TokenServiceDtos\VerifyAccessResponse.cs" />
+    <Compile Include="Dtos\TokenServiceDtos\VerifyCertificateRequest.cs" />
+    <Compile Include="Dtos\TokenServiceDtos\VerifyCertificateResponse.cs" />
+    <Compile Include="Dtos\MeasurementsSearchDto.cs" />
+    <Compile Include="Resources\GlobalStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalStrings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VitalsService.Common\VitalsService.Common.csproj">
+      <Project>{0b0efe13-f567-41f5-8c68-129edc3863b5}</Project>
+      <Name>VitalsService.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GlobalStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

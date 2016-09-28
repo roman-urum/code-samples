@@ -1,0 +1,18 @@
+﻿@model HandleErrorInfo
+@{
+    ViewBag.Title = GlobalStrings.Shared_ErrorMessage_Title;
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+<div class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="bg-danger">
+                    <h2 class="text-danger">Error</h2>
+                    <p class="text-danger">@Model.Exception.Message</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

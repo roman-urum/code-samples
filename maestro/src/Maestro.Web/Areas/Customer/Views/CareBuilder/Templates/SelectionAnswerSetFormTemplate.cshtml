@@ -1,0 +1,49 @@
+﻿<script id="selectionAnswerSetFormTemplate" type="text/template">
+    <form>
+        <div class="form-group">
+            <label>Language</label>
+            <div>EN-US (default)</div>
+        </div>
+        <div class="form-group">
+            <label>Name of Content Item</label>
+            <input type="text" data-name="name" class="form-control" placeholder="Enter Name Here" value="<%= name %>" />
+            <span class="help-block hidden"></span>
+        </div>
+        <div class="form-group">
+            <label>Tags <i>(Optional)</i></label>
+            <input type="text" class="form-control creation-tags" data-placeholder="Add Tags" data-loading-placeholder="Loading..." 
+                   data-name="tags"
+                   value="<%= tags.join(',') %>" />
+            <span class="help-block help-block-tags hidden"></span>
+        </div>
+        <hr />
+        <div class="form-group">
+            <button class="btn btn-default js-change-answerset-type">
+                <span class="glyphicon glyphicon-refresh"></span>
+                Change Answer Type
+            </button>
+        </div>
+        <hr />
+        
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" data-name="isMultipleChoice"> @GlobalStrings.Edit_Customer_CareBuilder_MultipleChoiceCheckboxLabel
+            </label>
+        </div>
+
+        <div class="js-answers"></div>
+
+        <div class="form-group">
+            <button class="btn btn-default js-add-answer">
+                <span class="glyphicon glyphicon-plus"></span>
+                Add Another Answer
+            </button>
+        </div>
+
+        <div class="form-group">
+            <div class="alert alert-success js-alert-create-success hidden" role="alert">Answer set added successfully!</div>
+            <div class="alert alert-success js-alert-update-success hidden" role="alert">Answer set updated successfully!</div>
+            <div class="alert alert-danger hidden" role="alert"></div>
+        </div>
+    </form>
+</script>

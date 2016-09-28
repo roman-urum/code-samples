@@ -1,0 +1,47 @@
+﻿<script id="textMediaElementTemplate" type="text/template">
+    <div class="form-group">
+        <label>Language</label>
+        <div>EN-US (default)</div>
+    </div>
+
+    <div class="form-group">
+        <label for="careElement-textelementName">Name of Content Item</label>
+        <input data-name="name" name="name" value="<%= name %>" type="text" class="form-control" id="careElement-textelementName" placeholder="Enter Name Here">
+        <span class="help-block hidden" data-validate-for="careElement-textelementName"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Tags <i>(Optional)</i></label>
+        <input type="text" id="text-and-media-element-tags" class="form-control creation-tags" 
+               data-placeholder="Add Tags" 
+               data-loading-placeholder="Loading..." 
+               data-name="tags"
+               value="<%= tags.join(',') %>" />
+        <span class="help-block help-block-tags hidden" data-validate-for="text-and-media-element-tags"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="careElement-TextElementString">Text <i>(Optional)</i></label>
+        <textarea class="form-control" data-name="text.value" name="text.value" id="careElement-textelementText"><%= text.value %></textarea>
+        <span class="help-block hidden" data-validate-for="careElement-textelementText"></span>
+    </div>
+
+    <div id="audio-options">
+
+    </div>
+
+    <div class="js-media-preview">
+
+        <div class="media media-preview-ci">
+            <div class="media-preview media-left media-middle"></div>
+            <div class="media-body media-buttons"></div>
+        </div>
+
+    </div>
+
+    <div class="form-group" id="js-media-form-container"></div>
+
+    <div class="alert alert-success js-alert-create-success hidden" role="alert">Text & Media element added successfully!</div>
+    <div class="alert alert-success js-alert-update-success hidden" role="alert">Text & Media element updated successfully!</div>
+    <div class="alert alert-danger hidden" role="alert"></div>
+</script>

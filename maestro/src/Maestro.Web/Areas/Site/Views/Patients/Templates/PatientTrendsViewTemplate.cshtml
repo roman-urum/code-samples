@@ -1,0 +1,37 @@
+<script id="patientTrendsViewTemplate" type="text/template">
+    <div class="patient-trends clearfix">
+        @*<nav class="navbar navbar-default">
+            <div class="navbar-title-ci">Trends</div>
+        </nav>*@
+        <div class="row patients-trends-header">
+            <div class="col-sm-2">
+                <button class="btn btn-primary btn-lg patient-trends-add-charts" <%= isSettingsFetched ? '' : 'disabled'%> >Add charts</button>
+            </div>
+            <div class="col-sm-8 daterange-container">
+            </div>
+            <div class="col-sm-2 text-right">
+                <a href="#" class="disabled js-patient-export-trends">
+                    <i class="fa fa-external-link fa-invert-ci"></i>
+                    Export all charts
+                </a>
+            </div>
+        </div>
+
+        <% if (isSettingsFetched) { %>
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <ul class="chart-containers-list list-unstyled row">
+
+                    </ul>
+
+                </div>
+            </div>
+        <% } else {%>
+            <div class="col-sm-12">
+                <img src="/Content/img/spinner.gif" class="spinner" />
+            </div>
+        <% }%>
+
+    </div>
+</script>

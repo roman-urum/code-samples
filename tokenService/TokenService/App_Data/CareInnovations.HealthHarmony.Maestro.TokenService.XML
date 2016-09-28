@@ -1,0 +1,1278 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CareInnovations.HealthHarmony.Maestro.TokenService</name>
+    </assembly>
+    <members>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.AutoMapperConfig">
+            <summary>
+            AutoMapperConfig.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.AutoMapperConfig.RegisterProfiles">
+            <summary>
+            Registers the profiles.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.IocConfig">
+            <summary>
+            IocConfig.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.IocConfig.RegisterDependencies">
+            <summary>
+            Registers the dependencies.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.WebApiConfig">
+            <summary>
+            WebApiConfig.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Registers the specified configuration.
+            </summary>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.CertificatesController">
+            <summary>
+            Provides API methods to manage devices cetificates subjects.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.CertificatesController.#ctor(CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.ICertificatesControllerHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.CertificatesController"/> class.
+            </summary>
+            <param name="certificatesControllerHelper">The certificates controller helper.</param>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.CertificatesController.Get(System.String,System.Int32,System.Nullable{System.Guid})">
+            <summary>
+            Returns info if access to patient is allowed with specified certificate.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.CertificatesController.Post(CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreateCertificateModel)">
+            <summary>
+            Creates record to allow access patient data by certificate with specified subject.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.CertificatesController.Delete(System.String)">
+            <summary>
+            Handles requests to delete device certificate.
+            </summary>
+            <param name="thumbprint"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.GroupsController">
+            <summary>
+            GroupsController.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.GroupsController.#ctor(CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IGroupsControllerHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.GroupsController"/> class.
+            </summary>
+            <param name="groupsControllerHelper">The groups controller helper.</param>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.GroupsController.Get(System.Int32,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Gets the groups.
+            </summary>
+            <param name="take">The take.</param>
+            <param name="skip">The skip.</param>
+            <param name="customerId">The customer identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.GroupsController.Get(System.Guid)">
+            <summary>
+            Gets the specified group.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.GroupsController.Post(CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreateGroupModel)">
+            <summary>
+            Creates the specified group.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.GroupsController.Put(System.Guid,CareInnovations.HealthHarmony.Maestro.TokenService.Models.GroupModel)">
+            <summary>
+            Updates the specified group.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.GroupsController.Delete(System.Guid)">
+            <summary>
+            Deletes the specified group.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.PrincipalsController">
+            <summary>
+            PrincipalsController.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.PrincipalsController.#ctor(CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IPrincipalsControllerHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.PrincipalsController" /> class.
+            </summary>
+            <param name="principalsControllerHelper">The principals controller helper.</param>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.PrincipalsController.Get(System.Int32,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Gets principals.
+            </summary>
+            <param name="take">The take.</param>
+            <param name="skip">The skip.</param>
+            <param name="customerId">The customer identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.PrincipalsController.Get(System.Guid)">
+            <summary>
+            Gets the specified principal.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.PrincipalsController.Post(CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreatePrincipalModel)">
+            <summary>
+            Creates the specified principal.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+            <exception cref="T:System.ApplicationException">Object should not have an ID.</exception>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.PrincipalsController.Put(System.Guid,CareInnovations.HealthHarmony.Maestro.TokenService.Models.UpdatePrincipalModel)">
+            <summary>
+            Updates the specified principal.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="model">The model.</param>
+            <returns></returns>
+            <exception cref="T:System.ApplicationException">Object has an ID and it doesn't match the resource ID.</exception>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.PrincipalsController.Delete(System.Guid)">
+            <summary>
+            Deletes the specified principal.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.ServiceController">
+            <summary>
+            ServiceController.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.TokensController">
+            <summary>
+            TokensController.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.TokensController.#ctor(CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.ITokensControllerHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.TokensController" /> class.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.TokensController.VerifyAccess(System.String,System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Guid})">
+            <summary>
+            Verify access for provided access token (id).
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="action">The action.</param>
+            <param name="service">The service.</param>
+            <param name="controller">The controller.</param>
+            <param name="customer">The customer identifier.</param>
+            <param name="patientId">The patient identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.TokensController.CreateTokenByCredentials(CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenRequestModel)">
+            <summary>
+            Generate access token.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.TokensController.CreateTokenByCertificate(CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenByCertificateRequestModel)">
+            <summary>
+            Generates the token by certificate.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Controllers.TokensController.DeleteToken(System.String)">
+            <summary>
+            Delete a token (e.g. user logs out)
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.DataAnnotations.Base64StringAttribute">
+            <summary>
+            Validates if string provided in base-64 format.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.DataAnnotations.Base64StringAttribute.IsValid(System.Object)">
+            <summary>
+            Returns true if ... is valid.
+            </summary>
+            <param name="value">The value of the object to validate.</param>
+            <returns>
+            true if the specified value is valid; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.ExceptionHandling.GlobalExceptionHandler">
+            <summary>
+            GlobalExceptionHandler.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.ExceptionHandling.GlobalExceptionHandler.HandleAsync(System.Web.Http.ExceptionHandling.ExceptionHandlerContext,System.Threading.CancellationToken)">
+            <summary>
+            When overridden in a derived class, handles the exception asynchronously.
+            </summary>
+            <param name="context">The exception handler context.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>
+            A task representing the asynchronous exception handling operation.
+            </returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.ExceptionHandling.GlobalExceptionHandler.Handle(System.Web.Http.ExceptionHandling.ExceptionHandlerContext)">
+            <summary>
+            When overridden in a derived class, handles the exception synchronously.
+            </summary>
+            <param name="context">The exception handler context.</param>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Filters.LogIpAddressesAttribute">
+            <summary>
+            LogIpAddressesAttribute.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Filters.LogIpAddressesAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Called when [action executing].
+            </summary>
+            <param name="actionContext">The action context.</param>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Filters.SkipModelValidationAttribute">
+            <summary>
+            SkipModelValidationAttribute.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Filters.ValidateModelAttribute">
+            <summary>
+            Apply this attribute to endpoints which should be validated before handling of request.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Filters.ValidateModelAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Called when [action executing].
+            </summary>
+            <param name="actionContext">The action context.</param>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Filters.ValidateModelAttribute.GenerateErrorMessageDetails(System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Generates the error message details.
+            </summary>
+            <param name="modelState">State of the model.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Extensions.ServiceActionResultExtensions">
+            <summary>
+            Extension methods for service action result.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Extensions.ServiceActionResultExtensions.CloneWithMapping``3(CareInnovations.HealthHarmony.Maestro.TokenService.DomainLogic.Services.Results.ServiceActionResult{``0,``1},``2)">
+            <summary>
+            Creates copy of service action result and maps content to new specified type.
+            </summary>
+            <typeparam name="TStatus"></typeparam>
+            <typeparam name="TContent"></typeparam>
+            <typeparam name="TClone"></typeparam>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.ActionsMapper">
+            <summary>
+            ActionsMapper.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.ActionsMapper.Actions">
+            <summary>
+            Gets or sets the actions.
+            </summary>
+            <value>
+            The actions.
+            </value>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.ActionsMapper.#cctor">
+            <summary>
+            Initializes the <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.ActionsMapper"/> class.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.CertificatesControllerHelper">
+            <summary>
+            Helper for CertificatesController.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.CertificatesControllerHelper.#ctor(CareInnovations.HealthHarmony.Maestro.TokenService.DomainLogic.Services.Interfaces.ICertificatesService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.CertificatesControllerHelper"/> class.
+            </summary>
+            <param name="certificatesService">The certificates service.</param>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.CertificatesControllerHelper.VerifyAccess(System.String,System.Int32,System.Nullable{System.Guid})">
+            <summary>
+            Verifies that thumbprint has access to specified patient and customer.
+            </summary>
+            <param name="thumbprint">The thumbprint.</param>
+            <param name="customerId">The customer identifier.</param>
+            <param name="patientId">The patient identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.CertificatesControllerHelper.CreateCertificate(CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreateCertificateModel)">
+            <summary>
+            Creates new certificate.
+            </summary>
+            <param name="model"></param>
+            <returns>True if certificate successfully created.</returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.CertificatesControllerHelper.DeleteCertificate(System.String)">
+            <summary>
+            Deletes certificate with specified thumbprint.
+            </summary>
+            <param name="thumbprint"></param>
+            <returns>False in case if certificate not found.</returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.GroupsControllerHelper">
+            <summary>
+            GroupsControllerHelper.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.GroupsControllerHelper.#ctor(CareInnovations.HealthHarmony.Maestro.TokenService.DomainLogic.Services.Interfaces.IGroupsService,StackExchange.Redis.IDatabase)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.GroupsControllerHelper" /> class.
+            </summary>
+            <param name="groupsService">The groups service.</param>
+            <param name="redisCache">The redis cache.</param>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.GroupsControllerHelper.GetGroups(System.Nullable{System.Int32},System.Int32,System.Int32)">
+            <summary>
+            Returns list of groups for specified customer and range.
+            </summary>
+            <param name="customerId"></param>
+            <param name="skip"></param>
+            <param name="take"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.GroupsControllerHelper.GetGroupById(System.Guid)">
+            <summary>
+            Returns required group by is.
+            Returns null if group with specified id not exists.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.GroupsControllerHelper.CreateGroup(CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreateGroupModel)">
+            <summary>
+            Creates new group in db.
+            </summary>
+            <param name="group"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.GroupsControllerHelper.UpdateGroup(System.Guid,CareInnovations.HealthHarmony.Maestro.TokenService.Models.GroupModel)">
+            <summary>
+            Updates existing group record.
+            </summary>
+            <param name="id"></param>
+            <param name="group"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.GroupsControllerHelper.DeleteGroup(System.Guid)">
+            <summary>
+            Deletes group with specified id.
+            </summary>
+            <param name="id"></param>
+            <returns>False in case if group not exists.</returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.PrincipalsControllerHelper">
+            <summary>
+            PrincipalsControllerHelper.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.PrincipalsControllerHelper.#ctor(CareInnovations.HealthHarmony.Maestro.TokenService.DomainLogic.Services.Interfaces.IPrincipalsService,CareInnovations.HealthHarmony.Maestro.TokenService.DomainLogic.Services.Interfaces.IGroupsService,StackExchange.Redis.IDatabase)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.PrincipalsControllerHelper" /> class.
+            </summary>
+            <param name="principalsService">The principals service.</param>
+            <param name="groupsService">The groups service.</param>
+            <param name="redisCache">The redis cache.</param>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.PrincipalsControllerHelper.GetPrincipals(System.Nullable{System.Int32},System.Int32,System.Int32)">
+            <summary>
+            Returns list of principals for specified customer and range.
+            </summary>
+            <param name="customerId"></param>
+            <param name="skip"></param>
+            <param name="take"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.PrincipalsControllerHelper.GetPrincipalById(System.Guid)">
+            <summary>
+            Returns required principal by id.
+            Returns null if principal not exists.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.PrincipalsControllerHelper.CreatePrincipal(CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreatePrincipalModel)">
+            <summary>
+            Creates record for new principal.
+            </summary>
+            <param name="principal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.PrincipalsControllerHelper.UpdatePrincipal(System.Guid,CareInnovations.HealthHarmony.Maestro.TokenService.Models.UpdatePrincipalModel)">
+            <summary>
+            Generates entity and updates principal data.
+            </summary>
+            <param name="id"></param>
+            <param name="principal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.PrincipalsControllerHelper.DeletePrincipal(System.Guid)">
+            <summary>
+            Deletes principal from database.
+            </summary>
+            <returns>False if specified id not exists.</returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.TokensControllerHelper">
+            <summary>
+            TokensControllerHelper.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.TokensControllerHelper.#ctor(StackExchange.Redis.IDatabase,CareInnovations.HealthHarmony.Maestro.TokenService.DomainLogic.Services.Interfaces.IPrincipalsService,CareInnovations.HealthHarmony.Maestro.TokenService.DomainLogic.Services.Interfaces.ICertificatesService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.TokensControllerHelper" /> class.
+            </summary>
+            <param name="redisCache">The redis cache.</param>
+            <param name="principalsService">The principals service.</param>
+            <param name="certificatesService">The certificates service.</param>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.TokensControllerHelper.VerifyAccess(System.String,System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Guid})">
+            <summary>
+            Verifies if provided id(token) has access to specified functionality
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="action">The action.</param>
+            <param name="service">The service.</param>
+            <param name="controller">The controller.</param>
+            <param name="customer">The customer.</param>
+            <param name="patientId">The patient identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.TokensControllerHelper.CreateTokenByCredentials(CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenRequestModel)">
+            <summary>
+            Verifies credentials and generates response model with token.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.TokensControllerHelper.CreateTokenByCertificate(CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenByCertificateRequestModel)">
+            <summary>
+            Creates the token by certificate.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.TokensControllerHelper.DeleteToken(System.String)">
+            <summary>
+            Deletes token.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.TokensControllerHelper.CachePolicies(System.String,CareInnovations.HealthHarmony.Maestro.TokenService.Domain.Entities.Principal,System.Collections.Generic.IList{CareInnovations.HealthHarmony.Maestro.TokenService.Domain.Entities.Group},System.TimeSpan)">
+            <summary>
+            Caches the policies.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="principal">The user.</param>
+            <param name="groups">The groups.</param>
+            <param name="ttl">The TTL.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.TokensControllerHelper.CacheDevicePrincipalPolicies(System.String,System.Int32,System.Guid,CareInnovations.HealthHarmony.Maestro.TokenService.Domain.Entities.Principal,System.TimeSpan)">
+            <summary>
+            Caches the device principal policies.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="customerId">The customer identifier.</param>
+            <param name="patientId">The patient identifier.</param>
+            <param name="principal">The principal.</param>
+            <param name="ttl">The TTL.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.TokensControllerHelper.VerifyPolicies(System.String,System.String,System.String,CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPrincipalModel,System.Nullable{System.Int32})">
+            <summary>
+            Verifies the policies.
+            </summary>
+            <param name="action">The action.</param>
+            <param name="service">The service.</param>
+            <param name="controller">The controller.</param>
+            <param name="cpm">The CPM.</param>
+            <param name="customer">The customer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Implementations.TokensControllerHelper.VerifyDevicePrincipalPolicies(System.String,System.String,System.String,CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPrincipalModel,System.Nullable{System.Int32},System.Nullable{System.Guid})">
+            <summary>
+            Verifies the device principal policies.
+            </summary>
+            <param name="action">The action.</param>
+            <param name="service">The service.</param>
+            <param name="controller">The controller.</param>
+            <param name="cpm">The CPM.</param>
+            <param name="customer">The customer.</param>
+            <param name="patientId">The patient identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.ICertificatesControllerHelper">
+            <summary>
+            Helper for CertificatesController.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.ICertificatesControllerHelper.VerifyAccess(System.String,System.Int32,System.Nullable{System.Guid})">
+            <summary>
+            Verifies that thumbprint has access to specified patient and customer.
+            </summary>
+            <param name="thumbprint">The thumbprint.</param>
+            <param name="customerId">The customer identifier.</param>
+            <param name="patientId">The patient identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.ICertificatesControllerHelper.CreateCertificate(CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreateCertificateModel)">
+            <summary>
+            Creates new certificate.
+            </summary>
+            <param name="model"></param>
+            <returns>True if certificate successfully created.</returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.ICertificatesControllerHelper.DeleteCertificate(System.String)">
+            <summary>
+            Deletes certificate with specified thumbprint.
+            </summary>
+            <param name="thumbprint"></param>
+            <returns>False in case if certificate not found.</returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IGroupsControllerHelper">
+            <summary>
+            IGroupsControllerHelper.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IGroupsControllerHelper.GetGroups(System.Nullable{System.Int32},System.Int32,System.Int32)">
+            <summary>
+            Returns list of groups for specified customer and range.
+            </summary>
+            <param name="customerId"></param>
+            <param name="skip"></param>
+            <param name="take"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IGroupsControllerHelper.GetGroupById(System.Guid)">
+            <summary>
+            Returns required group by is.
+            Returns null if group with specified id not exists.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IGroupsControllerHelper.CreateGroup(CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreateGroupModel)">
+            <summary>
+            Creates new group in db.
+            </summary>
+            <param name="group"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IGroupsControllerHelper.UpdateGroup(System.Guid,CareInnovations.HealthHarmony.Maestro.TokenService.Models.GroupModel)">
+            <summary>
+            Updates existing group record.
+            </summary>
+            <param name="id"></param>
+            <param name="group"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IGroupsControllerHelper.DeleteGroup(System.Guid)">
+            <summary>
+            Deletes group with specified id.
+            </summary>
+            <param name="id"></param>
+            <returns>False in case if group not exists.</returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IPrincipalsControllerHelper">
+            <summary>
+            IPrincipalsControllerHelper.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IPrincipalsControllerHelper.GetPrincipals(System.Nullable{System.Int32},System.Int32,System.Int32)">
+            <summary>
+            Returns list of principals for specified customer and range.
+            </summary>
+            <param name="customerId"></param>
+            <param name="skip"></param>
+            <param name="take"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IPrincipalsControllerHelper.GetPrincipalById(System.Guid)">
+            <summary>
+            Returns required principal by id.
+            Returns null if principal not exists.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IPrincipalsControllerHelper.CreatePrincipal(CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreatePrincipalModel)">
+            <summary>
+            Creates record for new principal.
+            </summary>
+            <param name="principal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IPrincipalsControllerHelper.UpdatePrincipal(System.Guid,CareInnovations.HealthHarmony.Maestro.TokenService.Models.UpdatePrincipalModel)">
+            <summary>
+            Generates entity and updates principal data.
+            </summary>
+            <param name="id"></param>
+            <param name="principal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.IPrincipalsControllerHelper.DeletePrincipal(System.Guid)">
+            <summary>
+            Deletes principal from database.
+            </summary>
+            <returns>False if specified id not exists.</returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.ITokensControllerHelper">
+            <summary>
+            ITokensControllerHelper.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.ITokensControllerHelper.VerifyAccess(System.String,System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Guid})">
+            <summary>
+            Verifies if provided id(token) has access to specified functionality
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="action">The action.</param>
+            <param name="service">The service.</param>
+            <param name="controller">The controller.</param>
+            <param name="customer">The customer.</param>
+            <param name="patientId">The patient identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.ITokensControllerHelper.CreateTokenByCredentials(CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenRequestModel)">
+            <summary>
+            Verifies credentials and generates response model with token.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.ITokensControllerHelper.DeleteToken(System.String)">
+            <summary>
+            Deletes token.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.Interfaces.ITokensControllerHelper.CreateTokenByCertificate(CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenByCertificateRequestModel)">
+            <summary>
+            Creates the token by certificate.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.TokensGenerator">
+            <summary>
+            Provides methods to generate tokens.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Helpers.TokensGenerator.GetToken">
+            <summary>
+            Generates new string with token.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.BasePrincipalModel">
+            <summary>
+            Contains base set of fields for principal.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.BasePrincipalModel.Username">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>
+            The username.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.BasePrincipalModel.FirstName">
+            <summary>
+            First name of principal user.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.BasePrincipalModel.LastName">
+            <summary>
+            Last name of principal user.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.BasePrincipalModel.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.BasePrincipalModel.Disabled">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.BasePrincipalModel"/> is disabled.
+            </summary>
+            <value>
+              <c>true</c> if disabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.BasePrincipalModel.ExpiresUtc">
+            <summary>
+            Gets or sets the expires UTC.
+            </summary>
+            <value>
+            The expires UTC.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.BasePrincipalModel.LockedOutUntilUtc">
+            <summary>
+            Gets or sets the locked out until UTC.
+            </summary>
+            <value>
+            The locked out until UTC.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.BasePrincipalModel.Policies">
+            <summary>
+            Gets or sets the policies.
+            </summary>
+            <value>
+            The policies.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.BasePrincipalModel.Groups">
+            <summary>
+            Gets or sets the groups.
+            </summary>
+            <value>
+            The groups.
+            </value>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPolicyModel">
+            <summary>
+            Model of Policy for storing in cache.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPolicyModel.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPolicyModel.Effect">
+            <summary>
+            Gets or sets the effect.
+            </summary>
+            <value>
+            The effect.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPolicyModel.Service">
+            <summary>
+            Gets or sets the service.
+            </summary>
+            <value>
+            The service.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPolicyModel.Controller">
+            <summary>
+            Gets or sets the controller.
+            </summary>
+            <value>
+            The controller.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPolicyModel.Action">
+            <summary>
+            Gets or sets the action.
+            </summary>
+            <value>
+            The action.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPolicyModel.Customer">
+            <summary>
+            Gets or sets the customer.
+            </summary>
+            <value>
+            The customer.
+            </value>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPrincipalModel">
+            <summary>
+            CachedPrincipalModel.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPrincipalModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPrincipalModel"/> class.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPrincipalModel.PrincipalId">
+            <summary>
+            Gets or sets the principal identifier.
+            </summary>
+            <value>
+            The principal identifier.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPrincipalModel.UserName">
+            <summary>
+            Gets or sets the name of the user.
+            </summary>
+            <value>
+            The name of the user.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPrincipalModel.FullName">
+            <summary>
+            Gets or sets the full name.
+            </summary>
+            <value>
+            The full name.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPrincipalModel.UpdatedUtc">
+            <summary>
+            Date in ticks when principal was updated last time.
+            </summary>
+            <value>
+            The principal updated UTC.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPrincipalModel.Policies">
+            <summary>
+            Gets or sets the policies.
+            </summary>
+            <value>
+            The policies.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPrincipalModel.CustomerId">
+            <summary>
+            Gets or sets the customer identifier.
+            </summary>
+            <value>
+            The customer identifier.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CachedPrincipalModel.PatientId">
+            <summary>
+            Gets or sets the patient identifier.
+            Note: Will be used only during certificate based auth.
+            </summary>
+            <value>
+            The patient identifier.
+            </value>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CertificateResponseModel">
+            <summary>
+            Model for response data of request to verify access rights.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CertificateResponseModel.IsAllowed">
+            <summary>
+            Identify if certificate has access to specified patient.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreateCertificateModel">
+            <summary>
+            Model to send certificate data.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreateCertificateModel.PatientId">
+            <summary>
+            Id of patient who uses device with certificate.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreateCertificateModel.CustomerId">
+            <summary>
+            Id of patient customer.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreateCertificateModel.Thumbprint">
+            <summary>
+            Certificate thumbprint.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreateCertificateModel.Certificate">
+            <summary>
+            Base64 with certificate raw data.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CredentialModel">
+            <summary>
+            CredentialModel.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CredentialModel.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CredentialModel.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CredentialModel.Disabled">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CredentialModel"/> is disabled.
+            </summary>
+            <value>
+              <c>true</c> if disabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CredentialModel.ExpiresUtc">
+            <summary>
+            Gets or sets the expires UTC.
+            </summary>
+            <value>
+            The expires UTC.
+            </value>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CredentialUpdateModel">
+            <summary>
+            Model to change principal credential.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CredentialUpdateModel.CurrentValue">
+            <summary>
+            Current value of credential to verify that it is valid.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.Enums.ErrorCode">
+            <summary>
+            ErrorCode.
+            </summary>
+        </member>
+        <member name="F:CareInnovations.HealthHarmony.Maestro.TokenService.Models.Enums.ErrorCode.InvalidRequest">
+            <summary>
+            The invalid request
+            </summary>
+        </member>
+        <member name="F:CareInnovations.HealthHarmony.Maestro.TokenService.Models.Enums.ErrorCode.CredentialsExpired">
+            <summary>
+            Credentials used for authorization is expired.
+            </summary>
+        </member>
+        <member name="F:CareInnovations.HealthHarmony.Maestro.TokenService.Models.Enums.ErrorCode.InvalidCredentialValue">
+            <summary>
+            Invalid credential value is provided.
+            </summary>
+        </member>
+        <member name="F:CareInnovations.HealthHarmony.Maestro.TokenService.Models.Enums.ErrorCode.CredentialAlreadyUsed">
+            <summary>
+            Identifies that the same credential was used earlier.
+            </summary>
+        </member>
+        <member name="F:CareInnovations.HealthHarmony.Maestro.TokenService.Models.Enums.ErrorCode.InternalServerError">
+            <summary>
+            The unspecified server error.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.ErrorResponseDto">
+            <summary>
+            ErrorResponseDto.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.ErrorResponseDto.Error">
+            <summary>
+            Gets or sets the error code.
+            </summary>
+            <value>
+            The error code.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.ErrorResponseDto.Message">
+            <summary>
+            Gets or sets the error message.
+            </summary>
+            <value>
+            The error message.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.ErrorResponseDto.Details">
+            <summary>
+            Gets or sets the details.
+            </summary>
+            <value>
+            The details.
+            </value>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.GroupResponseModel">
+            <summary>
+            Includes detailed info about group for response.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreatePrincipalModel">
+            <summary>
+            Model for request to create new principal.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreatePrincipalModel.Credentials">
+            <summary>
+            Gets or sets the credentials.
+            </summary>
+            <value>
+            The credentials.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.CreatePrincipalModel.CustomerId">
+            <summary>
+            Gets or sets the customer identifier.
+            </summary>
+            <value>
+            The customer identifier.
+            </value>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.PrincipalResponseModel">
+            <summary>
+            Model for response with principal details.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.PrincipalResponseModel.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenByCertificateRequestModel">
+            <summary>
+            TokenByCertificateRequestModel.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenByCertificateRequestModel.NonceBase64">
+            <summary>
+            Gets or sets the nonce.
+            </summary>
+            <value>
+            The nonce.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenByCertificateRequestModel.CustomerId">
+            <summary>
+            Gets or sets the customer identifier.
+            </summary>
+            <value>
+            The customer identifier.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenByCertificateRequestModel.PatientId">
+            <summary>
+            Gets or sets the patient identifier.
+            </summary>
+            <value>
+            The patient identifier.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenByCertificateRequestModel.SignatureBase64">
+            <summary>
+            Gets or sets the signature.
+            </summary>
+            <value>
+            The signature.
+            </value>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.UpdatePrincipalModel">
+            <summary>
+            Model for request to update existing principal.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.UpdatePrincipalModel.Credential">
+            <summary>
+            New credential.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenRequestModel">
+            <summary>
+            TokenRequestModel.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenRequestModel.Username">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>
+            The username.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenRequestModel.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>
+            The password.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenRequestModel.ApiKey">
+            <summary>
+            Gets or sets the API key.
+            </summary>
+            <value>
+            The API key.
+            </value>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenResponseModel">
+            <summary>
+            TokenResponseModel.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenResponseModel.ExpirationUtc">
+            <summary>
+            Utc date and time when current credential is expires.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenResponseModel.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenResponseModel.Success">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenResponseModel"/> is success.
+            </summary>
+            <value>
+              <c>true</c> if success; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.TokenResponseModel.TTL">
+            <summary>
+            </summary>
+            <value>
+            The TTL.
+            </value>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Models.VerifyAccessResponseModel">
+            <summary>
+            Model for success response of validation request.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.VerifyAccessResponseModel.FullName">
+            <summary>
+            Fullname of token owner.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Models.VerifyAccessResponseModel.PrincipalId">
+            <summary>
+            Id of principal which was used to create token.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.WebApiApplication">
+            <summary>
+            WebApiApplication.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.WebApiApplication.Application_Start">
+            <summary>
+            Application_s the start.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.Resources.GlobalStrings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Resources.GlobalStrings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Resources.GlobalStrings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Resources.GlobalStrings.Base64StringAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to The field {0} must be in base-64 string format.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Resources.GlobalStrings.ErrorCode_CredentialAlreadyUsed">
+            <summary>
+              Looks up a localized string similar to The same credetial already was used.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Resources.GlobalStrings.ErrorCode_CredentialsExpired">
+            <summary>
+              Looks up a localized string similar to Credentials is expired.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Resources.GlobalStrings.ErrorCode_InternalServerError">
+            <summary>
+              Looks up a localized string similar to Unspecified server error.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Resources.GlobalStrings.ErrorCode_InvalidCredentialValue">
+            <summary>
+              Looks up a localized string similar to Invalid credential value.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Resources.GlobalStrings.ErrorCode_InvalidRequest">
+            <summary>
+              Looks up a localized string similar to Invalid parameter value(s).
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Resources.GlobalStrings.RequiredAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to The {0} field is required.
+            </summary>
+        </member>
+        <member name="P:CareInnovations.HealthHarmony.Maestro.TokenService.Resources.GlobalStrings.StringLengthAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to The field {0} must be a string with a maximum length of {1}.
+            </summary>
+        </member>
+        <member name="T:CareInnovations.HealthHarmony.Maestro.TokenService.WebApiCompositionRoot">
+            <summary>
+            LightInject composition root for Api.
+            </summary>
+        </member>
+        <member name="M:CareInnovations.HealthHarmony.Maestro.TokenService.WebApiCompositionRoot.Compose(LightInject.IServiceRegistry)">
+            <summary>
+            Composes services by adding services to the <paramref name="serviceRegistry" />.
+            </summary>
+            <param name="serviceRegistry">The target <see cref="T:LightInject.IServiceRegistry" />.</param>
+        </member>
+    </members>
+</doc>

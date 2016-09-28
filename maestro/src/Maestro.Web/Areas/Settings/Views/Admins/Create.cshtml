@@ -1,0 +1,89 @@
+﻿@model Maestro.Web.Models.Users.UserViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Settings/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="tab-pane active">
+    <div id="create-admin-user">
+        @using (Html.BeginForm("Create", "Admins"))
+        {
+            <h3>User Information</h3>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        @Html.CheckBoxFor(model => model.IsEnabled, new { @class = "basic-checkbox", data_on_text = "ENABLED", data_off_text = "DISABLED" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.FirstName)
+                        @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.FirstName)
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.LastName)
+                        @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.LastName)
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email)
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Phone)
+                        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Phone)
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Role)
+                        @Html.ValueFor(model => model.Role)
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary" id="save-new-admin">@GlobalStrings.Edit_Customer_SaveButtonText</button>
+                    <button type="button" class="btn btn-link" data-dismiss="modal" id="cancel-new-admin" href="@Url.Action("Index", "Admins")">@GlobalStrings.Edit_Customer_CancelButtonText</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@helper DisplayInnerExceptions(Exception exception)
+{
+if (exception != null)
+{
+    <div class="error-state">@exception.Message: @exception.StackTrace</div>
+    @DisplayInnerExceptions(exception.InnerException)
+}
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/js/jqueryval")
+    @Scripts.Render("~/bundles/js/create-admin")
+}

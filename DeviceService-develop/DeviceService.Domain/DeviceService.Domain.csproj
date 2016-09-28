@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6C4FEB6-0B45-4A26-AED7-BAB1CD58B4B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeviceService.Domain</RootNamespace>
+    <AssemblyName>DeviceService.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\VA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dtos\BaseSearchDto.cs" />
+    <Compile Include="Dtos\DevicesSearchDto.cs" />
+    <Compile Include="Dtos\Enums\DeleteDeviceStatus.cs" />
+    <Compile Include="Dtos\Enums\ActivateDeviceStatus.cs" />
+    <Compile Include="Dtos\Enums\UpdateDeviceStatus.cs" />
+    <Compile Include="Dtos\Enums\CreateDeviceStatus.cs" />
+    <Compile Include="Dtos\Enums\GetDeviceStatus.cs" />
+    <Compile Include="Dtos\Enums\SetDecomissionStatusOperationStatus.cs" />
+    <Compile Include="Dtos\iHealth\CreateiHealthUserRequestDto.cs" />
+    <Compile Include="Dtos\iHealth\iHealthBaseResponseDto.cs" />
+    <Compile Include="Dtos\iHealth\iHealthUserResponseDto.cs" />
+    <Compile Include="Dtos\MessagingHub\NotificationDto.cs" />
+    <Compile Include="Dtos\MessagingHub\NotificationResponseDto.cs" />
+    <Compile Include="Dtos\OperationResultDto.cs" />
+    <Compile Include="Dtos\PagedResult.cs" />
+    <Compile Include="Dtos\TokenService\CreateCertificateRequest.cs" />
+    <Compile Include="Dtos\TokenService\CreateUserRequest.cs" />
+    <Compile Include="Dtos\TokenService\CredentialsDto.cs" />
+    <Compile Include="Dtos\TokenService\DeleteCertificateRequest.cs" />
+    <Compile Include="Dtos\TokenService\GetTokenRequest.cs" />
+    <Compile Include="Dtos\TokenService\GetTokenResponse.cs" />
+    <Compile Include="Dtos\TokenService\VerifyAccessRequest.cs" />
+    <Compile Include="Dtos\TokenService\VerifyAccessResponse.cs" />
+    <Compile Include="Entities\Activation.cs" />
+    <Compile Include="Entities\DbConstraints.cs" />
+    <Compile Include="Entities\Device.cs" />
+    <Compile Include="Entities\DeviceSettings.cs" />
+    <Compile Include="Entities\Enums\BloodGlucosePeripheral.cs" />
+    <Compile Include="Entities\Enums\DeviceIdType.cs" />
+    <Compile Include="Entities\Enums\DeviceType.cs" />
+    <Compile Include="Entities\Enums\RegistrationType.cs" />
+    <Compile Include="Entities\Enums\Status.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Resources\GlobalStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ISoftDelitable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DeviceService.Common\DeviceService.Common.csproj">
+      <Project>{e9b3e2a3-6c21-4038-8d17-8f600bf74739}</Project>
+      <Name>DeviceService.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GlobalStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

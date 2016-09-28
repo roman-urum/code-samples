@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Maestro.Web.Areas.Settings.Models.Admins.AdminListModel>
+@{
+    ViewBag.Title = "Administration";
+}
+
+<div class="tab-pane active" id="admin-users">
+    <div class="row">
+        <div class="col-xs-5">
+            <h2 class="ci-page-subheader">@GlobalStrings.Settings_Admins_Index_Title</h2>
+        </div>
+
+        <div class="col-sm-7 subhead-add-link">
+            <a href="@Url.Action("Create", "Admins")">@GlobalStrings.Settings_Admins_Index_CreateAdminLink</a>
+        </div>
+    </div>
+
+    <div class="ci-admin-list">
+        <table class="table">
+            <tbody>
+                @foreach (var admin in Model)
+                {
+                    <tr user-id="@admin.Id" role="row">
+                        <td class="col-xs-6 ci-user-name">
+                            @admin.FirstName @admin.LastName <br />
+                            <a href="mailto:@admin.EmailAddress">@admin.EmailAddress</a> <br />
+                            @admin.Phone
+                        </td>
+                        <td class="col-xs-2">
+                            <div class="label label-success">@admin.Role</div>
+                        </td>
+                        <td class="col-xs-3">
+                            @Html.CheckBox("IsEnabled", admin.IsEnabled, new { @class = "basic-checkbox", data_on_text = "ENABLED", data_off_text = "DISABLED", data_size="mini" })
+                        </td>
+                        <td class="col-xs-1">
+                            @Html.ActionLink("Edit", "Edit", "Admins", new { id = admin.Id }, null)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/js/admin-users")
+}

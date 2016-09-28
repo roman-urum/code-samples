@@ -1,0 +1,16 @@
+<script id="patientCalendarSearchListItemTemplate" type="text/template">
+    <div class="calendar-search-element-title calendar-handle clearfix">
+        <div class="pull-left italic">Program</div>
+        <span class="glyphicon glyphicon-move pull-right handle-icon"></span>
+    </div>
+    <div class="calendar-search-element-body">
+        <p class="search-result-text" title="<%=name%>"><%=name%></p>
+        <% if( tags.length ) { %>
+            <div class="search-result-tags">
+                <% _.each(tags, function(tag) { %>
+                <span class="label label-info"><%= tag %></span>
+                <% }); %>
+            </div>
+        <% } %>
+    </div>
+</script>

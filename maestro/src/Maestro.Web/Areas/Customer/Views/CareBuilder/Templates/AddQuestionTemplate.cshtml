@@ -1,0 +1,73 @@
+﻿@using Roles = Maestro.Domain.Constants.Roles
+<script id="addQuestionTemplate" type="text/template">
+    <div class="form-group">
+        <label for="careElement-question">Question</label>
+        <textarea name="questionElementString.value"
+                  data-name="questionElementString.value"
+                  value="<%=questionElementString.value%>"
+                  class="form-control"
+                  id="careElement-question"
+                  placeholder="Enter Question Text Here"></textarea>
+        <span class="help-block hidden" data-validate-for="careElement-question"></span>
+    </div>
+
+    <!-- Audio options -->
+    <div id="audio-options-container">
+
+    </div>
+
+    <div class="form-group">
+        <label>Tags <i>(Optional)</i></label>
+        <input type="text" class="form-control creation-tags" data-placeholder="Add Tags" data-loading-placeholder="Loading..." 
+               data-name="tags"
+               value="<%= tags.join(',') %>" />
+        <span class="help-block help-block-tags hidden"></span>
+    </div>
+    <div class="row form-horizontal">
+        <div class="col-sm-6">
+            <div class=" form-group">
+                <label class="col-sm-3 control-label text-left">ID:</label>
+                <div class="col-sm-9">
+                    <input class="form-control"
+                           type="text"
+                           name="externalId"
+                           data-name="externalId"
+                           value="<%=externalId%>"
+                           placeholder="Enter ID here" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            @if (User.IsInRole(Roles.SuperAdmin))
+            {
+                <div class=" form-group">
+                    <label class="col-sm-3 control-label text-left">CI ID:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control"
+                               type="text"
+                               name="internalId"
+                               data-name="internalId"
+                               value="<%=internalId%>"
+                               placeholder="Enter CI ID here" />
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="form-group js-change-answer-set-row">
+        <button class="btn btn-default js-change-answer-set">
+            <span class="glyphicon glyphicon-refresh"></span>
+            Change Answer Set
+        </button>
+    </div>
+    <hr class="js-change-answer-set-row" />
+
+    <div id="select-answer-set"></div>
+
+    <div class="alert alert-success js-alert-create-success hidden" role="alert">Question added successfully</div>
+    <div class="alert alert-success js-alert-update-success hidden" role="alert">Question updated successfully</div>
+</script>

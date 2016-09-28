@@ -1,0 +1,45 @@
+<script id="conditionDetailsView" type="text/template">
+
+    <div class="row">
+        <div class="col-sm-4 ci-text">
+            <label>*Name:</label>            
+        </div>        
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="name" data-name="name" placeholder="Enter Name Here">
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-4 ci-text">
+            <label>*Description:</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <textarea class="form-control" name="description" data-name="description" placeholder="Enter Desctription Here" />
+            <span class="help-block hidden"></span>
+        </div>
+    </div>
+    
+    <div class="well">
+        <div class="row">
+            <div class="col-sm-12">
+                <a href="#" class="btn btn-danger js-save-condition-and-next-button">
+                    @GlobalStrings.Patient_SaveAndNextTabText
+                </a>
+                <a href="#" class="btn btn-primary js-save-condition-and-exit-button">
+                    @GlobalStrings.Patient_SaveAndExitText
+                </a>
+                <a href="#" class="btn btn-link js-cancel-button">
+                    @GlobalStrings.Edit_Customer_CancelButtonText
+                </a>
+            </div>
+        </div>
+    </div>
+
+</script>

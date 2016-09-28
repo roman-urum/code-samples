@@ -1,0 +1,223 @@
+<script id="patientDashboardViewTemplate" type="text/template">
+    <div class="patient-dashboard row">
+        <% if (isModelFetched) { %>
+        <div class="main-data col-sm-8">
+            <nav class="navbar navbar-default">
+                <div class="navbar-title-ci">Latest Information</div>
+                <div class="navbar-text navbar-right">
+                    <% if (currentTabIndex == 0) { %>
+                        <%= latestHealthSessionDateText %>
+                    <% } %>
+                </div>
+            </nav>
+
+            <div class="main-data-container">
+                <div class="main-data-header">
+                    <div class="btn-group">
+                        <a class="btn btn-primary btn-lg js-show-health-session active">Latest Health Session</a>
+                        <a class="btn btn-primary btn-lg js-show-readings">Latest Readings</a>
+                    </div>
+                    <div class="more">
+                        <% if (currentTabIndex == 0) { %>
+                            <a href="/<%=siteId%>/Patients/PatientDetails/<%=id%>/DetailedData/">
+                                <i class="fa fa-eye fa-invert-ci"></i> View more Health Session details
+                            </a>
+                        <% } else if (currentTabIndex == 1) { %>
+                            <a href="/<%=siteId%>/Patients/PatientDetails/<%=id%>/DetailedData/">
+                                <i class="fa fa-eye fa-invert-ci"></i>
+                                View more readings details
+                            </a>
+                        <% } %>
+                        <br />
+                        @*<% if (currentTabIndex == 0) { %>
+                            <a>
+                                <i class="fa fa-external-link fa-invert-ci"></i>
+                                Export Latest Health Session
+                            </a>
+                        <% } else if (currentTabIndex == 1) { %>
+                            <a>
+                                <i class="fa fa-external-link fa-invert-ci"></i>
+                                Export Latest Set of Readings
+                            </a>
+                        <% } %>*@ 
+                    </div>
+                </div>
+                <% if (currentTabIndex == 0) { %>
+                    <div class="main-data-content js-health-session-readings">
+                        <div class="row">
+                            <% if (isModelFetched) { %>
+                                <% var col1Class = 'col-sm-8'; %>
+                                <% var col2Class = 'col-sm-4'; %>
+                                <% if (healthSessionQuestions.length && !healthSessionReadings.length) { %>
+                                    <% col1Class = 'hidden' %>
+                                    <% col2Class = 'col-sm-12' %>
+                                <% } %>
+                                <div class="<%= col1Class %>">
+                                    <% if (healthSessionReadings.length) { %>
+                                        <table class="table table-striped readings-list">
+                                            <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th class="text-right">Reading</th>
+                                                <th class="text-center">Unit of Measure</th>
+                                                <th class="text-center">Trend</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <% _.each(healthSessionReadings, function (reading) { %>
+                                            <tr>
+                                                <th><%= reading.name %></th>
+                                                <% var color = 'inherit'; %>
+                                                <% if (reading.alert) { %>
+                                                    <% color = reading.alert.alertSeverity ? reading.alert.alertSeverity.colorCode : 'red'; %>
+                                                <% } %>
+                                                <td class="text-right value" style="color: <%= color %>">
+                                                    <% if (!reading.isAutomated) { %>
+                                                    <sup class="is-manual"><span class="fa fa-asterisk"></span></sup>
+                                                    <% } %>
+                                                    <%= reading.value %>
+                                                </td>
+                                                <td class="text-center unit" style="color: <%= color %>"><%= reading.unit %></td>
+                                                <td class="reading-trend">
+                                                    <% if (reading.trend == 0) { %>
+                                                    <% } else if (reading.trend == 1) { %>
+                                                    <span class="fa fa-arrow-up"></span>
+                                                    <% } else if (reading.trend == 2) { %>
+                                                                        <span class="icon-equal">
+                                                                            <span class="fa fa-minus"></span>
+                                                                            <span class="fa fa-minus"></span>
+                                                                        </span>
+                                                    <% } else if (reading.trend == 3) { %>
+                                                    <span class="fa fa-arrow-down"></span>
+                                                    <% } %>
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                            </tbody>
+                                        </table>
+                                        <span class="pull-right italic"><sup class="is-manual"><span class="fa fa-asterisk"></span></sup>manual entry</span>
+                                    <% } else { %>
+                                        <span> No Health Session Reported Yet</span>
+                                    <% } %>
+                                </div>
+
+                                <div class="<%= col2Class %>">
+                                    <table class="table table-striped">
+                                        <% _.each(healthSessionQuestions, function (questionData) { %>
+                                            <% var color = 'inherit'; %>
+                                            <% if (questionData.alert) { %>
+                                                <% color = questionData.alert.alertSeverity ? questionData.alert.alertSeverity.colorCode : 'red'; %>
+                                            <% } %>
+                                            <tr>
+                                                <td style="color: <%= color %>">
+                                                    <div class="question-text-block">
+                                                        <label>Q:</label>
+                                                        <span><%= questionData.questionText %></span>
+                                                    </div>
+                                                    <div class="question-text-block">
+                                                        <label>A:</label>
+                                                        <span><%= questionData.answerText %></span>
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                        <% }); %>
+                                    </table>
+                                </div>
+                            <% } else { %>
+                                <div class="col-sm-12">
+                                    <img src="/Content/img/spinner.gif" class="spinner" />
+                                </div>
+                            <% } %>
+
+                        </div>
+                    </div>
+                <% } %>
+
+                <% if (currentTabIndex == 1) { %>
+                    <div class="main-data-content row js-readings">
+                        <div class="col-sm-12">
+                            <% if (isModelFetched) { %>
+                                <% if (readings.length) { %>
+                                    <table class="table table-striped readings-list">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th class="text-right">Reading</th>
+                                                <th class="text-center">Unit of Measure</th>
+                                                <th class="text-center">Trend</th>
+                                                <th class="text-center">Date</th>
+                                                <th class="text-center">Time</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% _.each(readings, function (reading) { %>
+
+                                                <tr>
+                                                    <th><%= reading.name %></th>
+                                                    <% var color = 'inherit'; %>
+                                                    <% if (reading.alert) { %>
+                                                        <% color = reading.alert.alertSeverity ? reading.alert.alertSeverity.colorCode : 'red'; %>
+                                                    <% } %>
+                                                    <td class="text-right value" style="color: <%= color %>">
+                                                        <% if (!reading.isAutomated) { %>
+                                                            <sup class="is-manual"><span class="fa fa-asterisk"></span></sup>
+                                                        <% } %>
+                                                        <%= reading.value %>
+                                                    </td>
+                                                    <td class="text-center unit" style="color: <%= color %>"><%= reading.unit %></td>
+                                                    <td class="reading-trend">
+                                                        <% if (reading.trend == 0) { %>
+                                                        <% } else if (reading.trend == 1) { %>
+                                                            <span class="fa fa-arrow-up"></span>
+                                                        <% } else if (reading.trend == 2) { %>
+                                                            <span class="icon-equal">
+                                                                <span class="fa fa-minus"></span>
+                                                                <span class="fa fa-minus"></span>
+                                                            </span>
+                                                        <% } else if (reading.trend == 3) { %>
+                                                        <span class="fa fa-arrow-down"></span>
+                                                        <% } %>
+                                                    </td>
+                                                    <td class="text-center"><%= reading.dateText %></td>
+                                                    <td class="text-center time-value"><%= reading.timeText %></td>
+                                                    <td>
+                                                        <% if(reading.id) { //TODO: do something with "Blood Pressure" %>
+                                                        <button data-id="<%= reading.id %>" type="button" class="btn btn-success btn-xs add-note">
+                                                            <i class="fa fa-book"></i>
+                                                        <% } %>
+                                                    </button>
+                                                    </td>
+                                                </tr>
+                                            <% }); %>
+                                        </tbody>
+                                    </table>
+                                    <span class="pull-right italic"><sup class="is-manual"><span class="fa fa-asterisk"></span></sup>manual entry</span>
+                                <% } else { %>
+                                    <span>No readings data</span>
+                                <% } %>
+                            <% } else { %>
+                                <img src="/Content/img/spinner.gif" class="spinner" />
+                            <% } %>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+
+        <div class="aside-data col-sm-4">
+            <div class="aside-block health-sessions-block"></div>
+            <div class="aside-block thresholds-block"></div>
+            <div class="aside-block peripherals-block">
+
+            </div>
+        </div>
+
+        <% } else { %>
+        <div class="col-sm-12">
+            <img src="/Content/img/spinner.gif" class="spinner" />
+        </div>
+        <% } %>
+    </div>
+</script>

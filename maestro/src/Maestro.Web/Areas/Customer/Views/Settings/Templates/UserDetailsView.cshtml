@@ -1,0 +1,203 @@
+<script id="userDetailsView" type="text/template">
+
+    <div id="ci-edit-customer-user">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="page-header">
+                    <%= firstName %> <%= lastName %>
+                    <div class="pull-right">
+                        <a href="/Settings/Users/<%= id %>/Edit" class="btn btn-primary js-link">@GlobalStrings.Customer_Users_List_EditExistingLink</a>
+                        <a href="/Settings/Users" class="btn btn-link js-link">@GlobalStrings.Edit_Customer_CancelButtonText</a>
+                    </div>
+                </h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2 ci-text">
+                <label>User Status</label>
+            </div>
+            <div class="col-sm-10">
+                <span><%= JSON.parse(isEnabled) ? 'enabled' : 'disabled' %></span>
+
+                <% if (isEmailVerified) { %>
+                    <a href="#" id="reset-password" class="pull-right">@GlobalStrings.Edit_Admin_ResetPasswordText</a>
+                <% } else { %>
+                    <a href="#" id="resend-invite" class="pull-right">@GlobalStrings.Edit_admin_ResendInviteText</a>
+                <% } %>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Contact Information</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>First Name*</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span><%= firstName %></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Last Name*</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span><%= lastName %></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Email*</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span><%= email %></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Phone</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span><%= phone %></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>NPI</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span><%= nationalProviderIdentificator %></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Customer User ID</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span><%= customerUserId %></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Address1</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span><%= address1 %></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Address2</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span><%= address2 %></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Address3</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span><%= address3 %></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>City</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span><%= city %></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>State</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span><%= state %></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 ci-text">
+                        <label>Zip Code</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span><%= zipCode %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Access</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Site</th>
+                        <th>Organization</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% _.each(sites, function (site) { %>
+                    <tr>
+                        <td><%= site.name %></td>
+                        <td><%= getSitePath(site.id) %></td>
+                    </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Permissions</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2 ci-text">
+                <label>Customer Role</label>
+            </div>
+            <div class="col-xs-5">
+                <span><%= customerUserRole.name %></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="permissions-wrapper"></div>
+            </div>
+        </div>
+
+    </div>
+
+</script>

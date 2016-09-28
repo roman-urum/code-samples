@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0AF8A9FC-4EED-4E9A-8071-DBB260F81B82}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Maestro.Domain</RootNamespace>
+    <AssemblyName>Maestro.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\VA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject, Version=4.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.4.0.9\lib\net45\LightInject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\CustomerUserRoles.cs" />
+    <Compile Include="Constants\DbConstraints.cs" />
+    <Compile Include="Constants\Permissions.cs" />
+    <Compile Include="Constants\Roles.cs" />
+    <Compile Include="Constants\ServicesErrors.cs" />
+    <Compile Include="DbEntities\ChartSetting.cs" />
+    <Compile Include="DbEntities\CustomerUserRole.cs" />
+    <Compile Include="DbEntities\CustomerUserRoleToPermissionMapping.cs" />
+    <Compile Include="DbEntities\CustomerUser.cs" />
+    <Compile Include="DbEntities\DisplayThresholdSetting.cs" />
+    <Compile Include="DbEntities\QuestionChartSetting.cs" />
+    <Compile Include="DbEntities\TrendSetting.cs" />
+    <Compile Include="DbEntities\User.cs" />
+    <Compile Include="DbEntities\UserRole.cs" />
+    <Compile Include="DbEntities\CustomerUserSite.cs" />
+    <Compile Include="DbEntities\VitalChartSetting.cs" />
+    <Compile Include="Dtos\BaseBusinessOperationResponse.cs" />
+    <Compile Include="Dtos\CustomerService\BaseSiteDto.cs" />
+    <Compile Include="Dtos\CustomerService\CategoryOfCareDto.cs" />
+    <Compile Include="Dtos\CustomerService\OrganizationRequestDto.cs" />
+    <Compile Include="Dtos\CustomerService\OrganizationResponseDto.cs" />
+    <Compile Include="Dtos\CustomerService\SiteResponseDto.cs" />
+    <Compile Include="Dtos\BaseSearchDto.cs" />
+    <Compile Include="Dtos\CustomerService\SiteSearchDto.cs" />
+    <Compile Include="Dtos\DevicesService\BaseDeviceRequestDto.cs" />
+    <Compile Include="Dtos\DevicesService\DeviceSettingsDto.cs" />
+    <Compile Include="Dtos\DevicesService\Enums\BloodGlucosePeripheral.cs" />
+    <Compile Include="Dtos\DevicesService\Enums\DeviceType.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\OpenEndedAnswerSetResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\AssessmentElements\AssessmentResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\ElementDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\LocalizedStrings\BaseLocalizedStringDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\LocalizedStrings\CreateLocalizedStringRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\LocalizedStrings\LocalizedStringResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\LocalizedStrings\LocalizedStringWithAudioFileMediaResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\LocalizedStrings\UpdateLocalizedStringRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\MeasurementElements\MeasurementResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\Medias\CreateMediaRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\Medias\MediaResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\Medias\SearchMediaDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\Medias\UpdateMediaRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\QuestionElements\AnswerChoiceIdDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\QuestionElements\BaseQuestionElementRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\QuestionElements\CreateQuestionElementRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\QuestionElements\QuestionElementResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\QuestionElements\UpdateQuestionElementRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\ScaleAnswerSet\BaseScaleAnswerSetDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\ScaleAnswerSet\CreateScaleAnswerSetLabelsRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\ScaleAnswerSet\CreateScaleAnswerSetRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\ScaleAnswerSet\LocalizedScaleStringDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\ScaleAnswerSet\ScaleAnswerSetResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\ScaleAnswerSet\UpdateScaleAnswerSetLabelsRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\ScaleAnswerSet\UpdateScaleAnswerSetRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\SearchAnswerSetRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\SelectionAnswerChoices\BaseSelectionAnswerChoiceDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\SelectionAnswerChoices\CreateSelectionAnswerChoiceRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\SelectionAnswerChoices\SelectionAnswerChoiceResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\SelectionAnswerChoices\UpdateSelectionAnswerChoiceRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\SelectionAnswerSet\BaseSelectionAnswerSetDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\SelectionAnswerSet\CreateSelectionAnswerSetRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\SelectionAnswerSet\SearchSelectionAnswerSetRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\SelectionAnswerSet\SelectionAnswerSetResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\SelectionAnswerSet\UpdateSelectionAnswerSetRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\TextMediaElements\CreateTextMediaElementRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\TextMediaElements\TextMediaElementResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Elements\TextMediaElements\UpdateTextMediaElementRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Enums\AnswerSetType.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Enums\AssessmentType.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Enums\ElementType.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Enums\MeasurementType.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Enums\MediaType.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Enums\SearchCategoryType.cs" />
+    <Compile Include="Dtos\HealthLibraryService\GlobalSearchDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Programs\BaseProgramDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Programs\ProgramElementResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Programs\ProgramRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Programs\ProgramResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Programs\CreateProgramResultDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Programs\ProgramDayElementDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Programs\ProgramDayElementToProgramElementDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Programs\ProgramElementDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Programs\RecurrenceDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Programs\SearchProgramsRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Protocols\AlertDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Protocols\BaseProtocolElementDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Protocols\BranchDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Protocols\ConditionDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Protocols\CreateProtocolRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Protocols\ProtocolElementRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Protocols\ProtocolElementResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Protocols\ProtocolResponseDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Protocols\SearchProtocolsRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\Protocols\UpdateProtocolRequestDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\SearchEntryDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\SearchProgramResultDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\SearchTextAndMediaDto.cs" />
+    <Compile Include="Dtos\HealthLibraryService\TagsSearchDto.cs" />
+    <Compile Include="Dtos\MessagingHub\Enums\RegistrationType.cs" />
+    <Compile Include="Dtos\MessagingHub\NotificationDto.cs" />
+    <Compile Include="Dtos\MessagingHub\NotificationResponseDto.cs" />
+    <Compile Include="Dtos\OperationResultDto.cs" />
+    <Compile Include="Dtos\OrderedSearchDto.cs" />
+    <Compile Include="Dtos\PagedResult.cs" />
+    <Compile Include="Dtos\PatientsService\DefaultSessions\DefaultSessionChangeResponseDto.cs" />
+    <Compile Include="Dtos\PatientsService\DefaultSessions\DefaultSessionDto.cs" />
+    <Compile Include="Dtos\PatientsService\DefaultSessions\DefaultSessionProtocolDto.cs" />
+    <Compile Include="Dtos\PatientsService\DefaultSessions\DefaultSessionResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\Conditions\ConditionRequestDto.cs" />
+    <Compile Include="Dtos\PatientsService\Enums\DefaultSessionAction.cs" />
+    <Compile Include="Dtos\VitalsService\Conditions\ConditionResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\PatientConditions\PatientConditionsRequestDto.cs" />
+    <Compile Include="Dtos\VitalsService\PatientNotes\BaseNoteDto.cs" />
+    <Compile Include="Dtos\VitalsService\PatientNotes\BaseNoteResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\PatientNotes\CreateNoteRequestDto.cs" />
+    <Compile Include="Dtos\VitalsService\PatientNotes\NoteDetailedResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\PatientNotes\NoteBriefResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\PatientNotes\SearchNotesDto.cs" />
+    <Compile Include="Dtos\VitalsService\PatientNotes\SuggestedNotableDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\AdherenceDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\BaseCalendarProgramDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\CalendarChangeResponseDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\CalendarItemChangeResponseDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\CalendarItemRequestDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\CalendarItemResponseDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\CalendarItemsSearchDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\CalendarProgramChangeResponseDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\CalendarProgramDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\CalendarProgramResponseDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\ClearCalendarRequestDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\CreateCalendarItemsRequestDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\CreateCalendarProgramRequestDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\ProgramScheduleRequestDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\ProtocolElementDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\RecurrenceRuleDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\TerminateProgramRequest.cs" />
+    <Compile Include="Dtos\PatientsService\Enums\AdherenceStatus.cs" />
+    <Compile Include="Dtos\PatientsService\Enums\CalendarElementType.cs" />
+    <Compile Include="Dtos\PatientsService\Enums\CalendarItemAction.cs" />
+    <Compile Include="Dtos\PatientsService\Enums\CalendarProgramAction.cs" />
+    <Compile Include="Dtos\PatientsService\Enums\Frequency.cs" />
+    <Compile Include="Dtos\PatientsService\Enums\Ordering\AdherenceOrderBy.cs" />
+    <Compile Include="Dtos\PatientsService\Enums\Ordering\PatientOrderBy.cs" />
+    <Compile Include="Dtos\PatientsService\Enums\WeekDays.cs" />
+    <Compile Include="Dtos\PatientsService\IdentifierDto.cs" />
+    <Compile Include="Dtos\PatientsService\PatientIdentifierDto.cs" />
+    <Compile Include="Dtos\PatientsService\PatientsSearchDto.cs" />
+    <Compile Include="Dtos\PatientsService\UpdatePatientRequestDto.cs" />
+    <Compile Include="Dtos\PostResponseDto.cs" />
+    <Compile Include="Dtos\TokenService\RequestsResponses\BasePrincipalModel.cs" />
+    <Compile Include="Dtos\TokenService\RequestsResponses\CreatePrincipalModel.cs" />
+    <Compile Include="Dtos\TokenService\RequestsResponses\CredentialModel.cs" />
+    <Compile Include="Dtos\TokenService\RequestsResponses\CredentialUpdateModel.cs" />
+    <Compile Include="Dtos\TokenService\RequestsResponses\PrincipalResponseModel.cs" />
+    <Compile Include="Dtos\TokenService\RequestsResponses\UpdatePrincipalModel.cs" />
+    <Compile Include="Dtos\UpdateCustomerUserResultDto.cs" />
+    <Compile Include="Dtos\CreateCustomerUserResultDto.cs" />
+    <Compile Include="Dtos\VitalsService\AlertSeverities\AlertSeverityResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\AlertSeverities\InvalidateAlertDto.cs" />
+    <Compile Include="Dtos\VitalsService\Alerts\AcknowledgeAlertsRequestDto.cs" />
+    <Compile Include="Dtos\VitalsService\Alerts\BaseAlertResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\Alerts\VitalAlertBriefResponseDto.cs" />
+    <Compile Include="Dtos\PatientsService\Calendar\AdherencesSearchDto.cs" />
+    <Compile Include="Dtos\VitalsService\Alerts\HealthSessionElementAlertResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\Alerts\PatientAlertsDto.cs" />
+    <Compile Include="Dtos\VitalsService\Alerts\SearchAlertsDto.cs" />
+    <Compile Include="Dtos\VitalsService\Alerts\ViolatedThresholdDto.cs" />
+    <Compile Include="Dtos\VitalsService\Alerts\VitalAlertResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\AssessmentMediaResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\AssessmentValueResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\Enums\Ordering\HealthSessionOrderBy.cs" />
+    <Compile Include="Dtos\VitalsService\Enums\ThresholdSearchType.cs" />
+    <Compile Include="Dtos\VitalsService\Enums\TrendType.cs" />
+    <Compile Include="Dtos\VitalsService\MeasurementBriefResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\Thresholds\BaseThresholdDto.cs" />
+    <Compile Include="Dtos\VitalsService\Thresholds\BaseThresholdRequestDto.cs" />
+    <Compile Include="Dtos\VitalsService\Thresholds\CreateDefaultThresholdRequestDto.cs" />
+    <Compile Include="Dtos\VitalsService\Thresholds\DefaultThresholdDto.cs" />
+    <Compile Include="Dtos\VitalsService\Enums\AlertType.cs" />
+    <Compile Include="Dtos\VitalsService\Enums\HealthSessionElementType.cs" />
+    <Compile Include="Dtos\VitalsService\Enums\HealthSessionElementValueType.cs" />
+    <Compile Include="Dtos\VitalsService\Enums\ProcessingType.cs" />
+    <Compile Include="Dtos\VitalsService\Enums\ThresholdDefaultType.cs" />
+    <Compile Include="Dtos\VitalsService\HealthSessionElementDto.cs" />
+    <Compile Include="Dtos\VitalsService\HealthSessionElementValueDto.cs" />
+    <Compile Include="Dtos\VitalsService\HealthSessionResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\MeasurementDeviceDto.cs" />
+    <Compile Include="Dtos\VitalsService\MeasurementDto.cs" />
+    <Compile Include="Dtos\VitalsService\MeasurementValueResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\MeasurementNoteDto.cs" />
+    <Compile Include="Dtos\VitalsService\ScaleAndFreeFormAnswerDto.cs" />
+    <Compile Include="Dtos\VitalsService\SearchHealthSessionsDto.cs" />
+    <Compile Include="Dtos\VitalsService\SearchVitalsDto.cs" />
+    <Compile Include="Dtos\VitalsService\SelectionAnswerDto.cs" />
+    <Compile Include="Dtos\VitalsService\Thresholds\DefaultThresholdsSearchDto.cs" />
+    <Compile Include="Dtos\VitalsService\Thresholds\ThresholdsSearchDto.cs" />
+    <Compile Include="Dtos\VitalsService\Thresholds\UpdateDefaultThresholdRequestDto.cs" />
+    <Compile Include="Dtos\VitalsService\Thresholds\UpdateThresholdRequestDto.cs" />
+    <Compile Include="Dtos\VitalsService\Enums\ThresholdType.cs" />
+    <Compile Include="Dtos\VitalsService\Enums\UnitType.cs" />
+    <Compile Include="Dtos\VitalsService\Enums\VitalType.cs" />
+    <Compile Include="Dtos\VitalsService\Thresholds\ThresholdDto.cs" />
+    <Compile Include="Dtos\VitalsService\Thresholds\CreateThresholdRequestDto.cs" />
+    <Compile Include="Dtos\VitalsService\VitalBriefResponseDto.cs" />
+    <Compile Include="Dtos\VitalsService\VitalDto.cs" />
+    <Compile Include="Dtos\VitalsService\Enums\AlertDetailsType.cs" />
+    <Compile Include="Dtos\VitalsService\VitalResponseDto.cs" />
+    <Compile Include="Dtos\Zoom\CreateMeetingRequestDto.cs" />
+    <Compile Include="Dtos\Zoom\CreateUserRequestDto.cs" />
+    <Compile Include="Dtos\Zoom\Enums\MeetingStatus.cs" />
+    <Compile Include="Dtos\Zoom\Enums\MeetingType.cs" />
+    <Compile Include="Dtos\Zoom\Enums\OptionAudio.cs" />
+    <Compile Include="Dtos\Zoom\Enums\OptionStartType.cs" />
+    <Compile Include="Dtos\Zoom\Enums\UserType.cs" />
+    <Compile Include="Dtos\Zoom\GetMeetingByIdRequestDto.cs" />
+    <Compile Include="Dtos\Zoom\MeetingDto.cs" />
+    <Compile Include="Dtos\Zoom\ZoomBaseRequestDto.cs" />
+    <Compile Include="Dtos\Zoom\Enums\LoginType.cs" />
+    <Compile Include="Dtos\Zoom\GetUserByEmailRequestDto.cs" />
+    <Compile Include="Dtos\Zoom\ZoomBaseResponseDto.cs" />
+    <Compile Include="Dtos\Zoom\ZoomErrorDto.cs" />
+    <Compile Include="Dtos\Zoom\ZoomUserDto.cs" />
+    <Compile Include="Enums\ChangePasswordStatus.cs" />
+    <Compile Include="Enums\ChartType.cs" />
+    <Compile Include="Enums\GetCareManagerPatientsStatus.cs" />
+    <Compile Include="Enums\PeripheralType.cs" />
+    <Compile Include="Enums\OperandType.cs" />
+    <Compile Include="Enums\OperatorType.cs" />
+    <Compile Include="Enums\CreateUpdateCustomerUserErrorState.cs" />
+    <Compile Include="Dtos\CustomerService\CreateCustomerRequestDto.cs" />
+    <Compile Include="Dtos\CustomerService\CustomerResponseDto.cs" />
+    <Compile Include="Dtos\CustomerService\UpdateCustomerRequestDto.cs" />
+    <Compile Include="Dtos\CustomerService\UploadFileResponse.cs" />
+    <Compile Include="Dtos\CustomerService\SiteRequestDto.cs" />
+    <Compile Include="Dtos\DevicesService\CreateDeviceRequestDto.cs" />
+    <Compile Include="Dtos\DevicesService\DeviceDto.cs" />
+    <Compile Include="Dtos\DevicesService\UpdateDeviceDecomissionStatusDto.cs" />
+    <Compile Include="Dtos\PatientsService\CreatePatientRequestDto.cs" />
+    <Compile Include="Dtos\PatientsService\PatientDto.cs" />
+    <Compile Include="Dtos\PatientsService\PatientStatus.cs" />
+    <Compile Include="Dtos\TokenService\TokenServiceGroupGuids.cs" />
+    <Compile Include="Dtos\TokenService\PolicyDto.cs" />
+    <Compile Include="Dtos\TokenService\RequestsResponses\GetTokenRequest.cs" />
+    <Compile Include="Dtos\TokenService\RequestsResponses\TokenResponseModel.cs" />
+    <Compile Include="Dtos\TokenService\RequestsResponses\VerifyAccessRequest.cs" />
+    <Compile Include="Dtos\TokenService\RequestsResponses\VerifyAccessResponse.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Enums\CustomerUserRolePermissions.cs" />
+    <Compile Include="Enums\DecommissionStatusDto.cs" />
+    <Compile Include="Enums\DeviceIdType.cs" />
+    <Compile Include="Enums\DeviceStatus.cs" />
+    <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Enums\SortDirection.cs" />
+    <Compile Include="FileDto.cs" />
+    <Compile Include="IConvertibleVital.cs" />
+    <Compile Include="ISoftDelitable.cs" />
+    <Compile Include="OnlyDateConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\GlobalStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VitalSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GlobalStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Maestro.Common\Maestro.Common.csproj">
+      <Project>{4c8f910a-d6b3-4b7e-8d64-6108691b8f7f}</Project>
+      <Name>Maestro.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

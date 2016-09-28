@@ -1,0 +1,25 @@
+﻿<script id="programProtocolTemplate" type="text/template">
+    <div class="dropdown">
+        <span id="programProtocol_<%= id %>" title="<%= name.value %>"
+                class="protocol-item dropdown-toggle"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                type="button">
+            <% if (recurrenceId !== null) { %>
+                <i class="recurrence-status"></i>
+            <% } %>
+            <%= name.value %>
+        </span>
+        <ul class="dropdown-menu" aria-labelledby="programProtocol_<%= id %>">
+            <% if (recurrenceId === null) { %>
+                <li><a class="js-set-recurrence">Set Recurrence</a></li>
+                <li><a class="js-delete-protocol">Delete Protocol</a></li>
+            <% } else { %>
+                <li><a class="js-edit-recurrence">Edit Recurrence</a></li>
+                <li><a class="js-delete-protocol-occurence">Delete Protocol Occurrence</a></li>
+                <li><a class="js-delete-protocol-series">Delete Protocol Series</a></li>
+            <% } %>
+        </ul>
+    </div>
+</script>

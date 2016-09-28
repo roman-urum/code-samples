@@ -1,0 +1,16 @@
+﻿<script id="protocolQuestionListItemTemplate" type="text/template">
+    <div class="protocol-search-element-title protocol-handle clearfix">
+        <div class="pull-left italic">Question</div>    
+        <span class="glyphicon glyphicon-move pull-right handle-icon"></span>
+    </div>
+    <div class="protocol-search-element-body">
+        <p class="search-result-text" title="<%=questionElementString.value%>"><%=questionElementString.value%></p>
+        <% if( tags.length > 0 ) { %>
+            <div class="search-result-tags">
+                <% _.each(tags, function(tag){ %>
+                <span class="label label-info" title="<%= tag %>"><%= tag %></span>
+                <% }); %>
+            </div>
+        <% } %>
+    </div>
+</script>

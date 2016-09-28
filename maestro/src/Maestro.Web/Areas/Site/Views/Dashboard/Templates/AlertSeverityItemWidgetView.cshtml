@@ -1,0 +1,15 @@
+﻿<script id="severityItemWidgetView" type="text/template">
+    <div class="scale-item-wrapper">
+        <span class="scale-name"><%- obj.name %></span>
+        <div class="scale-item" style="width: <%- obj.percentage %>%; background: <%- obj.colorCode %>;"> </div>
+        <span class="scale-range">
+            <% if(!obj.count) { %>
+            <%- 0 %>
+            <% } else if(obj.totalCount !== obj.count) { %>
+            <%- obj.count %>/<%- obj.totalCount %>
+            <% } else { %>
+            <%- obj.totalCount %>
+            <% } %>
+        </span>
+    </div>
+</script>

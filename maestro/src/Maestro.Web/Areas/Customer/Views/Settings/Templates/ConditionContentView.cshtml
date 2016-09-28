@@ -1,0 +1,80 @@
+<script id="conditionContentView" type="text/template">
+    
+    <div class="row content-assugnment-text-row">
+        <div class="col-sm-12">
+            <span class="glyphicon glyphicon-triangle-bottom"></span>
+            <span class="content-assignment-text">@GlobalStrings.Conditions_ContentAssignmentText</span>
+            <span class="glyphicon glyphicon-question-sign"
+                  data-toggle="popover"
+                  data-content="The below tags are in current use in the Care Builder library. Select from the cloud below or search specific tags to assemble which tagged content should be assigned to this condition. Content with the selected tags will be suggested during scheduling for patients assigned this condition."
+                  title="<span class='text-info'>Content Assignment</span><button type='button' class='close' data-dismiss='popover' aria-hidden='true'>&times;</button>">
+            </span>
+        </div>
+    </div>
+
+    <div class="row">     
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="input-group">
+                    <select id="protocols-and-programs-search-tags"
+                            data-placeholder="Add Tags"
+                            placeholder="Add Tags"
+                            data-loading-placeholder="Loading..."
+                            class="form-control chosen-select searching-tags"></select>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default js-search-clear" type="button">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 tags-cloud-row">
+        </div>
+    </div>  
+    
+    <div class="row programs-row">
+        <div class="col-sm-12">
+            <span class="glyphicon glyphicon-triangle-right"></span>
+            <span class="programs-text">@GlobalStrings.Conditions_ProgramsText</span>
+            <span class="glyphicon glyphicon-question-sign"
+                  data-toggle="popover"
+                  data-content="Programs in this list are assigned at least one of the tags assigned to this condition. When this condition is assigned to a patient, these programs will be suggested during scheduling."
+                  title="<span class='text-info'>Programs</span><button type='button' class='close' data-dismiss='popover' aria-hidden='true'>&times;</button>">
+            </span>
+            <div class="programs-list-container hidden">
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="row protocols-row">
+        <div class="col-sm-12">
+            <span class="glyphicon glyphicon-triangle-right"></span>
+            <span class="protocols-text">@GlobalStrings.Conditions_ProtocolsText</span>
+            <span class="glyphicon glyphicon-question-sign"
+                  data-toggle="popover"
+                  data-content="Protocols in this list are assigned at least one of the tags assigned to this condition. When this condition is assigned to a patient, these protocols will be suggested during scheduling."
+                  title="<span class='text-info'>Protocols</span><button type='button' class='close' data-dismiss='popover' aria-hidden='true'>&times;</button>">
+            </span>
+            <div class="protocols-list-container hidden">
+            </div>
+        </div>
+    </div>
+    <div class="well">
+        <div class="row">
+            <div class="col-sm-12">
+                <a href="#" class="btn btn-primary js-save-condition-content-and-exit-button">
+                    @GlobalStrings.Patient_SaveAndExitText
+                </a>
+                <a href="#" class="btn btn-link js-cancel-button">
+                    @GlobalStrings.Edit_Customer_CancelButtonText
+                </a>
+            </div>
+        </div>
+    </div>
+
+</script>

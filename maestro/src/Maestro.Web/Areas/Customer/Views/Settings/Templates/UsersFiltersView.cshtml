@@ -1,0 +1,57 @@
+<script id="usersFiltersView" type="text/template">
+
+    <a href="/Settings/Users/Create" class="js-link">+ Create New User</a>
+
+    <div class="row users-filters">
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label>&nbsp;</label>
+                <input type="text" id="search-users" class="form-control" placeholder="Search users">
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="sort-users">Sort by:</label>
+                <select id="sort-users" class="form-control">
+                    <option value="1">First Name (A-Z)</option>
+                    <option value="2">First Name (Z-A)</option>
+                    <option value="3">Last Name (A-Z)</option>
+                    <option value="4">Last Name (Z-A)</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="filter-users-by-role">Filter by Role:</label>
+                <select id="filter-users-by-role" class="form-control">
+                    <option value="">All</option>
+                    <% _.each(roles, function (role) { %>
+                        <option value="<%= role.id %>"><%= role.name %></option>
+                    <% }); %>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="filter-users-by-status">Filter by Status:</label>
+                <select id="filter-users-by-status" class="form-control">
+                    <option value="">All</option>
+                    <option value="1">Enabled</option>
+                    <option value="2">Disabled</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label for="filter-users-by-site">Filter by Site:</label>
+                <select id="filter-users-by-site" class="form-control">
+                    <option value="">All</option>
+                    <% _.each(sites, function (site) { %>
+                        <option value="<%= site.id %>"><%= site.name %></option>
+                    <% }); %>
+                </select>
+            </div>
+        </div>
+    </div>
+
+</script>

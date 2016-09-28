@@ -1,0 +1,8 @@
+<script id="devicesSelectListItemTemplate" type="text/template">
+    <%=(deviceType ? deviceType : "Other Device")%>
+    <% if(deviceType) { %>
+        <% if(deviceId) { %>
+            (<% if(deviceIdType != null) { %><%=deviceIdTypeLabel%>: <% } %><%=deviceId%>)
+        <% } %>
+    <% } %>
+</script>

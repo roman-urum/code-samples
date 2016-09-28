@@ -1,0 +1,66 @@
+<script id="patientDashboardHealthSessionsViewTemplate" type="text/template">
+    <nav class="navbar navbar-default">
+        <div class="navbar-title-ci">Health Sessions</div>
+    </nav>
+
+    <div class="aside-block-content">
+        <div class="missed-health-sessions <%= healthSessionsMissedCount ? 'warning' : ''%>">
+            <% if (isModelFetched) { %>
+                <% if (healthSessionsMissedCount) { %>
+                    <p><%= healthSessionsMissedCount %> Sessions Missed</p>
+                <% } else { %>
+                    <p>No missed sessions</p>
+                <% } %>
+            <% } %>
+            <a class="btn btn-primary btn-lg js-check-connection">Check Connection</a>
+        </div>
+
+        <table class="table table-striped health-sessions-data-list">
+            <% if (isModelFetched) { %>
+                <tr>
+                    <td>
+                        <label>Next Session:</label>
+                        <% if (nextSessionText) { %>
+                            <span><%= nextSessionText %></span>
+                        <% } else { %>
+                            <span>&mdash;</span>
+                        <% } %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Programs:</label>
+                        <% if (currentPrograms.length) { %>
+                            <ul class="list-unstyled">
+                                <% _.each(currentPrograms, function (programName) { %>
+                                <li><%= programName %></li>
+                                <% }) %>
+                            </ul>
+                        <% } else { %>
+                            <span>&mdash;</span>
+                        <% } %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Current Time for Patient:</label><span><%= currentTimeForPatient %></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Preferred Session Time:</label><span><%= preferredSessionTime %></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Last Connected <%= lastConnectedDeviceType ? '('+lastConnectedDeviceType+')' : ''%>:</label><span><%= lastConnectedDateText ? lastConnectedDateText : 'unknown' %></span>
+                    </td>
+                </tr>
+            <% } else { %>
+                <img src="/Content/img/spinner.gif" class="spinner" />
+            <% } %>
+        </table>
+
+        <a class="btn btn-primary btn-lg" href="/<%=siteId%>/Patients/PatientDetails/<%=id%>/Schedule/">Schedule a Program</a>
+    </div>
+</script>

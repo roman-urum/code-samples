@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDFD72E9-C050-4A6D-A9C5-707A06B3C97B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeviceService.DataAccess</RootNamespace>
+    <AssemblyName>DeviceService.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\VA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Isg.EntityFramework">
+      <HintPath>..\ExternalLibs\Isg.EntityFramework\Isg.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject, Version=3.0.2.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LightInject.3.0.2.7\lib\net45\LightInject.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.ServiceLocation, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LightInject.ServiceLocation.1.0.0.2\lib\net45\LightInject.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\DeviceServiceDbContext.cs" />
+    <Compile Include="DataAccessCompositionRoot.cs" />
+    <Compile Include="Extenstions\CollectionExtensions.cs" />
+    <Compile Include="Interceptors\PrimaryKeyInterceptor.cs" />
+    <Compile Include="Interceptors\SoftDeletableInterceptor.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Mappings\DeviceMapping.cs" />
+    <Compile Include="Mappings\DeviceSettingsMapping.cs" />
+    <Compile Include="Migrations\201506151508550_Initial.cs" />
+    <Compile Include="Migrations\201506151508550_Initial.Designer.cs">
+      <DependentUpon>201506151508550_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506161100220_AddDeviceTypeAndDeviceIdType.cs" />
+    <Compile Include="Migrations\201506161100220_AddDeviceTypeAndDeviceIdType.Designer.cs">
+      <DependentUpon>201506161100220_AddDeviceTypeAndDeviceIdType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506170740161_DeviceSettingsAdded.cs" />
+    <Compile Include="Migrations\201506170740161_DeviceSettingsAdded.Designer.cs">
+      <DependentUpon>201506170740161_DeviceSettingsAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506171524038_MakeDeviceIdTypeNullable.cs" />
+    <Compile Include="Migrations\201506171524038_MakeDeviceIdTypeNullable.Designer.cs">
+      <DependentUpon>201506171524038_MakeDeviceIdTypeNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506190837295_AddCertificateSubjectColumn.cs" />
+    <Compile Include="Migrations\201506190837295_AddCertificateSubjectColumn.Designer.cs">
+      <DependentUpon>201506190837295_AddCertificateSubjectColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507161209226_AddCertificateAndThumbprintColumns.cs" />
+    <Compile Include="Migrations\201507161209226_AddCertificateAndThumbprintColumns.Designer.cs">
+      <DependentUpon>201507161209226_AddCertificateAndThumbprintColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511231316181_PedometerSettings.cs" />
+    <Compile Include="Migrations\201511231316181_PedometerSettings.Designer.cs">
+      <DependentUpon>201511231316181_PedometerSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601050858479_DeviceType.cs" />
+    <Compile Include="Migrations\201601050858479_DeviceType.Designer.cs">
+      <DependentUpon>201601050858479_DeviceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601060826198_LastConnectedUtc.cs" />
+    <Compile Include="Migrations\201601060826198_LastConnectedUtc.Designer.cs">
+      <DependentUpon>201601060826198_LastConnectedUtc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601281433501_iHealthAccount.cs" />
+    <Compile Include="Migrations\201601281433501_iHealthAccount.Designer.cs">
+      <DependentUpon>201601281433501_iHealthAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603211144080_DevicesTableUpdated.cs" />
+    <Compile Include="Migrations\201603211144080_DevicesTableUpdated.Designer.cs">
+      <DependentUpon>201603211144080_DevicesTableUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604071202141_CustomerIdIndexesAdded.cs" />
+    <Compile Include="Migrations\201604071202141_CustomerIdIndexesAdded.Designer.cs">
+      <DependentUpon>201604071202141_CustomerIdIndexesAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604141456549_AddBloodGlucosePeripheral.cs" />
+    <Compile Include="Migrations\201604141456549_AddBloodGlucosePeripheral.Designer.cs">
+      <DependentUpon>201604141456549_AddBloodGlucosePeripheral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DeviceService.Common\DeviceService.Common.csproj">
+      <Project>{E9B3E2A3-6C21-4038-8D17-8F600BF74739}</Project>
+      <Name>DeviceService.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DeviceService.Domain\DeviceService.Domain.csproj">
+      <Project>{b6c4feb6-0b45-4a26-aed7-bab1cd58b4b7}</Project>
+      <Name>DeviceService.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201506151508550_Initial.resx">
+      <DependentUpon>201506151508550_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506161100220_AddDeviceTypeAndDeviceIdType.resx">
+      <DependentUpon>201506161100220_AddDeviceTypeAndDeviceIdType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506170740161_DeviceSettingsAdded.resx">
+      <DependentUpon>201506170740161_DeviceSettingsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506171524038_MakeDeviceIdTypeNullable.resx">
+      <DependentUpon>201506171524038_MakeDeviceIdTypeNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506190837295_AddCertificateSubjectColumn.resx">
+      <DependentUpon>201506190837295_AddCertificateSubjectColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507161209226_AddCertificateAndThumbprintColumns.resx">
+      <DependentUpon>201507161209226_AddCertificateAndThumbprintColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511231316181_PedometerSettings.resx">
+      <DependentUpon>201511231316181_PedometerSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601050858479_DeviceType.resx">
+      <DependentUpon>201601050858479_DeviceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601060826198_LastConnectedUtc.resx">
+      <DependentUpon>201601060826198_LastConnectedUtc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601281433501_iHealthAccount.resx">
+      <DependentUpon>201601281433501_iHealthAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603211144080_DevicesTableUpdated.resx">
+      <DependentUpon>201603211144080_DevicesTableUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604071202141_CustomerIdIndexesAdded.resx">
+      <DependentUpon>201604071202141_CustomerIdIndexesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604141456549_AddBloodGlucosePeripheral.resx">
+      <DependentUpon>201604141456549_AddBloodGlucosePeripheral.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

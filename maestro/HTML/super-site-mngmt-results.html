@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- SUPER USER - SITE ADMINISTRATION - WITH RESULTS -->
+        <meta http-equiv="X-UI-Compatible" content="IE=edge" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      
+      <!-- PAGE HEADER -->
+      <header class="non-responsive-container ci-header">
+        <div class="ci-brand-img">
+            <a class="navbar-brand" href="#">
+                <img src="img/ci-logo.png" alt="Care Innovations, an Intel - GE Company"/>
+            </a>
+        </div>
+        <div class="ci-user-menu">
+          Welcome <a href="#">Susan</a>!
+        </div>
+        <div class="ci-signout">
+          <a href="#">Sign Out</a>
+        </div>
+      </header>
+      <!-- END PAGE HEADER -->
+      
+      <section class="non-responsive-container">
+        <div class="row">
+          
+          <!-- SIDE NAVIGATION -->
+          <nav class="col-xs-1 ci-navigation left-wrap">
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><br />Home</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><br />Patients</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><br />Calendar</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span><br />Care Builder</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><br />Reports</a></div>
+            <div class="nav-item"><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span><br />Settings</a></div>
+          </nav>
+          <!-- END SIDE NAVIGATION -->
+          
+          <div class="right-wrap col-xs-11">
+            
+            <!-- PAGE HEADER / BREADCRUMBS -->
+            <h1 class="ci-page-header">Administration</h1>
+            <!-- END PAGE HEADER / BREADCRUMBS -->
+            
+            <!-- MAIN CONTENT - SITE ADMIN -->
+            <div class="ci-content">
+              <div class="row">
+                <div class="col-xs-12">
+                  If you want to edit the default libraries and settings available to all customers, edit the master site settings here: <a href="#">Maestro Default Settings</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3"><h2 class="ci-page-subheader">Sites</h2></div>
+                <div class="col-xs-9 subhead-add-link"><a class="add-cust" href="#" data-toggle="modal" data-target="#create-customer">+ Add New Customer</a></div>
+              </div>
+              <!-- SEARCH FILTER -->
+              <div class="row">
+                <div class="col-xs-4">
+                  <p>Select the customer you want to manage</p>
+                  <form class="site-filter form-inline">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input type="text" class="form-control filter-input" placeholder="Filter results here..." value="health">
+                        <!--
+                          The following line has the search icon instead of the remove icon.
+                          You can replace 'glyphicon-remove' with 'glyphicon-search' to change back to the magnifying glass.  Change 'clear-filter' back to 'submit-site-filter' to change functionality.
+                          <div class="input-group-addon"><a href="#" class="submit-site-filter"><span class="glyphicon glyphicon-search"></span></a></div>
+                        -->
+                        <div class="input-group-addon"><a href="#" class="clear-filter"><span class="glyphicon glyphicon-remove"></span></a></div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <!-- END SERACH FILTER -->
+              <!-- USER LIST -->
+              <div class="row">
+                <div class="col-xs-12 ci-user-list">
+                  <!-- USER ROWS WITH ONE SITE -->
+                  <div class="row user-item">
+                    <div class="col-xs-3 ci-customer-name">Customer Name</div>
+                    <div class="col-xs-5 ci-site-name"><span class="search-result">Health</span> Point</div>
+                    <div class="col-xs-2 ci-site-state"><strong>ON</strong></div>
+                    <div class="col-xs-2 ci-site-edit"><a href="#">Edit</a></div>
+                  </div>
+                  <div class="row user-item">
+                    <div class="col-xs-3 ci-customer-name">Customer Name</div>
+                    <div class="col-xs-5 ci-site-name"><span class="search-result">Health</span> Center</div>
+                    <div class="col-xs-2 ci-site-state"><strong>ON</strong> <span class="error-state">Not Published</span></div>
+                    <div class="col-xs-2 ci-site-edit"><a href="#">Edit</a></div>
+                  </div>
+                  <!-- END USER ROWS WITH ONE SITE -->
+                  <!-- USER ROW WITH MULTIPLE SITES -->
+                  <div class="list-accordion">
+                    <div class="row user-item">
+                      <div class="col-xs-12">
+                        <div class="list-arrow"></div>
+                        <a class="list-collapse ci-customer-name" href="javascript:void(0);">Customer Name</a>
+                      </div>
+                    </div>
+                    <div class="accordion-content">
+                      <div class="row user-item">
+                        <div class="col-xs-3"></div>
+                        <div class="col-xs-5 ci-site-name">Site Name</div>
+                        <div class="col-xs-2 ci-site-state"><strong>ON</strong></div>
+                        <div class="col-xs-2 ci-site-edit"><a href="#">Edit</a></div>
+                      </div>
+                      <div class="row user-item">
+                        <div class="col-xs-3"></div>
+                        <div class="col-xs-5 ci-site-name">Site Name</div>
+                        <div class="col-xs-2 ci-site-state"><strong>ON</strong></div>
+                        <div class="col-xs-2 ci-site-edit"><a href="#">Edit</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- END USER ROW WITH MULTIPLE SITES -->
+                </div>
+                <div class="user-list-counter small">3 sites found</div>
+              </div>
+              <!-- END USER LIST -->
+            </div>
+            <!-- END MAIN CONTENT -->
+            
+            <!-- MODALS / TOOLTIPS -->
+            <div class="modal fade" id="page-loader" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    Searching...
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="create-customer" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Create Customer</h4>
+                  </div>
+                  <form>
+                    <div class="modal-body">
+                        <h5><strong>STEP 1:</strong></h5>
+                        <p>Enter the name of the customer as you would like it to appear on the Login page of the customer's site.</p>
+                        <div class="row">
+                          <div class="col-xs-4 ci-text"><label for="new-cust-name">Customer Name*:</label></div>
+                          <div class="col-xs-8">
+                            <input id="new-cust-name" class="input-validation-error" type="text">
+                            <div class="input-sub-note x-small error-state">Customer Name cannot contain special characters !@#$%^&amp;</div>
+                          </div>
+                        </div>
+                        <h5><strong>STEP 2:</strong></h5>
+                        <p>Enter the name as you would like it to appear in the link to the customer's site.</p>
+                        <p><strong>Example</strong><br />https://www.<strong>customername</strong>.healthharmonymaestro.com</p>
+                        <div class="row">
+                          <div class="col-xs-4 ci-text"><label for="new-cust-name">Subdomain Name*:</label></div>
+                          <div class="col-xs-8">
+                            <input id="new-subdomain" class="input-validation-error" type="text">
+                            <div class="input-sub-note x-small error-state">Subdomain Name is required.</div>
+                          </div>
+                        </div>
+                        <h5><strong>STEP 3:</strong></h5>
+                        <p>Enter the name and support number of your first site (you can make more and edit the name in the future).</p>
+                        <p><strong>Example</strong><br />https://www.<strong>customername</strong>.healthharmonymaestro.com</p>
+                        <div class="row">
+                          <div class="col-xs-4 ci-text"><label for="new-cust-name">Site Name*:</label></div>
+                          <div class="col-xs-8">
+                            <input id="new-site-name" class="input-validation-error" type="text">
+                            <div class="input-sub-note x-small error-state">Site Name is required.</div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-4 ci-text"><label for="new-cust-name">Contact Phone*:</label></div>
+                          <div class="col-xs-8">
+                            <input id="new-phone-number" class="input-validation-error" type="text">
+                            <div class="input-sub-note x-small error-state">Contact phone cannot contain special characters !@#$%^&amp;</div>
+                          </div>
+                        </div>
+                        <p><em>*Required</em></p>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            <!-- END MODALS / TOOLTIPS -->
+            
+          </div>
+        </div>
+      </section>
+      <script src="vendor/jquery/dist/jquery.min.js"></script>
+      <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="js/global.js"></script>
+      <script src="js/site-management.js"></script>
+    </body>
+</html>

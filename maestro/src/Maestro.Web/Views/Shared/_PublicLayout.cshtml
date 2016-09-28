@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_PublicHeader")
+
+<div class="main">
+    <div class="container">
+        @RenderBody()
+    </div>
+</div>
+
+<footer id="footer" class="container">
+    <hr />
+</footer>
+
+@section scripts
+{
+    @RenderSection("scripts", required: false)
+}

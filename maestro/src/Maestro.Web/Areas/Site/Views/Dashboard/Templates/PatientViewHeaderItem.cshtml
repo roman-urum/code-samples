@@ -1,0 +1,15 @@
+﻿<script id="patientCardViewTemplateHeaderItem" type="text/template">
+    <div class="alert-count-item">
+        <span class="alert-dot" style="background-color: <%- obj.colorCode %>;box-shadow: 0 0 1px <%- obj.colorCode %>;"></span>
+        <span class="alert-data-container">
+            <strong title="<%- obj.name %>" data-toggle="tooltip" data-placement="top" class="alert-data-name" style="color: <%- obj.colorCode %>; text-shadow: 0 0 .01px #ababab;">
+                <span class="alert-data-name-wrapper"><%- obj.name %></span>
+            </strong>
+            <span class="alert-data-value"><i><% if(obj.count === 0) { %>
+                -
+                <% }  else { %>
+                <%- obj.count %>
+                <% } %></i></span>
+        </span>
+    </div>
+</script>

@@ -1,0 +1,7 @@
+﻿<script id="careManagersFilterTemplate" type="text/template">
+    <option value="<%- obj.currentCareMenagerId %>">My Patients</option>
+    <option value="">All Patients</option>
+    <% _.each(obj.careManagers, function(careManager) { %>
+        <option value="<%- careManager.userId %>"><%- careManager.firstName + " " + careManager.lastName %></option>
+    <% });%>
+</script>
