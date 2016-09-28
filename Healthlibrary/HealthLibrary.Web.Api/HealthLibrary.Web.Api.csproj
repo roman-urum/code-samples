@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B3C4BB96-8918-486F-8895-9F44FD313E5C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HealthLibrary.Web.Api</RootNamespace>
+    <AssemblyName>HealthLibrary.Web.Api</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data\XmlDocument.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AzureStorageExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AzureStorageExtensions.1.0.0\lib\net45\AzureStorageExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Base64Url, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Base64Url.1.0.0\lib\net45\Base64Url.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Isg.EntityFramework, Version=0.4.1.31637, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalLibs\Isg.EntityFramework\Isg.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="JWT, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JWT.1.3.4\lib\3.5\JWT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LightInject, Version=3.0.2.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.3.0.2.7\lib\net45\LightInject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LightInject.ServiceLocation, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.ServiceLocation.1.0.0.2\lib\net45\LightInject.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LightInject.Web, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.Web.1.0.0.7\lib\net45\LightInject.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LightInject.WebApi, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.WebApi.1.0.0.4\lib\net45\LightInject.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=5.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.5.0.2\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NewRelic.Api.Agent, Version=5.2.87.0, Culture=neutral, PublicKeyToken=06552fced0b33d87, processorArchitecture=MSIL">
+      <HintPath>..\packages\NewRelic.Azure.WebSites.5.2.87.0\lib\NewRelic.Api.Agent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog.Targets.Azure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.Targets.Azure.1.0.1\lib\net45\NLog.Targets.Azure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog.Targets.AzureTableByMonth, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.Targets.AzureTableByMonth.1.0.0.0\lib\net45\NLog.Targets.AzureTableByMonth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NodaTime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NodaTime.1.3.1\lib\net35-Client\NodaTime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.0.316.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.0.481\lib\net45\StackExchange.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.2.1\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebApi Foolproof Validation">
+      <HintPath>..\packages\foolproof.webapi.0.0.2\lib\WebApi Foolproof Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="WebApi.OutputCache.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Strathweb.CacheOutput.WebApi2.0.9.0\lib\net45\WebApi.OutputCache.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebApi.OutputCache.V2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Strathweb.CacheOutput.WebApi2.0.9.0\lib\net45\WebApi.OutputCache.V2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\XmlDocument.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Global.asax" />
+    <EmbeddedResource Include="Resources\GlobalStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SwaggerExtensions\AuthorizeHeaders.js" />
+    <Content Include="newrelic\Extensions\CoreInstrumentation.xml" />
+    <Content Include="newrelic\Extensions\NewRelic.Agent.AttributeFilter.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Agent.Configuration.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Agent.Core.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Agent.LabelsService.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Agent.LazyMap.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Collections.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Core.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Dispatchers.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Memoization.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.CallStack.AsyncLocal.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.TransactionContext.Asp.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.TransactionContext.Default.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.TransactionContext.Wcf3.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.Asp35.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.Asp35.Instrumentation.xml" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.HttpClient.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.HttpClient.Instrumentation.xml" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.MongoDb.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.MongoDb.Instrumentation.xml" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.Mvc3.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.Mvc3.Instrumentation.xml" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.NServiceBus.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.NServiceBus.Instrumentation.xml" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.Wcf3.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.Wcf3.Instrumentation.xml" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.WebApi1.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.WebApi1.Instrumentation.xml" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.WebApi2.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.WebApi2.Instrumentation.xml" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.WebOptimization.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.WebOptimization.Instrumentation.xml" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.WebServices.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Providers.Wrapper.WebServices.Instrumentation.xml" />
+    <Content Include="newrelic\Extensions\NewRelic.Reflection.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.SystemExtensions.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.SystemInterfaces.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Testing.Assertions.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.Trie.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.TypeInstantiation.dll" />
+    <Content Include="newrelic\Extensions\NewRelic.WeakActions.dll" />
+    <Content Include="newrelic\NewRelic.Agent.Core.dll" />
+    <Content Include="newrelic\NewRelic.Agent.Extensions.dll" />
+    <Content Include="newrelic\NewRelic.Profiler.dll" />
+    <Content Include="NLog.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <Content Include="newrelic\newrelic.config" />
+    <Content Include="newrelic\Extensions\extension.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\server.cer" />
+    <Content Include="App_Data\server.key" />
+    <None Include="newrelic\newrelic.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NLog.Debug.config">
+      <DependentUpon>NLog.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="NLog.Release.config">
+      <DependentUpon>NLog.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\VA.pubxml" />
+    <None Include="Web.VA.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AutomapperConfig.cs" />
+    <Compile Include="App_Start\IocConfig.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AssessmentElementsController.cs" />
+    <Compile Include="Controllers\MeasurementElementsController.cs" />
+    <Compile Include="Controllers\MediasController.cs" />
+    <Compile Include="Controllers\OpenEndedAnswerSetsController.cs" />
+    <Compile Include="Controllers\ProgramsController.cs" />
+    <Compile Include="Controllers\ProtocolsController.cs" />
+    <Compile Include="Controllers\QuestionElementsController.cs" />
+    <Compile Include="Controllers\TagsController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\TextMediaElementsController.cs" />
+    <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\ScaleAnswerSetsController.cs" />
+    <Compile Include="Controllers\SelectionAnswerSetsController.cs" />
+    <Compile Include="CareElementRequestContext.cs" />
+    <Compile Include="DataAnnotations\Base64Attribute.cs" />
+    <Compile Include="DataAnnotations\Base64FileSizeAttribute.cs" />
+    <Compile Include="DataAnnotations\ElementStringLengthAttribute.cs" />
+    <Compile Include="DataAnnotations\ListRegularExpressionAttribute.cs" />
+    <Compile Include="DataAnnotations\MediaExtensionAttribute.cs" />
+    <Compile Include="DataAnnotations\FileNameAttribute.cs" />
+    <Compile Include="DataAnnotations\IANATimeZoneAttribute.cs" />
+    <Compile Include="DataAnnotations\NotRequiredIfNotEmptyAttribute.cs" />
+    <Compile Include="DataAnnotations\RequireGroupAttribute.cs" />
+    <Compile Include="DataAnnotations\SupportedContentTypeAttribute.cs" />
+    <Compile Include="DataAnnotations\MediaUrlAttribute.cs" />
+    <Compile Include="DataAnnotations\UniqueStringsListAttribute.cs" />
+    <Compile Include="ExceptionHandling\GlobalExceptionHandler.cs" />
+    <Compile Include="Exceptions\AttributeUsageException.cs" />
+    <Compile Include="Exceptions\ContextUsageException.cs" />
+    <Compile Include="Extensions\HttpRequestExtensions.cs" />
+    <Compile Include="Extensions\LocalizedStringExtensions.cs" />
+    <Compile Include="Extensions\RouteDataExtensions.cs" />
+    <Compile Include="DataAnnotations\NotEmptyListAttribute.cs" />
+    <Compile Include="Extensions\ServiceActionResultExtensions.cs" />
+    <Compile Include="Extensions\StackExchangeRedisExtensions.cs" />
+    <Compile Include="Filters\AuthorizeResultAttribute.cs" />
+    <Compile Include="Filters\CertificateAuthorizeAttribute.cs" />
+    <Compile Include="Filters\Exceptions\InvalidContentFilterAttribute.cs" />
+    <Compile Include="Filters\InvalidateCacheOutputAttribute.cs" />
+    <Compile Include="Filters\TokenAuthorizeAttribute.cs" />
+    <Compile Include="Filters\ValidateModelAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Implementations\MediaFileHelper.cs" />
+    <Compile Include="Helpers\Implementations\AssessmentElementsControllerHelper.cs" />
+    <Compile Include="Helpers\Implementations\OpenEndedAnswerSetsControllerHelper.cs" />
+    <Compile Include="Helpers\Implementations\TagsSearchCacheHelper.cs" />
+    <Compile Include="Helpers\Implementations\GlobalSearchCacheHelper.cs" />
+    <Compile Include="Helpers\Implementations\InMemoryCacheProvider.cs" />
+    <Compile Include="Helpers\Implementations\MeasurementElementsControllerHelper.cs" />
+    <Compile Include="Helpers\Implementations\MediaControllerHelper.cs" />
+    <Compile Include="Helpers\Implementations\ProgramControllerHelper.cs" />
+    <Compile Include="Helpers\Implementations\ProtocolsControllerHelper.cs" />
+    <Compile Include="Helpers\Implementations\QuestionElementControllerHelper.cs" />
+    <Compile Include="Helpers\Implementations\ScaleAnswerSetControllerHelper.cs" />
+    <Compile Include="Helpers\Implementations\TagsControllerHelper.cs" />
+    <Compile Include="Helpers\Implementations\SearchControllerHelper.cs" />
+    <Compile Include="Helpers\Implementations\TextMediaElementsControllerHelper.cs" />
+    <Compile Include="Helpers\Interfaces\IAssessmentElementsControllerHelper.cs" />
+    <Compile Include="Helpers\Interfaces\IMediaFileHelper.cs" />
+    <Compile Include="Helpers\Interfaces\ICacheProvider.cs" />
+    <Compile Include="Helpers\Interfaces\IOpenEndedAnswerSetsControllerHelper.cs" />
+    <Compile Include="Helpers\Interfaces\ITagsSearchCacheHelper.cs" />
+    <Compile Include="Helpers\Interfaces\IGlobalSearchCacheHelper.cs" />
+    <Compile Include="Helpers\Interfaces\IMeasurementElementsControllerHelper.cs" />
+    <Compile Include="Helpers\Interfaces\IMediaControllerHelper.cs" />
+    <Compile Include="Helpers\Interfaces\IProgramsControllerHelper.cs" />
+    <Compile Include="Helpers\Interfaces\IProtocolsControllerHelper.cs" />
+    <Compile Include="Helpers\Interfaces\IQuestionElementControllerHelper.cs" />
+    <Compile Include="Helpers\Interfaces\ITagsControllerHelper.cs" />
+    <Compile Include="Helpers\Interfaces\ISearchControllerHelper.cs" />
+    <Compile Include="Helpers\Interfaces\ITextMediaElementsControllerHelper.cs" />
+    <Compile Include="Helpers\StackExchangeRedisOutputCacheProvider.cs" />
+    <Compile Include="ICareElementRequestContext.cs" />
+    <Compile Include="Models\Elements\AssessmentElements\AssessmentResponseDto.cs" />
+    <Compile Include="Models\Elements\Medias\BaseMediaRequestDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerChoices\BaseAnswerStringRequestDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerChoices\UpdateAnswerStringRequestDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerChoices\CreateAnswerStringRequestDto.cs" />
+    <Compile Include="Models\Elements\TextMediaElements\CreateTextMediaElementRequestDto.cs" />
+    <Compile Include="Helpers\Implementations\SelectionAnswerSetsControllerHelper.cs" />
+    <Compile Include="Helpers\Interfaces\IScaleAnswerSetControllerHelper.cs" />
+    <Compile Include="Helpers\Interfaces\ISelectionAnswerSetControllerHelper.cs" />
+    <Compile Include="Models\Elements\TextMediaElements\TextMediaElementResponseDto.cs" />
+    <Compile Include="Models\Elements\TextMediaElements\UpdateTextMediaElementLocalizedRequestDto.cs" />
+    <Compile Include="Models\Elements\TextMediaElements\UpdateTextMediaElementRequestDto.cs" />
+    <Compile Include="Models\Elements\OpenEndedAnswerSetResponseDto.cs" />
+    <Compile Include="Models\Elements\ElementDto.cs" />
+    <Compile Include="Models\Enums\ErrorCode.cs" />
+    <Compile Include="Models\ErrorResponseDto.cs" />
+    <Compile Include="Models\Elements\LocalizedStrings\BaseLocalizedStringDto.cs" />
+    <Compile Include="Models\Elements\LocalizedStrings\LocalizedStringWithAudioFileMediaResponseDto.cs" />
+    <Compile Include="Models\Elements\LocalizedStrings\LocalizedStringResponseDto.cs" />
+    <Compile Include="Models\Elements\LocalizedStrings\UpdateLocalizedStringRequestDto.cs" />
+    <Compile Include="Models\Mappings\Converters\AnswerSetConverter.cs" />
+    <Compile Include="Models\Mappings\Converters\ElementConverter.cs" />
+    <Compile Include="Models\Mappings\AssessmentMapping.cs" />
+    <Compile Include="Models\Mappings\MeasurementMapping.cs" />
+    <Compile Include="Models\Mappings\MediaMapping.cs" />
+    <Compile Include="Models\Mappings\OpenEndedAnswerSetMapping.cs" />
+    <Compile Include="Models\Mappings\ProgramMapping.cs" />
+    <Compile Include="Models\Mappings\CommonMapping.cs" />
+    <Compile Include="Models\Mappings\Resolvers\ScaleAnswerSetHighLabelStringResolver.cs" />
+    <Compile Include="Models\Mappings\Resolvers\ScaleAnswerSetMidLabelStringResolver.cs" />
+    <Compile Include="Models\Mappings\Resolvers\ScaleAnswerSetLowLabelStringResolver.cs" />
+    <Compile Include="Models\Mappings\Resolvers\ThumbnailUrlResolver.cs" />
+    <Compile Include="Models\Mappings\TagMapping.cs" />
+    <Compile Include="Models\Mappings\ProtocolMapping.cs" />
+    <Compile Include="Models\Mappings\QuestionElementMapping.cs" />
+    <Compile Include="Models\Mappings\Resolvers\AnswerChoiceIdResponseResolver.cs" />
+    <Compile Include="Models\Mappings\Resolvers\ProgramElementNameResolver.cs" />
+    <Compile Include="Models\Mappings\Resolvers\QuestionElementStringResponseResolver.cs" />
+    <Compile Include="Models\Mappings\Resolvers\SelectionAnswerChoiceResponseResolver.cs" />
+    <Compile Include="Models\Mappings\Resolvers\TextMediaElementMediaResolver.cs" />
+    <Compile Include="Models\Mappings\Resolvers\ProtocolNameStringResolver.cs" />
+    <Compile Include="Models\Mappings\Resolvers\MediaUrlResolver.cs" />
+    <Compile Include="Models\Mappings\Resolvers\TextMediaElementStringResolver.cs" />
+    <Compile Include="Models\Mappings\TextMediaElementMapping.cs" />
+    <Compile Include="Models\Mappings\ScaleAnswerSetMapping.cs" />
+    <Compile Include="Models\Mappings\SelectionAnswerSetMapping.cs" />
+    <Compile Include="Models\Elements\MeasurementElements\MeasurementResponseDto.cs" />
+    <Compile Include="Models\Elements\Medias\CreateMediaRequestDto.cs" />
+    <Compile Include="Models\Elements\Medias\MediaResponseDto.cs" />
+    <Compile Include="Models\Elements\Medias\UpdateMediaRequestDto.cs" />
+    <Compile Include="Models\PagedResultDto.cs" />
+    <Compile Include="Models\PostResponseDto.cs" />
+    <Compile Include="Models\Elements\LocalizedStrings\CreateLocalizedStringRequestDto.cs" />
+    <Compile Include="Models\Programs\ProgramRequestDto.cs" />
+    <Compile Include="Models\Programs\ProgramDayElementDto.cs" />
+    <Compile Include="Models\Programs\ProgramElementDto.cs" />
+    <Compile Include="Models\Programs\ProgramElementResponseDto.cs" />
+    <Compile Include="Models\Programs\ProgramBriefResponseDto.cs" />
+    <Compile Include="Models\Programs\ProgramResponseDto.cs" />
+    <Compile Include="Models\Programs\ProgramScheduleDto.cs" />
+    <Compile Include="Models\Programs\ProgramScheduleEventDto.cs" />
+    <Compile Include="Models\Programs\ProgramScheduleElementDto.cs" />
+    <Compile Include="Models\Programs\ProgramScheduleRequestDto.cs" />
+    <Compile Include="Models\Programs\RecurrenceDto.cs" />
+    <Compile Include="Models\Protocols\AlertDto.cs" />
+    <Compile Include="Models\Protocols\ConditionDto.cs" />
+    <Compile Include="Models\Protocols\ProtocolElementResponseDto.cs" />
+    <Compile Include="Models\Protocols\ProtocolResponseDto.cs" />
+    <Compile Include="Models\Protocols\BranchDto.cs" />
+    <Compile Include="Models\Protocols\CreateProtocolRequestDto.cs" />
+    <Compile Include="Models\Protocols\ProtocolElementRequestDto.cs" />
+    <Compile Include="Models\Protocols\BaseProtocolElementDto.cs" />
+    <Compile Include="Models\Protocols\UpdateProtocolLocalizedNameRequestDto.cs" />
+    <Compile Include="Models\Protocols\UpdateProtocolRequestDto.cs" />
+    <Compile Include="Models\Elements\QuestionElements\BaseQuestionElementRequestDto.cs" />
+    <Compile Include="Models\Elements\QuestionElements\CreateQuestionElementRequestDto.cs" />
+    <Compile Include="Models\Elements\QuestionElements\UpdateQuestionElementLocalizedRequestDto.cs" />
+    <Compile Include="Models\Elements\QuestionElements\QuestionElementResponseDto.cs" />
+    <Compile Include="Models\Elements\QuestionElements\UpdateQuestionElementRequestDto.cs" />
+    <Compile Include="Models\Elements\QuestionElements\AnswerChoiceIdDto.cs" />
+    <Compile Include="Models\Elements\ScaleAnswerSets\BaseScaleAnswerSetDto.cs" />
+    <Compile Include="Models\Elements\ScaleAnswerSets\CreateScaleAnswerSetRequestDto.cs" />
+    <Compile Include="Models\Elements\ScaleAnswerSets\CreateScaleAnswerSetLabelsRequestDto.cs" />
+    <Compile Include="Models\Elements\ScaleAnswerSets\UpdateScaleAnswerSetLabelsRequestDto.cs" />
+    <Compile Include="Models\Elements\ScaleAnswerSets\UpdateScaleAnswerSetLocalizedRequestDto.cs" />
+    <Compile Include="Models\Elements\ScaleAnswerSets\ScaleAnswerSetResponseDto.cs" />
+    <Compile Include="Models\Elements\ScaleAnswerSets\UpdateScaleAnswerSetRequestDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerChoices\BaseSelectionAnswerChoiceDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerChoices\UpdateSelectionAnswerChoiceLocalizedRequestDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerChoices\SelectionAnswerChoiceResponseDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerChoices\UpdateSelectionAnswerChoiceRequestDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerChoices\CreateSelectionAnswerChoiceRequestDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerSets\BaseSelectionAnswerSetDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerSets\CreateSelectionAnswerSetRequestDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerSets\UpdateSelectionAnswerSetLocalizedRequestDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerSets\SelectionAnswerSetResponseDto.cs" />
+    <Compile Include="Models\Elements\SelectionAnswerSets\UpdateSelectionAnswerSetRequestDto.cs" />
+    <Compile Include="Models\SearchEntryDto.cs" />
+    <Compile Include="Models\SearchProgramResponseDto.cs" />
+    <Compile Include="Models\SearchTextAndMediaDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\GlobalStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\CertificateAuthContext.cs" />
+    <Compile Include="Security\CertificateStorage.cs" />
+    <Compile Include="WebApiCompositionRoot.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Properties\SlowCheetah\SlowCheetah.Transforms.targets" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HealthLibrary.Common\HealthLibrary.Common.csproj">
+      <Project>{CD2E3CBD-5051-4A25-9D4C-05A8EC07CFE6}</Project>
+      <Name>HealthLibrary.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HealthLibrary.ContentStorage.Azure\HealthLibrary.ContentStorage.Azure.csproj">
+      <Project>{af82f7fb-bb5e-4ab0-87f5-7db0c0b4dbe2}</Project>
+      <Name>HealthLibrary.ContentStorage.Azure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HealthLibrary.DomainLogic\HealthLibrary.DomainLogic.csproj">
+      <Project>{2B4A6FE4-170C-410B-9D3A-DBE817BF0149}</Project>
+      <Name>HealthLibrary.DomainLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HealthLibrary.Domain\HealthLibrary.Domain.csproj">
+      <Project>{E8D968F4-0F80-486B-A62B-1EC79160B9A5}</Project>
+      <Name>HealthLibrary.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Label="SlowCheetah">
+    <SlowCheetahToolsPath>$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\SlowCheetah.2.5.15\tools\))</SlowCheetahToolsPath>
+    <SlowCheetah_EnableImportFromNuGet Condition=" '$(SlowCheetah_EnableImportFromNuGet)'=='' ">true</SlowCheetah_EnableImportFromNuGet>
+    <SlowCheetah_NuGetImportPath Condition=" '$(SlowCheetah_NuGetImportPath)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\Properties\SlowCheetah\SlowCheetah.Transforms.targets ))</SlowCheetah_NuGetImportPath>
+    <SlowCheetahTargets Condition=" '$(SlowCheetah_EnableImportFromNuGet)'=='true' and Exists('$(SlowCheetah_NuGetImportPath)') ">$(SlowCheetah_NuGetImportPath)</SlowCheetahTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>App_Data\XmlDocument.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>46751</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:46722/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <Import Project="$(SlowCheetahTargets)" Condition="Exists('$(SlowCheetahTargets)')" Label="SlowCheetah" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

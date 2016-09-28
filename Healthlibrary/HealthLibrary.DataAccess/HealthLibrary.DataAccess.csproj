@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C36D0720-3F05-445F-A9AB-F55EEA87729E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HealthLibrary.DataAccess</RootNamespace>
+    <AssemblyName>HealthLibrary.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\VA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Isg.EntityFramework">
+      <HintPath>..\ExternalLibs\Isg.EntityFramework\Isg.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject, Version=3.0.2.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.3.0.2.7\lib\net45\LightInject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LightInject.ServiceLocation, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.ServiceLocation.1.0.0.2\lib\net45\LightInject.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LightInject.WebApi, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.WebApi.1.0.0.4\lib\net45\LightInject.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexts\HealthLibraryServiceDbContext.cs" />
+    <Compile Include="DataAccessCompositionRoot.cs" />
+    <Compile Include="Interceptors\AuditableInterceptor.cs" />
+    <Compile Include="Interceptors\PrimaryKeyInterceptor.cs" />
+    <Compile Include="Interceptors\SoftDeletableInterceptor.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Mappings\AlertMapping.cs" />
+    <Compile Include="Mappings\ElementMapping.cs" />
+    <Compile Include="Mappings\ConditionMapping.cs" />
+    <Compile Include="Mappings\AssessmentElementMapping.cs" />
+    <Compile Include="Mappings\ProgramDayElementMapping.cs" />
+    <Compile Include="Mappings\ProtocolStringMapping.cs" />
+    <Compile Include="Mappings\MeasurementElementMapping.cs" />
+    <Compile Include="Mappings\QuestionElementToScaleAnswerChoiceMapping.cs" />
+    <Compile Include="Mappings\QuestionElementToSelectionAnswerChoiceMapping.cs" />
+    <Compile Include="Mappings\RecurrenceMapping.cs" />
+    <Compile Include="Mappings\ProgramElementMapping.cs" />
+    <Compile Include="Mappings\ProgramMapping.cs" />
+    <Compile Include="Mappings\ProtocolElementMapping.cs" />
+    <Compile Include="Mappings\BranchMapping.cs" />
+    <Compile Include="Mappings\TagMapping.cs" />
+    <Compile Include="Mappings\HighLabelScaleAnswerSetStringMapping.cs" />
+    <Compile Include="Mappings\MidLabelScaleAnswerSetStringMapping.cs" />
+    <Compile Include="Mappings\LowLabelScaleAnswerSetStringMapping.cs" />
+    <Compile Include="Mappings\LocalizedStringMapping.cs" />
+    <Compile Include="Mappings\ProtocolMapping.cs" />
+    <Compile Include="Mappings\TextMediaElementToMediaMapping.cs" />
+    <Compile Include="Mappings\TextMediaElementStringMapping.cs" />
+    <Compile Include="Mappings\SelectionAnswerChoiceStringMapping.cs" />
+    <Compile Include="Mappings\QuestionElementStringMapping.cs" />
+    <Compile Include="Mappings\ScaleAnswerSetMapping.cs" />
+    <Compile Include="Mappings\SelectionAnswerSetMapping.cs" />
+    <Compile Include="Mappings\QuestionElementMapping.cs" />
+    <Compile Include="Mappings\AnswerSetMapping.cs" />
+    <Compile Include="Mappings\MediaMapping.cs" />
+    <Compile Include="Mappings\TextMediaElementMapping.cs" />
+    <Compile Include="Migrations\201506291218573_Initial.cs" />
+    <Compile Include="Migrations\201506291218573_Initial.Designer.cs">
+      <DependentUpon>201506291218573_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506291325490_CustomerIdForAnswerSet.cs" />
+    <Compile Include="Migrations\201506291325490_CustomerIdForAnswerSet.Designer.cs">
+      <DependentUpon>201506291325490_CustomerIdForAnswerSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506300657102_NullableFieldsForSelectionAnswerSet.cs" />
+    <Compile Include="Migrations\201506300657102_NullableFieldsForSelectionAnswerSet.Designer.cs">
+      <DependentUpon>201506300657102_NullableFieldsForSelectionAnswerSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506301147168_NullableMediaTypeInTextMediaElement.cs" />
+    <Compile Include="Migrations\201506301147168_NullableMediaTypeInTextMediaElement.Designer.cs">
+      <DependentUpon>201506301147168_NullableMediaTypeInTextMediaElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506301431176_RelationshipsUpdated.cs" />
+    <Compile Include="Migrations\201506301431176_RelationshipsUpdated.Designer.cs">
+      <DependentUpon>201506301431176_RelationshipsUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506301823580_NullableCustomerIdInElements.cs" />
+    <Compile Include="Migrations\201506301823580_NullableCustomerIdInElements.Designer.cs">
+      <DependentUpon>201506301823580_NullableCustomerIdInElements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507011225042_StringStorageKeyInMedias.cs" />
+    <Compile Include="Migrations\201507011225042_StringStorageKeyInMedias.Designer.cs">
+      <DependentUpon>201507011225042_StringStorageKeyInMedias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507020748584_CustomerIdColumnInTags.cs" />
+    <Compile Include="Migrations\201507020748584_CustomerIdColumnInTags.Designer.cs">
+      <DependentUpon>201507020748584_CustomerIdColumnInTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507011452475_UpdateAnswerSets.cs" />
+    <Compile Include="Migrations\201507011452475_UpdateAnswerSets.Designer.cs">
+      <DependentUpon>201507011452475_UpdateAnswerSets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507021258219_MERGE_Migration.cs" />
+    <Compile Include="Migrations\201507021258219_MERGE_Migration.Designer.cs">
+      <DependentUpon>201507021258219_MERGE_Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507061225033_ProtocolUpdated.cs" />
+    <Compile Include="Migrations\201507061225033_ProtocolUpdated.Designer.cs">
+      <DependentUpon>201507061225033_ProtocolUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507061405438_ProtocolUpdatedWithLocalizedStrings.cs" />
+    <Compile Include="Migrations\201507061405438_ProtocolUpdatedWithLocalizedStrings.Designer.cs">
+      <DependentUpon>201507061405438_ProtocolUpdatedWithLocalizedStrings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507080917161_BranchUpdated.cs" />
+    <Compile Include="Migrations\201507080917161_BranchUpdated.Designer.cs">
+      <DependentUpon>201507080917161_BranchUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507081205455_RelationshipsUpdated1.cs" />
+    <Compile Include="Migrations\201507081205455_RelationshipsUpdated1.Designer.cs">
+      <DependentUpon>201507081205455_RelationshipsUpdated1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507081404158_AddIsDeletedColumnIntoElement.cs" />
+    <Compile Include="Migrations\201507081404158_AddIsDeletedColumnIntoElement.Designer.cs">
+      <DependentUpon>201507081404158_AddIsDeletedColumnIntoElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507090732504_ProtocolSchemaUpdated.cs" />
+    <Compile Include="Migrations\201507090732504_ProtocolSchemaUpdated.Designer.cs">
+      <DependentUpon>201507090732504_ProtocolSchemaUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507090913187_ProtocolUpdated1.cs" />
+    <Compile Include="Migrations\201507090913187_ProtocolUpdated1.Designer.cs">
+      <DependentUpon>201507090913187_ProtocolUpdated1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507081451463_QuestionElementRelationshipsUpdated.cs" />
+    <Compile Include="Migrations\201507081451463_QuestionElementRelationshipsUpdated.Designer.cs">
+      <DependentUpon>201507081451463_QuestionElementRelationshipsUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507090816534_Merge.cs" />
+    <Compile Include="Migrations\201507090816534_Merge.Designer.cs">
+      <DependentUpon>201507090816534_Merge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507090838029_RemoveDefaultStringForQuestionElement.cs" />
+    <Compile Include="Migrations\201507090838029_RemoveDefaultStringForQuestionElement.Designer.cs">
+      <DependentUpon>201507090838029_RemoveDefaultStringForQuestionElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507090928165_RemoveDefaultStringForSelectionAnswerSet.cs" />
+    <Compile Include="Migrations\201507090928165_RemoveDefaultStringForSelectionAnswerSet.Designer.cs">
+      <DependentUpon>201507090928165_RemoveDefaultStringForSelectionAnswerSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507090944519_Merge1.cs" />
+    <Compile Include="Migrations\201507090944519_Merge1.Designer.cs">
+      <DependentUpon>201507090944519_Merge1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507091153293_Scale_RemoveDefaultStrings.cs" />
+    <Compile Include="Migrations\201507091153293_Scale_RemoveDefaultStrings.Designer.cs">
+      <DependentUpon>201507091153293_Scale_RemoveDefaultStrings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507091201407_DeleteDefaultStringInElements.cs" />
+    <Compile Include="Migrations\201507091201407_DeleteDefaultStringInElements.Designer.cs">
+      <DependentUpon>201507091201407_DeleteDefaultStringInElements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507091524323_Merge2.cs" />
+    <Compile Include="Migrations\201507091524323_Merge2.Designer.cs">
+      <DependentUpon>201507091524323_Merge2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507091601573_Merge3.cs" />
+    <Compile Include="Migrations\201507091601573_Merge3.Designer.cs">
+      <DependentUpon>201507091601573_Merge3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507101528023_NonNllableProtocolIdInProgramElement.cs" />
+    <Compile Include="Migrations\201507101528023_NonNllableProtocolIdInProgramElement.Designer.cs">
+      <DependentUpon>201507101528023_NonNllableProtocolIdInProgramElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507131213447_AddIsDeletedColToMedia.cs" />
+    <Compile Include="Migrations\201507131213447_AddIsDeletedColToMedia.Designer.cs">
+      <DependentUpon>201507131213447_AddIsDeletedColToMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507141109320_LocalizedValue_RemoveRequirement.cs" />
+    <Compile Include="Migrations\201507141109320_LocalizedValue_RemoveRequirement.Designer.cs">
+      <DependentUpon>201507141109320_LocalizedValue_RemoveRequirement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507141321312_AddIsDeletedColToProgram.cs" />
+    <Compile Include="Migrations\201507141321312_AddIsDeletedColToProgram.Designer.cs">
+      <DependentUpon>201507141321312_AddIsDeletedColToProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507211532242_IdsAndScoresForQuestionElement.cs" />
+    <Compile Include="Migrations\201507211532242_IdsAndScoresForQuestionElement.Designer.cs">
+      <DependentUpon>201507211532242_IdsAndScoresForQuestionElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507240916520_MakeScoresNullable.cs" />
+    <Compile Include="Migrations\201507240916520_MakeScoresNullable.Designer.cs">
+      <DependentUpon>201507240916520_MakeScoresNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508051456174_ConditionsAdded.cs" />
+    <Compile Include="Migrations\201508051456174_ConditionsAdded.Designer.cs">
+      <DependentUpon>201508051456174_ConditionsAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508261343095_NameForMeasurementElements.cs" />
+    <Compile Include="Migrations\201508261343095_NameForMeasurementElements.Designer.cs">
+      <DependentUpon>201508261343095_NameForMeasurementElements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509041248562_MeasurementsUpdate.cs" />
+    <Compile Include="Migrations\201509041248562_MeasurementsUpdate.Designer.cs">
+      <DependentUpon>201509041248562_MeasurementsUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509111438081_ProgramDayElementsMappingChanged.cs" />
+    <Compile Include="Migrations\201509111438081_ProgramDayElementsMappingChanged.Designer.cs">
+      <DependentUpon>201509111438081_ProgramDayElementsMappingChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509141453519_ProgramElementIdForDays.cs" />
+    <Compile Include="Migrations\201509141453519_ProgramElementIdForDays.Designer.cs">
+      <DependentUpon>201509141453519_ProgramElementIdForDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510131012149_MediaTableUpdated.cs" />
+    <Compile Include="Migrations\201510131012149_MediaTableUpdated.Designer.cs">
+      <DependentUpon>201510131012149_MediaTableUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510231503178_ProtocolElementAlertsAdded.cs" />
+    <Compile Include="Migrations\201510231503178_ProtocolElementAlertsAdded.Designer.cs">
+      <DependentUpon>201510231503178_ProtocolElementAlertsAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511171258154_ProtocolUpdated2.cs" />
+    <Compile Include="Migrations\201511171258154_ProtocolUpdated2.Designer.cs">
+      <DependentUpon>201511171258154_ProtocolUpdated2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512241336004_AlertsUpdated.cs" />
+    <Compile Include="Migrations\201512241336004_AlertsUpdated.Designer.cs">
+      <DependentUpon>201512241336004_AlertsUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512280929527_BranchUpdated1.cs" />
+    <Compile Include="Migrations\201512280929527_BranchUpdated1.Designer.cs">
+      <DependentUpon>201512280929527_BranchUpdated1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601160714550_AssessmentElements.cs" />
+    <Compile Include="Migrations\201601160714550_AssessmentElements.Designer.cs">
+      <DependentUpon>201601160714550_AssessmentElements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602171451445_ExtendLocalizedStringsDescription.cs" />
+    <Compile Include="Migrations\201602171451445_ExtendLocalizedStringsDescription.Designer.cs">
+      <DependentUpon>201602171451445_ExtendLocalizedStringsDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603020948549_Extend media name and original file name.cs" />
+    <Compile Include="Migrations\201603020948549_Extend media name and original file name.Designer.cs">
+      <DependentUpon>201603020948549_Extend media name and original file name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603021458409_Set media name and original file name to 200 characters.cs" />
+    <Compile Include="Migrations\201603021458409_Set media name and original file name to 200 characters.Designer.cs">
+      <DependentUpon>201603021458409_Set media name and original file name to 200 characters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603041247086_MediasTableUpdated.cs" />
+    <Compile Include="Migrations\201603041247086_MediasTableUpdated.Designer.cs">
+      <DependentUpon>201603041247086_MediasTableUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603041409371_MediasTableUpdated1.cs" />
+    <Compile Include="Migrations\201603041409371_MediasTableUpdated1.Designer.cs">
+      <DependentUpon>201603041409371_MediasTableUpdated1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604071324531_CustomerIdIndexesAdded.cs" />
+    <Compile Include="Migrations\201604071324531_CustomerIdIndexesAdded.Designer.cs">
+      <DependentUpon>201604071324531_CustomerIdIndexesAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604261425547_CustomerIdIsRequired.cs" />
+    <Compile Include="Migrations\201604261425547_CustomerIdIsRequired.Designer.cs">
+      <DependentUpon>201604261425547_CustomerIdIsRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606201229131_TagsIndexAdded.cs" />
+    <Compile Include="Migrations\201606201229131_TagsIndexAdded.Designer.cs">
+      <DependentUpon>201606201229131_TagsIndexAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606281154110_Extend_entities_with_CreatedUTC_and_UpdatedUTC.cs" />
+    <Compile Include="Migrations\201606281154110_Extend_entities_with_CreatedUTC_and_UpdatedUTC.Designer.cs">
+      <DependentUpon>201606281154110_Extend_entities_with_CreatedUTC_and_UpdatedUTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HealthLibrary.Common\HealthLibrary.Common.csproj">
+      <Project>{CD2E3CBD-5051-4A25-9D4C-05A8EC07CFE6}</Project>
+      <Name>HealthLibrary.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HealthLibrary.Domain\HealthLibrary.Domain.csproj">
+      <Project>{E8D968F4-0F80-486B-A62B-1EC79160B9A5}</Project>
+      <Name>HealthLibrary.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201506291218573_Initial.resx">
+      <DependentUpon>201506291218573_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506291325490_CustomerIdForAnswerSet.resx">
+      <DependentUpon>201506291325490_CustomerIdForAnswerSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506300657102_NullableFieldsForSelectionAnswerSet.resx">
+      <DependentUpon>201506300657102_NullableFieldsForSelectionAnswerSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506301147168_NullableMediaTypeInTextMediaElement.resx">
+      <DependentUpon>201506301147168_NullableMediaTypeInTextMediaElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506301431176_RelationshipsUpdated.resx">
+      <DependentUpon>201506301431176_RelationshipsUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506301823580_NullableCustomerIdInElements.resx">
+      <DependentUpon>201506301823580_NullableCustomerIdInElements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507011225042_StringStorageKeyInMedias.resx">
+      <DependentUpon>201507011225042_StringStorageKeyInMedias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507020748584_CustomerIdColumnInTags.resx">
+      <DependentUpon>201507020748584_CustomerIdColumnInTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507011452475_UpdateAnswerSets.resx">
+      <DependentUpon>201507011452475_UpdateAnswerSets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507021258219_MERGE_Migration.resx">
+      <DependentUpon>201507021258219_MERGE_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507061225033_ProtocolUpdated.resx">
+      <DependentUpon>201507061225033_ProtocolUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507061405438_ProtocolUpdatedWithLocalizedStrings.resx">
+      <DependentUpon>201507061405438_ProtocolUpdatedWithLocalizedStrings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507080917161_BranchUpdated.resx">
+      <DependentUpon>201507080917161_BranchUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507081205455_RelationshipsUpdated1.resx">
+      <DependentUpon>201507081205455_RelationshipsUpdated1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507081404158_AddIsDeletedColumnIntoElement.resx">
+      <DependentUpon>201507081404158_AddIsDeletedColumnIntoElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507090732504_ProtocolSchemaUpdated.resx">
+      <DependentUpon>201507090732504_ProtocolSchemaUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507090913187_ProtocolUpdated1.resx">
+      <DependentUpon>201507090913187_ProtocolUpdated1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507081451463_QuestionElementRelationshipsUpdated.resx">
+      <DependentUpon>201507081451463_QuestionElementRelationshipsUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507090816534_Merge.resx">
+      <DependentUpon>201507090816534_Merge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507090838029_RemoveDefaultStringForQuestionElement.resx">
+      <DependentUpon>201507090838029_RemoveDefaultStringForQuestionElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507090928165_RemoveDefaultStringForSelectionAnswerSet.resx">
+      <DependentUpon>201507090928165_RemoveDefaultStringForSelectionAnswerSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507090944519_Merge1.resx">
+      <DependentUpon>201507090944519_Merge1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507091153293_Scale_RemoveDefaultStrings.resx">
+      <DependentUpon>201507091153293_Scale_RemoveDefaultStrings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507091201407_DeleteDefaultStringInElements.resx">
+      <DependentUpon>201507091201407_DeleteDefaultStringInElements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507091524323_Merge2.resx">
+      <DependentUpon>201507091524323_Merge2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507091601573_Merge3.resx">
+      <DependentUpon>201507091601573_Merge3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507101528023_NonNllableProtocolIdInProgramElement.resx">
+      <DependentUpon>201507101528023_NonNllableProtocolIdInProgramElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507131213447_AddIsDeletedColToMedia.resx">
+      <DependentUpon>201507131213447_AddIsDeletedColToMedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507141109320_LocalizedValue_RemoveRequirement.resx">
+      <DependentUpon>201507141109320_LocalizedValue_RemoveRequirement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507141321312_AddIsDeletedColToProgram.resx">
+      <DependentUpon>201507141321312_AddIsDeletedColToProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507211532242_IdsAndScoresForQuestionElement.resx">
+      <DependentUpon>201507211532242_IdsAndScoresForQuestionElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507240916520_MakeScoresNullable.resx">
+      <DependentUpon>201507240916520_MakeScoresNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508051456174_ConditionsAdded.resx">
+      <DependentUpon>201508051456174_ConditionsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508261343095_NameForMeasurementElements.resx">
+      <DependentUpon>201508261343095_NameForMeasurementElements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509041248562_MeasurementsUpdate.resx">
+      <DependentUpon>201509041248562_MeasurementsUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509111438081_ProgramDayElementsMappingChanged.resx">
+      <DependentUpon>201509111438081_ProgramDayElementsMappingChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509141453519_ProgramElementIdForDays.resx">
+      <DependentUpon>201509141453519_ProgramElementIdForDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510131012149_MediaTableUpdated.resx">
+      <DependentUpon>201510131012149_MediaTableUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510231503178_ProtocolElementAlertsAdded.resx">
+      <DependentUpon>201510231503178_ProtocolElementAlertsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511171258154_ProtocolUpdated2.resx">
+      <DependentUpon>201511171258154_ProtocolUpdated2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512241336004_AlertsUpdated.resx">
+      <DependentUpon>201512241336004_AlertsUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512280929527_BranchUpdated1.resx">
+      <DependentUpon>201512280929527_BranchUpdated1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601160714550_AssessmentElements.resx">
+      <DependentUpon>201601160714550_AssessmentElements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602171451445_ExtendLocalizedStringsDescription.resx">
+      <DependentUpon>201602171451445_ExtendLocalizedStringsDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603020948549_Extend media name and original file name.resx">
+      <DependentUpon>201603020948549_Extend media name and original file name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603021458409_Set media name and original file name to 200 characters.resx">
+      <DependentUpon>201603021458409_Set media name and original file name to 200 characters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603041247086_MediasTableUpdated.resx">
+      <DependentUpon>201603041247086_MediasTableUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603041409371_MediasTableUpdated1.resx">
+      <DependentUpon>201603041409371_MediasTableUpdated1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604071324531_CustomerIdIndexesAdded.resx">
+      <DependentUpon>201604071324531_CustomerIdIndexesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604261425547_CustomerIdIsRequired.resx">
+      <DependentUpon>201604261425547_CustomerIdIsRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606201229131_TagsIndexAdded.resx">
+      <DependentUpon>201606201229131_TagsIndexAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606281154110_Extend_entities_with_CreatedUTC_and_UpdatedUTC.resx">
+      <DependentUpon>201606281154110_Extend_entities_with_CreatedUTC_and_UpdatedUTC.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

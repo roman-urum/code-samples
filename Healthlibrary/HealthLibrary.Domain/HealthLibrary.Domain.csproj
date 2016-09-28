@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8D968F4-0F80-486B-A62B-1EC79160B9A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HealthLibrary.Domain</RootNamespace>
+    <AssemblyName>HealthLibrary.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\VA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\DbConstraints.cs" />
+    <Compile Include="Constants\ValidationExpressions.cs" />
+    <Compile Include="CustomerAggregateRoot.cs" />
+    <Compile Include="Dtos\SearchProtocolDto.cs" />
+    <Compile Include="Dtos\TagsSearchDto.cs" />
+    <Compile Include="Dtos\Enums\SearchCategoryType.cs" />
+    <Compile Include="Dtos\GlobalSearchDto.cs" />
+    <Compile Include="Dtos\BaseSearchDto.cs" />
+    <Compile Include="Dtos\Enums\CreateMediaStatus.cs" />
+    <Compile Include="Dtos\Enums\DeleteProgramStatus.cs" />
+    <Compile Include="Dtos\Enums\GetProtocolStatus.cs" />
+    <Compile Include="Dtos\Enums\GetProgramStatus.cs" />
+    <Compile Include="Dtos\Enums\UpdateMediaStatus.cs" />
+    <Compile Include="Dtos\OperationResultDto.cs" />
+    <Compile Include="Dtos\Enums\CreateScaleAnswerSetStatus.cs" />
+    <Compile Include="Dtos\Enums\CreateTextMediaElementStatus.cs" />
+    <Compile Include="Dtos\Enums\DeleteMediaStatus.cs" />
+    <Compile Include="Dtos\Enums\DeleteProtocolStatus.cs" />
+    <Compile Include="Dtos\Enums\DeleteStatus.cs" />
+    <Compile Include="Dtos\Enums\DeteleTextMediaElementStatus.cs" />
+    <Compile Include="Dtos\Enums\CreateUpdateProgramStatus.cs" />
+    <Compile Include="Dtos\Enums\CreateUpdateProtocolStatus.cs" />
+    <Compile Include="Dtos\Enums\UpdateScaleAnswerSetLocalization.cs" />
+    <Compile Include="Dtos\Enums\UpdateScaleAnswerSetStatus.cs" />
+    <Compile Include="Dtos\Enums\UpdateTextMediaElementStatus.cs" />
+    <Compile Include="Dtos\ErrorResponse.cs" />
+    <Compile Include="Dtos\PagedResult.cs" />
+    <Compile Include="Dtos\SearchProgramDto.cs" />
+    <Compile Include="Dtos\SelectionAnswerSetSearchDto.cs" />
+    <Compile Include="Dtos\MediaSearchDto.cs" />
+    <Compile Include="Dtos\TextMediaElementSearchDto.cs" />
+    <Compile Include="Dtos\TokenService\VerifyCertificateRequest.cs" />
+    <Compile Include="Dtos\TokenService\VerifyCertificateResponse.cs" />
+    <Compile Include="Dtos\TokenService\VerifyTokenRequest.cs" />
+    <Compile Include="Dtos\TokenService\VerifyTokenResponse.cs" />
+    <Compile Include="AggregateRoot.cs" />
+    <Compile Include="Entities\Element\AssessmentElement.cs" />
+    <Compile Include="Entities\Element\MeasurementElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\Element\QuestionElementToScaleAnswerChoice.cs" />
+    <Compile Include="Entities\Element\HighLabelScaleAnswerSetString.cs" />
+    <Compile Include="Entities\Element\MidLabelScaleAnswerSetString.cs" />
+    <Compile Include="Entities\Element\LowLabelScaleAnswerSetString.cs" />
+    <Compile Include="Entities\Element\QuestionElementToSelectionAnswerChoice.cs" />
+    <Compile Include="Entities\Enums\AssessmentType.cs" />
+    <Compile Include="Entities\Enums\MeasurementLimitType.cs" />
+    <Compile Include="Entities\Enums\MeasurementType.cs" />
+    <Compile Include="Entities\Enums\OperandType.cs" />
+    <Compile Include="Entities\IAnalyticsEntity.cs" />
+    <Compile Include="Entities\IBaseAnalyticsEntity.cs" />
+    <Compile Include="Entities\Protocol\Alert.cs" />
+    <Compile Include="Entities\Protocol\Condition.cs" />
+    <Compile Include="Entities\Protocol\ProtocolString.cs" />
+    <Compile Include="Entities\Element\TextMediaElementString.cs" />
+    <Compile Include="Entities\Element\SelectionAnswerChoiceString.cs" />
+    <Compile Include="Entities\Element\AnswerSet.cs" />
+    <Compile Include="Entities\Protocol\Branch.cs" />
+    <Compile Include="Entities\Element\Element.cs" />
+    <Compile Include="Entities\Enums\AnswerSetType.cs" />
+    <Compile Include="Entities\Enums\MediaType.cs" />
+    <Compile Include="Entities\Enums\ElementType.cs" />
+    <Compile Include="Entities\Enums\OperatorType.cs" />
+    <Compile Include="Entities\Element\Media.cs" />
+    <Compile Include="Entities\Element\LocalizedString.cs" />
+    <Compile Include="Entities\Program\Program.cs" />
+    <Compile Include="Entities\Program\ProgramDayElement.cs" />
+    <Compile Include="Entities\Program\ProgramElement.cs" />
+    <Compile Include="Entities\Protocol\Protocol.cs" />
+    <Compile Include="Entities\Protocol\ProtocolElement.cs" />
+    <Compile Include="Entities\Element\QuestionElement.cs" />
+    <Compile Include="Entities\Element\QuestionElementString.cs" />
+    <Compile Include="Entities\Program\Recurrence.cs" />
+    <Compile Include="Entities\Element\ScaleAnswerSet.cs" />
+    <Compile Include="Entities\Element\SelectionAnswerChoice.cs" />
+    <Compile Include="Entities\Element\SelectionAnswerSet.cs" />
+    <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Entities\Element\TextMediaElement.cs" />
+    <Compile Include="Entities\Element\TextMediaElementToMedia.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="IAggregateRoot.cs" />
+    <Compile Include="IAuditable.cs" />
+    <Compile Include="ISoftDelitable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\GlobalStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalStrings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HealthLibrary.Common\HealthLibrary.Common.csproj">
+      <Project>{CD2E3CBD-5051-4A25-9D4C-05A8EC07CFE6}</Project>
+      <Name>HealthLibrary.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GlobalStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
