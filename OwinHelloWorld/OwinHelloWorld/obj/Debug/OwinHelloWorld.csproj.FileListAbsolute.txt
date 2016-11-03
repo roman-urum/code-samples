@@ -1,0 +1,5 @@
+c:\users\rurum\documents\visual studio 2015\Projects\OwinHelloWorld\OwinHelloWorld\bin\Debug\OwinHelloWorld.dll
+c:\users\rurum\documents\visual studio 2015\Projects\OwinHelloWorld\OwinHelloWorld\bin\Debug\OwinHelloWorld.pdb
+c:\users\rurum\documents\visual studio 2015\Projects\OwinHelloWorld\OwinHelloWorld\bin\Debug\Owin.dll
+c:\users\rurum\documents\visual studio 2015\Projects\OwinHelloWorld\OwinHelloWorld\obj\Debug\OwinHelloWorld.dll
+c:\users\rurum\documents\visual studio 2015\Projects\OwinHelloWorld\OwinHelloWorld\obj\Debug\OwinHelloWorld.pdb
