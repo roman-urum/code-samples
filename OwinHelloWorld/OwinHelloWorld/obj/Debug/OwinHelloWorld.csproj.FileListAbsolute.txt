@@ -3,3 +3,4 @@ c:\users\rurum\documents\visual studio 2015\Projects\OwinHelloWorld\OwinHelloWor
 c:\users\rurum\documents\visual studio 2015\Projects\OwinHelloWorld\OwinHelloWorld\bin\Debug\Owin.dll
 c:\users\rurum\documents\visual studio 2015\Projects\OwinHelloWorld\OwinHelloWorld\obj\Debug\OwinHelloWorld.dll
 c:\users\rurum\documents\visual studio 2015\Projects\OwinHelloWorld\OwinHelloWorld\obj\Debug\OwinHelloWorld.pdb
+C:\Users\rurum\Documents\Visual Studio 2015\Projects\OwinHelloWorld\OwinHelloWorld\obj\Debug\OwinHelloWorld.csprojResolveAssemblyReference.cache

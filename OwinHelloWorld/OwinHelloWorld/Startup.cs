@@ -21,12 +21,12 @@ namespace OwinHelloWorld
 
         public AppFunc Middlware(AppFunc nexdMiddlaware)
         {
-            AppFunc appFunc = (IDictionary<string, object> env) =>
+            AppFunc appFunc = env =>
             {
-                byte[] bytes = Encoding.UTF8.GetBytes("Hello world");
+                byte[] bytes = Encoding.UTF8.GetBytes("ha ha ha ha :)");
                 var headers = (IDictionary<string, string[]>)env["owin.ResponseHeaders"];
                 headers["Content-Length"] = new[] { bytes.Length.ToString() };
-                headers["Content-Type"] = new[] { "text/html" };
+                headers["Content-Type"] = new[] { "text/plain" };
                 var response = (Stream)env["owin.ResponseBody"];
                 response.WriteAsync(bytes, 0, bytes.Length);
           
