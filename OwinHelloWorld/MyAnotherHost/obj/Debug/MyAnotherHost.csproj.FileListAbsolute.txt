@@ -1,0 +1,15 @@
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\MyAnotherHost.exe.config
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\MyAnotherHost.exe
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\MyAnotherHost.pdb
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\Microsoft.Owin.Diagnostics.dll
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\Microsoft.Owin.dll
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\Microsoft.Owin.Hosting.dll
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\Owin.dll
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\Microsoft.Owin.xml
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\Microsoft.Owin.Diagnostics.xml
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\Microsoft.Owin.Hosting.xml
+C:\code-samples\OwinHelloWorld\MyAnotherHost\obj\Debug\MyAnotherHost.csprojResolveAssemblyReference.cache
+C:\code-samples\OwinHelloWorld\MyAnotherHost\obj\Debug\MyAnotherHost.exe
+C:\code-samples\OwinHelloWorld\MyAnotherHost\obj\Debug\MyAnotherHost.pdb

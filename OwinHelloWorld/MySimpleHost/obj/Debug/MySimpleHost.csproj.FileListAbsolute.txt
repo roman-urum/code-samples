@@ -15,3 +15,6 @@ C:\Users\rurum\Documents\Visual Studio 2015\Projects\OwinHelloWorld\MySimpleHost
 C:\Users\rurum\Documents\Visual Studio 2015\Projects\OwinHelloWorld\MySimpleHost\obj\Debug\MySimpleHost.csprojResolveAssemblyReference.cache
 C:\Users\rurum\Documents\Visual Studio 2015\Projects\OwinHelloWorld\MySimpleHost\obj\Debug\MySimpleHost.exe
 C:\Users\rurum\Documents\Visual Studio 2015\Projects\OwinHelloWorld\MySimpleHost\obj\Debug\MySimpleHost.pdb
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\MySimpleHost.exe.config
+C:\code-samples\OwinHelloWorld\MySimpleHost\obj\Debug\MySimpleHost.exe
+C:\code-samples\OwinHelloWorld\MySimpleHost\obj\Debug\MySimpleHost.pdb

@@ -1,0 +1,8 @@
+C:\code-samples\OwinHelloWorld\OwinHelloWorldv2\bin\Debug\OwinHelloWorldv2.dll
+C:\code-samples\OwinHelloWorld\OwinHelloWorldv2\bin\Debug\OwinHelloWorldv2.pdb
+C:\code-samples\OwinHelloWorld\OwinHelloWorldv2\bin\Debug\Microsoft.Owin.dll
+C:\code-samples\OwinHelloWorld\OwinHelloWorldv2\bin\Debug\Owin.dll
+C:\code-samples\OwinHelloWorld\OwinHelloWorldv2\bin\Debug\Microsoft.Owin.xml
+C:\code-samples\OwinHelloWorld\OwinHelloWorldv2\obj\Debug\OwinHelloWorldv2.csprojResolveAssemblyReference.cache
+C:\code-samples\OwinHelloWorld\OwinHelloWorldv2\obj\Debug\OwinHelloWorldv2.dll
+C:\code-samples\OwinHelloWorld\OwinHelloWorldv2\obj\Debug\OwinHelloWorldv2.pdb
