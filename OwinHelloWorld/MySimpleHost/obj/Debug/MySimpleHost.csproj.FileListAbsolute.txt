@@ -18,3 +18,17 @@ C:\Users\rurum\Documents\Visual Studio 2015\Projects\OwinHelloWorld\MySimpleHost
 C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\MySimpleHost.exe.config
 C:\code-samples\OwinHelloWorld\MySimpleHost\obj\Debug\MySimpleHost.exe
 C:\code-samples\OwinHelloWorld\MySimpleHost\obj\Debug\MySimpleHost.pdb
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\MySimpleHost.exe
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\MySimpleHost.pdb
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\Microsoft.Owin.Diagnostics.dll
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\Microsoft.Owin.dll
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\Microsoft.Owin.Hosting.dll
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\Owin.dll
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\OwinHelloWorld.dll
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\OwinHelloWorld.pdb
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\Microsoft.Owin.xml
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\Microsoft.Owin.Diagnostics.xml
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
+C:\code-samples\OwinHelloWorld\MySimpleHost\bin\Debug\Microsoft.Owin.Hosting.xml
+C:\code-samples\OwinHelloWorld\MySimpleHost\obj\Debug\MySimpleHost.csprojResolveAssemblyReference.cache

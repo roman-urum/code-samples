@@ -13,3 +13,13 @@ C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\Microsoft.Owin.Hosting.xm
 C:\code-samples\OwinHelloWorld\MyAnotherHost\obj\Debug\MyAnotherHost.csprojResolveAssemblyReference.cache
 C:\code-samples\OwinHelloWorld\MyAnotherHost\obj\Debug\MyAnotherHost.exe
 C:\code-samples\OwinHelloWorld\MyAnotherHost\obj\Debug\MyAnotherHost.pdb
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\MyWebApi.dll
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\Newtonsoft.Json.dll
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\System.Net.Http.Formatting.dll
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\System.Web.Http.dll
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\System.Web.Http.Owin.dll
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\MyWebApi.pdb
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\Newtonsoft.Json.xml
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\System.Net.Http.Formatting.xml
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\System.Web.Http.xml
+C:\code-samples\OwinHelloWorld\MyAnotherHost\bin\Debug\System.Web.Http.Owin.xml

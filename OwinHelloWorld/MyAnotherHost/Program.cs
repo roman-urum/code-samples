@@ -11,11 +11,12 @@ namespace MyAnotherHost
     {
         static void Main(string[] args)
         {
+            var controllerType = typeof(MyWebApi.Controllers.EmployeesController);
 
-            using (WebApp.Start<Startup>("http://localhost:5000"))
+            using (WebApp.Start<StartupWebApi>("http://localhost:5000"))
             {
                 Console.WriteLine("server ready... Press enter to quit");
-                Console.ReadLine();
+                Console.ReadKey();
             }
         }
     }
