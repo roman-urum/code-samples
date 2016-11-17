@@ -7,6 +7,6 @@ C:\Users\rurum\Documents\Visual Studio 2015\Projects\OwinHelloWorld\OwinHelloWor
 C:\code-samples\OwinHelloWorld\OwinHelloWorld\bin\Debug\OwinHelloWorld.dll
 C:\code-samples\OwinHelloWorld\OwinHelloWorld\bin\Debug\OwinHelloWorld.pdb
 C:\code-samples\OwinHelloWorld\OwinHelloWorld\bin\Debug\Owin.dll
-C:\code-samples\OwinHelloWorld\OwinHelloWorld\obj\Debug\OwinHelloWorld.csprojResolveAssemblyReference.cache
 C:\code-samples\OwinHelloWorld\OwinHelloWorld\obj\Debug\OwinHelloWorld.dll
 C:\code-samples\OwinHelloWorld\OwinHelloWorld\obj\Debug\OwinHelloWorld.pdb
+C:\code-samples\OwinHelloWorld\OwinHelloWorld\obj\Debug\OwinHelloWorld.csprojResolveAssemblyReference.cache
