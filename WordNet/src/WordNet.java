@@ -1,15 +1,21 @@
 /**
  * Created by rurum on 1/17/2017.
  */
+import edu.princeton.cs.algs4.Digraph;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.ST;
 
 public class WordNet {
     private ST<String, Integer> nouns;  // string -> index
-
+    private Digraph graph;
 
     // constructor takes the name of the two input files
     public WordNet(String synsets, String hypernyms){
+
+        if (synsets == null || hypernyms == null) {
+            throw new NullPointerException();
+        }
+
         nouns = new ST<>();
         In in = new In(synsets);
         while(!in.isEmpty()){
@@ -18,6 +24,18 @@ public class WordNet {
             String[] synsetNouns = synset[1].split(" ");
             for (String noun: synsetNouns) {
                 nouns.put(noun, synsetId);
+            }
+        }
+
+        //build graph
+        graph = new Digraph(nouns.size());
+        in = new In(hypernyms);
+        while(!in.isEmpty()){
+            String[] hypernym = in.readLine().split(",");
+            int v = Integer.parseInt(hypernym[0]);
+            for (int i = 1; i < hypernym.length; i++){
+                int w = Integer.parseInt(hypernym[i]);
+                graph.addEdge(v, w);
             }
         }
     }
@@ -29,18 +47,27 @@ public class WordNet {
 
     // is the word a WordNet noun?
     public boolean isNoun(String word){
+        if (word == null){
+            throw new NullPointerException();
+        }
+
         return nouns.contains(word);
     }
 
     // distance between nounA and nounB (defined below)
     public int distance(String nounA, String nounB){
-
+        if (nounA == null || nounB == null) {
+            throw new NullPointerException();
+        }
+        
     }
 
     // a synset (second field of synsets.txt) that is the common ancestor of nounA and nounB
     // in a shortest ancestral path (defined below)
     public String sap(String nounA, String nounB){
-
+        if (nounA == null || nounB == null) {
+            throw new NullPointerException();
+        }
     }
 
     // do unit testing of this class
