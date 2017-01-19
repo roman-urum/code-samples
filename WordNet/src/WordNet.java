@@ -3,6 +3,7 @@
  */
 import edu.princeton.cs.algs4.Digraph;
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.ST;
 
 public class WordNet {
@@ -59,7 +60,54 @@ public class WordNet {
         if (nounA == null || nounB == null) {
             throw new NullPointerException();
         }
-        
+
+        int nounAId = nouns.get(nounA);
+        int nounBId = nouns.get(nounB);
+        if (nounAId == nounBId){
+            return 0;
+        }
+
+        boolean[] aMarked = new boolean[graph.V()];
+        aMarked[nounAId] = true;
+        int[] aDistTo = new int[graph.V()];
+        aDistTo[nounAId] = 0;
+        Queue<Integer> queue = new Queue<>();
+        queue.enqueue(nounAId);
+        while(!queue.isEmpty()){
+            int v = queue.dequeue();
+            for (int w: graph.adj(v)){
+                if (!aMarked[w]){
+                    aDistTo[w] = aDistTo[v] + 1;
+                    aMarked[w] = true;
+                    queue.enqueue(w);
+                }
+            }
+        }
+
+        boolean[] bMarked = new boolean[graph.V()];
+        aMarked[nounBId] = true;
+        int[] bDistTo = new int[graph.V()];
+        bDistTo[nounBId] = 0;
+        queue = new Queue<>();
+        queue.enqueue(nounBId);
+        while(!queue.isEmpty()){
+            int v = queue.dequeue();
+
+            if (aMarked[v]){
+                return aDistTo[v] + bDistTo[v];
+            }
+
+            for (int w : graph.adj(v)) {
+                if (!bMarked[w]){
+                    bDistTo[w] = bDistTo[v] + 1;
+                    bMarked[w] = true;
+                    queue.enqueue(w);
+                }
+            }
+        }
+
+        //this should not be executed never
+        return 0;
     }
 
     // a synset (second field of synsets.txt) that is the common ancestor of nounA and nounB
