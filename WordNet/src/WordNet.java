@@ -8,7 +8,7 @@ import edu.princeton.cs.algs4.ST;
 
 public class WordNet {
     private ST<String, Integer> nouns;  // string -> index
-    private Digraph graph;
+    private SAP sap;
 
     // constructor takes the name of the two input files
     public WordNet(String synsets, String hypernyms){
@@ -29,7 +29,7 @@ public class WordNet {
         }
 
         //build graph
-        graph = new Digraph(nouns.size());
+        Digraph graph = new Digraph(nouns.size());
         in = new In(hypernyms);
         while(!in.isEmpty()){
             String[] hypernym = in.readLine().split(",");
@@ -39,6 +39,8 @@ public class WordNet {
                 graph.addEdge(v, w);
             }
         }
+
+        this.sap = new SAP(graph);
     }
 
     // returns all WordNet nouns
