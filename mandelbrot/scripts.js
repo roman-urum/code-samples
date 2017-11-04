@@ -21,15 +21,13 @@ function drawFractal(){
     context.fillStyle = "rgba(255,255,255,1)";
     context.fillRect(0, 0, canvas.width, canvas.height );
 
-    var worigin = canvas.width / 2;
-    var horigin = canvas.height / 2;
 
     for(var i = -canvas.width; i < canvas.width; i++){
         for(var j = -canvas.height; j < canvas.height; j++){
-            var it = i - worigin + traslatex;
-            var jt = j - horigin + traslatey;
-            var width = canvas.width - worigin;
-            var height = canvas.height - horigin;
+            var it = i - traslatex;
+            var jt = j - traslatey;
+            var width = canvas.width;
+            var height = canvas.height;
 
             var c = {
                 re: it / width * scale,
@@ -50,10 +48,20 @@ function drawFractal(){
 }
 
 function canvasScale(e){
+
+    console.log(e.layerX - canvas.width/2);
+    console.log(e.layerY - canvas.height/2);
+    //return;
     if (e.button == 0){
         scale /= getScaleStep();
+        traslatex += (e.layerX - canvas.width/2) / scale;
+        traslatey += (e.layerY - canvas.height/2) / scale;
+
     } else if (e.button == 2){
         scale *= getScaleStep();
+        //traslatex += (e.layerX - canvas.width/2) * scale;
+        //traslatey += (e.layerY - canvas.height/2) * scale;
+
     }
     drawFractal();
 }
